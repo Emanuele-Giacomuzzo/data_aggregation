@@ -1,0 +1,23 @@
+clc,clear;
+cd '/Users/ema/Documents/MATLAB/Data_aggregation';
+
+load weighted_network.mat weighted_network;
+load node_names.mat node_names; node_names_table = table(node_names);
+graph=digraph(weighted_network); graph.Nodes = node_names_table;
+%plot(graph,'NodeLabel',node_names)
+
+unweighted_
+
+for i=1:length(unweighted_network)
+    for j=1:length(unweighted_network)
+        if weighted_network(i,j)== 0
+            unweighted_network(i,j)=0
+        else
+            unweighted_network(i,j)=1
+    end
+    end
+end
+
+%jaccard_vector = pdist (network, 'jaccard'); jaccard_matrix = squareform (jaccard_vector);
+%jaccard_single = linkage(jaccard_vector, 'single');
+%dendrogram(jaccard_single)
