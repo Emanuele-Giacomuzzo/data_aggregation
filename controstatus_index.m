@@ -12,8 +12,8 @@ for i=1:length(path_length_inverse)
 end
 
 for i=1:length(path_length_inverse)
-A=path_length_inverse(i,:)
-controstatus(i)=sum(A)
+A=path_length_inverse(i,:);
+controstatus(i)=sum(A);
 end
 
 

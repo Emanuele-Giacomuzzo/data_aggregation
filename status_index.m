@@ -10,8 +10,8 @@ for i=1:length(path_length)
 end
 
 for i=1:length(path_length)
-A=path_length(i,:)
-status(i)=sum(A)
+A=path_length(i,:);
+status(i)=sum(A);
 end
 
 end

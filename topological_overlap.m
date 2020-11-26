@@ -1,21 +1,21 @@
-function [node_overlap_v] = topological_overlap(weighted_network, threshold)
+function [node_overlap_v] = topological_overlap(adj_weighted, threshold)
 threshold=0.1;
 %n-step matrices
-n_step{1}=weighted_network;
+n_step{1}=adj_weighted;
 for n=2:10
 n_step{n}=n_step{n-1}.^n;
 end
 
 %average effect matrix
-addition=weighted_network;
-for n=2:10
-    addition=addition+n_step{n}
+addition=adj_weighted;
+for n=1:10
+    addition=addition+n_step{n};
 end
 average_effect=(1/n)*addition;
 
 %interactor matrix
-for i=1:length(weighted_network)
-    for j=1:length(weighted_network)
+for i=1:length(adj_weighted)
+    for j=1:length(adj_weighted)
         if average_effect(i,j) > threshold
             interactor(i,j)='S';
         else
@@ -41,5 +41,5 @@ for c=1:length(interactor)
     end
 end
 
-%species uniqueness
+%topological overlap vector
 node_overlap_v=sum(node_overlap_m);
