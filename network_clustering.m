@@ -6,27 +6,46 @@ load adj_undir_weight;
 load adj_undir_binary;
 load node_names;
 
-food_web=digraph(adj_dir_weight); 
+food_web=digraph(adj_dir_weight);
 food_web_undir=graph(adj_undir_weight);
 
 centrality_degree=centrality(food_web_undir,'degree');
 centrality_close=centrality(food_web_undir,'closeness');
 centrality_between=centrality(food_web,'betweenness');
-centrality_overlap=topological_overlap(adj_dir_weight, 0.1);
-centrality_uniqueness=species_uniqueness(adj_dir_weight, 0.1, 1.0, 0.1);
-centrality_importance=topological_importance(adj_undir_binary, food_web_undir, 3);
-centrality_status = status_index(food_web);
-centrality_controstatus = controstatus_index(food_web);
-centrality_net_status = centrality_status - centrality_controstatus;
+centrality_overlap=topological_overlap(adj_dir_weight, 0.1); %To check
+centrality_uniqueness=species_uniqueness(adj_dir_weight, 0.1, 1.0, 0.1); %To check 
+centrality_importance=topological_importance(adj_undir_binary, food_web_undir, 3); %To check
+centrality_status = status_index(food_web); %To check 
+centrality_controstatus = controstatus_index(food_web); %To check 
+centrality_net_status = centrality_status - centrality_controstatus; %To check
+centrality_keystone=keystone_index(adj_dir_weight); %Not working 
 
-jaccard_vector = pdist (adj_dir_binary, 'jaccard'); jaccard_matrix = squareform (jaccard_vector);
-jaccard_average = linkage(jaccard_vector, 'average');
-cophenet_jac_average = cophenet(jaccard_average, jaccard_vector);
+jaccard_v = pdist (adj_dir_binary, 'jaccard'); jaccard_matrix = squareform (jaccard_v);
+jaccard_average = linkage(jaccard_v, 'average');
+cophenet_jac_average = cophenet(jaccard_average, jaccard_v);
 inconsistent_jac_average=inconsistent(jaccard_average);
 cluster_identity =cluster(jaccard_average,'cutoff',0.5);
-adj_clustered=clusterslinkage(adj_dir_binary,cluster_identity,0.25);
+adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity,0.25);
 
-x=input('Enter a value for x: ');
+rege_m = regesimilarity (adj_dir_binary); rege_v = ?(rege_m); %Need rege matrix
+rege_average = linkage(rege_v, 'average'); %Need rege matrix
+cophenet_jac_average = cophenet(rege_average, rege_v); %Need rege matrix
+inconsistent_jac_average=inconsistent(rege_average); %Need rege matrix
+cluster_identity =cluster(rege_average,'cutoff',0.5); %Need rege matrix
+adj_cluster_rege=clusterslinkage(adj_dir_binary,cluster_identity,0.25); %Need rege matrix
 
+modules_dens=densitybasedmodularity(adj_dir_binary); %Not finished
+modules_patt=patternbasedmodularity(adj_dir_binary); %Not started
+
+adj_cluster_sbm=sbm(adj_dir_binary); %Not started
+
+[p,tbl,stats] = friedman(rankings_for_different_data_aggregation);
+
+a=input('Would you like to see how the original food web looks like? [sure bro/nah bro]: ','s');
+if a=='sure bro'
 plot(food_web,'NodeLabel',node_names);
+end
+a=input('Would you like to see the dendrogram of Jaccard similarities? [sure bro/nah bro]: ','s');
+if a=='sure bro'
 dendrogram(jaccard_average, 63,'Orientation','left','Labels',node_names);
+end
