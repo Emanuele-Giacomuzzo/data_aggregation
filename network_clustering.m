@@ -37,12 +37,12 @@ possible_connections=possibleconnections(adj_dir_binary,cluster_identity);
 realised_connections=realisedconnections(adj_dir_binary,cluster_identity);
 adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity,realised_connections,possible_connections,0.25);
 
-rege_m = regesimilarity (adj_dir_binary); rege_v = ?(rege_m); %Need rege matrix
-rege_average = linkage(rege_v, 'average'); %Need rege matrix
-cophenet_jac_average = cophenet(rege_average, rege_v); %Need rege matrix
-inconsistent_jac_average=inconsistent(rege_average); %Need rege matrix
-cluster_identity =cluster(rege_average,'cutoff',0.5); %Need rege matrix
-adj_cluster_rege=clusterslinkage(adj_dir_binary,cluster_identity,0.25); %Need rege matrix
+%rege_m = regesimilarity (adj_dir_binary); rege_v = ?(rege_m); %Need rege matrix
+%rege_average = linkage(rege_v, 'average'); %Need rege matrix
+%cophenet_jac_average = cophenet(rege_average, rege_v); %Need rege matrix
+%inconsistent_jac_average=inconsistent(rege_average); %Need rege matrix
+%cluster_identity =cluster(rege_average,'cutoff',0.5); %Need rege matrix
+%adj_cluster_rege=clusterslinkage(adj_dir_binary,cluster_identity,0.25); %Need rege matrix
 
 modules_dens=densitybasedmodularity(adj_dir_binary); %Not finished
 modules_patt=patternbasedmodularity(adj_dir_binary); %Not started

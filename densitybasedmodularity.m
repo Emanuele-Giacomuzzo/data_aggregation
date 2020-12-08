@@ -1,77 +1,20 @@
 function [modules] = densitybasedmodularity(adj_dir_binary)
 
 %Initialise parameters
-adj_dir_binary=adj_dir_binary;
-indegree=zeros(length(adj_dir_binary),1);
-outdegree=zeros(length(adj_dir_binary),1);
-Q_v=zeros(length(adj_dir_binary),1);
-finetune_increase=1;
 average_sum=0;
 row_coloumn_summed=zeros(length(adj_dir_binary),1);
-for i=1:64 modules{i}=zeros(length(adj_dir_binary),1); end
-for i=1:length(adj_dir_binary) modules{1}(i)=i; end
-for i=1:64 B{i}=zeros(length(adj_dir_binary),length(adj_dir_binary)); end
 delta_Q=0;
-m=0;
-for i=1:length(adj_dir_binary)
-    for j=1:length(adj_dir_binary)
-        if adj_dir_binary(i,j)>0
-            m=m+1;
-        end
-    end
-end
-for i=1:length(adj_dir_binary)
-    for j=1:length(adj_dir_binary)
-        if adj_dir_binary(i,j)>0 
-            indegree(j)=indegree(j)+1;
-        end
-    end
-end
-for i=1:length(adj_dir_binary)
-    for j=1:length(adj_dir_binary) 
-        if adj_dir_binary(j,i)>0 
-            outdegree(i)=outdegree(i)+1;
-        end
-    end
-end
 
-%Modularity matrix
-for i=1:length(adj_dir_binary)
-    for j=1:length(adj_dir_binary)
-        B{1}(i,j)=adj_dir_binary(i,j)-((indegree(i)*outdegree(j))/m);
-    end
-end
-[eigenvectors,eigenvalues]=eig(B{1}+B{1}');
-[max_eigenvalue,linear_index]=max(eigenvalues,[],'all','linear');
-[row,col] = ind2sub(size(eigenvalues),linear_index);
-s=eigenvectors(:,row);
-for i=1:length(s)
-    if s(i)>0
-        s(i)=1;
-    else
-        s(i)=-1;
-    end
-end
+m=numberoflinks(adj_dir_weight);
+indegree=nodeindegree(adj_dir_binary);
+outdegree=nodeoutdegree(adj_dir_binary);
+B=modularitymatrix(adj_dir_binary,indegree,outdegree,m);
+s=svector(B);
 Q=(1/4*m)*s'*(B{1}+B{1}')*s;
-while finetune_increase>0
-    for i=1:length(s)
-        s(i)=s(i)*-1;
-        Q_v(i)=(1/4*m)*s'*(B{1}+B{1}')*s;
-        s(i)=s(i)*-1;
-    end
-    [max_Q,index]=max(Q_v,[],'all','linear'); finetune_increase=max_Q-Q;
-    if finetune_increase>0
-        s(index)=s(index)*-1;
-        Q=max_Q;
-    end
-end
-for i=1:length(s)
-    if s(i)==1
-        modules{2}(i)=i;
-    else
-        modules{3}(i)=i;
-    end
-end
+[Q,s]=finetune(Q,B,s,m);
+modules=modulecomposition(adj_dir_binary,s);
+
+
 
 %Modularity submatrix
 for z=2:64
