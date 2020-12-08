@@ -12,7 +12,7 @@ food_web_undir=graph(adj_undir_weight);
 centrality_degree=centrality(food_web_undir,'degree');
 centrality_close=centrality(food_web_undir,'closeness');
 centrality_between=centrality(food_web,'betweenness');
-centrality_importance=topological_importance(adj_undir_binary, food_web_undir, 3);
+centrality_importance=topological_importance(adj_undir_binary, food_web_undir, 3); %To check
 
 n_step=nstepmatrices(adj_dir_weight);
 average_effect=averageeffect(adj_dir_weight,n_step);
@@ -20,22 +20,22 @@ interactor=interactormatrix(adj_dir_weight, average_effect, 0.1);
 node_overlap_m=topologicaloverlapmatrix(interactor);
 centrality_overlap=sum(node_overlap_m);
 
-centrality_status = status_index(food_web);
-centrality_controstatus = controstatusindex(food_web);
-centrality_net_status = centrality_status - centrality_controstatus;
+%centrality_uniqueness=species_uniqueness(adj_dir_weight,centrality_overlap,0.1,1.0,0.1); %To fix
 
-%centrality_keystone=keystone_index(adj_dir_weight);
-%centrality_uniqueness=species_uniqueness(adj_dir_weight,centrality_overlap,0.1,1.0,0.1);
+
+centrality_status = status_index(food_web); %To check
+centrality_controstatus = controstatusindex(food_web); %To check 
+
+centrality_net_status = centrality_status - centrality_controstatus; %To check
+
+centrality_keystone=keystone_index(adj_dir_weight); %Not working 
 
 jaccard_v = pdist (adj_dir_binary, 'jaccard'); jaccard_matrix = squareform (jaccard_v);
 jaccard_average = linkage(jaccard_v, 'average');
 cophenet_jac_average = cophenet(jaccard_average, jaccard_v);
 inconsistent_jac_average=inconsistent(jaccard_average);
 cluster_identity =cluster(jaccard_average,'cutoff',0.5);
-
-possible_connections=possibleconnections(adj_dir_binary,cluster_identity);
-realised_connections=realisedconnections(adj_dir_binary,cluster_identity);
-adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity,realised_connections,possible_connections,0.25);
+adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity,0.25);
 
 rege_m = regesimilarity (adj_dir_binary); rege_v = ?(rege_m); %Need rege matrix
 rege_average = linkage(rege_v, 'average'); %Need rege matrix
