@@ -1,8 +1,8 @@
-function[interactor]=interactormatrix(adj_dir_weight,average_effect, threshold)
+function[interactor]=interactormatrix(average_effect, threshold)
 
 %interactor matrix
-for i=1:length(adj_dir_weight)
-    for j=1:length(adj_dir_weight)
+for i=1:length(average_effect)
+    for j=1:length(average_effect)
         if average_effect(i,j) > threshold
             interactor(i,j)='S';
         else

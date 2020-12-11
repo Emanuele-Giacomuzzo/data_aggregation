@@ -1,20 +1,10 @@
-function[possible_connections]=possibleconnections(adj_dir_binary,cluster_identity)
+function[possible_connections]=possibleconnections(cluster_size)
 
-possible_connections=zeros(max(cluster_identity));
+possible_connections=zeros(max(cluster_size));
 
-for i=1:max(cluster_identity) 
-    for j=1:max(cluster_identity) 
-        for k=1:length(adj_dir_binary) 
-            if cluster_identity(k)==i 
-                for l=1:length(adj_dir_binary)
-                    if cluster_identity(l)==j 
-                        possible_connections(i,j)=possible_connections(i,i)+1;
-                    else
-                        possible_connections(i,j)=possible_connections(i,i);
-                    end
-                end
-            end
-        end
+for i=1:length(cluster_size)
+    for j=1:length(cluster_size)
+        possible_connections(i,j)=cluster_size(i)*cluster_size(j);
     end
 end
 
