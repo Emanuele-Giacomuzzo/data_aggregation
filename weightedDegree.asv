@@ -1,0 +1,8 @@
+function [centrality_we_degree] = weightedDegree(adj_dir_weight)
+
+n=length(adj_dir_)
+
+for i=1:
+
+end
+
