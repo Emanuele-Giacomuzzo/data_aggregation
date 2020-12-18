@@ -27,8 +27,8 @@
 //Therefore, you should copy your adjacency matrix to the folder where
 //you want your output file.
 
-int main (int argc, char *argv[]){
-	int N = atoi(argv[1]); // number of species
+int main (int argc, char *argv[]){ // argc=argument count. argv=
+	int N = atoi(argv[1]); // number of species  atoi=string2integers
 	char * FileName = argv[2]; // file storing the signed adjacency mat
 	int seed = atoi(argv[3]); // random seed
 	int Steps = atoi(argv[4]); // number of steps
