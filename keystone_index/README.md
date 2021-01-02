@@ -1,6 +1,6 @@
 # Keystone indices 
 
-# Author
+## Author
 
 Wei-chung liu
 
@@ -22,4 +22,4 @@ The result is recorded in a dataframe called resu. (So if you type resu and pres
 
 Resu has a format like this: nodeID, k, kbu, ktd, kdir, kindir. 
 
-### Example
+## Example
