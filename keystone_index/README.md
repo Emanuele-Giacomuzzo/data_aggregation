@@ -1,12 +1,11 @@
 # Keystone indices 
 
+This R program calculates the four different K indices - Kbu, Ktd, Kdir, Kindir. 
+
 ## Author
 
 Wei-chung liu
 
-## What the program does  
-
-This R program calculates the four different K indices - Kbu, Ktd, Kdir, Kindir. 
 
 ## Input format
 
