@@ -1,3 +1,9 @@
+## Author
+
+Wei-chung liu
+
+##What it is 
+
 This R program calculates the four different K indices - Kbu, Ktd, Kdir, Kindir. 
 
 The input format is as follows. First, each node has an ID. If there is a link from fish to bird , then the input format must be:
