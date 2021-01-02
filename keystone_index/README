@@ -1,5 +1,9 @@
-Here is the programe for calculating K index (including Kbu, Ktd, Kdir, Kindir) in R. The input format is as follows. First, each node has an ID. If there is a link from fish to bird , then the input format must be:
+This R program calculates the four different K indices - Kbu, Ktd, Kdir, Kindir. 
+
+The input format is as follows. First, each node has an ID. If there is a link from fish to bird , then the input format must be:
+
 fish	bird	1
+
 (1 indicates a trophic link from fish to bird, meaning bird eats fish).
 
 The first line of the code tells R where your input file is, it should be a textfile.
