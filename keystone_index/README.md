@@ -4,7 +4,7 @@ This R program calculates the four different K indices - Kbu, Ktd, Kdir, Kindir.
 
 ## Author
 
-Wei-chung liu
+Wei-chung Liu
 
 
 ## Input format
@@ -24,3 +24,5 @@ The result is recorded in a dataframe called resu. (So if you type resu and pres
 Resu has a format like this: nodeID, k, kbu, ktd, kdir, kindir. 
 
 ## Example
+
+Use web.txt to see if the program works. 
