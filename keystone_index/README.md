@@ -12,7 +12,9 @@ Wei-chung liu
 It takes a textfile with the following structure:
 
 plankton fish 1
+
 fish	bird	1
+
 bird bear 1
 
 ## How to interpret the output 
