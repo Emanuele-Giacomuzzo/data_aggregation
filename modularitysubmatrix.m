@@ -1,5 +1,8 @@
 function[B]=modularitysubmatrix(modules,B_matrix,z)
 
+n=length(B_matrix);
+B=zeros(n);
+
 row_coloumn_summed=zeros(length(modules{1}),1);
 
 for i=1:length(modules{1}) 

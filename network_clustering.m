@@ -3,134 +3,44 @@ load adj_dir_weight; % i (prey) -> j (predator)
 load node_names;
 
 adj_dir_binary=tounweighted(adj_dir_weight);
-adj_undir_weight=toundirected(adj_dir_weight);
-adj_undir_binary=toundirected(adj_dir_binary);
+adj_und_weight=toundirected(adj_dir_weight);
+adj_und_binary=toundirected(adj_dir_binary);
 
-food_web=digraph(adj_dir_weight);
-food_web_undir=graph(adj_undir_weight);
+network_dir=digraph(adj_dir_weight);
+network_und=graph(adj_und_weight);
 n=length(adj_dir_weight);
 
-%Centrality
-centrality_degree=centrality(food_web_undir,'degree');
-centrality_degree_norm=centrality_degree/(n-1);
-centrality_we_degree=weightedDegree(adj_dir_weight);
-centrality_we_degree_norm=centrality_we_degree/(n-1);
-centrality_close=centrality(food_web_undir,'closeness');
-centrality_close_norm=centrality_close*(n-1);
-centrality_between=centrality(food_web,'betweenness');
-centrality_between_norm=centrality_between/[(n-1)*(n-2)/2];
+degree=centrality(network_und,'degree')/(n-1);
+weighted_degree=weightedDegree(adj_dir_weight)/(n-1);
+closeness=centrality(network_und,'closeness')*(n-1);
+betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 
 %Topological overlap 
 nr_of_steps=4;
 threshold=0.01;
-degree_m=degreematrix(adj_undir_binary, food_web_undir);
+
+degree_m=degreematrix(adj_und_binary, network_und);
+
 n_step=onestepeffect(adj_dir_weight, degree_m); %It's the same as for topological importance
 n_step=stepeffectoverlap(adj_dir_weight,n_step, nr_of_steps);
+
 average_effect=averageeffect(adj_dir_weight,n_step, nr_of_steps);
 interactor=interactormatrix(average_effect, threshold);
+
 node_overlap_m=topologicaloverlapmatrix(interactor);
-centrality_overlap=sum(node_overlap_m,2);
-centrality_overlap_ratio=centrality_overlap/sum(centrality_overlap);
+
+overlap=sum(node_overlap_m,2);
+overlap_ratio=overlap/sum(overlap);
 
 %Weighted topological overlap
 nr_of_steps=4;
 threshold=0.01;
 weighted_one_step=weightedOneStep(adj_dir_weight);
 
-
-
 %Status index 
-path_length=distances(food_web,'Method','unweighted');
-path_length=getridofinf(path_length);
-centrality_status=sum(path_length,2);
-food_web_flipped=flipedge(food_web);
-path_length_inv=distances(food_web_flipped,'Method','unweighted');
-path_length_inv=getridofinf(path_length_inv);
-centrality_controstatus=sum(path_length_inv,2);
-centrality_net_status = centrality_status - centrality_controstatus;
-
-%Jaccard clustering
-threshold=0.5;
-link_percentage=0.25;
-jaccard_v = pdist (adj_dir_binary, 'jaccard');
-jaccard_average = linkage(jaccard_v, 'average');
-cluster_identity_jac =cluster(jaccard_average,'cutoff',threshold);
-cluster_size_jac=clustersize(cluster_identity_jac);
-possible_connections=possibleconnections(cluster_size_jac);
-realised_connections=realisedconnections(adj_dir_binary,cluster_identity_jac);
-adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity_jac,realised_connections,possible_connections,link_percentage);
-food_web_clustered=digraph(adj_cluster_jaccard);
-
-%Density-based modularity
-m=numberoflinks(adj_dir_weight);
-indegree=nodeindegree(adj_dir_binary);
-outdegree=nodeoutdegree(adj_dir_binary);
-[modules,B]=createmodulesandb(adj_dir_binary);
-B_matrix=modularitymatrix(adj_dir_binary,indegree,outdegree,m);
-B{1}=B_matrix;
-s=svector(B,1);
-Q=(1/4*m)*s'*(B{1}+B{1}')*s;
-[Q,s]=finetune(Q,B,s,m,1);
-modules{2}=modulecomposition(s,1);
-modules{3}=modulecomposition(s,0);
-for z=2:length(modules)
-    B{z}=modularitysubmatrix(modules,B_matrix,z);
-    s=svector(B,z);
-    [Q,s]=finetune(Q,B,s,m,z);
-    for i=1:length(modules)
-        if sum(modules{i})==0
-            modules{i}=modulecomposition(s,1);
-            break
-        end
-    end
-    for i=1:length(modules)
-        if sum(modules{i})==0
-            modules{i}=modulecomposition(s,0);
-            break
-        end
-    end
-end
-cluster_identity_mod_den=moduleofnodes(modules);
-module_number_new=changemodulenumber(cluster_identity_mod_den);
-cluster_size_dens_modul=clustersize(module_number_new);
-possible_connections_mod_den=possibleconnections(cluster_size_dens_modul);
-realised_connections_mod_den=realisedconnections(adj_dir_binary,module_number_new);
-adj_cluster_mod_den=clusterslinkage(adj_dir_binary,module_number_new,realised_connections_mod_den,possible_connections_mod_den,link_percentage);
-food_web_clust_mod_den=digraph(adj_cluster_mod_den);
-
-%Pattern-based modularity
-[modules,B]=createmodulesandb(adj_dir_binary);
-c_out=sharedOutLink(adj_dir_binary);
-in_times_in_minus_one=inTimesInMinusOne(indegree);
-B_matrix_patt=modularityMatrixPattern(adj_dir_binary,c_out,in_times_in_minus_one,outdegree,indegree);
-B{1}=B_matrix_patt;
-s=svector(B,1);
-Q=(1/4*m)*s'*(B{1}+B{1}')*s;
-[Q,s]=finetune(Q,B,s,m,1);
-modules{2}=modulecomposition(s,1);
-modules{3}=modulecomposition(s,0);
-for z=2:length(modules)
-    B{z}=modularitysubmatrix(modules,B_matrix,z);
-    s=svector(B,z);
-    [Q,s]=finetune(Q,B,s,m,z);
-    for i=1:length(modules)
-        if sum(modules{i})==0
-            modules{i}=modulecomposition(s,1);
-            break
-        end
-    end
-    for i=1:length(modules)
-        if sum(modules{i})==0
-            modules{i}=modulecomposition(s,0);
-            break
-        end
-    end
-end
-cluster_identity_mod_den=moduleofnodes(modules);
-module_number_new=changemodulenumber(cluster_identity_mod_den);
-cluster_size_dens_modul=clustersize(module_number_new);
-possible_connections_mod_den=possibleconnections(cluster_size_dens_modul);
-realised_connections_mod_den=realisedconnections(adj_dir_binary,module_number_new);
-adj_cluster_mod_den=clusterslinkage(adj_dir_binary,module_number_new,realised_connections_mod_den,possible_connections_mod_den,link_percentage);
-food_web_clust_mod_den=digraph(adj_cluster_mod_den);
-
+path_length=getridofinf(distances(network_dir,'Method','unweighted'));
+status=sum(path_length,2);
+network_flipped=flipedge(network);
+path_length_inv=getridofinf(distances(network_flipped,'Method','unweighted'));
+controstatus=sum(path_length_inv,2);
+net_status = status - controstatus;

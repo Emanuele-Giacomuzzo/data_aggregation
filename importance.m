@@ -1,4 +1,4 @@
-function[centrality_importance]=centralityimportance(adj_undir_binary, species_step_importance, number_of_steps)
+function[centrality_importance]=importance(adj_undir_binary, species_step_importance, number_of_steps)
 
 centrality_importance=zeros(length(adj_undir_binary),1);
 for i=1:number_of_steps
