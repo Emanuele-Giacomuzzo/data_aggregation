@@ -21,3 +21,5 @@ bird bear 1
 The result is recorded in a dataframe called resu. (So if you type resu and press enter, then it should give you the result.)
 
 Resu has a format like this: nodeID, k, kbu, ktd, kdir, kindir. 
+
+### Example
