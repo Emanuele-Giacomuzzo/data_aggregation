@@ -1,4 +1,4 @@
-clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/keystone_index';
+clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/keystone_index/Matlab_files';
 load web.mat; % i (prey) -> j (predator)
 n=length(web);
 
