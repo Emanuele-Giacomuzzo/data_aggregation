@@ -1,4 +1,4 @@
-clc,clear,cd '/Users/ema/Documents/MATLAB/Data_aggregation';
+clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
 load adj_dir_weight; % i (prey) -> j (predator)
 load node_names;
 
@@ -14,7 +14,10 @@ n=length(adj_dir_weight);
 threshold=0.5;
 link_percentage=0.25;
 load REGE3.mat;
-rege_v=squareform(REGE3); %This needs to be a distance matrix, not a similarity matrix
+REGE3_norm=REGE3/1000;
+REGE3_dis=similarityToDissimilarity(REGE3_norm);
+
+rege_v=squareform(REGE3_dis);
 rege_average = linkage(rege_v, 'average');
 cluster_identity_rege =cluster(rege_average,'cutoff',threshold);
 cluster_size_rege=clustersize(cluster_identity_rege);
