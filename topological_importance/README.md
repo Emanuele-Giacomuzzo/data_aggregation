@@ -1,4 +1,4 @@
-#Topological importance 
+# Topological importance 
 
 Here is the programe for calculating TI up to n steps in R. The input format is as follows. First, each node has an ID. If there is a link between Jon and Tom, then the input format must be:
 Jon	Tom	1
