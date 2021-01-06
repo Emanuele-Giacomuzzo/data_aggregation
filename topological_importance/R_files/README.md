@@ -1,5 +1,5 @@
 # Topological importance 
-This r program calculates the topological importance (Jordàn 2003) up to n steps.
+This r program calculates the topological importance (Jordàn, 2003) up to n steps.
 
 # Author
 Wei-chung Liu
