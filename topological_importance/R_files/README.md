@@ -8,10 +8,12 @@ Wei-chung Liu
 The input should be an edge list (.txt) of the undirected binary network. If there is a link between Jon and Tom, the input is as follows:
 
 Jon	Tom	1
+
 Tom	Jon	1
 
 ## Code
 The first line of the code tells R where your input file is. 
+
 The second line tells R how many steps up to the TI index should be calculated.
 
 ## Output 
