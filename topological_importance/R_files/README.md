@@ -15,9 +15,7 @@ Tom	Jon	1
 The first line of the code tells R where your input file is. The second line tells R how many steps up to the TI index should be calculated. The part that follows transform the edge list into a matrix. Then, the algorithm of the topological importance goes as follows:
 
 1. Create the topological importance of the first step. In this matrix, every value is the fraction of the total preys constituted by a prey in the diet of a predator.
-2. For the total number of steps
-a. yo
-b. yo
+2. For the total number of steps -> multiply the first-step matrix, then add it to a matrix called SI. 
 3. The topological importance of a species is the sum of all its topological importances (sum of its row) at the n step divided by the total number of steps.
 
 ## Output 
