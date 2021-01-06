@@ -1,3 +1,5 @@
+function[]=keystoneIndices()
+
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/keystone_index/Matlab_files';
 load web.mat; % i (prey) -> j (predator)
 n=length(web);
@@ -36,4 +38,6 @@ end
 predator_coefficients_col_sum=sum(predator_coefficients_col);
 for i=1:n
     kindir(i)=kindir(i)+predator_coefficients_col_sum(i);
+end
+
 end

@@ -1,3 +1,5 @@
+function[]=regeClustering()
+
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
 load adj_dir_weight; % i (prey) -> j (predator)
 load node_names;
@@ -71,3 +73,5 @@ path_length_inv=distances(network_flipped,'Method','unweighted');
 path_length_inv=getridofinf(path_length_inv);
 controstatus=sum(path_length_inv,2);
 net_status = status - controstatus;
+
+end

@@ -1,5 +1,7 @@
+function[]=densityBasedModularity()
+
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/modularity_maximisation';
-load ../data/adj_dir_weight; % i (prey) -> j (predator)
+load ../data/adj_dir_weight; % rows:preys, coloumns:predators
 load ../data/node_names;
 
 adj_dir_binary=tounweighted(adj_dir_weight);
@@ -10,12 +12,13 @@ food_web=digraph(adj_dir_weight);
 food_web_undir=graph(adj_undir_weight);
 n=length(adj_dir_weight);
 
-%Pattern-based modularity
+%Density-based modularity
+m=numberoflinks(adj_dir_weight);
+indegree=nodeindegree(adj_dir_binary);
+outdegree=nodeoutdegree(adj_dir_binary);
 [modules,B]=createmodulesandb(adj_dir_binary);
-c_out=sharedOutLink(adj_dir_binary);
-in_times_in_minus_one=inTimesInMinusOne(indegree);
-B_matrix_patt=modularityMatrixPattern(adj_dir_binary,c_out,in_times_in_minus_one,outdegree,indegree);
-B{1}=B_matrix_patt;
+B_matrix=modularitymatrix(adj_dir_binary,indegree,outdegree,m);
+B{1}=B_matrix;
 s=svector(B,1);
 Q=(1/4*m)*s'*(B{1}+B{1}')*s;
 [Q,s]=finetune(Q,B,s,m,1);
@@ -45,3 +48,4 @@ possible_connections_mod_den=possibleconnections(cluster_size_dens_modul);
 realised_connections_mod_den=realisedconnections(adj_dir_binary,module_number_new);
 adj_cluster_mod_den=clusterslinkage(adj_dir_binary,module_number_new,realised_connections_mod_den,possible_connections_mod_den,link_percentage);
 food_web_clust_mod_den=digraph(adj_cluster_mod_den);
+end
