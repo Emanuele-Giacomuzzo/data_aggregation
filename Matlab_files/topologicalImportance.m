@@ -1,10 +1,11 @@
-function[]=topologicalImportance()
+function [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary)
 
-load web.mat;
+cd topological_importance;
+
 num_steps=3;
-n=length(web);
+n=length(adj_und_binary);
 
-TI=oneStepTI(web);
+TI=oneStepTI(adj_und_binary);
 
 CI=ones(n);
 CI=diag(CI);
@@ -21,7 +22,8 @@ TI_species=sum(SI,2);
 TI_species=TI_species/num_steps;
 TI_species_ratio=TI_species/sum(TI_species);
 
-
 %I guess I can just use a weighted network here. 
+
+cd ..;
 
 end

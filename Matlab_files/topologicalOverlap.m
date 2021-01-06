@@ -1,7 +1,4 @@
-function[]=topologicalOverlap()
-
-nr_of_steps=4;
-threshold=0.01;
+function [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,nr_of_steps,threshold)
 
 degree_m=degreematrix(adj_und_binary, network_und);
 
@@ -15,10 +12,5 @@ node_overlap_m=topologicaloverlapmatrix(interactor);
 
 overlap=sum(node_overlap_m,2);
 overlap_ratio=overlap/sum(overlap);
-
-%Weighted topological overlap
-nr_of_steps=4;
-threshold=0.01;
-weighted_one_step=weightedOneStep(adj_dir_weight);
 
 end
