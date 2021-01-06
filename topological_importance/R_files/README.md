@@ -11,10 +11,14 @@ Jon	Tom	1
 
 Tom	Jon	1
 
-## Code
-The first line of the code tells R where your input file is. 
+## Code & Algorithm
+The first line of the code tells R where your input file is. The second line tells R how many steps up to the TI index should be calculated. The part that follows transform the edge list into a matrix. Then, the algorithm of the topological importance goes as follows:
 
-The second line tells R how many steps up to the TI index should be calculated.
+1. Create the topological importance of the first step. In this matrix, every value is the fraction of the total preys constituted by a prey in the diet of a predator.
+
+
+
+
 
 ## Output 
 The output is recorded in a dataframe called resu. 
