@@ -1,4 +1,4 @@
-clc,clear,cd '/Users/ema/Documents/MATLAB/Data_aggregation';
+clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
 load adj_dir_weight; % i (prey) -> j (predator)
 load node_names;
 
