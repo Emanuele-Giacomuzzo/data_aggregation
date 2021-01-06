@@ -1,6 +1,6 @@
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/modularity_maximisation';
-load ../data/adj_dir_weight; % i (prey) -> j (predator)
-load node_names;
+load ../data/adj_dir_weight; % rows:preys, coloumns:predators
+load ../data/node_names;
 
 adj_dir_binary=tounweighted(adj_dir_weight);
 adj_undir_weight=toundirected(adj_dir_weight);
