@@ -1,0 +1,8 @@
+function [adj_cluster] = linkingClusters(adj_dir_binary,cluster_identity,link_percentage)
+
+cluster_size_jac=clustersize(cluster_identity_jac);
+possible_connections=possibleconnections(cluster_size_jac);
+realised_connections=realisedconnections(adj_dir_binary,cluster_identity_jac);
+adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity_jac,realised_connections,possible_connections,link_percentage);
+
+end

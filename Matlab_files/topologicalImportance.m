@@ -1,8 +1,7 @@
-function [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary)
+function [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,num_steps)
 
 cd topological_importance;
 
-num_steps=3;
 n=length(adj_und_binary);
 
 TI=oneStepTI(adj_und_binary);

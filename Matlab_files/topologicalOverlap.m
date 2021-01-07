@@ -1,5 +1,7 @@
 function [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,nr_of_steps,threshold)
 
+cd topological_overlap;
+
 degree_m=degreematrix(adj_und_binary, network_und);
 
 n_step=onestepeffect(adj_dir_weight, degree_m); %It's the same as for topological importance
@@ -12,5 +14,7 @@ node_overlap_m=topologicaloverlapmatrix(interactor);
 
 overlap=sum(node_overlap_m,2);
 overlap_ratio=overlap/sum(overlap);
+
+cd ..;
 
 end
