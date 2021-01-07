@@ -45,6 +45,8 @@ for i=1:n
     kindir(i)=kindir(i)+predator_coefficients_col_sum(i);
 end
 
+k=k';
+
 cd ..;
 
 end

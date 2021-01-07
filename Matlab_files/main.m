@@ -15,8 +15,8 @@ closeness=centrality(network_und,'closeness')*(n-1);
 betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 [status,controstatus,net_status] = status_index(network_dir);
 [k,kbu,ktd,kdir,kindir]=keystoneIndices(adj_dir_binary);
-[TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,3); %weird
-[overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,network_und,3,0.01); %not working
+[TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,3);
+[overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,3,0.01);
 
 jaccard_clusters=jaccardClustering(adj_dir_binary,0.01,50); %not working
 rege_clusters=regeClustering(0.01, 50); %not working

@@ -1,5 +1,11 @@
 function[adj_cluster_rege]=regeClustering(threshold,link_percentage)
 
+%Watch out: this toolbox doesn't implement the REGE algorithm. It needs to
+%be calcualated from the UCINET VI software (available only for windows at
+%https://sites.google.com/site/ucinetsoftware/home). The output of UCINET
+%needs then to be transformed into a matlab matrix and saved in the folder
+%data.
+
 load ../data/REGE3.mat;
 cd rege_clustering;
 

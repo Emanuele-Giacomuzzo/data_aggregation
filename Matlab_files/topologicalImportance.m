@@ -3,17 +3,14 @@ function [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,num_
 cd topological_importance;
 
 n=length(adj_und_binary);
-
 TI=oneStepTI(adj_und_binary);
-
 CI=ones(n);
-CI=diag(CI);
-CI=diag(CI);
-
+CI=diag(diag(CI));
 SI=zeros(n);
 
 for i=1:num_steps
     CI=CI*TI;
+    CI(isnan(CI))=0; %Nan appears if one of the species inside the web is not connected to the others.
     SI=SI+CI;
 end
 
