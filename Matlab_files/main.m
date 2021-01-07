@@ -19,12 +19,17 @@ betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,3);
 [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,3,0.01);
 
-cluster_identity_jac=jaccardClustering(adj_dir_binary,0.01);
+[cluster_identity_jac,adj_jaccard]=jaccardClustering(adj_dir_binary,degree);
+
+rege_dissimilarity_v=regeTransform(REGE3);
+[cluster_identity_rege,adj_rege]=regeClustering(adj_dir_binary,rege_dissimilarity_v);
+
+
+
 cluster_identity_rege=regeClustering(REGE3, 0.01, 50);
 cluster_identity_patternModularity=patternBasedModularity(adj_dir_binary,adj_dir_weight);
 cluster_identity_densityModularity=densityBasedModularity(adj_dir_weight, adj_dir_binary);
 
-adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,5);
 adj_rege=linkingClusters(adj_dir_binary,cluster_identity_rege,5);
 adj_patternModularity=linkingClusters(adj_dir_binary,cluster_identity_patternModularity,5);
 adj_densityModularity=linkingClusters(adj_dir_binary,cluster_identity_densityModularity,5);
