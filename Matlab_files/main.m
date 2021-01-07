@@ -19,4 +19,4 @@ betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,network_und,3,0.01); %not working 
 
 jaccard_clusters=jaccardClustering(adj_dir_binary,0.01,50);
-rege_clusters=regeClustering();
+rege_clusters=regeClustering(0.01, 50);

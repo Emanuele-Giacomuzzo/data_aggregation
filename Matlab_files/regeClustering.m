@@ -1,6 +1,8 @@
-function[]=regeClustering(threshold,link_percentage)
+function[adj_cluster_rege]=regeClustering(threshold,link_percentage)
 
-load REGE3.mat;
+load ../data/REGE3.mat;
+cd rege_clustering;
+
 REGE3_norm=REGE3/1000;
 REGE3_dis=similarityToDissimilarity(REGE3_norm);
 
@@ -12,7 +14,7 @@ possible_connections=possibleconnections(cluster_size_rege);
 realised_connections=realisedconnections(adj_dir_binary,cluster_identity_rege);
 
 adj_cluster_rege=clusterslinkage(adj_dir_binary,cluster_identity_rege,realised_connections,possible_connections,link_percentage);
-adj_cluster_rege_undir=toundirected(adj_cluster_rege); %Here's the problem
-network_rege=graph(adj_cluster_rege_undir);
+
+cd ..;
 
 end
