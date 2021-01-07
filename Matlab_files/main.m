@@ -18,7 +18,13 @@ betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 [TI_species,TI_species_ratio]=topologicalImportance(adj_und_binary,3);
 [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,3,0.01);
 
-jaccard_clusters=jaccardClustering(adj_dir_binary,0.01,50); %not working
+cluster_identity_jac=jaccardClustering(adj_dir_binary,0.01,50);
+adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,50);
+
+
+
+
+
 rege_clusters=regeClustering(0.01, 50); %not working
 pattern_modularity_max=patternBasedModularity(adj_dir_binary);
 density_modularity_max=densityBasedModularity(adj_dir_weight);
