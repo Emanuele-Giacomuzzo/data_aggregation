@@ -2,6 +2,11 @@ function[k,kbu,ktd,kdir,kindir]=keystoneIndices(adj_dir_binary)
 
 cd keystone_indices;
 
+%The keystone index doesn't take into consideration self-loops, this is why
+%we need to make sure that we eliminate them from the adjacency matrix
+%before computing it. 
+adj_dir_binary=adj_dir_binary-diag(diag(adj_dir_binary));
+
 n=length(adj_dir_binary);
 preys=sum(adj_dir_binary); preys=preys.';
 predators=sum(adj_dir_binary,2);
@@ -40,6 +45,6 @@ for i=1:n
     kindir(i)=kindir(i)+predator_coefficients_col_sum(i);
 end
 
-cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
+cd ..;
 
 end

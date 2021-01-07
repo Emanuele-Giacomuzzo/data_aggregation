@@ -1,18 +1,7 @@
-function[]=patternBasedModularity()
+function[adj_cluster_mod_den]=patternBasedModularity(adj_dir_binary)
 
-clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/modularity_maximisation';
-load ../data/adj_dir_weight; % i (prey) -> j (predator)
-load ../data/node_names;
-
-adj_dir_binary=tounweighted(adj_dir_weight);
-adj_undir_weight=toundirected(adj_dir_weight);
-adj_undir_binary=toundirected(adj_dir_binary);
-
-food_web=digraph(adj_dir_weight);
-food_web_undir=graph(adj_undir_weight);
 n=length(adj_dir_weight);
 
-%Pattern-based modularity
 [modules,B]=createmodulesandb(adj_dir_binary);
 c_out=sharedOutLink(adj_dir_binary);
 in_times_in_minus_one=inTimesInMinusOne(indegree);
