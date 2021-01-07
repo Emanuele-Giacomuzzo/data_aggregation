@@ -1,13 +1,15 @@
-function[adj_cluster_mod_den]=densityBasedModularity(adj_dir_weight)
+function[cluster_identity_densityModularity]=densityBasedModularity(adj_dir_weight, adj_dir_binary)
 
-n=length(adj_dir_weight);
+cd modularity_maximisation;
 
-%Density-based modularity
+network_dir=digraph(adj_dir_weight);
+indegree_v=indegree(network_dir);
+outdegree_v=outdegree(network_dir);
+m=length(adj_dir_weight);
+
 m=numberoflinks(adj_dir_weight);
-indegree=nodeindegree(adj_dir_binary);
-outdegree=nodeoutdegree(adj_dir_binary);
 [modules,B]=createmodulesandb(adj_dir_binary);
-B_matrix=modularitymatrix(adj_dir_binary,indegree,outdegree,m);
+B_matrix=modularitymatrix(adj_dir_binary,indegree_v,outdegree_v,m);
 B{1}=B_matrix;
 s=svector(B,1);
 Q=(1/4*m)*s'*(B{1}+B{1}')*s;
@@ -31,11 +33,10 @@ for z=2:length(modules)
         end
     end
 end
-cluster_identity_mod_den=moduleofnodes(modules);
-module_number_new=changemodulenumber(cluster_identity_mod_den);
-cluster_size_dens_modul=clustersize(module_number_new);
-possible_connections_mod_den=possibleconnections(cluster_size_dens_modul);
-realised_connections_mod_den=realisedconnections(adj_dir_binary,module_number_new);
-adj_cluster_mod_den=clusterslinkage(adj_dir_binary,module_number_new,realised_connections_mod_den,possible_connections_mod_den,link_percentage);
-food_web_clust_mod_den=digraph(adj_cluster_mod_den);
+
+cluster_identity_densityModularity=moduleofnodes(modules);
+cluster_identity_densityModularity=changemodulenumber(cluster_identity_densityModularity);
+
+cd ..;
+
 end

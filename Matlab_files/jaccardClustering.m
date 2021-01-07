@@ -1,7 +1,5 @@
 function[cluster_identity_jac]=jaccardClustering(adj_dir_binary,threshold,link_percentage)
 
-cd jaccard_clustering;
-
 jaccard_v = pdist (adj_dir_binary, 'jaccard');
 jaccard_average = linkage(jaccard_v, 'average');
 cluster_identity_jac =cluster(jaccard_average,'cutoff',threshold);
@@ -13,7 +11,5 @@ cluster_identity_jac =cluster(jaccard_average,'cutoff',threshold);
 %realised_connections=realisedconnections(adj_dir_binary,cluster_identity_jac);
 
 %adj_cluster_jaccard=clusterslinkage(adj_dir_binary,cluster_identity_jac,realised_connections,possible_connections,link_percentage);
-
-cd ..;
 
 end

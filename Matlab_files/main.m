@@ -1,6 +1,7 @@
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
-load ../data/adj_dir_weight; % rows:preys, coloumns:predators
+load ../data/adj_dir_weight; %the species in the rows are eaten by the species in the coloumns
 load ../data/node_names;
+load ../data/REGE3.mat; %compute the REGE matrix with the software UCINET
 
 adj_dir_binary=tounweighted(adj_dir_weight);
 adj_und_weight=toundirected(adj_dir_weight);
@@ -19,12 +20,13 @@ betweenness=centrality(network_dir,'betweenness')/[(n-1)*(n-2)/2];
 [overlap,overlap_ratio]=topologicalOverlap(adj_und_binary,adj_dir_weight,network_und,3,0.01);
 
 cluster_identity_jac=jaccardClustering(adj_dir_binary,0.01,50);
-adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,50);
+adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,5);
 
+cluster_identity_rege=regeClustering(REGE3, 0.01, 50);
+adj_rege=linkingClusters(adj_dir_binary,cluster_identity_rege,5);
 
+cluster_identity_patternModularity=patternBasedModularity(adj_dir_binary,adj_dir_weight);
+adj_patternModularity=linkingClusters(adj_dir_binary,cluster_identity_patternModularity,5);
 
-
-
-rege_clusters=regeClustering(0.01, 50); %not working
-pattern_modularity_max=patternBasedModularity(adj_dir_binary);
-density_modularity_max=densityBasedModularity(adj_dir_weight);
+cluster_identity_densityModularity=densityBasedModularity(adj_dir_weight, adj_dir_binary);
+adj_densityModularity=linkingClusters(adj_dir_binary,cluster_identity_densityModularity,5);
