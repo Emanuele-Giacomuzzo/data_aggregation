@@ -2,6 +2,7 @@ clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_file
 load ../data/adj_dir_weight; %the species in the rows are eaten by the species in the coloumns
 load ../data/node_names;
 load ../data/REGE3.mat; %compute the REGE matrix with the software UCINET
+load 
 
 adj_dir_binary=tounweighted(adj_dir_weight);
 adj_und_weight=toundirected(adj_dir_weight);
