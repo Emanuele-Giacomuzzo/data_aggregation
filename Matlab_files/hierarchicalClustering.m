@@ -1,21 +1,21 @@
-function [cluster_nr,A] = hierarchicalClustering(similarity,centrality,similarity)
-
+function [clusterID,A_clusters] = hierarchicalClustering(A, similarity,centrality,rege_similarity)
+%A = adjacency matrix
+%similarity = jaccard/rege
+%centrality = nDC/nwDC/nCC/nBC/...
+%rege_similarity = rege similarity matrix (only if you use rege) 
 cd hierarchical_clustering;
 
+A_db=tounweighted(A);
+
 if similarity=="jaccard"
-    dissimilarity = pdist (A_DB, 'jaccard');
+    dissimilarity = pdist (A_db, 'jaccard');
 elseif similarity=="rege" 
     dissimilarity = regeTransform(similarity);
 end
 
 best_linkage = chooseLinkageCriteria(dissimilarity);
-linked = linkWithBestCriteria(best_linkage,dissimilarity);
-[cluster_nr,A] = bestClustering(A_DB,degree,jaccard,linked);
+branches = linkWithBestCriteria(dissimilarity,best_linkage);
+[clusterID,A_clusters] = bestClustering(A_db,degree,jaccard,branches);
 
 cd ..;
 end
-
-%Example
-%similarity=rege
-%centrality=degree
-%similarity=REGE3
