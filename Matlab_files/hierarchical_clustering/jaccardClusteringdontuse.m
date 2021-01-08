@@ -1,16 +1,13 @@
-function[cluster_identity_jac,adj_jaccard]=jaccardClustering(adj_dir_binary,degree)
+function[cluster_identity_jac,adj_jaccard]=jaccardClustering(adj_dir_binary,degree,best_linkage,jaccard_v,jaccard_linked)
 
 n=length(adj_dir_binary);
 c=1;
 p_value=zeros(10000,1);
 
-jaccard_v = pdist (adj_dir_binary, 'jaccard');
-jaccard_average = linkage(jaccard_v, 'average');
-
 for j=0.01:0.05:1
 for i=0.01:0.05:1
     c=c+1;
-cluster_identity_jac =cluster(jaccard_average,'cutoff',i);
+cluster_identity_jac =cluster(jaccard_linked,'cutoff',i);
 adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,j);
 adj_jaccard_und=toundirected(adj_jaccard);
 network_und_jac=graph(adj_jaccard_und);
@@ -26,7 +23,7 @@ end
 end
 end
 
-cluster_identity_jac=cluster(jaccard_average,'cutoff',best_threshold);
+cluster_identity_jac=cluster(jaccard_linked,'cutoff',best_threshold);
 adj_jaccard=linkingClusters(adj_dir_binary,cluster_identity_jac,best_link_percentage);
 
 end
