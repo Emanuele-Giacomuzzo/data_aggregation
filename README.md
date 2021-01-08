@@ -1,5 +1,11 @@
 # Data_aggregation
 
+## Input
+A is the adjacency matrix. It needs to be a weighted, directed network. 
+The species in the rows needs to be eaten by the species in the coloumns.
+
+Example: A(2,3) species 2 is eaten by species 3. 
+
 ## Modularity maximisation
 It could take some time, normally a couple of minutes. Be patient. 
 

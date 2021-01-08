@@ -1,10 +1,7 @@
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
-load ../data/A; %the species in the rows are eaten by the species in the coloumns. A: directed weighted network.
+load ../data/A; network=digraph(A);  n=length(A); 
 load ../data/node_names;
 load ../data/REGE3.mat; %compute the REGE matrix with the software UCINET
-
-network=digraph(A); 
-n=length(A);
 
 nBC=centrality(network,'betweenness')/[(n-1)*(n-2)/2];
 nwDC=weightedDegree(A)/(n-1);
