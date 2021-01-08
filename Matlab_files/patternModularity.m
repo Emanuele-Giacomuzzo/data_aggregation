@@ -1,20 +1,19 @@
-function[cluster_identity_patternModularity]=patternBasedModularity(adj_dir_binary,adj_dir_weight)
-
+function[cluster_identity_patternModularity]=patternBasedModularity(A)
 %Here I refer to the total number of species in the network as m instead of
 %n. This is to conform to the notation used by Leicht & Newman 2008
 %(Community structure in directed networks) and to not create confusion. 
-
 cd modularity_maximisation;
 
-network_dir=digraph(adj_dir_weight);
-indegree_v=indegree(network_dir);
-outdegree_v=outdegree(network_dir);
-m=length(adj_dir_weight);
+A_db=tounweighted(A);
+network=digraph(A);
+indegree_v=indegree(network);
+outdegree_v=outdegree(network);
+m=length(A);
 
-[modules,B]=createmodulesandb(adj_dir_binary);
-c_out=sharedOutLink(adj_dir_binary);
+[modules,B]=createmodulesandb(A_db);
+c_out=sharedOutLink(A_db);
 in_times_in_minus_one=inTimesInMinusOne(indegree_v);
-B_matrix_patt=modularityMatrixPattern(adj_dir_binary,c_out,in_times_in_minus_one,outdegree_v,indegree_v);
+B_matrix_patt=modularityMatrixPattern(A_db,c_out,in_times_in_minus_one,outdegree_v,indegree_v);
 B{1}=B_matrix_patt;
 s=svector(B,1);
 Q=(1/4*m)*s'*(B{1}+B{1}')*s;

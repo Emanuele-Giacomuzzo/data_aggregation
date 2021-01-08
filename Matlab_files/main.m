@@ -1,28 +1,27 @@
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
-load ../data/A_DW; %the species in the rows are eaten by the species in the coloumns
+load ../data/A; %the species in the rows are eaten by the species in the coloumns. A: directed weighted network.
 load ../data/node_names;
 load ../data/REGE3.mat; %compute the REGE matrix with the software UCINET
 
-A_DB=tounweighted(A_DW); network_D=digraph(A_DW);
-A_UW=toundirected(A_DW); network_U=graph(A_UW);
-A_UB=toundirected(A_DB);
-n=length(A_DW);
+network=digraph(A); 
+n=length(A);
 
-DC=centrality(network_U,'degree')/(n-1);
-wDC=weightedDegree(A_DW)/(n-1);
-CC=centrality(network_U,'closeness')*(n-1);
-BC=centrality(network_D,'betweenness')/[(n-1)*(n-2)/2];
-[s,cs,ns] = status_index(network_D);
-[k,kbu,ktd,kdir,kindir]=keystoneIndices(A_DB);
-[TI_species,TI_species_ratio]=topologicalImportance(A_UB,3);
-[TO,TO_ratio]=topologicalOverlap(A_UB,A_DW,network_U,3,0.01);
+nBC=centrality(network,'betweenness')/[(n-1)*(n-2)/2];
+nwDC=weightedDegree(A)/(n-1);
 
-%Modularity maximisation is quiet a slow process and it could take a couple
-%of minutes for the program to run. Just be patient. 
-cluster_nr_patternModularity=patternModularity(A_DB,A_DW);
-cluster_nr_densityModularity=densityModularity(A_DW, A_DB);
-%A_patternModularity=linkingClusters(A_DB,cluster_nr_patternModularity,5);
-%A_densityModularity=linkingClusters(A_DB,cluster_nr_densityModularity,5);
+A_uw=toundirected(A); network_U=graph(A_uw);
+nCC=centrality(network_U,'closeness')*(n-1);
+nDC=centrality(network_U,'degree')/(n-1);
+
+[s,cs,ns] = status_index(A);
+[k,kbu,ktd,kdir,kindir]=keystoneIndices(A);
+[TI_species,TI_species_ratio]=topologicalImportance(A,3);
+[TO,TO_ratio]=topologicalOverlap(A,3,0.01);
+
+cluster_nr_patternModularity=patternModularity(A);
+cluster_nr_densityModularity=densityModularity(A);
+%A_patternModularity=linkingClusters(A,cluster_nr_patternModularity,5);
+%A_densityModularity=linkingClusters(A,cluster_nr_densityModularity,5);
 
 
 [cluster_nr_DC{1},A_DC{1}]=hierarchicalClustering(jaccard,degree);

@@ -1,22 +1,22 @@
-function[k,kbu,ktd,kdir,kindir]=keystoneIndices(adj_dir_binary)
-
-cd keystone_indices;
-
+function[k,kbu,ktd,kdir,kindir]=keystoneIndices(A)
 %The keystone index doesn't take into consideration self-loops, this is why
 %we need to make sure that we eliminate them from the adjacency matrix
 %before computing it. 
-adj_dir_binary=adj_dir_binary-diag(diag(adj_dir_binary));
+cd keystone_indices;
 
-n=length(adj_dir_binary);
-preys=sum(adj_dir_binary); preys=preys.';
-predators=sum(adj_dir_binary,2);
+A_db=tounweighted(A);
+A_db=A_db-diag(diag(A_db));
 
-prey_coefficients=preyCoefficients(adj_dir_binary,preys,n);
+n=length(A_db);
+preys=sum(A_db); preys=preys.';
+predators=sum(A_db,2);
+
+prey_coefficients=preyCoefficients(A_db,preys,n);
 vw=sum(prey_coefficients,2)*-1;
 diagonal=diag(ones(n,1)*-1); prey_coefficients_updated=prey_coefficients+diagonal;
 kbu=linsolve(prey_coefficients_updated,vw);
 
-predator_coefficients=predatorCoefficients(adj_dir_binary,predators,n);
+predator_coefficients=predatorCoefficients(A_db,predators,n);
 vw=sum(predator_coefficients,2)*-1;
 predator_coefficients_updated=predator_coefficients+diagonal;
 ktd=linsolve(predator_coefficients_updated,vw);
@@ -29,7 +29,7 @@ kdir=sum(prey_coefficients,2);
 
 kindir=kIndirect(prey_coefficients,kbu,n);
 
-predator_coefficients_col = predatorCoefficientsCol(adj_dir_binary,predators,n);
+predator_coefficients_col = predatorCoefficientsCol(A_db,predators,n);
 vw=sum(predator_coefficients_col);
 for i=1:n
     kdir(i)=kdir(i)+vw(i);

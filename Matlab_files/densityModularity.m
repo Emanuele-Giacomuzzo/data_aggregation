@@ -1,15 +1,15 @@
-function[cluster_identity_densityModularity]=densityBasedModularity(adj_dir_weight, adj_dir_binary)
-
+function[cluster_nr_densityModularity]=densityBasedModularity(A)
 cd modularity_maximisation;
 
-network_dir=digraph(adj_dir_weight);
-indegree_v=indegree(network_dir);
-outdegree_v=outdegree(network_dir);
-m=length(adj_dir_weight);
+A_db=tounweighted(A); 
+network=digraph(A);
+indegree_v=indegree(network);
+outdegree_v=outdegree(network);
+m=length(A);
 
-m=numberoflinks(adj_dir_weight);
-[modules,B]=createmodulesandb(adj_dir_binary);
-B_matrix=modularitymatrix(adj_dir_binary,indegree_v,outdegree_v,m);
+m=numberoflinks(A);
+[modules,B]=createmodulesandb(A_db);
+B_matrix=modularitymatrix(A_db,indegree_v,outdegree_v,m);
 B{1}=B_matrix;
 s=svector(B,1);
 Q=(1/4*m)*s'*(B{1}+B{1}')*s;
@@ -34,8 +34,8 @@ for z=2:length(modules)
     end
 end
 
-cluster_identity_densityModularity=moduleofnodes(modules);
-cluster_identity_densityModularity=changemodulenumber(cluster_identity_densityModularity);
+cluster_nr_densityModularity=moduleofnodes(modules);
+cluster_nr_densityModularity=changemodulenumber(cluster_nr_densityModularity);
 
 cd ..;
 
