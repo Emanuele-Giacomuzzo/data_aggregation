@@ -17,21 +17,21 @@ nBC = centrality(network,'betweenness')/[(n-1)*(n-2)/2];
 [TO,TO_ratio] = topologicalOverlap(A,3,0.01);
 
 for i=1:2
-if i==1 similarity="rege"; elseif i==2 similarity="jaccard"; end
-[clusterID_nDC{i},A_nDC{i}] = hierarchicalClustering(A,similarity,nDC);
-[clusterID_nDC{i},A_nwDC{i}] = hierarchicalClustering(A,similarity,nwDC);
-[clusterID_nCC{i},A_nCC{i}] = hierarchicalClustering(A,similarity,nCC);
-[clusterID_nBC{i},A_nBC{i}] = hierarchicalClustering(A,similarity,nBC);
-[clusterID_s{i},A_s{i}] = hierarchicalClustering(A,similarity,s);
-[clusterID_cs{i},A_cs{i}] = hierarchicalClustering(A,similarity,cs);
-[clusterID_ns{i},A_ns{i}] = hierarchicalClustering(A,similarity,ns);
-[clusterID_k{i},A_k{i}] = hierarchicalClustering(A,similarity,k);
-[clusterID_kbu{i},A_kbu{i}]=hierarchicalClustering(A,similarity,kbu);
-[clusterID_ktd{i},A_ktd{i}]=hierarchicalClustering(A,similarity,ktd);
-[clusterID_kdir{i},A_kdir{i}]=hierarchicalClustering(A,similarity,kdir);
-[clusterID_kindir{i},A_kindir{i}]=hierarchicalClustering(A,similarity,kindir);
-[clusterID_TI{i},A_TI{i}]=hierarchicalClustering(A,similarity,TI);
-[clusterID_TIratio{i},A_TIratio{i}]=hierarchicalClustering(A,similarity,TI_ratio);
-[clusterID_TO{i},A_TO{i}]=hierarchicalClustering(A,similarity,TO);
-[clusterID_TOratio{i},A_TOratio{i}]=hierarchicalClustering(A,similarity,TO_ratio);
+if i==1 similarity="jaccard"; elseif i==2 similarity="rege"; end
+[clusterID_nDC{i},A_nDC{i}] = hierarchicalClustering(A,similarity,"nDC",nDC); %ok
+[clusterID_nDC{i},A_nwDC{i}] = hierarchicalClustering(A,similarity,"nwDC",nwDC);
+[clusterID_nCC{i},A_nCC{i}] = hierarchicalClustering(A,similarity,"nCC",nCC);
+[clusterID_nBC{i},A_nBC{i}] = hierarchicalClustering(A,similarity,"nBC",nBC);
+[clusterID_s{i},A_s{i}] = hierarchicalClustering(A,similarity,"s",s);
+[clusterID_cs{i},A_cs{i}] = hierarchicalClustering(A,similarity,"cs",cs);
+[clusterID_ns{i},A_ns{i}] = hierarchicalClustering(A,similarity,"ns",ns);
+[clusterID_k{i},A_k{i}] = hierarchicalClustering(A,similarity,"k",k);
+[clusterID_kbu{i},A_kbu{i}]=hierarchicalClustering(A,similarity,"kbu",kbu);
+[clusterID_ktd{i},A_ktd{i}]=hierarchicalClustering(A,similarity,"ktd",ktd);
+[clusterID_kdir{i},A_kdir{i}]=hierarchicalClustering(A,similarity,"kdir",kdir);
+[clusterID_kindir{i},A_kindir{i}]=hierarchicalClustering(A,similarity,"kindir",kindir);
+[clusterID_TI{i},A_TI{i}]=hierarchicalClustering(A,similarity,"TI",TI);
+[clusterID_TIratio{i},A_TIratio{i}]=hierarchicalClustering(A,similarity,"TI_ratio",TI_ratio);
+[clusterID_TO{i},A_TO{i}]=hierarchicalClustering(A,similarity,"TO",TO);
+[clusterID_TOratio{i},A_TOratio{i}]=hierarchicalClustering(A,similarity,"TO_ratio",TO_ratio);
 end
