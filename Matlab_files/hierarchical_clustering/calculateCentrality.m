@@ -17,10 +17,9 @@ if centrality_type=="TI_ratio", [~,centrality_clusters]=topologicalImportance(A_
 if centrality_type=="k", [centrality_clusters,~,~,~,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kbu", [~,centrality_clusters,~,~,~]=keystoneIndices(A_clusters); end
 if centrality_type=="ktd", [~,~,centrality_clusters,~,~]=keystoneIndices(A_clusters); end
-if centrality_type=="kdir ", [~,~,~,centrality_clusters,~]=keystoneIndices(A_clusters); end
+if centrality_type=="kdir", [~,~,~,centrality_clusters,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kindir", [~,~,~,~,centrality_clusters]=keystoneIndices(A_clusters); end
-if centrality_type=="TO", [centrality_clusters,~]=topologicalOverlap(A_clusters,3,0.01); end
-if centrality_type=="TO_ratio", [~,centrality_clusters]=topologicalOverlap(A_clusters,3,0.01); end
-%if centrality_type=="STO" end %where's uniqueness?
+if centrality_type=="STO", [centrality_clusters,~]=topologicalOverlap(A_clusters,3,0.01,0.2,0.01); end
+if centrality_type=="STO_ratio", [~,centrality_clusters]=topologicalOverlap(A_clusters,3,0.01,0.2,0.01); end
 
 end

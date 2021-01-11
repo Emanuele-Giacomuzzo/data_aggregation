@@ -1,4 +1,4 @@
-function [clusterID,A_clusters] = hierarchicalClustering(A, similarity,centrality_type,centrality_original,rege_similarity)
+function [clusterID,A_clusters,centrality_nodes] = hierarchicalClustering(A, similarity,centrality_type,centrality_original,rege_similarity)
 %This function finds the best way of using hierarchical clustering to
 %preserve the pattern of a certain centrality measure. 
 %
@@ -15,11 +15,12 @@ A_db=tounweighted(A);
 if similarity=="jaccard"
     dissimilarity = pdist (A_db, 'jaccard');
 elseif similarity=="rege"
-    dissimilarity = regeTransform(similarity);
+    dissimilarity = regeTransform(rege_similarity); %here's the problem
 end
 
 best_linkage = chooseLinkageCriteria(dissimilarity);
 branches = linkWithBestCriteria(dissimilarity,best_linkage);
-[clusterID,A_clusters] = bestClustering(A,branches,centrality_type,centrality_original);
+[clusterID,A_clusters,centrality_nodes] = bestClustering(A,branches,centrality_type,centrality_original);
+cd ..;
 
 end

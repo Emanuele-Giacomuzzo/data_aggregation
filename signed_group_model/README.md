@@ -2,6 +2,13 @@
 
 Elizabeth Sander and Stefano Allesina
 
+## How to make it work
+1. Download all the folder, not only the C files, for example. 
+2. Install gcc compiler, GSL and GSL CBLAS libraries for C (use homebrew if you are on a Mac, I don't know about other operating systems)
+2. Terminal -> Open the folder with the C file -> Make
+3. Convert your network into a compatible one (see the three examples Donana, Norwood and Tatoosh)
+4.  ./FindGroups 110 ../Data/Tatoosh/Tatoosh.txt 587184 5000 20 (per far partire il programma), otherwise sh example.sh Watch out!!! You need to specify the number of nodes inside the network, in this case it is 110. 
+
 ## Overview
 
 This package contains code to search for and analyze group model 
