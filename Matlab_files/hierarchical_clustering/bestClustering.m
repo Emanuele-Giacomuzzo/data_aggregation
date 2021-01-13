@@ -4,7 +4,7 @@ function[clusterID,A_clusters,centrality_nodes]=bestClustering(A,branches,centra
 %two different clusters. 
 A_db=tounweighted(A);
 
-best_p=0;
+best_W=0;
 for j=0.01:0.05:1
     for i=0.01:0.05:1
         clusterID=cluster(branches ,'cutoff',i);
@@ -14,8 +14,8 @@ for j=0.01:0.05:1
         centrality_nodes=centralityNodes(centrality_clusters, clusterID);
         
         centrality_compare=[centrality_original, centrality_nodes];
-        p = friedman(centrality_compare,1,'off');
-        if p > best_p best_p=p; best_threshold=i; best_link_percentage=j; end
+        W = KendallCoef(centrality_compare);
+        if W > best_W best_W=W; best_threshold=i; best_link_percentage=j; end
     end
 end 
 

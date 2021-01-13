@@ -20,6 +20,6 @@ if centrality_type=="ktd", [~,~,centrality_clusters,~,~]=keystoneIndices(A_clust
 if centrality_type=="kdir", [~,~,~,centrality_clusters,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kindir", [~,~,~,~,centrality_clusters]=keystoneIndices(A_clusters); end
 if centrality_type=="STO", [centrality_clusters,~]=topologicalOverlap(A_clusters,3,0.01,0.2,0.01); end
-if centrality_type=="STO_ratio", [~,centrality_clusters]=topologicalOverlap(A_clusters,3,0.01,0.2,0.01); end
+if centrality_type=="STO_ratio", [~,centrality_clusters]=topologicalOverlap(A_clusters,3,0.01,0.2,0.02); end
 
 end

@@ -71,6 +71,8 @@ function myfriedman(x,varargin)
 % To cite this file, this would be an appropriate format:
 % Cardillo G. (2009). MYFRIEDMAN: Friedman test for non parametric two way ANalysis Of VAriance
 % http://www.mathworks.com/matlabcentral/fileexchange/25882
+%In the comments there's written that the program uses a Nemenyi Test for
+%the post-hoc analysis.
 
 %Input Error handling
 p = inputParser;

@@ -1,21 +1,21 @@
-%Running time: 2m40sec
-%tounweighted changes the network if the input is already unweighted.
-%The toundirected actually works real fine.
+%Running time: 2m40sec. A needs to be directed and weighted. Rege needs to
+%be computed with the software UCINET. The clusterID of the group model
+%needs to be computed through the C program. 
 clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
-load ../data/A; %A=readmatrix('../data/A.txt','FixedWidthImportOptions');
+load ../data/A; 
 load ../data/node_names;
-load ../data/REGE3.mat; %compute the REGE matrix with the software UCINET
-load ../data/clusterID_groups.mat; %import the identity from the C output
+load ../data/REGE3.mat;
+load ../data/clusterID_groups.mat;
 
 rege_similarity=REGE3;
 n=length(A);
 network=digraph(A);
 network_U=graph(toundirected(A));
 
-clusterID_patternModularity=patternModularity(A);
-clusterID_densityModularity=densityModularity(A);
+clusterID_patternModularity=patternModularity(A); %check 
+clusterID_densityModularity=densityModularity(A); %check 
 
-[clusterID_nDC,A_nDC,clusterID_nwDC,A_nwDC,clusterID_nCC,A_nCC,clusterID_nBC,A_nBC,clusterID_s,A_s,clusterID_cs,A_cs,clusterID_ns,A_ns,clusterID_k,A_k,clusterID_kbu,A_kbu,clusterID_ktd,A_ktd,clusterID_kdir,A_kdir, clusterID_kindir, A_kindir,clusterID_TI,A_TI,clusterID_TIratio,A_TIratio,clusterID_STO,A_STO,clusterID_STOratio, A_STOratio,nDC,nwDC,nCC,nBC,s,cs,ns,k,kbu,ktd,kdir,kindir,TI,TIratio,TO,TOratio] = initialise(n);
+[clusterID_nDC,A_nDC,clusterID_nwDC,A_nwDC,clusterID_nCC,A_nCC,clusterID_nBC,A_nBC,clusterID_s,A_s,clusterID_cs,A_cs,clusterID_ns,A_ns,clusterID_k,A_k,clusterID_kbu,A_kbu,clusterID_ktd,A_ktd,clusterID_kdir,A_kdir, clusterID_kindir, A_kindir,clusterID_TI,A_TI,clusterID_TI_ratio,A_TI_ratio,clusterID_STO,A_STO,clusterID_STOratio, A_STOratio,nDC,nwDC,nCC,nBC,s,cs,ns,k,kbu,ktd,kdir,kindir,TI,TI_ratio,STO,STO_ratio] = initialise(n);
 
 for i=1:6
     if i==1
@@ -26,9 +26,9 @@ for i=1:6
         [s(:,1),cs(:,1),ns(:,1)] = statusIndices(A); 
         [k(:,1),kbu(:,1),ktd(:,1),kdir(:,1),kindir(:,1)] = keystoneIndices(A);
         [TI(:,1),TI_ratio(:,1)] = topologicalImportance(A,3);
-        [STO(:,1),STO_ratio(:,1)] = topologicalOverlap(A,3,0.01,0.2,0.01);
+        [STO(:,1),STO_ratio(:,1)] = topologicalOverlap(A,3,0.02,0.2,0.02);
     end
-    if i==2 || i==3 
+    if i==2 || i==3
         if i==2; similarity="jaccard"; elseif i==3; similarity="rege"; end
         [clusterID_nDC(:,i-1),A_nDC{i},nDC(:,i)] = hierarchicalClustering(A,similarity,"nDC",nDC(:,1),rege_similarity);
         [clusterID_nwDC(:,i-1),A_nwDC{i},nwDC(:,i)] = hierarchicalClustering(A,similarity,"nwDC",nwDC(:,1),rege_similarity);
@@ -43,9 +43,9 @@ for i=1:6
         [clusterID_kdir(:,i-1),A_kdir{i},kdir(:,i)] = hierarchicalClustering(A,similarity,"kdir",kdir(:,1),rege_similarity);
         [clusterID_kindir(:,i-1),A_kindir{i},kindir(:,i)] = hierarchicalClustering(A,similarity,"kindir",kindir(:,1),rege_similarity);
         [clusterID_TI(:,i-1),A_TI{i},TI(:,i)] = hierarchicalClustering(A,similarity,"TI",TI(:,1),rege_similarity);
-        [clusterID_TIratio(:,i-1),A_TIratio{i},TIratio(:,i)] = hierarchicalClustering(A,similarity,"TI_ratio",TI_ratio(:,1),rege_similarity);
-        %slow [clusterID_STO(:,i-1),A_STO{i},TO(:,i)] = hierarchicalClustering(A,similarity,"STO",TO(:,1),rege_similarity); 
-        %slow [clusterID_STOratio(:,i-1),A_STOratio{i},TOratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",TO_ratio(:,1),rege_similarity); 
+        [clusterID_TI_ratio(:,i-1),A_TI_ratio{i},TI_ratio(:,i)] = hierarchicalClustering(A,similarity,"TI_ratio",TI_ratio(:,1),rege_similarity);
+        %[clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        %[clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
     end
     if i==4 || i==5 || i==6
         if i==4; clustering_type="pattern_modularity"; elseif i==5; clustering_type="density_modularity"; elseif i==6; clustering_type="group_model"; end
@@ -63,27 +63,37 @@ for i=1:6
         [A_kdir{i},kdir(:,i)] = otherClustering(A,clustering_type,"kdir",kdir,clusterID);
         [A_kindir{i},kindir(:,i)] = otherClustering(A,clustering_type,"kindir",kindir,clusterID);
         [A_TI{i},TI(:,i)] = otherClustering(A,clustering_type,"TI",TI,clusterID);
-        [A_TIratio{i},TIratio(:,i)] = otherClustering(A,clustering_type,"TI_ratio",TI_ratio,clusterID);
-        %slow [A_STO{i},TO(:,i)] = otherClustering(A,clustering_type,"STO",TO,clusterID);
-        %slow [A_STOratio{i},TOratio(:,i)] = otherClustering(A,clustering_type,"STO_ratio",TO_ratio,clusterID);
+        [A_TI_ratio{i},TI_ratio(:,i)] = otherClustering(A,clustering_type,"TI_ratio",TI_ratio,clusterID);
+        [A_STO{i},STO(:,i)] = otherClustering(A,clustering_type,"STO",STO,clusterID);
+        [A_STOratio{i},STO_ratio(:,i)] = otherClustering(A,clustering_type,"STO_ratio",STO_ratio,clusterID);
     end
 end
 
-[nDC_results,table] = friedman(nDC,1,'off');
-X2=cell2mat(table(2,5));
-W=X2/n*(6-1); %Kendall's W
-nwDC_results = friedman(nwDC,1,'off');
-nCC_results = friedman(nCC,1,'off');
-nBC_results = friedman(nBC,1,'off');
-s_results = friedman(s,1,'off');
-cs_results = friedman(cs,1,'off');
-ns_results = friedman(ns,1,'off');
-k_results = friedman(k,1,'off');
-kbu_results = friedman(kbu,1,'off');
-ktd_results = friedman(ktd,1,'off');
-kdir_results = friedman(kdir,1,'off');
-kindir_results = friedman(kindir,1,'off');
-TI_results = friedman(TI,1,'off');
-%problem TI_ratio_results = friedman(TI_ratio,1,'off');
-%slow STO_results = friedman(STO,1,'off');
-%slow STO_ratio_results = friedman(STO_ratio,1,'off');
+centralities=["nDC";"nwDC";"nCC";"nBC";"s";"cs";"ns";"k";"kbu";"ktd";"kdir";"kindir";"TI";"TI_ratio";"STO";"STO_ratio"];
+clustering=["Jaccard similarity HC";"Rege similarity HC";"Pattern modularity";"Density modularity";"Group model"];
+z=length(centralities);
+for i=1:z
+    c=centralities(i);
+    myfriedman(eval(c));
+end
+
+W_values=zeros(z,5);
+for i=1:z
+    centrality_type=eval(centralities(i));
+    for j=2:6
+        centralities_to_check=[centrality_type(:,1) centrality_type(:,j)]; %here
+        W_values(i,j-1)=KendallCoef(centralities_to_check);
+    end
+end
+
+map=heatmap(clustering,centralities,W_values,'Colormap',parula);
+map.CellLabelFormat = '%.2f';
+
+%Tounweighted changes the network if the input is already unweighted. The toundirected actually works real fine.
+i=2;
+[clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        [clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
+        i=3;
+        [clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        [clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
+        
