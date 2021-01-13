@@ -1,3 +1,4 @@
+getwd()
 data<-read.table("web.txt", header=F)
 nodeID<-levels(factor(c(as.character(data[,1]),as.character(data[,2]))))
 numnode<-length(nodeID)
