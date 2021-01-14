@@ -1,12 +1,13 @@
 %Running time: 2m40sec. A needs to be directed and weighted. Rege needs to
 %be computed with the software UCINET. The clusterID of the group model
 %needs to be computed through the C program. 
-clc,clear;
-cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
+clc,clear,cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
 A=readmatrix("../data/A.txt");
-clusterID_groups=readmatrix("../data/group_model_results");
-rege_similarity=readmatrix("../data/REGE3");
+load ../data/node_names;
+load ../data/REGE3.mat;
+load ../data/clusterID_groups.mat;
 
+rege_similarity=REGE3;
 n=length(A);
 network=digraph(A);
 network_U=graph(toundirected(A));
@@ -15,6 +16,7 @@ clusterID_patternModularity=patternModularity(A); %check
 clusterID_densityModularity=densityModularity(A); %check 
 
 [clusterID_nDC,A_nDC,clusterID_nwDC,A_nwDC,clusterID_nCC,A_nCC,clusterID_nBC,A_nBC,clusterID_s,A_s,clusterID_cs,A_cs,clusterID_ns,A_ns,clusterID_k,A_k,clusterID_kbu,A_kbu,clusterID_ktd,A_ktd,clusterID_kdir,A_kdir, clusterID_kindir, A_kindir,clusterID_TI,A_TI,clusterID_TI_ratio,A_TI_ratio,clusterID_STO,A_STO,clusterID_STOratio, A_STOratio,nDC,nwDC,nCC,nBC,s,cs,ns,k,kbu,ktd,kdir,kindir,TI,TI_ratio,STO,STO_ratio] = initialise(n);
+
 for i=1:6
     if i==1
         nDC(:,1) = centrality(network_U,'degree')/(n-1);
@@ -89,3 +91,10 @@ map=heatmap(clustering,centralities,W_values,'Colormap',parula);
 map.CellLabelFormat = '%.2f';
 
 %Tounweighted changes the network if the input is already unweighted. The toundirected actually works real fine.
+i=2;
+[clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        [clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
+        i=3;
+        [clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        [clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
+        
