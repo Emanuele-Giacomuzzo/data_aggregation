@@ -2,8 +2,8 @@
 %be computed with the software UCINET. The clusterID of the group model
 %needs to be computed through the C program. 
 clc,clear;
-cd '/Users/ema/Google Drive/Github/MATLAB/Data_aggregation/Matlab_files';
-A=readmatrix("../data/A.txt");
+cd '/Users/ema/Google Drive/Github/Data_aggregation/Matlab_files';
+A=readmatrix("../data/adjacency_matrix.txt");
 clusterID_groups=readmatrix("../data/group_model_results");
 rege_similarity=readmatrix("../data/REGE3");
 
