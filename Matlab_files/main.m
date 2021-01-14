@@ -27,6 +27,7 @@ for i=1:6
         [k(:,1),kbu(:,1),ktd(:,1),kdir(:,1),kindir(:,1)] = keystoneIndices(A);
         [TI(:,1),TI_ratio(:,1)] = topologicalImportance(A,3);
         [STO(:,1),STO_ratio(:,1)] = topologicalOverlap(A,3,0.02,0.2,0.02);
+        TP(:,1) = trophicPosition(A);
     end
     if i==2 || i==3
         if i==2; similarity="jaccard"; elseif i==3; similarity="rege"; end
