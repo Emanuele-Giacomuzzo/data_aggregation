@@ -76,16 +76,18 @@ for i=1:z
     myfriedman(eval(c));
 end
 
-W_values=zeros(z,5);
+W=zeros(z,5);
 for i=1:z
     centrality_type=eval(centralities(i));
     for j=2:6
         centralities_to_check=[centrality_type(:,1) centrality_type(:,j)]; %here
-        W_values(i,j-1)=KendallCoef(centralities_to_check);
+        W(i,j-1)=KendallCoef(centralities_to_check);
     end
 end
+k=5; %number of aggregations
+rs=((k*W)-1)/(k-1);
 
-map=heatmap(clustering,centralities,W_values,'Colormap',parula);
-map.CellLabelFormat = '%.2f';
-
+h=heatmap(clustering,centralities,rs,'Colormap',parula);
+h.CellLabelFormat = '%.2f';
+h.Title="Spearman’s correlation coefficients";
 %Tounweighted changes the network if the input is already unweighted. The toundirected actually works real fine.
