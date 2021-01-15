@@ -43,8 +43,8 @@ for i=1:6
         [clusterID_kindir(:,i-1),A_kindir{i},kindir(:,i)] = hierarchicalClustering(A,similarity,"kindir",kindir(:,1),rege_similarity);
         [clusterID_TI(:,i-1),A_TI{i},TI(:,i)] = hierarchicalClustering(A,similarity,"TI",TI(:,1),rege_similarity);
         [clusterID_TI_ratio(:,i-1),A_TI_ratio{i},TI_ratio(:,i)] = hierarchicalClustering(A,similarity,"TI_ratio",TI_ratio(:,1),rege_similarity);
-        %[clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
-        %[clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
+        [clusterID_STO(:,i-1),A_STO{i},STO(:,i)] = hierarchicalClustering(A,similarity,"STO",STO(:,1),rege_similarity); 
+        [clusterID_STOratio(:,i-1),A_STOratio{i},STO_ratio(:,i)] = hierarchicalClustering(A,similarity,"STO_ratio",STO_ratio(:,1),rege_similarity); 
     end
     if i==4 || i==5 || i==6
         if i==4; clustering_type="pattern_modularity"; elseif i==5; clustering_type="density_modularity"; elseif i==6; clustering_type="group_model"; end
