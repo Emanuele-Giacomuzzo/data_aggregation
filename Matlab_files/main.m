@@ -103,3 +103,15 @@ h=heatmap(aggregations,centralities,rs,'Colormap',parula);
 h.CellLabelFormat = '%.2f';
 h.Title="Spearman’s correlation coefficients";
 %Tounweighted changes the network if the input is already unweighted. The toundirected actually works real fine.
+
+
+sum_cs=sum(cs);
+for i=1:5
+    cs_ratios(:,i)=cs(:,i)/sum_cs(i);
+end
+
+
+
+
+
+
