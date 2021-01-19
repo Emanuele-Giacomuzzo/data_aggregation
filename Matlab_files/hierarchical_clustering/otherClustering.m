@@ -1,4 +1,4 @@
-function [A_clusters,centrality_nodes] = otherClustering(A,centrality_type,centrality_original,clusterID)
+function [A_clusters,centrality_nodes,best_link_percentage] = otherClustering(A,centrality_type,centrality_original,clusterID)
 cd hierarchical_clustering;
 
 best_W=0;

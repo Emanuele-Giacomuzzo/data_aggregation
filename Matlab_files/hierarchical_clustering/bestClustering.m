@@ -1,7 +1,5 @@
-function[clusterID,A_clusters,centrality_nodes]=bestClustering(A,branches,centrality_type,centrality_original)
-%This function tells us what is (1) the threshold to which we should cut
-%the dendrogrma and the (1) link percentage we should consider to connect
-%two different clusters. 
+function[clusterID,A_clusters,centrality_nodes,best_threshold,best_link_percentage]=bestClustering(A,branches,centrality_type,centrality_original)
+
 A_db=tounweighted(A);
 
 best_W=0;
