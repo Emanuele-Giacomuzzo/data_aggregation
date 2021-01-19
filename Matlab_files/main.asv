@@ -19,10 +19,9 @@ nBC(:,1) = centrality(network,'betweenness')/((n-1)*(n-2)/2);
 [STO(:,1),STO_ratio(:,1)] = topologicalOverlap(A,3,0.02,0.2,0.02);
 TP(:,1) = trophicPosition(A);
 
-branches_jaccard = findBranches(A,"jaccard");
-branches_rege = findBranches(A,"rege",rege_similarity);
-clusterID_jaccard=cluster(branches_jaccard,'cutoff',0.01);
-clusterID_rege=cluster(branches_rege,'cutoff',0.01);
+branches_jaccard = findClusterID(A,"jacca",rege_similarity)
+branches_rege = findClusterID(A,similarity,rege_similarity)
+
 clusterID_patternModularity=patternModularity(A);
 clusterID_densityModularity=densityModularity(A);
 clusterID_groups=readmatrix("../data/group_model_results");
@@ -31,10 +30,13 @@ rege_similarity=readmatrix("../data/REGE3");
 cluster_ID=double.empty(a,c,n,0); 
 cluster_centrality=double.empty(a,c,n,0); 
 cluster_A=double.empty; 
+best_th=double.empty; 
 best_link=double.empty;
+branches=double.empty;
 for i=1:a
     for j=1:c
-        [A_clusters,best_link(a,c)] = wireWeb(A,cluster_ID,centrality,centrality_original);
+        branches(i) = createDendrogram(aggregations(j));
+        [cluster_A(i,j),cluster_centrality(i,j),cluster_ID(i,j),best_link(i,j),best_th(i,j)] = guidedClustering(A,aggregations(j),centrality(j),rege_similarity);
     end
 end
 
