@@ -1,4 +1,4 @@
-clc,clear; cd '/Users/ema/Google Drive/Github/Data_aggregation/Matlab_files';
+clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files';
 A=readmatrix("../data/adjacency_matrix.txt");
 n=length(A);
 network=digraph(A);
