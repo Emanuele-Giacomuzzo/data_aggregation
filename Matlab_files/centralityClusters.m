@@ -1,4 +1,4 @@
-function[centrality_clusters]=calculateCentrality(A_clusters,centrality_type)
+function[centrality_clusters]=centralityClusters(A_clusters,centrality_type)
 
 network=digraph(A_clusters);
 A_clusters_U=toundirected(A_clusters);

@@ -11,7 +11,6 @@ aggregations=["Jaccard_similarity";"Rege_similarity";"Pattern_modularity";"Densi
 a=length(aggregations);
 
 %Initialise
-centrality_single_clusters=cell(c,a);
 cluster_centrality=cell(c,a);
 cluster_A=double.empty; 
 best_link=double.empty;
@@ -44,16 +43,13 @@ cluster_ID=[clusterID_jaccard clusterID_rege clusterID_patternModularity cluster
 for i=1:a
     for j=1:c
         [cluster_A{j,i},best_link(j,i)] = wireWeb(A,cluster_ID(:,i),centralities(j),eval(centralities(j)));
+        centrality_single_clusters{=centralityClusters(cluster_A{j,i},centralities(j));
+        cluster_centrality{j,i}=centralityNodes(centrality_single_clusters, cluster_ID(:,i));
     end
 end
 
 %Centrality clusters
-for i=1:a
-    for j=1:c
-        centrality_single_clusters{j,i}=centralityClusters(cluster_A{j,i},centralities(j));
-        cluster_centrality{j,i}=centralityNodes(centrality_single_clusters{j,i}, cluster_ID(:,i));
-    end
-end
+
 
 %Kendall testr
 for i=1:a

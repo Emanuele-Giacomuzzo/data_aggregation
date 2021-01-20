@@ -1,7 +1,7 @@
 function [branches] = findBranches(A,similarity,rege_similarity)
 %A=adjacency matrix (DW)
 %similarity=tpye of similarity
-cd hierarchical_clustering;
+cd find_branches;
 
 A_db=tounweighted(A);
 if similarity=="jaccard"
