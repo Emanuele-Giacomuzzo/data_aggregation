@@ -19,19 +19,19 @@ TP = trophicPosition(A);
 branches_jaccard = findBranches(A,"jaccard");
 rege_similarity=readmatrix("../data/REGE3");
 branches_rege = findBranches(A,"rege",rege_similarity);
-clusterID_jaccard=cluster(branches_jaccard,'cutoff',0.01);
-clusterID_rege=cluster(branches_rege,'cutoff',0.01);
-clusterID_patternModularity=patternModularity(A);
-clusterID_densityModularity=densityModularity(A);
-clusterID_groups=readmatrix("../data/group_model_results");
-cluster_ID=[clusterID_jaccard clusterID_rege clusterID_patternModularity clusterID_densityModularity clusterID_groups];
+membership_jaccard=cluster(branches_jaccard,'cutoff',0.01);
+membership_rege=cluster(branches_rege,'cutoff',0.01);
+membership_patternModularity=patternModularity(A);
+membership_densityModularity=densityModularity(A);
+membership_groups=readmatrix("../data/group_model_results");
+membership=[membership_jaccard membership_rege membership_patternModularity membership_densityModularity membership_groups];
 
 %Cluster linkage
 best_link=double.empty;
 best_weight=string.empty;
 for i=1:a
     for j=1:c
-        [best_link(j,i),best_weight(j,i)] = bestLinking(A,cluster_ID(:,i),centralities(j),eval(centralities(j)))
+        [best_link(j,i),best_weight(j,i)] = bestLinking(A,membership(:,i),centralities(j),eval(centralities(j)))
     end
 end
 
@@ -41,7 +41,7 @@ centrality_nodes=cell(c,a);
 for i=1:a
     for j=1:c
         centrality_clusters{j,i}=centralityClusters(A_clustered{j,i},centralities(j));
-        centrality_nodes{j,i}=centralityNodes(centrality_clusters{j,i}, cluster_ID(:,i));
+        centrality_nodes{j,i}=centralityNodes(centrality_clusters{j,i}, membership(:,i));
     end
 end
 
