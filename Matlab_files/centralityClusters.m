@@ -12,15 +12,13 @@ if centrality_type=="nCC", centrality_clusters=centrality(network_U,'closeness')
 if centrality_type=="s", [centrality_clusters,~,~] = statusIndices(A_clusters); end
 if centrality_type=="cs", [~,centrality_clusters,~] = statusIndices(A_clusters); end
 if centrality_type=="ns", [~,~,centrality_clusters] = statusIndices(A_clusters); end
-if centrality_type=="TI", [centrality_clusters,~]=topologicalImportance(A_clusters,3); end
-if centrality_type=="TI_ratio", [~,centrality_clusters]=topologicalImportance(A_clusters,3); end
 if centrality_type=="k", [centrality_clusters,~,~,~,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kbu", [~,centrality_clusters,~,~,~]=keystoneIndices(A_clusters); end
 if centrality_type=="ktd", [~,~,centrality_clusters,~,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kdir", [~,~,~,centrality_clusters,~]=keystoneIndices(A_clusters); end
 if centrality_type=="kindir", [~,~,~,~,centrality_clusters]=keystoneIndices(A_clusters); end
+if centrality_type=="TI", [centrality_clusters,~]=topologicalImportance(A_clusters,3); end
 if centrality_type=="STO", [centrality_clusters,~]=topologicalOverlap(A_clusters,3,0.01,0.2,0.01); end
-if centrality_type=="STO_ratio", [~,centrality_clusters]=topologicalOverlap(A_clusters,3,0.01,0.2,0.02); end
 if centrality_type=="TP", centrality_clusters=trophicPosition(A_clusters); end
 
 end

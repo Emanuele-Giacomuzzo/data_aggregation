@@ -52,7 +52,7 @@ for i=1:a
                 centrality_compare=[eval(centrality_type), centrality_nodes];
                 W_check = KendallCoef(centrality_compare);
                 if W_check > best_W 
-                    best_W=W_check;
+                    best_W=W;
                     best_ratio=ratio;
                     best_weight=weight;
                 end
