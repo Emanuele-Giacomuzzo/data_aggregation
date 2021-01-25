@@ -1,12 +1,14 @@
-function[realised_connections]=realisedconnections(adj_dir_binary, cluster_identity, link_percentage)
+function[realised_connections]=realisedConnections(A, membership)
 
-realised_connections=zeros(max(cluster_identity));
+A_db=tounweighted(A);
 
-for i=1:length(adj_dir_binary)
-    for j=1:length(adj_dir_binary)
-        if adj_dir_binary(i,j)>0
-            k=cluster_identity(i);
-            l=cluster_identity(j);
+realised_connections=zeros(max(membership));
+
+for i=1:length(A_db)
+    for j=1:length(A_db)
+        if A_db(i,j)>0
+            k=membership(i);
+            l=membership(j);
             realised_connections(k,l)=realised_connections(k,l)+1;
         end
     end
