@@ -2,6 +2,7 @@ function [undirected_network] = toundirected(directed_network)
 %Test it
 loopless_network=directed_network-diag(diag(directed_network));
 
+undirected_network=zeros(length(directed_network));
 for i=1:length(loopless_network)
     for j=1:length(loopless_network)
         if loopless_network(i,j) > 0    

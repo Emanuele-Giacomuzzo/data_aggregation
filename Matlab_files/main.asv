@@ -56,7 +56,7 @@ for i=1:a
                 end
             end
         end
-        W(j,i)=W(j,i)+best_W;  
+        W(j,i)=W(j,i)+best_W;
         A_clustered{j,i} = buildBinaryNetwork(membership(:,i),possible_connections,realised_connections,best_percentage);
         A_clustered{j,i} = buildWeightedNetwork(A,A_clustered{j,i},membership(:,i),centrality_type,best_weight);
         centrality_clusters{j,i}=centralityClusters(A_clustered{j,i},centralities(j)); 
@@ -65,23 +65,23 @@ for i=1:a
 end
 rs=((a*W)-1)/(a-1);
 
-for i=1:a
-nDC = [nDC centrality_nodes{1,a}];
-nwDC = [nwDC centrality_nodes{2,a}];
-nCC = [nCC centrality_nodes{3,a}];
-nBC = [nBC centrality_nodes{4,a}];
-s = [s centrality_nodes{5,a}];
-cs = [cs centrality_nodes{6,a}];
-ns = [ns centrality_nodes{7,a}];
-kindex = [kindex centrality_nodes{8,a}];
-kbu = [kbu centrality_nodes{9,a}];
-ktd = [ktd centrality_nodes{10,a}];
-kdir = [kdir centrality_nodes{11,a}];
-kindir = [kindir centrality_nodes{12,a}];
-TI = [TI centrality_nodes{13,a}];
-STO = [STO centrality_nodes{14,a}];
-TP = [TP centrality_nodes{15,a}]; %All Nan and INf
-end
+nDC=[nDC];
+nwDC=[nwDC];
+nCC=[nCC];
+    nBC
+    s
+    cs
+    ns
+    kindex
+    kbu
+    ktd
+    kdir
+    kindir
+    TI
+    STO
+    TP
+
+%Problems: best_percentage is not a matrix 
 
 
 
