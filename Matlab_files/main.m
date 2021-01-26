@@ -1,6 +1,6 @@
 clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files';
 A=readmatrix("../data/adjacency_matrix.txt"); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
-node_names = readtable('../data/node_names.txt','Delimiter',' ');
+node_names = readtable('../data/node_names.txt','Delimiter',' ','ReadVariableNames', false);
 centralities=["nDC";"nwDC";"nCC";"nBC";"s";"cs";"ns";"kindex";"kbu";"ktd";"kdir";"kindir";"TI";"STO";"TP"]; c=length(centralities);
 aggregations=["Jaccard_similarity";"Rege_similarity";"Pattern_modularity";"Density_modularity";"Group_model"]; a=length(aggregations);
 
@@ -28,60 +28,80 @@ membership=[membership_jaccard membership_rege membership_prey_modularity member
 clear membership_jaccard membership_rege membership_prey_modularity membership_density_modularity membership_groups;
 
 %Cluster linkage
-weight_type = ["min" "mean" "max" "sum"];
-A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_percentage=double.empty; best_weight=string.empty; best_W=double.empty; W_check=0; W=zeros(c,a); rs=double.empty;
+cluster_size=cell(a,i); possible=cell(a,i); realised=cell(a,i);
+for i=1:a 
+    cluster_size{i}=clusterSize(membership(:,i));
+    possible{i} = possibleConnections(cluster_size{i});
+    realised{i} = realisedConnections(A,membership(:,i));
+end
+weight_method = ["min" "mean" "max" "sum"];
+A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_kendall=zeros(c,a); best_percentage=zeros(c,a); best_weight=strings(c,a); best_weight(:)="binary";
 for i=1:a
-    cluster_size = clusterSize(membership(:,i));
-    possible_connections = possibleConnections(cluster_size);
-    realised_connections = realisedConnections(A,membership(:,i));
     for j=1:c
-        centrality_type=centralities(j);
-        best_percentage(j,i)=0;
-        best_weight(j,i)="binary";
-        best_W=0;
         for k=1:1:100
-            percentage = k;
-            for l=1:length(weight_type)
-                weight = weight_type(l);
-                A_clustered_check = buildBinaryNetwork(membership(:,i),possible_connections,realised_connections,percentage); 
-                A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centrality_type,weight);
-                centrality_clusters_check = centralityClusters(A_clustered_check,centrality_type);
+            for l=1:length(weight_method)
+                A_clustered_check = buildBinaryNetwork(membership(:,i),possible{i},realised{i},k); 
+                A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l));
+                centrality_clusters_check = centralityClusters(A_clustered_check,centralities(j));
                 centrality_nodes_check = centralityNodes(centrality_clusters_check, membership(:,i));
-                centrality_compare = [eval(centrality_type), centrality_nodes_check];
-                W_check = KendallCoef(centrality_compare);
-                if W_check > best_W 
-                    best_W = W_check;
-                    best_percentage = percentage;
-                    best_weight = weight;
+                kendall_check = KendallCoef([eval(centralities(j)), centrality_nodes_check]);
+                if kendall_check > best_kendall(j,i)
+                    best_kendall(j,i) = kendall_check;
+                    best_percentage(j,i) = k;
+                    best_weight(j,i) = weight_method(l);
+                    A_clustered{j,i} = buildBinaryNetwork(membership(:,i),possible{i},realised{i},best_percentage(j,i));
+                    A_clustered{j,i} = buildWeightedNetwork(A,A_clustered{j,i},membership(:,i),centralities(j),best_weight(j,i));
+                    centrality_clusters{j,i}=centralityClusters(A_clustered{j,i},centralities(j)); 
+                    centrality_nodes{j,i}=centralityNodes(centrality_clusters{j,i}, membership(:,i));
                 end
             end
         end
-        W(j,i)=W(j,i)+best_W;  
-        A_clustered{j,i} = buildBinaryNetwork(membership(:,i),possible_connections,realised_connections,best_percentage);
-        A_clustered{j,i} = buildWeightedNetwork(A,A_clustered{j,i},membership(:,i),centrality_type,best_weight);
-        centrality_clusters{j,i}=centralityClusters(A_clustered{j,i},centralities(j)); 
-        centrality_nodes{j,i}=centralityNodes(centrality_clusters{j,i}, membership(:,i));
     end
 end
-rs=((a*W)-1)/(a-1);
+rs=((a*best_kendall)-1)/(a-1);
 
 for i=1:a
-nDC = [nDC centrality_nodes{1,a}];
-nwDC = [nwDC centrality_nodes{2,a}];
-nCC = [nCC centrality_nodes{3,a}];
-nBC = [nBC centrality_nodes{4,a}];
-s = [s centrality_nodes{5,a}];
-cs = [cs centrality_nodes{6,a}];
-ns = [ns centrality_nodes{7,a}];
-kindex = [kindex centrality_nodes{8,a}];
-kbu = [kbu centrality_nodes{9,a}];
-ktd = [ktd centrality_nodes{10,a}];
-kdir = [kdir centrality_nodes{11,a}];
-kindir = [kindir centrality_nodes{12,a}];
-TI = [TI centrality_nodes{13,a}];
-STO = [STO centrality_nodes{14,a}];
-TP = [TP centrality_nodes{15,a}]; %All Nan and INf
+nDC = [nDC centrality_nodes{1,i}];
+nwDC = [nwDC centrality_nodes{2,i}];
+nCC = [nCC centrality_nodes{3,i}];
+nBC = [nBC centrality_nodes{4,i}];
+s = [s centrality_nodes{5,i}];
+cs = [cs centrality_nodes{6,i}];
+ns = [ns centrality_nodes{7,i}];
+kindex = [kindex centrality_nodes{8,i}];
+kbu = [kbu centrality_nodes{9,i}];
+ktd = [ktd centrality_nodes{10,i}];
+kdir = [kdir centrality_nodes{11,i}];
+kindir = [kindir centrality_nodes{12,i}];
+TI = [TI centrality_nodes{13,i}];
+STO = [STO centrality_nodes{14,i}];
+TP = [TP centrality_nodes{15,i}]; %All Nan and INf
 end
+
+%Different aggregations
+heatmap(membership);
+%Best parameters 
+heatmap(best_percentage);
+best_weight; %wired
+%New centrality indices 
+heatmap(nDC);
+heatmap(nwDC);
+heatmap(nCC);
+heatmap(nBC);
+heatmap(s);
+heatmap(cs);
+heatmap(ns);
+heatmap(kindex);
+heatmap(kbu);
+heatmap(ktd);
+heatmap(kdir);
+heatmap(kindir);
+heatmap(TI);
+heatmap(STO);
+heatmap(TP);
+%Correlations
+heatmap(rs);
+
 
 
 
