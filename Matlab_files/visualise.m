@@ -1,3 +1,28 @@
+%Different aggregations
+heatmap(membership);
+%Best parameters 
+heatmap(best_percentage);
+best_weight; %wired
+%New centrality indices 
+heatmap(nDC);
+heatmap(nwDC);
+heatmap(nCC);
+heatmap(nBC);
+heatmap(s);
+heatmap(cs);
+heatmap(ns);
+heatmap(kindex);
+heatmap(kbu);
+heatmap(ktd);
+heatmap(kdir);
+heatmap(kindir);
+heatmap(TI);
+heatmap(STO);
+heatmap(TP);
+%Correlations
+heatmap(rs);
+
+
 %Centrality heatmap
 nDC_ratio=nDC/sum(nDC);
 nwDC_ratio=nwDC/sum(nwDC);

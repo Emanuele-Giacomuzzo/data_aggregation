@@ -28,19 +28,20 @@ membership=[membership_jaccard membership_rege membership_prey_modularity member
 clear membership_jaccard membership_rege membership_prey_modularity membership_density_modularity membership_groups;
 
 %Cluster linkage
-cluster_size=cell(a,i); possible=cell(a,i); realised=cell(a,i);
+cluster_size=cell(a,1); possible=cell(a,1); realised=cell(a,1);
 for i=1:a 
     cluster_size{i}=clusterSize(membership(:,i));
     possible{i} = possibleConnections(cluster_size{i});
     realised{i} = realisedConnections(A,membership(:,i));
 end
+
 weight_method = ["min" "mean" "max" "sum"];
 A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_kendall=zeros(c,a); best_percentage=zeros(c,a); best_weight=strings(c,a); best_weight(:)="binary";
 for i=1:a
     for j=1:c
         for k=1:1:100
             for l=1:length(weight_method)
-                A_clustered_check = buildBinaryNetwork(membership(:,i),possible{i},realised{i},k); 
+                A_clustered_check = buildBinaryNetwork(membership(:,i),possible{i},realised{i},k);
                 A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l));
                 centrality_clusters_check = centralityClusters(A_clustered_check,centralities(j));
                 centrality_nodes_check = centralityNodes(centrality_clusters_check, membership(:,i));
@@ -49,10 +50,9 @@ for i=1:a
                     best_kendall(j,i) = kendall_check;
                     best_percentage(j,i) = k;
                     best_weight(j,i) = weight_method(l);
-                    A_clustered{j,i} = buildBinaryNetwork(membership(:,i),possible{i},realised{i},best_percentage(j,i));
-                    A_clustered{j,i} = buildWeightedNetwork(A,A_clustered{j,i},membership(:,i),centralities(j),best_weight(j,i));
-                    centrality_clusters{j,i}=centralityClusters(A_clustered{j,i},centralities(j)); 
-                    centrality_nodes{j,i}=centralityNodes(centrality_clusters{j,i}, membership(:,i));
+                    A_clustered{j,i} = A_clustered_check;
+                    centrality_clusters{j,i}=centrality_clusters_check; 
+                    centrality_nodes{j,i}=centrality_nodes_check;
                 end
             end
         end
@@ -77,33 +77,6 @@ TI = [TI centrality_nodes{13,i}];
 STO = [STO centrality_nodes{14,i}];
 TP = [TP centrality_nodes{15,i}]; %All Nan and INf
 end
-
-%Different aggregations
-heatmap(membership);
-%Best parameters 
-heatmap(best_percentage);
-best_weight; %wired
-%New centrality indices 
-heatmap(nDC);
-heatmap(nwDC);
-heatmap(nCC);
-heatmap(nBC);
-heatmap(s);
-heatmap(cs);
-heatmap(ns);
-heatmap(kindex);
-heatmap(kbu);
-heatmap(ktd);
-heatmap(kdir);
-heatmap(kindir);
-heatmap(TI);
-heatmap(STO);
-heatmap(TP);
-%Correlations
-heatmap(rs);
-
-
-
 
 
 

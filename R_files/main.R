@@ -38,11 +38,11 @@ plot.igraph(G,
             rescale=F,
             asp=0)
 
-par(mfrow=c(1,2)) 
+#par(mfrow=c(1,2)) 
 
 #JACCARD FOOD WEB - colour 
 V(G)$jaccard <- membership[,1]
-V(G)$color <- "666" #V(G)$jaccard
+V(G)$color <- V(G)$jaccard
 plot.igraph(G,
             main = "(a)", #Clustering through the jaccard index
             vertex.label=NA,

@@ -4,7 +4,6 @@ function[centrality_nodes]=centralityNodes(centrality_clusters, cluster_ID)
 %the same centrality to the single nodes. 
 
 centrality_nodes=zeros(length(cluster_ID),1);
-
 for i=1:length(centrality_clusters)
     for k=1:length(centrality_nodes)
         if cluster_ID(k)==i
