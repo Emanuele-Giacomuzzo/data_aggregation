@@ -1,6 +1,7 @@
 function[TP]=trophicPosition(Aconnected)
 
 A_db=tounweighted(Aconnected');
+for i=1:length(A_db); A_db(i,i)=0; end
 
 n=length(A_db);
 TP=zeros(n,1);

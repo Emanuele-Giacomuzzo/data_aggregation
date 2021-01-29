@@ -2,9 +2,6 @@ library(igraph)
 library(NetIndices)
 setwd('/Users/ema/Github/Data_aggregation/R_files')
 
-#A<-get.adjacency(G,sparse=F) #i and j are inverted
-#indices<-GenInd(A)  
-
 #Import data
 edge_list <- read.delim('../data/edge_list_for_R.txt', header = FALSE)
 edge_list_jaccard <- read.delim('../variables/edge_list_jaccard.txt', header = FALSE)
@@ -37,6 +34,9 @@ plot.igraph(G,
             ylab="Trophic position (TP)",
             rescale=F,
             asp=0)
+
+A<-get.adjacency(G,sparse=F) #i and j are inverted
+indices<-GenInd(A)  
 
 #par(mfrow=c(1,2)) 
 
