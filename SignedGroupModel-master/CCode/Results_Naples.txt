@@ -1,0 +1,8 @@
+#Here I am trying to use different parameters to find the best solution
+#Random seed, MCMC steps, number of chains
+
+587184 100000 20 -> -851.8876 (settled on this number at step number: 1044)
+587184 100000 21 -> -851.8876 (324)
+587184 100000 25 -> -851.8876 (402)
+587184 100000 50 -> -851.8876 (364)
+587184 100000 100 -> -851.8876 (352)
