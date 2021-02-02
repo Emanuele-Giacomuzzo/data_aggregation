@@ -20,8 +20,8 @@ heatmap(TI);
 heatmap(STO);
 heatmap(TP);
 %Correlations
-heatmap(rs);
-
+z=heatmap(aggregations,centralities,best_ICC);
+z.CellLabelFormat = '%.2f';
 
 %Centrality heatmap
 nDC_ratio=nDC./sum(nDC);

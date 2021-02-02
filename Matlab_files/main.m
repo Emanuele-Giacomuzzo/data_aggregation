@@ -39,7 +39,7 @@ weight_method = ["min" "mean" "max" "sum"];
 A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_ICC=zeros(c,a); best_percentage=zeros(c,a); best_weight=strings(c,a); best_weight(:)="binary";
 for i=1:a
     for j=1:c
-        for k=1:1:100
+        for k=0.001:1:100
             for l=1:length(weight_method)
                 A_clustered_check = buildBinaryNetwork(membership(:,i),possible{i},realised{i},k);
                 A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l));
