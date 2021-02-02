@@ -1,0 +1,60 @@
+SBM
+\section{SBM}
+        Then we followed the approach of \citet{Allesina2009a}. However, I think it would be better to use the approach of \citep{Sander2015}. We created a set of random network models characterised by different modules (in number and composition) and selected the best one through the Akaike Information Criterion (AIC) \citep{Akaike1998}. This process is known as stochastic block modelling. The random networks were generated through the following algorithm, which is part of a broader category called genetic algorithms, a type of algorithms that mimic natural selection: 
+        \begin{enumerate}
+            \item Generate a random number of random networks with different number of modules, species composition and probabilities of having a link within and between specific modules. The information about the modules is contained inside a vector which tells us to which module the species belong to. 
+            \item Every vector has a fitness equal to the reciprocal of its AIC
+            \begin{equation}
+                AIC(N(S,L)|\vec{p}^{\,},k)=
+            \end{equation}
+            \begin{equation*}
+                2k^2+2S-2(\sum^k_{i=1}\sum^k_{j=1}L_{ij}log(p_{ij})+(S_iS_j-L_{ij}log(1-p_{ij}))
+            \end{equation*}
+            where $AIC(N(S,L)|\vec{p}^{\,},k)$ is the AIC of a network N with S number of species, L number of links, given the vector p containing the probability of links between and within each module and k is the number of modules. i and j are the modules, $L_ij$ is the number of links between them and $S_i$ and $S_j$ are the number of species in cluster i and j. When trying to evolve, the vector changes only one of its values at the time. At every generation time, the vector evolves into the vector with the highest fitness. In other words, it evolves into the vector where moving one of the species into another module increases its fitness the most. Every time a vector reproduces itself, there is a really small probability that it commits an error, as for mutation in DNA copying. 
+            \item Repeat step 2 until the maximum number of generations (we can set it) or until all the vectors are the same. 
+            \item Select the model with the lowest AIC.
+        \end{enumerate}
+
+Old TI algorithm. The algorithm I've invented for TI goes like this:
+            \begin{enumerate}
+                \item Check whether two species interact in the previous step (e.g. 2)
+                \item If they do interact, check whether the predator interacts with others in the previous step (e.g. 2)
+                \item If the predator does, then add to the current step (e.g. 3), the multiplication of the effect between the species inside the flow channel of the previous step. PROBLEM: WHAT IF TWO CHANNELS SHARE PART OF THEIR SPECIES?
+                \item The final topological importance a certain species has on its food web is the sum of all the effects it has on all species on all steps, averaged by the number of steps. Basically the topological importance of a species is its average n-step effect on its food web. 
+            \end{enumerate}
+
+Friedman test rationale
+    This is because we are looking at the differences between different conditions (how important different species are) in repeated measures (we keep measuring the same species) with three or more conditions (many different clustering methods))
+
+Rational conversion
+        We then found the rational version of all our indices. The topological importance can be converted into its rational version through the following equation
+        \begin{equation}
+            \%TI_i=\frac{TI_i}{\sum\limits\limits_{j=1}^{n} TI_j}
+        \end{equation}
+        The rational version of the weighted topological index can be found as in the unweighted version of topological importance
+        \begin{equation}
+            \%WI_i=\frac{WI_i}{\sum\limits\limits_{j=1}^{n} WI_j}
+        \end{equation}
+        It is possible to get the rational version of WO as with the other trophic field overlap 
+        \begin{equation}
+            \%WO_i=\frac{WO_i}{\sum\limits_{l=1}^n WO_l}    
+        \end{equation}
+        We found the rational version of STO
+        \begin{equation}
+            \%STO_i=\frac{STO_i}{\sum\limits_{l=1}^n STO_l}
+        \end{equation}
+        \par The trophic overlap of a species can be transformed into its rational version by dividing it by the sum of the trophic overlaps of all the species 
+        \begin{equation} 
+            \%TO_i=\frac{TO_i}{\sum\limits_{l=1}^n TO_l} 
+        \end{equation} 
+
+
+Old hierarchical clustering
+    As a first clustering method, we used the approach of \citet{Yodzis1999} and \citet{Luczkovich2003}. We used hierarchical clustering to divide nodes into clusters with similar species, where the similarity was defined as either their structural equivalence, computed as Jaccard similarity, or their regular equivalence, computed as regular equivalence index (REGE).
+
+
+Old introduction
+    \par The aggregation of data is something that ecologists always have to deal with when working with food webs. This is true if we consider sampling multiple nodes as if they were one as a process of data aggregation (for example, by sampling a species without making any distinction between its life stages and size classes). A further process of data aggregation can happen during data analysis, especially in large networks, where the study of hundreds of nodes would be unfeasible \citep{Yodzis1999}. The way we decide to deal with data aggregation should consider the system we are modelling and the question we are trying to answer. Failing to take this into consideration can bias the way by which (we) interpret food web models \citep{Paine1988,Hall1993}. For instance, different levels of aggregation at different trophic levels might bias our research if we are trying to characterise the structure of a network \citep{Yodzis1999}. Even if this seems like an ubiquitous problem in the field of food web ecology, a proper method to aggregate data in a meaningful way does not exist yet.
+    \par Different authors have tried to find species who play a similar role inside their food web. Among these, \citet{Yodzis1999} developed a method based on the Jaccard similarity coefficient to find so-called trophospecies, groups of species who share the same identical predators and preys. \citet{Luczkovich2003} developed another method to find species with a so-called similar trophic role, by using an algorithm called regular equivalence index (REGE). REGE is an algorithm that was originally developed by White et al. in three unpublished papers and was firstly described in the literature by \citet{Borgatti1993}. It is available to be used in the software of network analysis UCINET VI \citep{Borgatti2002}. It finds groups of species who have similar preys and predators. These were all based on similarity indices and in the social network literature trophospecies are known as structural equivalent nodes and nodes with similar trophic role as known as regularly equivalent nodes (see Figure \ref{fig:equivalences}). 
+    \par Finding communities within food webs can be defined as a clustering problem of a directed network. Other authors have tried to find similar species in a food web by using this approach. These communities were defined in two different ways. The first was that species within groups interacted more among each other then group between each other. The second was that species of a group had the same connections to other species. We will call the first type of cluster density-based and the second type of cluster pattern-based, as refereed to by \citet{Malliaros2013}.  \citet{Guimera2010} used directed modularity to find density-based clusters through the function of \citet{Arenas2007} and \citet{Leicht2008} and citation-based clusters through the function of \citet{Guimera2007}, which they maximised by using the method of \citet{Newman2004}. \citet{Allesina2009a} found density-based cluster by using stochastic block modelling (SBM), a model called group model, later developed into a faster one using Metropolis-coupled Markov chain Monte Carlo with a Gibbs sampler in \citet{Sander2015}. 
+    \par In this paper, we check how different aggregation methods maintain the pattern of the centrality indices that are most used in keystone species research. {\color{red}It would be nice to see how they maintain also a combination of them. I need to figure out a way of doing it tough.} Our investigation was carried out on the data of the plankton food web of the Gulf of Naples, sampled at the Long-Term Ecological Research station MareChiara (LTER-MC) \citep{RiberadAlcala2004}. This is composed by 63 different nodes (see Table 1 of \citep{DAlelio2016} for the species assemblage {\color{red} (I should rewrite the table)}). Watch out: the number 59 was not connected to anything, so it has been deleted. 

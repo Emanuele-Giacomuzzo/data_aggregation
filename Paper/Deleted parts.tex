@@ -1,0 +1,357 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{natbib} %it's for the APA citations
+\usepackage{graphicx}
+\graphicspath{ {./images/} }%Graphic foldeer
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{epigraph}
+\usepackage{endnotes}
+\renewcommand{\footnote}{\endnote}
+\newenvironment{conditions}
+  {\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}}
+  {\end{tabular}\par\vspace{\belowdisplayskip}}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{slantsc}
+\usepackage{lmodern}
+\usepackage[titletoc]{appendix}
+\title{Simplifying food webs by aggregating species using Katz similarity as a measure of regular equivalence}
+\author{Emanuele Giacomuzzo}
+%\date{}
+\begin{document}
+\maketitle
+
+
+\begin{table}[htbp]
+	\centering
+		\begin{tabularx}{\textwidth}{ l >{\raggedright}X l }
+			\hline
+			Centrality index & Indices & Reference \\
+			\hline
+			Trophic level & Trophic level (TL) & ? \\
+			Degree centrality & Normalised degree centrality (nDC) \linebreak Normalised weighted degree centrality (nwDC) & \citet{Newman2018} \\
+			Betweenness centrality & Normalised betweenness centrality (nBC) & \citet{Newman2018} \\
+			Closeness centrality & Normalised closeness centrality (nCC) & \citet{Newman2018} \\
+			Topological importance & 3 steps trophic importance (TI3) \linebreak 3 steps rational trophic importance (\%TI3) \linebreak 3 steps weighted trophic importance (WI3) \linebreak 3 steps rational weighted trophic importance (\%WI3) & \citet{Jordan2003} \\
+			Topological overlap & Topological overlap (TO) \linebreak Rational trophic overlap (\%TO) \linebreak Weighted topological overlap (WO) \linebreak Rational weighted trophic overlap (\%WO) & \citet{Jordan2003}\\
+			Status index & Status (s) \linebreak Contrastatus (s') \linebreak Netstatus (ds)  & \citet{Harary1961}\\
+			Keystone index & Bottom-up keystone index (Kbu) \linebreak Top-down keystone index (Ktd) \linebreak Direct keystone index (Kdir) \linebreak Indirect keystone index (Kind) & \citet{Jordan1999} \\
+			\\
+			\hline
+	            \label{tab:centrality_indices}
+	            \caption {Indices that can be used to calculate the importance of nodes in a network. Degree centrality, betweenness centrality, closeness centrality and the status indices are applied more widely in network science. The trophic level, topological importance, topological overlap and keystone index are specifically used for ecological networks.}
+	   \end{tabularx}
+\end{table}
+
+
+\section{Equations}
+
+
+
+\bigskip
+\noindent \textrm{\textsc{\textsl{Salton's cosine}}} 
+\begin{equation}
+	\sigma_{ij} = \frac{i \cdot j^T}{|i| \cdot |j|}
+        \label{eqn:Cosine}
+\end{equation}
+    \begin{conditions}
+	    \sigma_{ij} & Salton's cosine between node i and j \\
+        i & Row of node i in the adjacency matrix (vector of i)\\
+        j & Row of node j in the adjacency matrix (vector of j)\\
+    \end{conditions}
+	
+
+\bigskip
+\noindent \textrm{\textsc{\textsl{Additive topological similarity}}} 
+\begin{equation}
+    S_{TA}(i,j)=\frac{a}{a+b+c}
+        \label{eqn:jaccard_index}
+\end{equation}
+    \begin{conditions}
+        S_{TA}(i,j) & Additive topological similarity between node i and j \\
+        a & Preys and predators of i and j \\
+        b & Preys and predators of only i \\
+        c & Preys and predators of only j \\
+    \end{conditions}
+
+
+\bigbreak
+\noindent \textrm{\textsc{\textsl{Pearson correlation}}} 	
+\begin{equation}
+	r_{ij} = \frac {\sum_k (A_{ik} - \langle A_i \rangle) (A_{jk} - \langle A_j \rangle)}  {\sqrt{\sum_k(A_{ik}- \langle A_i \rangle )^2} \sqrt{\sum_k(A_{jk}- \langle A_j \rangle )^2}}
+        \label{eqn:pearson_correlation}
+\end{equation}
+    \begin{conditions}
+	    r_{ij} & Pearson correlation between node i and j \\
+	    A & Adjacency matrix \\
+	    \langle A_i \rangle & Average of the row of node i \\
+	    \langle A_j \rangle & Average of the row of node j \\
+    \end{conditions}
+	
+	
+\bigskip
+\noindent \textrm{\textsc{\textsl{Hamming distance}}} 
+\begin{equation}
+	h_{ij}=\sum_k(A_{ik}-A_{jk})^2
+        \label{eqn:hamming_distance}
+\end{equation}
+    \begin{conditions}
+	    h_{ij} & Hamming distance between node i and j \\
+        A & Adjacency matrix \\
+	\end{conditions}
+    
+    
+\bigskip
+\noindent \textrm{\textsc{\textsl{Topological/trophic overlap}}} 
+\begin{equation}
+    TO_{ij}=\:how\:much\:S\:and\:W\:match\:between\:i\:and\:j\:in\:M_T
+        \label{eqn:topological_overlap}
+\end{equation}
+    \begin{conditions}
+        TO_{ij} & Trophic overlap between node i and j \\
+        M_T & Interactor matrix
+    \end{conditions}
+
+
+\bigskip
+\noindent \textrm{\textsc{\textsl{Katz similarity not corrected by node degree}}} 
+\begin{equation}
+    \sigma = (I-\alpha A)^{-1}
+        \label{eqn:katz_similarity}
+\end{equation}
+	\begin{conditions}
+			\sigma & Katz similarity (vector) \\
+			I & Identity matrix \\
+			\alpha & We can decide its value, but it should be smaller than (K_1)^{-1} \\
+			K_1 & Constant of proportionality, it is the largest eigenvalue of A \\
+	\end{conditions}
+	
+	
+\bigskip
+\noindent \textrm{\textsc{\textsl{Katz similarity corrected by node degree}}} 
+\begin{equation}
+	\sigma = (D - \alpha A)^{-1}
+    	\label{eqn:katz_similarity_corrected}
+\end{equation}
+	\begin{conditions}
+        D & Diagonal matrix with elements D_{ii} = k_i \\
+	\end{conditions}
+	
+
+
+\begin{table}[htbp]
+    \centering
+        \begin{tabularx}{\textwidth}{l X }
+            \hline
+            Functional trait & Levels \\
+            \hline
+	        Life stage & Adult, juvenile, ichtyoplankton \\
+	        Size &  Large, macro, meso, small, meio, micro, $<$ 29 cm, $<$ 1 cm, $>$ 1 cm, $>$ 10 mm \\
+	        Diet & Autotroph, heterotroph, carnivorous, predatory, piscivore, invertebrate eater, molluscan feeder, omnivorous, herbivore, grazer, decomposer, deposit feeder, suspension feeder, filter feeder, desposit swallower, zoobenthos feeders \\
+	        Habitat & Surface, pelagic plankton, demersal, benthos, suprabenthos, epibenthos, infauna, periphyton, offshore, nearshore, reef, marine (birds), coast (birds) \\
+	        Movement type & Nekton, plankton, sessile, mobile, suspended \\
+	        Predator & Forage fish, ontermediate predators \\
+	        Other & Schooling, discards, commercial, spring (phytoplankton) \\
+	        \hline
+	            \label{tab:traits_in_dataset}
+	            \caption{Functional traits by which species were already aggregated inside the dataset.}
+	    \end{tabularx}
+\end{table}
+
+
+
+
+
+\section{Estimation of energy flow \citep{Yodzis1999}}
+
+\noindent \textrm{\textsc{\textsl{Ingestion rate}}} 
+\begin{equation}
+I_j=aw^b
+\end{equation}
+\begin{conditions}
+I_j & Ingestion rate \\
+a & Constant \\
+b & Constant \\
+w & Body weight \\
+\end{conditions}
+
+\bigskip
+\noindent \textrm{\textsc{\textsl{Energy flow}}} 
+\begin{equation}
+f_{ij}=p_{ij}I_j
+\end{equation}
+\begin{conditions}
+f_{ij} & Relative energy flow (proportion of energy flow to species j that comes from species i)\\
+p_{ij} & Dietary proportion (proportion of consumption by species j that comes from species i) \\
+I_j & Ingestion rate \\
+\end{conditions}
+
+
+
+
+
+
+
+\section{\citet{Yodzis1999} using Jaccard similarity index to aggregate data }
+The authors first identified four ways of calculating trophic similarity between OTEs and six ways of calculating trophic similarity between clusters. 
+After that, they run a hierarchical cluster analysis to investigate which one of the 24 combinations of OTEs and cluster aggregation was the best. 
+
+
+
+
+
+
+    \subsection{Trophic similarity of OTEs}
+    We can consider either the static food web (it does not consider interaction strength) to identify similar OTEs or we can consider the dynamical food web (it considers interaction strength). 
+    The first one gains topological similarities and the second one gains flow similarities. 
+    We can consider predators and preys as additive or multiplicative. In the multiplicative equations we assume that the predator composition doesn't influence the diet and the other way round. 
+    These similarities are based on the similarity coefficient of Jaccard (see Equation \ref{eqn:Jaccard}). 
+
+
+
+    \bigskip
+    \noindent \textrm{\textsc{\textsl{Topological similarity (multiplicative)}}} 
+    \begin{equation}
+        S_{TM}(i,j)=\frac{a_1}{a_1+b_2+c_3}\frac{a_2}{a_1+b_2+c_3}
+    \end{equation}
+    \begin{conditions}
+        a_1 & Number of species that are prey of both species i and j \\
+        b_1 & Number of species that are prey of only species i \\
+        c_1 & Number of species that are prey of only species j \\
+        a_2 & Number of species that are predator of both species i and j \\
+        b_2 & Number of species that are predator of only species i \\
+        c_2 & Number of species that are predator of only species j \\
+    \end{conditions}
+
+    \bigskip
+    \noindent \textrm{\textsc{\textsl{Flow similarity (additive):}}} 
+    \begin{equation}
+        S_{FA}(i,j)=\frac{\sum_k(p_{ki}p_{kj}+q_{ik}q_{jk})}{\sqrt(\sum_kp^2_{ki}+q^2_{ik})\sum_k(p^2_{kj}+q^2_{jk})}
+    \end{equation}
+    \begin{conditions}
+        i, j & Predator and prey \\
+        %f_{ij} & Interaction strength between i and j \\
+        k & All other species \\
+        p_{ki} & Proportion of consumption by species i that comes from species k \\
+        q_{ik} & Proportion of consumption of species i that goes to species k \\
+    \end{conditions}
+
+    \bigskip
+    \noindent \textrm{\textsc{\textsl{Flow similarity (multiplicative):}}} 
+    \begin{equation}
+        S_{FM}(i,j)=\frac{\sum_kp_{ki}p_{kj}}{\sqrt(\sum_kp^2_{ki}\sum_kq^2_{ik})}\frac{\sum_kq_{ik}q_{jk}}{\sqrt(\sum_kp^2_{kj}\sum_kq^2_{jk})}
+    \end{equation}
+    \begin{conditions}
+    \end{conditions}
+
+
+
+
+
+
+    \subsection{Trophic similarity of clusters}
+    Once that we know the similarity between pairs of OTEs, we can find clusters that will constitute our trophospecies. 
+    The authors used different methods to find clusters within the network:
+    
+    \begin{itemize}
+        \item NMIN (natural minimum linkage similarity) = There is a linkage between two clusters only if there is a linkage between every OTE of the two clusters (See \citet{Martinez1991} for further explanations). The flow between the clusters is the sum of the flows. 
+        \item NMAX (natural maximum linkage similarity) = There is a linkage between two clusters only if there is at least one linkage between one OTE of i and one OTE of j  (See \citet{Martinez1991} for further explanations). The flow between the clusters is the sum of the flows. 
+        \item SL (single linkage) = The similarity between clusters is the maximum of the similarities between pairs of OTEs
+        \item CL (complete linkage) = The similarity between clusters is the minimum of the similarities between pairs of OTEs
+        \item ASWC (average similarity within clusters) = The similarity between clusters is the average similarity between clusters if the two clusters were merged together
+        \item ASBC (average similarity between clusters) = The similarity between clusters is the average similarity between pairs of OTEs from the two clusters
+    \end{itemize}
+
+
+
+
+
+
+    \subsection{Cophenetic correlation}
+    The cophenetic correlation gives us an idea of how a certain dendrogram preserves the pairwise distances between the original unmodeled data points. 
+    This means that after we have clustered the OTEs they maintain the same similarity. To do this, we need to construct two matrices: the phenetic matrix and the original similarity matrix.
+    The phenetic matrix contains the similarity between OTEs after they have been clustered (phenetic similarities). 
+    The original similarity matrix contains the similarity between OTES before the clustering. 
+    The cophenetic correlation is the product moment correlation coefficient between the elements of the two matrices.
+
+
+
+
+
+
+\section{\citet{Luczkovich2003} using REGE to aggregate data}
+
+\begin{enumerate}
+	\item Calculate REGE
+	\item Non-metric multi-dimensional scaling (MDS) 
+	\item Hierarchical clustering (Johnson's)
+\end{enumerate}
+
+
+\section{\citet{Jordanplankton} using TO, REGE and traits to aggregate data}
+They used two approaches to aggregate data from a toy network and a real network: a biological approach and a mathematical approach. 
+Species from the same genus were aggregated together\footnote{Did they have similar body size?}. 
+
+
+
+
+
+
+    \subsection{Mathematical approach}
+    They used two indices to classify different species into different isotrophic classes: the topological overlap index (TO, STO) (see \citet{Jordan2003}) and the regular equivalence (REGE) index.
+
+
+
+
+
+
+    \subsection{Biological approach}
+    They used the body mass (b), body size (s) and carbon content (c) to classify different species into different isotrophic classes. 
+    The similarity between species were then clustered according to 30 evenly defined ranges of size (v), equal (?), ranks in groups of three (r). 
+    The combinations of similarity and clustering gave rise to seven categories of interest:
+
+    \emph{
+    \begin{itemize}
+        \item be
+        \item sv
+        \item ce
+        \item cv    
+        \item cr
+    \end{itemize}}
+
+    Furthermore, they considered the trophic status, which means in which way do species get their energy. 
+    These were heterotrophs, autotrophs, mixotrophs and detritivores. 
+
+\subsection{Cosine similarity [Structural equivalence]}	 OK 
+	As explained by \citet{Newman2018}, we could consider two nodes to be structurally equivalent following the definition by saying that they are equivalent when they share a lot of nodes. To have a measure of whether a certain number of nodes is a lot or not, we can divide them by the total number of nodes. However, this measure would give two nodes with low degree but with the same exact neighbours a small similarity score. This is why the Cosine similarity is better, because it takes into consideration the degree of the nodes.  The cosine similarity of i and j is the number of common neighbours of the two nodes divided by the geometric mean of their degrees. This is the most used structural equivalence measure in networks. The cosine similarity might be improved by using the Salton's cosine, but I should read more about this. 
+	\bigbreak
+	\noindent \textrm{\textsc{\textsl{Cosine similarity}}} 
+	\begin{equation}
+		\sigma_{ij}=\frac{n_{ij}}{\sqrt{k_ik_j}}
+	\end{equation}
+    
+Summary:  The number of neighbours that that two nodes share, divided by the geometric mean of their degrees.
+
+\section{Jaccard coefficient}
+
+    \bigskip
+	\noindent \textrm{\textsc{\textsl{Jaccard similarity coefficient}}} 
+	\begin{equation}
+		J_{ij}=\frac{n_{ij}}{k_i+k_j-n_{ij}}
+	\label{eqn:Jaccard}
+	\end{equation}
+	\begin{conditions}
+		J_{ij} & Jaccard similarity between node i and j \\
+		n_{ij} & Number of common neighbours \\
+		k_i & Distinct neighbours of i \\
+		k_j & Distinct neighbours of j \\
+	\end{conditions}
+
+
+
+
+\bibliographystyle{apalike}
+\bibliography{library}
+
+\end{document}

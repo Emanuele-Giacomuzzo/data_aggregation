@@ -36,7 +36,7 @@ for i=1:a
 end
 
 weight_method = ["min" "mean" "max" "sum"];
-A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_kendall=zeros(c,a); best_percentage=zeros(c,a); best_weight=strings(c,a); best_weight(:)="binary";
+A_clustered=cell(c,a); centrality_clusters=cell(c,a); centrality_nodes=cell(c,a); best_ICC=zeros(c,a); best_percentage=zeros(c,a); best_weight=strings(c,a); best_weight(:)="binary";
 for i=1:a
     for j=1:c
         for k=1:1:100
@@ -45,9 +45,9 @@ for i=1:a
                 A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l));
                 centrality_clusters_check = centralityClusters(A_clustered_check,centralities(j));
                 centrality_nodes_check = centralityNodes(centrality_clusters_check, membership(:,i));
-                kendall_check = KendallCoef([eval(centralities(j)), centrality_nodes_check]);
-                if kendall_check > best_kendall(j,i)
-                    best_kendall(j,i) = kendall_check;
+                ICC_check = ICC([eval(centralities(j)), centrality_nodes_check],'C-1');
+                if ICC_check > best_ICC(j,i)
+                    best_ICC(j,i) = ICC_check;
                     best_percentage(j,i) = k;
                     best_weight(j,i) = weight_method(l);
                     A_clustered{j,i} = A_clustered_check;
@@ -58,7 +58,6 @@ for i=1:a
         end
     end
 end
-rs=((a*best_kendall)-1)/(a-1);
 
 for i=1:a
 nDC = [nDC centrality_nodes{1,i}];
