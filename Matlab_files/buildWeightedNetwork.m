@@ -7,7 +7,7 @@ if (centrality_type=="nwDC" || centrality_type=="STO") && weight_method=="min"
             MIN=10^10;
             for k=1:length(A)
                 for l=1:length(A)
-                    if membership(k)==i && membership(l)==j && A(k,l)<MIN
+                    if membership(k)==i && membership(l)==j && A(k,l)~=0 && A(k,l)<MIN
                         MIN=A(k,l);
                     end
                 end
@@ -26,7 +26,7 @@ if (centrality_type=="nwDC" || centrality_type=="STO") && weight_method=="mean"
             SUM=0;
             for k=1:length(A)
                 for l=1:length(A)
-                    if membership(k)==i && membership(l)==j
+                    if membership(k)==i && membership(l)==j && A(k,l)~=0
                         COUNT=COUNT+1;
                         SUM=SUM+A(k,l);
                     end
@@ -45,7 +45,7 @@ if (centrality_type=="nwDC" || centrality_type=="STO") && weight_method=="max"
             MAX=0;
             for k=1:length(A)
                 for l=1:length(A)
-                    if membership(k)==i && membership(l)==j && A(k,l)>MAX
+                    if membership(k)==i && membership(l)==j && A(k,l)~=0 && A(k,l)>MAX
                         MAX=A(k,l);
                     end
                 end
@@ -63,7 +63,7 @@ if (centrality_type=="nwDC" || centrality_type=="STO") && weight_method=="sum"
             SUM=0;
             for k=1:length(A)
                 for l=1:length(A)
-                    if membership(k)==i && membership(l)==j 
+                    if membership(k)==i && membership(l)==j && A(k,l)~=0
                         SUM=SUM+A(k,l);
                     end
                 end

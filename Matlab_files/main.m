@@ -42,7 +42,7 @@ for i=1:a
         for k=0.001:1:100
             for l=1:length(weight_method)
                 A_clustered_check = buildBinaryNetwork(membership(:,i),possible{i},realised{i},k);
-                A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l));
+                A_clustered_check = buildWeightedNetwork(A,A_clustered_check,membership(:,i),centralities(j),weight_method(l)); %the problem is here: when I try to build the weighted network for the Jaccard index according to STO 
                 centrality_clusters_check = centralityClusters(A_clustered_check,centralities(j));
                 centrality_nodes_check = centralityNodes(centrality_clusters_check, membership(:,i));
                 ICC_check = ICC([eval(centralities(j)), centrality_nodes_check],'C-1');
@@ -77,7 +77,6 @@ STO = [STO centrality_nodes{14,i}];
 TP = [TP centrality_nodes{15,i}]; %All Nan and INf
 end
 
-%This is the new branch. 
 
 
 
@@ -91,7 +90,7 @@ end
 
 
 
-
+ 
 
 
 
