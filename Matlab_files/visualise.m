@@ -1,8 +1,12 @@
-%Different aggregations
-heatmap(membership);
 %Best parameters 
 heatmap(best_percentage);
 best_weight 
+%Food webs
+n=1;
+m=1;
+plot(digraph(A_clustered{m,n}));
+m=m+1;
+n=n+1;
 %New centrality indices 
 heatmap(nDC);
 heatmap(nwDC); 
