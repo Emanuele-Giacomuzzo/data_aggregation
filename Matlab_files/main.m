@@ -1,6 +1,3 @@
-%You need to install the toolbox "Mann-Kendall Tau-b with Sen's Method
-%(enhanced)"
-
 clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files';
 A=readmatrix("../data/adjacency_matrix.txt"); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
 node_names = readtable('../data/node_names.txt','Delimiter',' ','ReadVariableNames', false);
@@ -58,9 +55,13 @@ for i=1:a
                     centrality_clusters{j,i}=centrality_clusters_check;
                     centrality_nodes{j,i}=centrality_nodes_check;
                 end
+                l
             end
+            k
         end
+        j
     end
+    i
 end
 z=heatmap(aggregations,centralities,best_Kendall);
 z.CellLabelFormat = '%.2f';

@@ -1,9 +1,9 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration build-checksum="3427739222" file="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools/food_web_tools.prj" location="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools" name="food_web_tools" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="692787308" file="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools/food_web_tools.prj" location="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools" name="food_web_tools" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>food_web_tools</param.appname>
-    <param.authnamewatermark>Emanuele Giacomuzzo</param.authnamewatermark>
-    <param.email>emanuelegiacomuzzo@gmail.com</param.email>
-    <param.company>Balaton Limnological Institute</param.company>
+    <param.authnamewatermark />
+    <param.email />
+    <param.company />
     <param.summary />
     <param.description />
     <param.screenshot />
@@ -108,10 +108,9 @@
       <file>${PROJECT_ROOT}/degreeMatrix.m</file>
       <file>${PROJECT_ROOT}/densityModularity.m</file>
       <file>${PROJECT_ROOT}/edgeList.m</file>
+      <file>${PROJECT_ROOT}/edgeListForR.m</file>
       <file>${PROJECT_ROOT}/keystoneIndices.m</file>
       <file>${PROJECT_ROOT}/keystone_indices</file>
-      <file>${PROJECT_ROOT}/linkingClusters.m</file>
-      <file>${PROJECT_ROOT}/linking_clusters</file>
       <file>${PROJECT_ROOT}/modularity_maximisation</file>
       <file>${PROJECT_ROOT}/nodeindegree.m</file>
       <file>${PROJECT_ROOT}/nodeoutdegree.m</file>
@@ -136,7 +135,7 @@
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>/Applications/MATLAB_R2020b.app</root>
+      <root>/Applications/MATLAB_R2020a.app</root>
       <toolboxes />
     </matlab>
     <platform>

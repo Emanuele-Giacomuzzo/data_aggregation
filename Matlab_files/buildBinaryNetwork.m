@@ -1,9 +1,10 @@
-function [A_clustered] = buildBinaryNetwork(membership,possible_connections,realised_connections,percentage)
+function [A_clustered] = buildBinaryNetwork(realised_ratio,ratio)
 
-A_clustered=zeros(max(membership));
-for i=1:max(membership) 
-    for j=1:max(membership)
-        if realised_connections(i,j)/possible_connections(i,j)*100>percentage
+n=length(realised_ratio);
+A_clustered=zeros(n);
+for i=1:n
+    for j=1:n
+        if realised_ratio(i,j)>ratio
             A_clustered(i,j)=1;
         end
     end

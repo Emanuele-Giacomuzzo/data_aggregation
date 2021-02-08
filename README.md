@@ -13,7 +13,7 @@ It could take some time, normally a couple of minutes. Be patient.
 Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be calculated from the UCINET VI software (available only for windows at https://sites.google.com/site/ucinetsoftware/home). The output of UCINET needs then to be transformed into a matlab matrix and saved in the folder data. Here I supposed that the maximum of REGE is 1000.
 
 ## Dependencies
-1. Intecorellation coefficient (ICC) at https://uk.mathworks.com/matlabcentral/fileexchange/22099-intraclass-correlation-coefficient-icc
+1. "Mann-Kendall Tau-b with Sen's Method (enhanced)" at https://uk.mathworks.com/matlabcentral/fileexchange/11190-mann-kendall-tau-b-with-sen-s-method-enhanced
 2. Food web tools at ...
 3. Signed group model at https://github.com/elsander/SignedGroupModel
 

@@ -1,24 +1,20 @@
 function[TP]=trophicPosition(Aconnected)
 
-A_db=tounweighted(Aconnected');
-for i=1:length(A_db); A_db(i,i)=0; end
-
+A_db = tounweighted(Aconnected'); %binary
+A_db = A_db - diag(diag(A_db)); %loop-less
 n=length(A_db);
-TP=zeros(n,1);
-
 TA=fluxRatio(A_db);
 diet=sum(TA,2);
-QA = withoutAutotrophs(TA,diet); %problem
+QA = withoutAutotrophs(TA,diet);
 
-%Create a matrix with 1s on the diagonal (IA) and a vector with ones (vw).
 IA=QA*0;
 for i=1:length(IA)
     IA(i,i)=1;
 end
 vw=ones(length(IA),1);
-
 TP_heterotrophs=linsolve((IA-QA),vw);
 
+TP=zeros(n,1);
 c=1;
 for i=1:n
     if diet(i)==0

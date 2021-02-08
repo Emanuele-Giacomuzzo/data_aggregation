@@ -44,7 +44,7 @@ TI_ratio=TI./sum(TI);
 STO_ratio=STO./sum(STO);
 TP_ratio=TP./sum(TP);
 original_centralities=[nDC_ratio nwDC_ratio nCC_ratio nBC_ratio s_ratio cs_ratio ns_ratio kindex_ratio kbu_ratio ktd_ratio kdir_ratio kindir_ratio TI_ratio STO_ratio TP_ratio];
-h2=heatmap(centralities,node_names,original_centralities,'Colormap',parula);
+h2=heatmap(centralities,node_names,centralities_original,'Colormap',parula);
 caxis(h2,[0, 1]);
 h2.CellLabelFormat = '%.1f';
 h2.Title="Centrality of the nodes inside the original network";

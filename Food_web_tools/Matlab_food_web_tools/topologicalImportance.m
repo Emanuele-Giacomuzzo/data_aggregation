@@ -1,7 +1,7 @@
 function [TI]=topologicalImportance(A,num_steps)
 
-A_db=tounweighted(A);  
-A_ub=toundirected(A_db);
+A_db=tounweighted(A); %binary
+A_ub=toundirected(A_db); %undirected
 
 n=length(A_ub);
 TI=oneStepTI(A_ub);

@@ -1,15 +1,19 @@
-function [undirected_network] = toundirected(directed_network)
-%Test it
-loopless_network=directed_network-diag(diag(directed_network));
+function [undirected_network] = toundirected(input_network)
+%It preserves the self-loops.
 
-undirected_network=zeros(length(directed_network));
-for i=1:length(loopless_network)
-    for j=1:length(loopless_network)
-        if loopless_network(i,j) > 0    
-            undirected_network(i,j)=loopless_network(i,j);
-            undirected_network(j,i)=loopless_network(i,j);
+if issymmetric(input_network)==0
+    n=length(input_network);
+    undirected_network=zeros(n);
+    for i=1:n
+        for j=1:n
+            if input_network(i,j) ~= 0
+                undirected_network(i,j)=input_network(i,j);
+                undirected_network(j,i)=input_network(i,j);
+            end
         end
     end
+else
+    undirected_network=input_network;
 end
 
 end

@@ -1,7 +1,7 @@
 function[k,kbu,ktd,kdir,kindir]=keystoneIndices(A)
 
-A_db=tounweighted(A);
-A_db=A_db-diag(diag(A_db)); %eliminate self loops
+A_db=tounweighted(A); %binary
+A_db=A_db-diag(diag(A_db)); %loop-less
 
 n=length(A_db);
 preys=sum(A_db); preys=preys.';
