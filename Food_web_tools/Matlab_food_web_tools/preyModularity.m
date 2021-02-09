@@ -1,12 +1,11 @@
-function[clusterID_patternModularity]=patternModularity(A)
+function[membership_patternModularity]=preyModularity(A)
 %Here I refer to the total number of species in the network as m instead of
 %n. This is to conform to the notation used by Leicht & Newman 2008
 %(Community structure in directed networks) and to not create confusion. 
 
-A_db=tounweighted(A);
-network=digraph(A);
-indegree_v=indegree(network);
-outdegree_v=outdegree(network);
+A_db = tounweighted(A); network = digraph(A);
+indegree_v = indegree(network);
+outdegree_v = outdegree(network);
 m=length(A);
 
 [modules,B]=createmodulesandb(A_db);
@@ -36,7 +35,7 @@ for z=2:length(modules)
         end
     end
 end
-clusterID_patternModularity=moduleofnodes(modules);
-clusterID_patternModularity=changemodulenumber(clusterID_patternModularity);
+membership_patternModularity=moduleofnodes(modules);
+membership_patternModularity=changemodulenumber(membership_patternModularity);
 
 end

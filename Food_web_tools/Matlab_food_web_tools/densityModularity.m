@@ -1,10 +1,9 @@
 function[clusterID_densityModularity]=densityModularity(A)
 
-A_db=tounweighted(A);
-network=digraph(A);
-indegreeSpecies=indegree(network);
-outdegreeSpecies=outdegree(network);
-m=numberoflinks(A);
+A_db = tounweighted(A); network = digraph(A); 
+indegreeSpecies = indegree(network); 
+outdegreeSpecies = outdegree(network);
+m = sum(sum(A_db));
 
 [modules,B]=createmodulesandb(A_db);
 B_matrix=modularitymatrix(A_db,indegreeSpecies,outdegreeSpecies,m);

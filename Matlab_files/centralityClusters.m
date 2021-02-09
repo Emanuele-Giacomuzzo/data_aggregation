@@ -17,7 +17,12 @@ if centrality_type=="kbu", [~,centrality_clusters,~,~,~] = keystoneIndices(A_clu
 if centrality_type=="ktd", [~,~,centrality_clusters,~,~] = keystoneIndices(A_clustered); end
 if centrality_type=="kdir", [~,~,~,centrality_clusters,~] = keystoneIndices(A_clustered); end
 if centrality_type=="kindir", [~,~,~,~,centrality_clusters] = keystoneIndices(A_clustered); end
-if centrality_type=="TI", centrality_clusters = topologicalImportance(A_clustered,3); end
+if centrality_type=="TI1", centrality_clusters = topologicalImportance(A_clustered,1,"false"); end
+if centrality_type=="TI3", centrality_clusters = topologicalImportance(A_clustered,3,"false"); end
+if centrality_type=="TI5", centrality_clusters = topologicalImportance(A_clustered,5,"false"); end
+if centrality_type=="WI1", centrality_clusters = topologicalImportance(A_clustered,1,"true"); end
+if centrality_type=="WI3", centrality_clusters = topologicalImportance(A_clustered,3,"true"); end
+if centrality_type=="WI5", centrality_clusters = topologicalImportance(A_clustered,5,"true"); end
 if centrality_type=="STO", centrality_clusters = topologicalOverlap(A_clustered,3,0.01,0.2,0.01); end
 if centrality_type=="TP", centrality_clusters = trophicPosition(A_clustered); end
 
