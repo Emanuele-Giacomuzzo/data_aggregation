@@ -1,36 +1,37 @@
+rm(list = ls()); cat("\014"); setwd('/Users/ema/Github/Data_aggregation/R_files')
+library(leiden)
 library(ggplot2)
-library(dplyr)
+library(tibble)
+library(plyr)
 library(igraph)
 library(NetIndices)
-rm(list = ls()); cat("\014"); setwd('/Users/ema/Github/Data_aggregation/R_files')
+library(dplyr)
+library(RColorBrewer)
 
-#IMPORT
-edge_list <- read.delim('../data/edge_list_for_R.txt', header = FALSE)
-edge_list_jaccard <- read.delim('../variables/edge_list_jaccard.txt', header = FALSE)
-edge_list_rege <- read.delim('../variables/edge_list_rege.txt', header = FALSE)
-edge_list_prey_modularity <- read.delim('../variables/edge_list_prey_modularity.txt', header = FALSE)
-edge_list_density_modularity <- read.delim('../variables/edge_list_density_modularity.txt', header = FALSE)
-edge_list_groups <- read.delim('../variables/edge_list_groups.txt', header = FALSE)
-membership <- read.csv('../variables/membership.txt',header = FALSE)
-TP <- as.matrix(read.csv('../variables/TP.txt', header = FALSE))
-TP_jaccard <- as.matrix(read.csv('../variables/TP_jaccard_clusters.txt', header = FALSE))
-TP_rege <- as.matrix(read.csv(''))
 
-#ORIGINAL FOOD WEB
-G <- graph_from_edgelist(as.matrix(edge_list[,c("V2","V1")])) #You need to invert i and j
+edge_list <- read.delim('../data/Napoli_edgelist_for_R.txt', header = FALSE)
+links <- edge_list %>% select(V1,V2)
+weights <- edge_list %>% select(V3)
+G <- graph_from_edgelist(as.matrix(links)) #You need to invert i and j
+E(G)$weight <- as.matrix(weights)
+
+TP <- as.matrix(read.csv('../data/variables/Napoli_TP.txt', header = FALSE))
 V(G)$TP <- TP[,1]
-A <- get.adjacency(G,sparse=F) #i and j are inverted
-indices <- data.frame(GenInd(A))
-layout.matrix <- matrix( nrow=length(V(G)),ncol=2)
-layout.matrix[,1] <- runif(length(V(G)))
-layout.matrix[,2] <- TP[,1]
-plot.igraph(G,
-            main= "Original food web",
+
+#membership <- read.csv('../variables/membership.txt',header = FALSE)
+
+#Plot
+plotting_layout <- matrix( nrow=length(V(G)),ncol=2)
+plotting_layout[,1] <- runif(length(V(G)))
+plotting_layout[,2] <- TP[,1]
+plot.igraph(simplify(G),
+            #main= "Original food web",
             vertex.label=NA,
             vertex.size=2,
-            vertex.color="666",
+            vertex.color="grey75",
+            #edge.width = E(G)$weight,
             edge.arrow.size=.25,
-            layout=layout.matrix,
+            layout=plotting_layout,
             axes=TRUE,
             xlim = c(0,1),
             ylim=c(0,3),
@@ -38,199 +39,38 @@ plot.igraph(G,
             rescale=F,
             asp=0)
 
-#ORIGINAL FOOD WEB - JACCARD COLORATION 
-V(G)$jaccard <- membership[,1]
-V(G)$color <- V(G)$jaccard
-plot.igraph(G,
-            main = "Jaccard index coloration",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=T,
-            #ylab="Trophic position (TP)",
-            rescale=F,
-            asp=0)
-title("",sub="Coloration of the original food web according to the Jaccard index.")
+#Node strength
+wDC <- strength(G, vids = V(G), mode = "all", loops = TRUE)
+nwDC <- wDC/(nrow(TP)-1)
 
-#ORIGINAL FOO WEB - REGE COLORATION  
-V(G)$rege <- membership[,2] 
-V(G)$color <- V(G)$rege
-plot.igraph(G,
-            main = "REGE index coloration",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=T,
-            #ylab="Trophic position (TP)"
-            rescale=F,
-            asp=0)
-title("",sub="Coloration of the original food web according to the REGE index.")
+#Density-based modularity
+A <- get.adjacency(G,sparse=F) #Adjacency (i and j are inverted)
+A <- t(A)
+rownames(A) <- 1:nrow(A)
+colnames(A) <- 1:nrow(A)
+#partition <- leiden(A)
 
-#ORIGINAL FOOD WEB - PREY MODULARITY COLORATION
-V(G)$preymodularity <- membership[,3] 
-V(G)$color <- V(G)$preymodularity
-plot.igraph(G,
-            main = "Prey modules coloration",
+node.cols <- brewer.pal(max(c(3, partition)),"Pastel1")[partition]
+plot.igraph(simplify(G),
+            #main= "Original food web",
             vertex.label=NA,
-            vertex.size=3,
+            vertex.size=2,
+            vertex.color = node.cols,
+            #edge.width = E(G)$weight,
             edge.arrow.size=.25,
-            layout=layout.matrix,
+            layout=plotting_layout,
+            axes=TRUE,
             xlim = c(0,1),
             ylim=c(0,3),
-            #axes=T,
-            #ylab="Trophic position (TP)"
-            rescale=F,
-            asp=0)
-title("",sub="Coloration of the original food web according to their prey modules.")
-
-#ORIGINAL FOOD WEB - DENSITY MODULARITY COLORATION
-V(G)$densitymodularity <- membership[,4] 
-V(G)$color <- V(G)$densitymodularity
-plot.igraph(G,
-            main = "Density modules coloration",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=T,
-            #ylab="Trophic position (TP)"
-            rescale=F,
-            asp=0)
-title("",sub="Coloration of the original food web according to the density modules.")
-
-#ORIGINAL FOOD WEB - GROUP MODEL COLORATION 
-V(G)$groups <- membership[,5]
-V(G)$color <- V(G)$groups
-plot.igraph(G,
-            main = "Group modules coloration",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=T,
-            #ylab="Trophic position (TP)"
-            rescale=F,
-            asp=0)
-title("",sub="Coloration of the original food web according to the group modules.")
-
-#JACCARD FOOD WEB
-G_jaccard <- graph_from_edgelist(as.matrix(edge_list_jaccard[,c("V2","V1")])) #You need to invert i and j
-V(G_jaccard)$TP <- TP_jaccard
-layout.matrix<-matrix( nrow=length(V(G_jaccard)),ncol=2)
-layout.matrix[,1]<-runif(length(V(G_jaccard)))
-layout.matrix[,2] <- TP_jaccard
-V(G_jaccard)$color <- "666" #V(G_jaccard)
-plot.igraph(G_jaccard,
-            main= "Jaccard food web",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=TRUE,
-            #ylab="Trophic position (TP)",
+            ylab="Trophic position (TP)",
             rescale=F,
             asp=0)
 
-#REGE FOOD WEB
-edges_rege <- edge_list_rege[,c("V2","V1")] #You need to invert i and j
-G_rege <- graph_from_edgelist(edges_rege)
-weights_rege<-edge_list_rege[,"V3"]
-G_rege$weight <- weights_rege
-#V(G_rege)$TP <- TP
-layout.matrix<-matrix( nrow=length(V(G_rege)),ncol=2)
-layout.matrix[,1]<-runif(length(V(G_rege)))
-#layout.matrix[,2] <- TP
-#V(G_rege)$color <- 
-plot.igraph(G_rege,
-            main= "REGE food web",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=TRUE,
-            #ylab="Trophic position (TP)",
-            rescale=F,
-            asp=0)
+#print(paste0('There have been found ', max(partition) , ' partitions'))
 
-#PREY MODULARITY FOOD WEB
-edges_preymodularity <- edge_list_preymodularity[,c("V2","V1")] #You need to invert i and j
-G_preymodularity <- graph_from_edgelist(edges_preymodularity)
-weights_preymodularity<-edge_list_preymodularity[,"V3"]
-G_preymodularity$weight <- weights_preymodularity
-#V(G_preymodularity)$TP <- TP
-layout.matrix<-matrix( nrow=length(V(G_preymodularity)),ncol=2)
-layout.matrix[,1]<-runif(length(V(G_preymodularity)))
-#layout.matrix[,2] <- TP
-#V(G_preymodularity)$color <- 
-plot.igraph(G_preymodularity,
-            main= "Prey modules food web",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=TRUE,
-            #ylab="Trophic position (TP)",
-            rescale=F,
-            asp=0)
-
-#DENSITY MODULARITY FOOD WEB
-edges_densitymodularity <- edge_list_densitymodularity[,c("V2","V1")] #You need to invert i and j
-G_densitymodularity <- graph_from_edgelist(edges_densitymodularity)
-weights_densitymodularity<-edge_list_densitymodularity[,"V3"]
-G_densitymodularity$weight <- weights_densitymodularity
-#V(G_densitymodularity)$TP <- TP_densitymodularity
-layout.matrix<-matrix( nrow=length(V(G_densitymodularity)),ncol=2)
-layout.matrix[,1]<-runif(length(V(G_densitymodularity)))
-#layout.matrix[,2] <- TP
-#V(G_densitymodularity)$color <- 
-plot.igraph(G_densitymodularity,
-            main= "Density modules food web",
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=TRUE,
-            #ylab="Trophic position (TP)",
-            rescale=F,
-            asp=0)
-
-#GROUP MODEL FOOD WEB - create
-edges_groups <- edge_list_groups[,c("V2","V1")] #You need to invert i and j
-G_groups <- graph_from_edgelist(edges_groups)
-weights_groups<-edge_list_groups[,"V3"]
-G_groups$weight <- weights_groups
-#V(G_groups)$TP <- TP
-layout.matrix<-matrix( nrow=length(V(G_groups)),ncol=2)
-layout.matrix[,1]<-runif(length(V(G_groups)))
-#layout.matrix[,2] <- TP
-#V(G_groups)$color <- 
-plot.igraph(G_groups,
-            main= "Group modules food web", 
-            vertex.label=NA,
-            vertex.size=3,
-            edge.arrow.size=.25,
-            layout=layout.matrix,
-            xlim = c(0,1),
-            ylim=c(0,3),
-            #axes=TRUE,
-            #ylab="Trophic position (TP)",
-            rescale=F,
-            asp=0)
+#Nodelist for Gephi
+xaxis = runif(length(V(G)), -max(TP[,1]), max(TP[,1]))
+nodelist = cbind(0:61, 0:61,TP[,1],xaxis)
+names = c("Id","Names","trophic_position","xaxis")
+nodelist %>% 
+  write.table(.,file = "/Users/ema/github/data_aggregation/gephi_files/Napoli_Gephi_nodelist.csv",row.names=FALSE, col.names=names, sep="\t")
