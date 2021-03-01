@@ -1,0 +1,57 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          131SeagrassMangroveTerminos fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\131SeagrassMangroveTerminos fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 269.000
+
+                           1            2
+                 Betweenness nBetweenness
+                ------------ ------------
+   11    Zoopl        25.500       32.692
+   12    Benth        24.167       30.983
+    3     Shri        13.833       17.735
+   13    Ocrus         9.250       11.859
+    1    Phyto         6.167        7.906
+    2    Grass         4.250        5.449
+   10     Spar         1.667        2.137
+    8    Gerre         1.583        2.030
+    5     Clup         1.583        2.030
+    7  Tetraod         0.000        0.000
+    4    Ofish         0.000        0.000
+    9    Lutja         0.000        0.000
+    6    Poeci         0.000        0.000
+   14    Cichl         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         6.286        8.059
+    2   Std Dev         8.544       10.954
+    3       Sum        88.000      112.821
+    4  Variance        72.996      119.980
+    5       SSQ      1575.083     2588.894
+    6     MCSSQ      1021.940     1679.718
+    7  Euc Norm        39.687       50.881
+    8   Minimum         0.000        0.000
+    9   Maximum        25.500       32.692
+   10  N of Obs        14.000       14.000
+
+Network Centralization Index = 26.53%
+
+Output actor-by-centrality measure matrix saved as dataset 131SeagrassMangroveTerminos fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  08 j�n. 16 14:28:07
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

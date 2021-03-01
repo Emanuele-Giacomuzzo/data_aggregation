@@ -1,0 +1,59 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          52 Iceland's fisheries fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\52 Iceland's fisheries fullmatrix_loopless)
+Output dataset:                         52 Iceland's fisheries fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\52 Iceland's fisheries fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 2,0108894728115
+  Number of symmetric pairs: 83
+  Percentage of symmetric pairs: 43.68%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                      1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20 
+                 MarMam    Bird    Acod    Jcod    Hadd  Saithe RedFish GreenHa OFlatFi OdemFis    Herr    Cape    Opel    Neph NorthSh   Mollu   Benth    Nekt   Zoopl   Phyto 
+                                                                              l      sh       h                                      ri                                         
+                ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+    1    MarMam       0       0   0,175   0,087   0,070   0,026   0,087       0   0,087   0,436       0   1,047   0,175       0   0,087       0   0,515   1,571   4,363       0 
+    2      Bird       0       0       0       0       0       0       0       0       0       0   0,003   0,230   0,008       0       0       0   0,248   0,024   0,046       0 
+    3      Acod   0,175       0       0   0,161   0,020   0,052   0,210   0,020   0,109   0,081   0,020   1,088   0,210       0   0,447       0   0,443   0,343   0,826       0 
+    4      Jcod   0,087       0   0,161       0       0   0,001   0,048   0,016   0,031   0,100       0       0       0       0   0,621       0   1,698   0,290   1,118   0,414 
+    5      Hadd   0,070       0   0,020       0       0   0,007   0,002       0   0,005       0       0   0,076       0       0   0,027       0   0,404   0,010   0,236       0 
+    6    Saithe   0,026       0   0,052   0,001   0,007       0   0,007       0   0,001       0   0,001   0,204   0,001       0       0       0   0,056   0,183   0,242       0 
+    7   RedFish   0,087       0   0,210   0,048   0,002   0,007       0   0,021   0,184   0,080       0   0,288   0,192       0   0,125       0   1,440   0,384   7,122       0 
+    8  GreenHal       0       0   0,020   0,016       0       0   0,021       0       0       0       0   0,043   0,032       0   0,021       0   0,027   0,134   0,070       0 
+    9 OFlatFish   0,087       0   0,109   0,031   0,005   0,001   0,184       0       0       0       0   0,113       0       0   0,101       0   1,533   0,613   0,123       0 
+   10  OdemFish   0,436       0   0,081   0,100       0       0   0,080       0       0       0       0   0,149       0       0   0,132   0,120   1,839   0,803   0,161       0 
+   11      Herr       0   0,003   0,020       0       0   0,001       0       0       0       0       0       0       0       0       0       0       0   0,462   3,590   0,399 
+   12      Cape   1,047   0,230   1,088       0   0,076   0,204   0,288   0,043   0,113   0,149       0       0       0       0       0       0       0   0,031  16,960   1,884 
+   13      Opel   0,175   0,008   0,210       0       0   0,001   0,192   0,032       0       0       0       0       0       0       0       0       0   3,082  24,231   6,058 
+   14      Neph       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0   0,008       0   0,013   0,001 
+   15 NorthShri   0,087       0   0,447   0,621   0,027       0   0,125   0,021   0,101   0,132       0       0       0       0       0       0   3,032       0   5,558   0,505 
+   16     Mollu       0       0       0       0       0       0       0       0       0   0,120       0       0       0       0       0       0   1,552   0,665   1,330       0 
+   17     Benth   0,515   0,248   0,443   1,698   0,404   0,056   1,440   0,027   1,533   1,839       0       0       0   0,008   3,032   1,552       0   1,048       0  32,571 
+   18      Nekt   1,571   0,024   0,343   0,290   0,010   0,183   0,384   0,134   0,613   0,803   0,462   0,031   3,082       0       0   0,665   1,048       0  26,194       0 
+   19     Zoopl   4,363   0,046   0,826   1,118   0,236   0,242   7,122   0,070   0,123   0,161   3,590  16,960  24,231   0,013   5,558   1,330       0  26,194       0     600 
+   20     Phyto       0       0       0   0,414       0       0       0       0       0       0   0,399   1,884   6,058   0,001   0,505       0  32,571       0     600       0 
+
+20 rows, 20 columns, 1 levels.
+
+Density of the symmetrized matrix: 4,02177894562299
+Correlation with un-symmetrized matrix: 0,705601466330841
+
+Symmetrized matrix saved as dataset     52 Iceland's fisheries fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\52 Iceland's fisheries fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  05 jan. 18 12:26:20
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

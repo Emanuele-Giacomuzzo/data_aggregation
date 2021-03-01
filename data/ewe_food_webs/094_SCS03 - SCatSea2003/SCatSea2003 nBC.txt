@@ -1,0 +1,79 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          SCatSea2003 fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\SCatSea2003 fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 1784.088
+
+                                  1            2
+                        Betweenness nBetweenness
+                       ------------ ------------
+   10        BenthInv        64.502       10.841
+   21      DemFishOne        59.854       10.060
+   27            Sard        44.864        7.540
+    7            Shri        39.774        6.685
+   12  BenthPelaCepha        36.968        6.213
+    2  MicroMesoZoopl        30.861        5.187
+    3      MacroZoopl        29.180        4.904
+   23    DemFishThree        25.281        4.249
+   25   BenthPelaFish        23.900        4.017
+    8            Crab        22.499        3.781
+   28      OSPelaFish        18.918        3.180
+    6          Polych        18.422        3.096
+   26            Anch        13.281        2.232
+   29         HorMack        12.006        2.018
+   20        BlueWhit        11.574        1.945
+    5        SupBenth        10.734        1.804
+   11      BenthCepha        10.524        1.769
+   19           Ahake        10.427        1.752
+   18           Jhake        10.274        1.727
+   17         PoorCod         8.988        1.511
+   30            Mack         8.762        1.473
+    1           Phyto         3.787        0.637
+   24          DemSha         3.577        0.601
+   15         AngFish         3.560        0.598
+   31         AtlBoni         3.095        0.520
+   32   SwordFishTuna         2.659        0.447
+   16        FlatFish         2.274        0.382
+   35           Dolph         1.946        0.327
+   14         CongEel         1.561        0.262
+   13            Mull         1.341        0.225
+    9         NorLobs         1.071        0.180
+    4           Jelly         0.666        0.112
+   36        FinWhale         0.458        0.077
+   22      DemFishTwo         0.411        0.069
+   33       LogTurtle         0.000        0.000
+   34         AudGull         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        14.944        2.512
+    2   Std Dev        16.672        2.802
+    3       Sum       538.000       90.420
+    4  Variance       277.944        7.851
+    5       SSQ     18046.102      509.741
+    6     MCSSQ     10005.991      282.635
+    7  Euc Norm       134.336       22.577
+    8   Minimum         0.000        0.000
+    9   Maximum        64.502       10.841
+   10  N of Obs        36.000       36.000
+
+Network Centralization Index = 8.57%
+
+Output actor-by-centrality measure matrix saved as dataset SCatSea2003 fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  11 dec. 16 22:23:00
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

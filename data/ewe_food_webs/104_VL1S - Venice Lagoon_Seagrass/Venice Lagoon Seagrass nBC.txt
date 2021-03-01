@@ -1,0 +1,67 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          Venice Lagoon Seagrass fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\Venice Lagoon Seagrass fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 792.023
+
+                                         1            2
+                               Betweenness nBetweenness
+                              ------------ ------------
+   14   MacroBenthOmnMixFeed        43.876       17.342
+    7                  Zoopl        39.860       15.755
+   18               AtherBoy        36.322       14.357
+   10      MacroBenthHerbDet        30.439       12.031
+    9          MacroBenthDet        14.384        5.685
+   19                 ZosOph        13.837        5.469
+   23                ADicLab        13.410        5.300
+   11  MacroBenthOmnFiltFeed        12.568        4.968
+   15          MacroBenthOmn        12.033        4.756
+    8         MicroMeioBenth         8.800        3.478
+   22               ASparAur         7.628        3.015
+   12                 JTPhil         5.569        2.201
+   20          NektCarnBenth         4.731        1.870
+   21               JSparAur         3.891        1.538
+   17                  AMugi         3.217        1.271
+   13               TPhilCom         2.556        1.010
+   16                  JMugi         2.521        0.997
+    4                  Epiph         2.201        0.870
+   24                   Bird         1.158        0.458
+    5                  Phyto         0.600        0.237
+    6                 Bacipl         0.600        0.237
+    1                 UlvRig         0.400        0.158
+    3              MacroAlga         0.400        0.158
+    2                  Grass         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        10.875        4.298
+    2   Std Dev        12.969        5.126
+    3       Sum       261.000      103.162
+    4  Variance       168.207       26.279
+    5       SSQ      6875.340     1074.121
+    6     MCSSQ      4036.965      630.687
+    7  Euc Norm        82.918       32.774
+    8   Minimum         0.000        0.000
+    9   Maximum        43.876       17.342
+   10  N of Obs        24.000       24.000
+
+Network Centralization Index = 13.61%
+
+Output actor-by-centrality measure matrix saved as dataset Venice Lagoon Seagrass fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  11 dec. 16 22:41:33
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

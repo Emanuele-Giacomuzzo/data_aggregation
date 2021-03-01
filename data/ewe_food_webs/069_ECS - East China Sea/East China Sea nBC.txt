@@ -1,0 +1,85 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          East China Sea fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\East China Sea fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 3346.427
+
+                              1            2
+                    Betweenness nBetweenness
+                   ------------ ------------
+   40       Zoopl        95.010       11.587
+   27    SDemFish        65.350        7.970
+    8   TriLepTwo        56.426        6.881
+   26        Shri        50.695        6.182
+   36  MacroBenth        43.073        5.253
+   22       Cepha        41.033        5.004
+   42       Phyto        37.145        4.530
+   29        Crab        28.807        3.513
+   30      EngJap        28.637        3.492
+   39  MicroBenth        22.423        2.735
+   31  ScomberJap        19.563        2.386
+    5      SerLal        15.941        1.944
+    9     ScoNiph        12.347        1.506
+    1     MarMamm        11.720        1.429
+    3     LophLit         9.737        1.187
+   32      TraJap         9.419        1.149
+   19        Spar         8.390        1.023
+   33     DecaMar         7.648        0.933
+   21      Ljelly         7.350        0.896
+   13        Tham         7.137        0.870
+    6        Saur         6.874        0.838
+   35      SetTat         6.619        0.807
+   34   SPelaFish         5.288        0.645
+   18      PriMac         5.139        0.627
+   23     LarPoly         4.944        0.603
+   17    ChampCap         4.798        0.585
+   41     HetBaci         3.962        0.483
+   28       Strom         3.780        0.461
+   12      AciSin         3.679        0.449
+   11        Bird         3.635        0.443
+   15      PenArg         3.502        0.427
+   25    Argentin         3.439        0.419
+   38   TriLepOne         2.904        0.354
+   14      HarNeh         2.203        0.269
+    7        Bran         1.999        0.244
+   16     Pleuron         1.281        0.156
+    2      ShaRay         1.193        0.145
+   37        Sard         0.568        0.069
+   24   LarCroOne         0.244        0.030
+   10      NibAlb         0.098        0.012
+   20      Coilia         0.000        0.000
+    4       Sphyr         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        15.333        1.870
+    2   Std Dev        20.637        2.517
+    3       Sum       644.000       78.537
+    4  Variance       425.873        6.334
+    5       SSQ     27761.352      412.870
+    6     MCSSQ     17886.686      266.013
+    7  Euc Norm       166.617       20.319
+    8   Minimum         0.000        0.000
+    9   Maximum        95.010       11.587
+   10  N of Obs        42.000       42.000
+
+Network Centralization Index = 9.95%
+
+Output actor-by-centrality measure matrix saved as dataset East China Sea fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  08 dec. 16 00:00:27
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

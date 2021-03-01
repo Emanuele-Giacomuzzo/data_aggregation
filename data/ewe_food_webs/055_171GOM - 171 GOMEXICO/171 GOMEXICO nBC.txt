@@ -1,0 +1,57 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          171 GOMEXICO fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\171 GOMEXICO fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 132.933
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+    4    DemFish        14.210       18.217
+   11        Sha        13.155       16.865
+    3   PelaFish        12.767       16.368
+    5   CrabShri         9.857       12.637
+    1      Zoopl         7.688        9.857
+    8       Mack         3.969        5.089
+   12      Dolph         1.688        2.164
+    6   PelaPred         1.083        1.389
+    7    DemPred         0.917        1.175
+   10   BillFish         0.667        0.855
+    2      Benth         0.000        0.000
+    9       Tuna         0.000        0.000
+   13      Phyto         0.000        0.000
+   14  BenthProd         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         4.714        6.044
+    2   Std Dev         5.373        6.888
+    3       Sum        66.000       84.615
+    4  Variance        28.867       47.447
+    5       SSQ       715.278     1175.670
+    6     MCSSQ       404.135      664.258
+    7  Euc Norm        26.745       34.288
+    8   Minimum         0.000        0.000
+    9   Maximum        14.210       18.217
+   10  N of Obs        14.000       14.000
+
+Network Centralization Index = 13.11%
+
+Output actor-by-centrality measure matrix saved as dataset 171 GOMEXICO fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  16 j�n. 16 13:57:21
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

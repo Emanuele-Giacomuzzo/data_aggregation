@@ -1,0 +1,58 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          123 VENEZUELA fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\123 VENEZUELA fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 105.006
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+   12      Zoopl        10.000       10.989
+   13   HetBenth         9.438       10.372
+   11      Spela         8.688        9.548
+    2   ScomBarr         4.734        5.202
+    3  SnapGroup         3.417        3.755
+    7       Odem         3.146        3.457
+    8    CatFish         1.803        1.982
+    1       Ssha         1.467        1.612
+    9        Gru         0.837        0.919
+    4     Carang         0.470        0.516
+   10      Croak         0.345        0.379
+    6      Squid         0.327        0.359
+    5       Mack         0.236        0.259
+   14      Phyto         0.091        0.100
+   15  BenthProd         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         3.000        3.297
+    2   Std Dev         3.466        3.809
+    3       Sum        45.000       49.451
+    4  Variance        12.012       14.506
+    5       SSQ       315.181      380.607
+    6     MCSSQ       180.181      217.584
+    7  Euc Norm        17.753       19.509
+    8   Minimum         0.000        0.000
+    9   Maximum        10.000       10.989
+   10  N of Obs        15.000       15.000
+
+Network Centralization Index = 8.24%
+
+Output actor-by-centrality measure matrix saved as dataset 123 VENEZUELA fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  07 j�n. 16 10:01:59
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

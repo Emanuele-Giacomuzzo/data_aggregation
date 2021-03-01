@@ -1,0 +1,17 @@
+DL
+N=5
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+              "Mull"               "Ins"              14,884
+              "Mull"              "Amph"               7,536
+            "Dipsar"               "Ins"               6,617
+            "Dipsar"              "Amph"               0,355
+            "Dicpun"               "Ins"               3,415
+            "Dicpun"              "Amph"               0,073
+               "Ins"              "Mull"              14,884
+               "Ins"            "Dipsar"               6,617
+               "Ins"            "Dicpun"               3,415
+              "Amph"              "Mull"               7,536
+              "Amph"            "Dipsar"               0,355
+              "Amph"            "Dicpun"               0,073

@@ -1,0 +1,73 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          CAPE VERDE fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\CAPE VERDE fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 992.397
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+   28      Zoopl        41.413       10.200
+   23       Crus        34.729        8.554
+   15    DemFish        32.708        8.056
+   25  MolluWorm        31.188        7.682
+   26   HetBenth        14.012        3.451
+   12    Dempred        11.295        2.782
+    9    PelaSha        10.474        2.580
+    4      Ltuna         9.828        2.421
+   19       Spar         6.882        1.695
+   24     Echino         5.959        1.468
+    5   PelaPred         5.662        1.394
+    6      Stuna         5.435        1.339
+   14   ODemFish         5.293        1.304
+   11     DemSha         5.282        1.301
+    1       Bird         4.959        1.221
+    2       Mamm         4.662        1.148
+    7       Jack         4.210        1.037
+   18   ReefFeed         3.984        0.981
+   17      Spela         3.607        0.888
+   21       Herb         2.375        0.585
+   30  BenthAuto         1.912        0.471
+    8     MorEel         0.826        0.203
+   22     Turtle         0.679        0.167
+   10   BathyDem         0.671        0.165
+   20    FlyFish         0.602        0.148
+   27   MicroFau         0.468        0.115
+    3   BillFish         0.445        0.109
+   13        Ray         0.442        0.109
+   29      Phyto         0.000        0.000
+   16   FlatFish         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         8.333        2.053
+    2   Std Dev        11.129        2.741
+    3       Sum       250.000       61.576
+    4  Variance       123.857        7.514
+    5       SSQ      5799.055      351.808
+    6     MCSSQ      3715.721      225.419
+    7  Euc Norm        76.152       18.757
+    8   Minimum         0.000        0.000
+    9   Maximum        41.413       10.200
+   10  N of Obs        30.000       30.000
+
+Network Centralization Index = 8.43%
+
+Output actor-by-centrality measure matrix saved as dataset CAPE VERDE fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  26 j�l. 16 00:02:09
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

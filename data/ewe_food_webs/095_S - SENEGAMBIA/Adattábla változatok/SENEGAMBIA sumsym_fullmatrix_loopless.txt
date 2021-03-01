@@ -1,0 +1,55 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          SENEGAMBIA fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\SENEGAMBIA fullmatrix_loopless)
+Output dataset:                         SENEGAMBIA fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\SENEGAMBIA fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 26,7105332781405
+  Number of symmetric pairs: 67
+  Percentage of symmetric pairs: 55.83%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                        1        2        3        4        5        6        7        8        9       10       11       12       13       14       15       16 
+                   OisMar  MarMamm  ThonLar  ThonCot      Req      Ray    Cepha   DemCot SardRond SardPlat AutrPela    Zoopl MeioBent MacroBen BenthPro    Phyto 
+                                                                                                                                    h       th        d          
+                 -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- -------- 
+    1     OisMar        0        0        0        0        0        0        0        0    4,177    4,177    4,177        0        0        0        0        0 
+    2    MarMamm        0        0        0        0        0        0    0,067    0,034    0,067    0,135    0,067    0,236        0        0        0        0 
+    3    ThonLar        0        0        0        0    0,071        0    0,606        0    0,606    1,211    1,817    7,268        0        0        0        0 
+    4    ThonCot        0        0        0        0        0        0    0,686        0    2,746    5,491    2,746   15,100        0        0        0        0 
+    5        Req        0        0    0,071        0        0        0        0    0,071    0,089    0,107    0,071    0,303        0        0        0        0 
+    6        Ray        0        0        0        0        0        0        0    0,094        0        0        0        0    0,057    0,252    0,269        0 
+    7      Cepha        0    0,067    0,606    0,686        0        0        0    0,471    0,382    0,763    0,636    7,287        0    3,179        0        0 
+    8     DemCot        0    0,034        0        0    0,071    0,094    0,471        0    0,028    0,028    0,141    3,945    0,704    2,818   10,566    4,367 
+    9   SardRond    4,177    0,067    0,606    2,746    0,089        0    0,382    0,028        0        0        0  138,879        0        0        0   34,720 
+   10   SardPlat    4,177    0,135    1,211    5,491    0,107        0    0,763    0,028        0        0        0  141,113        0        0        0   47,038 
+   11   AutrPela    4,177    0,067    1,817    2,746    0,071        0    0,636    0,141        0        0        0  111,591        0        0        0   27,898 
+   12      Zoopl        0    0,236    7,268   15,100    0,303        0    7,287    3,945  138,879  141,113  111,591        0        0        0        0 5670,876 
+   13  MeioBenth        0        0        0        0        0    0,057        0    0,704        0        0        0        0        0   74,400   29,400        0 
+   14 MacroBenth        0        0        0        0        0    0,252    3,179    2,818        0        0        0        0   74,400        0   46,500        0 
+   15  BenthProd        0        0        0        0        0    0,269        0   10,566        0        0        0        0   29,400   46,500        0        0 
+   16      Phyto        0        0        0        0        0        0        0    4,367   34,720   47,038   27,898 5670,876        0        0        0        0 
+
+16 rows, 16 columns, 1 levels.
+
+Density of the symmetrized matrix: 53,4210665562811
+Correlation with un-symmetrized matrix: 0,7052155309442
+
+Symmetrized matrix saved as dataset     SENEGAMBIA fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\SENEGAMBIA fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  11 jan. 18 10:47:08
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

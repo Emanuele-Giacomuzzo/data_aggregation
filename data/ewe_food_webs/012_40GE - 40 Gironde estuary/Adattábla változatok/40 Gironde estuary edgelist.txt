@@ -1,0 +1,54 @@
+DL
+N=16
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+          "ProdPrim"             "Copep"           16746,730
+          "ProdPrim"               "PFV"            8352,460
+          "ProdPrim"         "MeioBenth"             844,452
+          "ProdPrim"        "MacroBenth"           10959,440
+          "ProdPrim"              "Crev"             300,692
+          "ProdPrim"               "Mul"              51,116
+             "Copep"               "PFV"           15120,370
+             "Copep"            "PetPel"             102,237
+             "Copep"              "Syng"              11,172
+             "Copep"               "Gob"             205,980
+               "PFV"             "Estur"               0,434
+               "PFV"               "Ang"               0,122
+               "PFV"            "PetPel"               6,057
+               "PFV"               "GPM"               7,485
+               "PFV"               "Gob"             148,035
+               "PFV"             "PeauD"               0,010
+         "MeioBenth"        "MacroBenth"             405,023
+         "MeioBenth"            "PetPel"               1,090
+         "MeioBenth"               "Mul"              62,953
+         "MeioBenth"              "Syng"               4,410
+        "MacroBenth"              "Crev"             153,933
+        "MacroBenth"             "Estur"               2,619
+        "MacroBenth"               "Ang"               3,673
+        "MacroBenth"            "PetPel"               6,541
+        "MacroBenth"               "GPM"               0,766
+        "MacroBenth"            "GraPel"               0,012
+        "MacroBenth"            "PoiPla"              24,361
+        "MacroBenth"             "PeauD"               0,700
+              "Crev"             "Estur"               0,195
+              "Crev"               "Ang"               7,917
+              "Crev"            "PetPel"               1,090
+              "Crev"               "GPM"              28,069
+              "Crev"            "GraPel"               0,001
+              "Crev"            "PoiPla"               4,890
+              "Crev"               "Gob"              34,683
+              "Crev"             "PeauD"               0,156
+            "PetPel"               "Ang"               0,136
+            "PetPel"               "GPM"               7,740
+            "PetPel"             "PeauD"               0,010
+               "Mul"               "GPM"               4,253
+            "PoiPla"               "Ang"               0,694
+            "PoiPla"               "GPM"               7,825
+               "Gob"             "Estur"               0,168
+               "Gob"               "Ang"               0,721
+               "Gob"               "GPM"              26,367
+               "Gob"            "GraPel"               0,001
+               "Gob"            "PoiPla"               0,268
+               "Gob"             "PeauD"               0,028
+             "PeauD"               "Ang"               0,095

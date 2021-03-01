@@ -1,0 +1,63 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          52 Iceland's fisheries fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\52 Iceland's fisheries fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 353.992
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+   19      Zoopl        21.850       12.778
+   17      Benth        15.336        8.968
+   18       Nekt        10.670        6.240
+    3       Acod         5.489        3.210
+   12       Cape         4.500        2.631
+   20      Phyto         4.130        2.415
+    6     Saithe         2.796        1.635
+    7    RedFish         2.756        1.612
+    4       Jcod         2.390        1.398
+   13       Opel         2.346        1.372
+   15  NorthShri         2.211        1.293
+   10   OdemFish         2.135        1.249
+    1     MarMam         2.127        1.244
+   11       Herr         1.010        0.590
+    8   GreenHal         0.996        0.583
+    2       Bird         0.927        0.542
+    9  OFlatFish         0.705        0.412
+    5       Hadd         0.494        0.289
+   14       Neph         0.067        0.039
+   16      Mollu         0.067        0.039
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         4.150        2.427
+    2   Std Dev         5.448        3.186
+    3       Sum        83.000       48.538
+    4  Variance        29.682       10.151
+    5       SSQ       938.092      320.814
+    6     MCSSQ       593.642      203.017
+    7  Euc Norm        30.628       17.911
+    8   Minimum         0.067        0.039
+    9   Maximum        21.850       12.778
+   10  N of Obs        20.000       20.000
+
+Network Centralization Index = 10.90%
+
+Output actor-by-centrality measure matrix saved as dataset 52 Iceland's fisheries fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  18 �pr. 16 15:30:25
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

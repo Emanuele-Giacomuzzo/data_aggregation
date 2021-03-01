@@ -1,0 +1,23 @@
+DL
+N=9
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+              "PlaF"              "Bird"               0,002
+              "PlaF"              "PisF"               0,182
+              "PlaF"             "BentF"               0,135
+            "BeDepF"              "Bird"               0,009
+            "BeDepF"              "PisF"               0,115
+            "BeDepF"              "PlaF"               0,016
+            "BeDepF"             "BentF"               0,034
+           "BeSuspF"              "Bird"               0,009
+           "BeSuspF"             "BentF"               0,299
+           "MacroZP"             "BentF"               0,062
+            "MesoZP"              "PlaF"               1,584
+            "MesoZP"             "BentF"               0,034
+            "MesoZP"           "BeSuspF"               0,421
+            "MesoZP"           "MacroZP"               0,296
+             "Phyto"            "BeDepF"              13,228
+             "Phyto"           "BeSuspF"              37,073
+             "Phyto"           "MacroZP"               0,131
+             "Phyto"            "MesoZP"              36,448

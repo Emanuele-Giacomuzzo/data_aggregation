@@ -1,0 +1,41 @@
+DL
+N=15
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+          "Sprphyto"        "Microzoopl"              64,000
+          "Sprphyto"             "Mysid"              13,517
+          "Sprphyto"            "Macrof"             672,277
+            "Ophyto"        "Microzoopl"              96,000
+            "Ophyto"         "Mesozoopl"             900,000
+            "Ophyto"             "Mysid"              20,275
+              "Baci"        "Microzoopl"             600,000
+        "Microzoopl"         "Mesozoopl"             300,000
+         "Mesozoopl"             "Mysid"              33,792
+         "Mesozoopl"            "Jsprat"              60,829
+         "Mesozoopl"             "Jherr"              62,488
+         "Mesozoopl"             "Sprat"              49,183
+         "Mesozoopl"              "Herr"              45,914
+             "Mysid"             "Jherr"               4,860
+             "Mysid"              "Herr"               5,277
+             "Meiof"            "Macrof"              27,123
+            "Macrof"             "Jherr"               2,083
+            "Macrof"              "Jcod"               1,797
+            "Macrof"              "Herr"               1,583
+            "Macrof"              "Acod"               0,320
+            "Jsprat"              "Jcod"               0,515
+            "Jsprat"             "Sprat"               0,044
+            "Jsprat"              "Acod"               0,149
+            "Jsprat"              "Seal"               0,001
+             "Jherr"              "Jcod"               0,872
+             "Jherr"              "Acod"               0,432
+             "Jherr"              "Seal"               0,001
+              "Jcod"            "Jsprat"               0,006
+              "Jcod"             "Sprat"               0,005
+              "Jcod"              "Acod"               0,201
+             "Sprat"              "Jcod"               0,523
+             "Sprat"              "Acod"               0,242
+             "Sprat"              "Seal"               0,001
+              "Herr"              "Jcod"               0,087
+              "Herr"              "Acod"               0,115
+              "Herr"              "Seal"               0,001

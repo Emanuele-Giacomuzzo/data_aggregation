@@ -1,0 +1,81 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          Gulf of Thailand fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\Gulf of Thailand fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 3882.029
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+   33      Zoopl       117.790       17.686
+   32      Benth        99.243       14.901
+   28       Tuna        60.173        9.035
+   19       Shri        52.846        7.935
+   18      Cepha        37.318        5.603
+   16        Ray        36.000        5.405
+    7      Lpisc        26.710        4.010
+   21    TraFish        18.423        2.766
+    8      Scian        17.084        2.565
+   23    DemPisc        13.184        1.980
+   22       Sdem        12.699        1.907
+   24   DemBenth        11.806        1.773
+    3      Caran        11.754        1.765
+   17        Sha        10.052        1.509
+   29   SergShri         7.622        1.144
+   10      Lutja         6.042        0.907
+    5      Spela         5.486        0.824
+    1       Rast         4.891        0.734
+   15        Ari         4.601        0.691
+   31   PonyFish         4.231        0.635
+   25  ShellFish         3.971        0.596
+    4       Pomf         3.940        0.592
+   38      Phyto         3.534        0.531
+   11     Plecto         3.498        0.525
+    6    FalTrev         3.479        0.522
+    2    Scomber         3.346        0.502
+    9       Saur         3.134        0.471
+   30       Mamm         2.350        0.353
+   14       Nemi         2.210        0.332
+   34      Jpela         1.855        0.278
+   35    Jcaranx         1.105        0.166
+   12       Pria         1.033        0.155
+   13      Silla         1.016        0.153
+   36      Jsaur         0.688        0.103
+   37      Jnemi         0.688        0.103
+   20   CrabLobs         0.200        0.030
+   26      Jelly         0.000        0.000
+   27       Cucu         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        15.632        2.347
+    2   Std Dev        26.104        3.920
+    3       Sum       594.000       89.189
+    4  Variance       681.418       15.363
+    5       SSQ     35179.035      793.114
+    6     MCSSQ     25893.879      583.779
+    7  Euc Norm       187.561       28.162
+    8   Minimum         0.000        0.000
+    9   Maximum       117.790       17.686
+   10  N of Obs        38.000       38.000
+
+Network Centralization Index = 15.75%
+
+Output actor-by-centrality measure matrix saved as dataset Gulf of Thailand fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  26 j�l. 16 01:02:26
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

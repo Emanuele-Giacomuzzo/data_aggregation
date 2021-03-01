@@ -1,0 +1,71 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          77 Alto Golfo de California fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\77 Alto Golfo de California fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 518.006
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+   16   OtroPec        24.893        7.092
+    8     Sciae        14.013        3.992
+   25     InFau        13.130        3.741
+   10    Serran        11.280        3.214
+   26     Zoopl        11.267        3.210
+   22     Haemu        10.764        3.067
+   21   Polique        10.682        3.043
+    5  BallDent         7.898        2.250
+   27    Fitopl         6.663        1.898
+   19     Cazul         6.029        1.718
+   23     Major         5.841        1.664
+    6     Merlu         5.561        1.584
+   15    PecPla         5.382        1.533
+   14     CDeRo         5.143        1.465
+    4    LobMar         4.993        1.423
+   17     Mycto         4.990        1.422
+    9     Rhino         4.459        1.270
+    3     Tibur         3.366        0.959
+    2      Vaqu         3.254        0.927
+    1     Totoa         3.073        0.876
+   24   Pelagic         2.930        0.835
+   11    Stomat         2.810        0.801
+   20    Cefalo         2.613        0.744
+    7   BallBar         1.791        0.510
+   12      Jaib         1.786        0.509
+   13     Manta         1.490        0.424
+   18     Ccafe         1.482        0.422
+   28  Macrofit         1.416        0.403
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         6.393        1.821
+    2   Std Dev         5.103        1.454
+    3       Sum       179.000       50.997
+    4  Variance        26.038        2.113
+    5       SSQ      1873.377      152.059
+    6     MCSSQ       729.056       59.176
+    7  Euc Norm        43.283       12.331
+    8   Minimum         1.416        0.403
+    9   Maximum        24.893        7.092
+   10  N of Obs        28.000       28.000
+
+Network Centralization Index = 5.47%
+
+Output actor-by-centrality measure matrix saved as dataset 77 Alto Golfo de California fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  10 m�j. 16 13:30:44
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

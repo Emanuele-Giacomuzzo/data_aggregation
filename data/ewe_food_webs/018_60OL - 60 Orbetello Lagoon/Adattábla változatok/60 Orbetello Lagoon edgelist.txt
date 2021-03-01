@@ -1,0 +1,26 @@
+DL
+N=11
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+            "Forage"             "Cormo"               1,974
+            "Forage"              "Bass"               6,020
+            "Forage"               "Eal"               4,297
+          "ZooBenth"              "Bass"               5,139
+          "ZooBenth"               "Eal"               9,310
+          "ZooBenth"             "Bream"              26,238
+          "ZooBenth"            "Forage"              85,420
+          "ZooBenth"             "Jmull"              26,590
+          "ZooBenth"              "Mull"              10,631
+             "Jmull"             "Cormo"               1,063
+             "Jmull"              "Bass"               3,524
+             "Jmull"               "Eal"               0,716
+             "Jmull"            "Forage"               0,327
+             "Zoopl"            "Forage"              75,130
+             "Zoopl"          "ZooBenth"             583,517
+             "Zoopl"             "Jmull"               6,331
+             "Phyto"          "ZooBenth"             436,946
+             "Phyto"             "Zoopl"            3324,888
+            "Pleust"          "ZooBenth"             583,517
+            "Pleust"             "Jmull"              51,913
+            "Pleust"              "Mull"              24,214

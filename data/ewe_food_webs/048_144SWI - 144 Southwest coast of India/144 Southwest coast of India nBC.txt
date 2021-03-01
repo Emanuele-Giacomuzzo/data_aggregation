@@ -1,0 +1,53 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          144 Southwest coast of India fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\144 Southwest coast of India fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 67.833
+
+                                 1            2
+                       Betweenness nBetweenness
+                      ------------ ------------
+    7         PlFeed         8.583       23.843
+    8          Zoopl         5.667       15.741
+    5   MesoPelaFeed         0.917        2.546
+    4        DemFeed         0.917        2.546
+   10            Det         0.667        1.852
+    2          Mpred         0.500        1.389
+    3  LzooBenthFeed         0.500        1.389
+    6       MollFeed         0.250        0.694
+    9          Phyto         0.000        0.000
+    1          Lpred         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         1.800        5.000
+    2   Std Dev         2.758        7.661
+    3       Sum        18.000       50.000
+    4  Variance         7.607       58.698
+    5       SSQ       108.472      836.977
+    6     MCSSQ        76.072      586.977
+    7  Euc Norm        10.415       28.931
+    8   Minimum         0.000        0.000
+    9   Maximum         8.583       23.843
+   10  N of Obs        10.000       10.000
+
+Network Centralization Index = 20.94%
+
+Output actor-by-centrality measure matrix saved as dataset 144 Southwest coast of India fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  14 j�n. 16 13:31:52
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

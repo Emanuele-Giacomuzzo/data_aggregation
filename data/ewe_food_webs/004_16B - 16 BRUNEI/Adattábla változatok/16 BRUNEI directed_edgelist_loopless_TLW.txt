@@ -1,0 +1,49 @@
+DL
+N=12
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+           "Intpred"             "Lpred"               0,183
+          "Sdemzoob"           "Intpred"               3,542
+          "Sdemzoob"             "Lpred"               0,623
+             "Lzoob"             "Lpred"               0,009
+          "Sdemzoop"           "Intpred"               0,017
+          "Sdemzoop"             "Lpred"               0,009
+          "Sdemzoop"          "Sdemzoob"               0,300
+              "Pela"           "Intpred"               0,178
+              "Pela"             "Lpred"               0,917
+              "Pela"          "Sdemzoob"               0,840
+             "Lcrus"           "Intpred"               0,204
+             "Lcrus"          "Sdemzoob"               0,360
+             "Lcrus"             "Lzoob"               0,008
+         "Smollworm"          "Sdemzoob"              15,593
+         "Smollworm"             "Lzoob"               0,110
+         "Smollworm"          "Sdemzoop"               0,089
+         "Smollworm"             "Lcrus"               1,826
+         "Smollworm"           "Hetbent"               3,128
+           "Hetbent"           "Intpred"               0,026
+           "Hetbent"             "Lpred"               0,092
+           "Hetbent"          "Sdemzoob"               9,236
+           "Hetbent"             "Lzoob"               0,099
+           "Hetbent"             "Lcrus"               1,388
+             "Scrus"           "Intpred"               0,187
+             "Scrus"          "Sdemzoob"              32,146
+             "Scrus"             "Lzoob"               0,429
+             "Scrus"          "Sdemzoop"               0,079
+             "Scrus"              "Pela"               0,403
+             "Scrus"             "Lcrus"               1,315
+             "Scrus"         "Smollworm"               5,532
+             "Scrus"           "Hetbent"               3,649
+             "Zoopl"          "Sdemzoob"               0,480
+             "Zoopl"          "Sdemzoop"               1,269
+             "Zoopl"              "Pela"               5,644
+             "Zoopl"             "Lcrus"               0,037
+             "Zoopl"         "Smollworm"              33,194
+             "Zoopl"           "Hetbent"               5,213
+             "Zoopl"             "Scrus"              34,532
+             "Phyto"              "Pela"               1,532
+             "Phyto"             "Lcrus"               0,073
+             "Phyto"         "Smollworm"              11,065
+             "Phyto"           "Hetbent"               5,213
+             "Phyto"             "Scrus"              11,511
+             "Phyto"             "Zoopl"             410,292

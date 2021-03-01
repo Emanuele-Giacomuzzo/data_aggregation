@@ -1,0 +1,34 @@
+DL
+N=17
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+          "EngraEnc"            "DicLab"               3,788
+             "Ather"            "DicLab"               0,142
+          "ChroChro"            "SciUmb"               0,792
+              "Mugi"            "DicLab"               0,142
+              "Mugi"            "SciUmb"               0,440
+            "Bivalv"               "Dip"               0,514
+            "Bivalv"            "SciUmb"               5,277
+            "Bivalv"           "SparAur"               0,310
+            "Polich"          "ChroChro"               1,310
+            "Polich"               "Dip"               9,661
+            "Polich"              "Mugi"               3,028
+            "Polich"            "SciUmb"               2,287
+            "Polich"           "SparAur"               0,124
+            "Polich"              "Deca"               1,391
+              "Deca"            "DicLab"               0,616
+              "Deca"           "SparAur"               0,083
+            "Echino"               "Dip"               0,103
+        "MicroZoopl"            "Bivalv"               3,719
+        "MicroZoopl"         "MesoZoopl"               2,232
+         "MesoZoopl"          "EngraEnc"               0,959
+         "MesoZoopl"             "Ather"               1,612
+         "MesoZoopl"          "ChroChro"               4,390
+         "MesoZoopl"            "Bivalv"               3,719
+             "Phyto"            "Bivalv"              13,760
+             "Phyto"        "MicroZoopl"              27,472
+             "Phyto"         "MesoZoopl"              42,410
+         "MacroAlga"              "Mugi"              13,628
+         "MacroAlga"            "SarSal"              12,096
+         "MacroAlga"              "Deca"               1,391

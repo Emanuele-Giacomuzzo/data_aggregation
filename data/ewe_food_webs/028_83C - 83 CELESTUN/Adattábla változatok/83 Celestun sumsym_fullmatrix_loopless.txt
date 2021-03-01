@@ -1,0 +1,54 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          83 Celestun fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\83 Celestun fullmatrix_loopless)
+Output dataset:                         83 Celestun fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\83 Celestun fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 5,13906189697307
+  Number of symmetric pairs: 48
+  Percentage of symmetric pairs: 45.71%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                      1       2       3       4       5       6       7       8       9      10      11      12      13      14      15 
+                  Lutja  Callin   Arius   Ortho EuciSto   Baird   Lagod   Penae PolyCha MeioBet   Mollu   Zoopl   Mugil   Phyto Benthpr 
+                                                                                      e       h                                      od 
+                ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+    1     Lutja       0       0       0   0,443       0   0,414   0,414       0   1,235   1,608       0   0,029       0       0       0 
+    2    Callin       0       0       0       0   0,162   0,162   0,162   0,324       0       0   2,108       0       0       0       0 
+    3     Arius       0       0       0   0,295   0,295   0,589       0       0   2,274   1,261   0,188   0,860   0,130       0       0 
+    4     Ortho   0,443       0   0,295       0   0,714       0       0       0   0,647   6,303   1,328   1,149   0,078       0       0 
+    5   EuciSto       0   0,162   0,295   0,714       0   0,107   0,409       0   0,516   9,663   0,462   2,786   0,082       0       0 
+    6     Baird   0,414   0,162   0,589       0   0,107       0   0,043   0,533       0   7,407   0,021   1,226   1,172       0   0,149 
+    7     Lagod   0,414   0,162       0       0   0,409   0,043       0       0   0,035   3,518   0,758   0,897   0,200       0   1,150 
+    8     Penae       0   0,324       0       0       0   0,533       0       0       0   1,350       0       0       0       0   2,025 
+    9  PolyChae   1,235       0   2,274   0,647   0,516       0   0,035       0       0   3,716       0       0       0       0   2,477 
+   10  MeioBeth   1,608       0   1,261   6,303   9,663   7,407   3,518   1,350   3,716       0  24,900  81,750       0       0     327 
+   11     Mollu       0   2,108   0,188   1,328   0,462   0,021   0,758       0       0  24,900       0       0       0  12,450  37,350 
+   12     Zoopl   0,029       0   0,860   1,149   2,786   1,226   0,897       0       0  81,750       0       0       0 283,500     243 
+   13     Mugil       0       0   0,130   0,078   0,082   1,172   0,200       0       0       0       0       0       0       0   5,379 
+   14     Phyto       0       0       0       0       0       0       0       0       0       0  12,450 283,500       0       0       0 
+   15 Benthprod       0       0       0       0       0   0,149   1,150   2,025   2,477     327  37,350     243   5,379       0       0 
+
+15 rows, 15 columns, 1 levels.
+
+Density of the symmetrized matrix: 10,2781237939461
+Correlation with un-symmetrized matrix: 0,699217788562396
+
+Symmetrized matrix saved as dataset     83 Celestun fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\83 Celestun fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  12 jan. 18 15:16:52
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

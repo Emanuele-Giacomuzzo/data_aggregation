@@ -1,0 +1,72 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          SGulfStLaurence80 fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\SGulfStLaurence80 fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 476.334
+
+                                  1            2
+                        Betweenness nBetweenness
+                       ------------ ------------
+   21            Shri        24.115        6.380
+   27          Lzoopl        21.336        5.644
+    8            SCod        21.320        5.640
+   20  PlankSPelaFeed        18.098        4.788
+   17            Cape        15.009        3.971
+   16        SDemFeed        14.533        3.845
+    7            LCod        14.229        3.764
+   12            Flou        10.700        2.831
+   15        LDemFeed         9.700        2.566
+   19   PiscSPelaFeed         8.930        2.363
+   10           SPlai         6.574        1.739
+   13           Skate         6.401        1.693
+   22           LCrus         5.602        1.482
+   11           LPlai         5.520        1.460
+   25          Polych         5.446        1.441
+   18       LPelaFeed         5.433        1.437
+   28          Szoopl         5.061        1.339
+    4        GreySeal         4.595        1.216
+   24           Mollu         3.469        0.918
+   26        BenthInv         3.463        0.916
+    2        HarpSeal         3.131        0.828
+    6            Bird         2.692        0.712
+    3        HoodSeal         1.566        0.414
+   14         RedFish         1.555        0.412
+    1             Cet         1.428        0.378
+   29           Phyto         0.981        0.260
+    5        HarbSeal         0.786        0.208
+    9        GreenHal         0.677        0.179
+   23          Echino         0.649        0.172
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         7.690        2.034
+    2   Std Dev         6.782        1.794
+    3       Sum       223.000       58.995
+    4  Variance        45.990        3.219
+    5       SSQ      3048.494      213.354
+    6     MCSSQ      1333.701       93.342
+    7  Euc Norm        55.213       14.607
+    8   Minimum         0.649        0.172
+    9   Maximum        24.115        6.380
+   10  N of Obs        29.000       29.000
+
+Network Centralization Index = 4.50%
+
+Output actor-by-centrality measure matrix saved as dataset SGulfStLaurence80 fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  26 j�l. 16 12:45:00
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

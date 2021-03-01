@@ -1,0 +1,66 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          174 WGMEXICO fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\174 WGMEXICO fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 340.244
+
+                             1            2
+                   Betweenness nBetweenness
+                  ------------ ------------
+   15       Shri        20.880        9.039
+   18  MicroCrus        15.686        6.791
+   21      Zoopl        13.656        5.912
+    6       Jack        12.533        5.426
+   17      Mollu         8.436        3.652
+   16       Crab         8.141        3.524
+    8      Trout         6.324        2.738
+    1       Herr         6.012        2.603
+    2       Anch         5.798        2.510
+    7      Mojar         5.200        2.251
+   19      Ofish         4.978        2.155
+    9        Gru         4.409        1.909
+   20       Anne         4.353        1.884
+   10        Sha         4.265        1.846
+   23  BenthProd         4.223        1.828
+    4   SpanMack         3.972        1.719
+   11   RedGroup         3.389        1.467
+   13    CatFish         3.166        1.371
+   12    RedSnap         2.188        0.947
+    5   KingMack         1.200        0.519
+    3    LizFish         0.812        0.352
+   14       Flou         0.236        0.102
+   22      Phyto         0.143        0.062
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         6.087        2.635
+    2   Std Dev         5.070        2.195
+    3       Sum       140.000       60.606
+    4  Variance        25.700        4.816
+    5       SSQ      1443.282      270.475
+    6     MCSSQ       591.108      110.775
+    7  Euc Norm        37.991       16.446
+    8   Minimum         0.143        0.062
+    9   Maximum        20.880        9.039
+   10  N of Obs        23.000       23.000
+
+Network Centralization Index = 6.70%
+
+Output actor-by-centrality measure matrix saved as dataset 174 WGMEXICO fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  16 j�n. 16 14:15:08
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

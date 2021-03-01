@@ -1,0 +1,47 @@
+DL
+N=9
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+               "Sha"            "ScoBri"               0,063
+               "Sha"             "Spela"               0,188
+               "Sha"           "DemFish"               0,031
+               "Sha"             "Zoopl"               0,003
+            "ScoBri"               "Sha"               0,063
+            "ScoBri"             "Spela"               1,650
+            "ScoBri"           "DemFish"               0,051
+            "ScoBri"             "Zoopl"               0,381
+            "ScoBri"             "Phyto"               0,051
+             "Spela"               "Sha"               0,188
+             "Spela"            "ScoBri"               1,650
+             "Spela"           "DemFish"               7,959
+             "Spela"             "Zoopl"              59,418
+             "Spela"             "Phyto"             417,374
+           "DemFish"               "Sha"               0,031
+           "DemFish"            "ScoBri"               0,051
+           "DemFish"             "Spela"               7,959
+           "DemFish"          "CrabShri"              25,470
+           "DemFish"          "HetBenth"               7,959
+           "DemFish"             "Zoopl"               0,531
+           "DemFish"         "BenthProd"               7,959
+          "CrabShri"           "DemFish"              25,470
+          "CrabShri"          "HetBenth"             100,538
+          "CrabShri"             "Zoopl"               2,681
+          "CrabShri"         "BenthProd"              20,108
+          "CrabShri"             "Phyto"               1,341
+          "HetBenth"           "DemFish"               7,959
+          "HetBenth"          "CrabShri"             100,538
+          "HetBenth"         "BenthProd"             594,984
+             "Zoopl"               "Sha"               0,003
+             "Zoopl"            "ScoBri"               0,381
+             "Zoopl"             "Spela"              59,418
+             "Zoopl"           "DemFish"               0,531
+             "Zoopl"          "CrabShri"               2,681
+             "Zoopl"             "Phyto"             583,191
+         "BenthProd"           "DemFish"               7,959
+         "BenthProd"          "CrabShri"              20,108
+         "BenthProd"          "HetBenth"             594,984
+             "Phyto"            "ScoBri"               0,051
+             "Phyto"             "Spela"             417,374
+             "Phyto"          "CrabShri"               1,341
+             "Phyto"             "Zoopl"             583,191

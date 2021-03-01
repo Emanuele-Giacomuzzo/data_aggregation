@@ -1,0 +1,57 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          180 CAMPECHE fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\180 CAMPECHE fullmatrix_loopless)
+Output dataset:                         180 CAMPECHE fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\180 CAMPECHE fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 2,09047383157189
+  Number of symmetric pairs: 71
+  Percentage of symmetric pairs: 46.41%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                      1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18 
+                  Copep    Worm   Mollu MicroCr    Deca   Ochry   Lrhom   Oogli   Hjagu   Arhom CatFish   Mojar   Hplum   Bchry   Aquad   Ofish   Phyto BenthPr 
+                                             us                                                                                                              od 
+                ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+    1     Copep       0       0  36,436       0       0       0       0   0,853       0       0       0   0,102       0       0       0   7,087 222,387  11,705 
+    2      Worm       0       0       0  38,625   4,083   1,961   0,484       0   1,703   0,036   0,372   0,123   1,123   0,041   0,117   1,890       0  39,915 
+    3     Mollu  36,436       0       0       0  14,292   2,092   2,323   0,187   0,060   0,855   0,031   0,033   0,221   0,073   0,274  14,174  63,763  45,545 
+    4 MicroCrus       0  38,625       0       0   4,083  10,589   2,389  10,794   3,707   0,762   0,120   0,878   1,088   0,217   0,032   7,087  57,938       0 
+    5      Deca       0   4,083  14,292   4,083       0   0,187   0,476   0,021   0,571   0,018   0,087   0,230   0,716   0,122   0,007   7,087       0       0 
+    6     Ochry       0   1,961   2,092  10,589   0,187       0       0       0       0       0       0       0       0       0       0   1,214       0   0,187 
+    7     Lrhom       0   0,484   2,323   2,389   0,476       0       0       0       0       0       0       0       0   0,100       0   0,821   0,123   1,240 
+    8     Oogli   0,853       0   0,187  10,794   0,021       0       0       0       0       0   0,013       0       0       0       0   2,329       0   4,534 
+    9     Hjagu       0   1,703   0,060   3,707   0,571       0       0       0       0       0   0,009   0,010       0       0       0   3,607       0   0,230 
+   10     Arhom       0   0,036   0,855   0,762   0,018       0       0       0       0       0       0       0       0       0       0       0       0   1,882 
+   11   CatFish       0   0,372   0,031   0,120   0,087       0       0   0,013   0,009       0       0   0,009       0       0       0   0,118       0   0,012 
+   12     Mojar   0,102   0,123   0,033   0,878   0,230       0       0       0   0,010       0   0,009       0       0   0,004       0   0,053       0   0,011 
+   13     Hplum       0   1,123   0,221   1,088   0,716       0       0       0       0       0       0       0       0       0       0   0,281       0   0,081 
+   14     Bchry       0   0,041   0,073   0,217   0,122       0   0,100       0       0       0       0   0,004       0       0       0   0,303       0       0 
+   15     Aquad       0   0,117   0,274   0,032   0,007       0       0       0       0       0       0       0       0       0       0   0,052       0   0,290 
+   16     Ofish   7,087   1,890  14,174   7,087   7,087   1,214   0,821   2,329   3,607       0   0,118   0,053   0,281   0,303   0,052       0       0       0 
+   17     Phyto 222,387       0  63,763  57,938       0       0   0,123       0       0       0       0       0       0       0       0       0       0       0 
+   18 BenthProd  11,705  39,915  45,545       0       0   0,187   1,240   4,534   0,230   1,882   0,012   0,011   0,081       0   0,290       0       0       0 
+
+18 rows, 18 columns, 1 levels.
+
+Density of the symmetrized matrix: 4,18094766314379
+Correlation with un-symmetrized matrix: 0,699571149051303
+
+Symmetrized matrix saved as dataset     180 CAMPECHE fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\180 CAMPECHE fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  12 jan. 18 14:30:16
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

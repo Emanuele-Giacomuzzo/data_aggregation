@@ -1,0 +1,69 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          Bay Calvi fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\Bay Calvi fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 568.887
+
+                                1            2
+                      Betweenness nBetweenness
+                     ------------ ------------
+   23          Deca        29.149        9.716
+   21          Crus        26.513        8.838
+   19      SuspFeed        21.509        7.170
+   26     MacroAlga        15.645        5.215
+   24        Polych        14.066        4.689
+   15         Zoopl        13.879        4.626
+   22          Amph         8.383        2.794
+   25        Gastro         6.515        2.172
+    5    InvFeedOne         5.969        1.990
+    3          Pisc         5.562        1.854
+    2          Bird         5.256        1.752
+    7  InvFeedThree         5.077        1.692
+   12        PlFish         4.853        1.618
+    4        Mcarni         4.852        1.617
+   20        Echino         4.488        1.496
+    6    InvFeedTwo         3.213        1.071
+   11      HerbFish         2.633        0.878
+    8         Dpunt         2.612        0.871
+   13         Mugil         2.459        0.820
+   10          Blen         1.957        0.652
+   18         Phyto         1.410        0.470
+   17         Proto         1.216        0.405
+   16       Macropl         0.883        0.294
+   14       PelBaci         0.367        0.122
+    1         Cepha         0.354        0.118
+    9   InvFeedFour         0.183        0.061
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean         7.269        2.423
+    2   Std Dev         7.881        2.627
+    3       Sum       189.000       63.000
+    4  Variance        62.118        6.902
+    5       SSQ      2988.944      332.105
+    6     MCSSQ      1615.060      179.451
+    7  Euc Norm        54.671       18.224
+    8   Minimum         0.183        0.061
+    9   Maximum        29.149        9.716
+   10  N of Obs        26.000       26.000
+
+Network Centralization Index = 7.59%
+
+Output actor-by-centrality measure matrix saved as dataset Bay Calvi fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  25 j�l. 16 23:33:45
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

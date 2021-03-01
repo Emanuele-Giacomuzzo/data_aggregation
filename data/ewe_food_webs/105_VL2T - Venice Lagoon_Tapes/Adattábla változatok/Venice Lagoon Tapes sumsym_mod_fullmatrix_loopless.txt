@@ -1,0 +1,65 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          Venice Lagoon Tapes mod_fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\Venice Lagoon Tapes mod_fullmatrix_loopless)
+Output dataset:                         Venice Lagoon Tapes mod_fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\Venice Lagoon Tapes mod_fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 8,7924529283065
+  Number of symmetric pairs: 224
+  Percentage of symmetric pairs: 74.67%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                                  1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18      19      20      21      22      23      24      25 
+                             UlvRig   Grass MacroAl   Epiph   Phyto  Bacipl   Zoopl MicroMe MacroBe MacroBe MacroBe  JTPhil TPhilCo MacroBe MacroBe   JMugi   AMugi AtherBo  ZosOph NektCar JSparAu ASparAu JDicLab ADicLab    Bird 
+                                                 ga                                 ioBenth  nthDet nthHerb nthOmnF               m nthOmnM  nthOmn                       y          nBenth       r       r                         
+                                                                                                        Det iltFeed                  ixFeed                                                                                         
+                            ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+    1                UlvRig       0       0       0       0       0       0       0       0       0   0,169       0       0       0 137,776       0       0       0       0       0       0       0       0       0   1,186       0 
+    2                 Grass       0       0       0       0       0       0       0       0       0   0,033       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 
+    3             MacroAlga       0       0       0       0       0       0       0       0       0   0,124       0       0       0 146,620       0       0   8,953       0       0       0       0       0       0       0       0 
+    4                 Epiph       0       0       0       0       0       0       0  99,022       0   0,183       0       0       0  68,266       0       0       0       0       0       0       0       0       0       0       0 
+    5                 Phyto       0       0       0       0       0       0 578,301       0       0       0 386,012 141,017 444,390       0       0       0       0       0       0       0       0       0       0       0       0 
+    6                Bacipl       0       0       0       0       0       0 847,122       0       0       0  50,227 151,148 482,382       0       0       0       0       0       0       0       0       0       0       0       0 
+    7                 Zoopl       0       0       0       0 578,301 847,122       0       0       0       0 189,016  36,349  46,051  61,633       0   0,705       0  35,662       0   1,346   0,154       0   0,001   1,087       0 
+    8        MicroMeioBenth       0       0       0  99,022       0       0       0       0 469,683       0       0       0       0 316,319  52,331       0  26,085  10,894   2,287  13,421   0,072       0       0       0       0 
+    9         MacroBenthDet       0       0       0       0       0       0       0 469,683       0       0       0       0       0 117,186  39,991   0,318  10,053  27,470  17,702   6,096   0,033   1,183       0       0       0 
+   10     MacroBenthHerbDet   0,169   0,033   0,124   0,183       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 
+   11 MacroBenthOmnFiltFeed       0       0       0       0 386,012  50,227 189,016       0       0       0       0       0       0  53,065   8,381       0       0       0   4,565   4,750       0   1,240       0       0       0 
+   12                JTPhil       0       0       0       0 141,017 151,148  36,349       0       0       0       0       0       0       0  40,791       0       0       0       0       0       0   1,527       0   0,172       0 
+   13              TPhilCom       0       0       0       0 444,390 482,382  46,051       0       0       0       0       0       0       0  33,673       0       0       0       0       0       0   1,221       0       0       0 
+   14  MacroBenthOmnMixFeed 137,776       0 146,620  68,266       0       0  61,633 316,319 117,186       0  53,065       0       0       0  31,820       0       0  15,535   9,341   5,510       0   0,600       0  18,593       0 
+   15         MacroBenthOmn       0       0       0       0       0       0       0  52,331  39,991       0   8,381  40,791  33,673  31,820       0       0       0   5,910       0   2,185       0       0       0       0       0 
+   16                 JMugi       0       0       0       0       0       0   0,705       0   0,318       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0   0,003 
+   17                 AMugi       0       0   8,953       0       0       0       0  26,085  10,053       0       0       0       0       0       0       0       0       0       0       0       0       0       0   0,045       0 
+   18              AtherBoy       0       0       0       0       0       0  35,662  10,894  27,470       0       0       0       0  15,535   5,910       0       0       0   4,116       0   0,036   0,018       0   1,834   0,305 
+   19                ZosOph       0       0       0       0       0       0       0   2,287  17,702       0   4,565       0       0   9,341       0       0       0   4,116       0   1,652       0   0,018       0   1,861       0 
+   20         NektCarnBenth       0       0       0       0       0       0   1,346  13,421   6,096       0   4,750       0       0   5,510   2,185       0       0       0   1,652       0       0   0,014       0   0,634       0 
+   21              JSparAur       0       0       0       0       0       0   0,154   0,072   0,033       0       0       0       0       0       0       0       0   0,036       0       0       0       0       0       0   0,003 
+   22              ASparAur       0       0       0       0       0       0       0       0   1,183       0   1,240   1,527   1,221   0,600       0       0       0   0,018   0,018   0,014       0       0       0       0       0 
+   23               JDicLab       0       0       0       0       0       0   0,001       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 
+   24               ADicLab   1,186       0       0       0       0       0   1,087       0       0       0       0   0,172       0  18,593       0       0   0,045   1,834   1,861   0,634       0       0       0       0       0 
+   25                  Bird       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0   0,003       0   0,305       0       0   0,003       0       0       0       0 
+
+25 rows, 25 columns, 1 levels.
+
+Density of the symmetrized matrix: 17,584905856613
+Correlation with un-symmetrized matrix: 0,699169609969657
+
+Symmetrized matrix saved as dataset     Venice Lagoon Tapes mod_fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\Venice Lagoon Tapes mod_fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  11 jan. 18 14:28:12
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

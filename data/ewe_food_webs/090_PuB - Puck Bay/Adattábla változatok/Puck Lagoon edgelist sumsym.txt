@@ -1,0 +1,55 @@
+DL
+N=11
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+              "Bird"              "PisF"               0,003
+              "Bird"              "PlaF"               0,039
+              "Bird"             "BentF"               0,041
+              "Bird"            "BeDepF"               0,097
+              "Bird"           "BeSuspF"               1,746
+              "Bird"      "PerMacrophyt"               0,349
+              "Bird"       "AnMacrophyt"               0,524
+              "PisF"              "Bird"               0,003
+              "PisF"              "PlaF"               0,371
+              "PisF"             "BentF"               0,058
+              "PisF"            "BeDepF"               0,064
+              "PisF"           "MacroZP"               0,037
+              "PlaF"              "Bird"               0,039
+              "PlaF"              "PisF"               0,371
+              "PlaF"           "MacroZP"               0,230
+              "PlaF"            "MesoZP"              17,222
+              "PlaF"       "AnMacrophyt"               5,511
+             "BentF"              "Bird"               0,041
+             "BentF"              "PisF"               0,058
+             "BentF"            "BeDepF"               9,834
+             "BentF"           "BeSuspF"               4,085
+             "BentF"           "MacroZP"               0,605
+             "BentF"       "AnMacrophyt"               0,605
+            "BeDepF"              "Bird"               0,097
+            "BeDepF"              "PisF"               0,064
+            "BeDepF"             "BentF"               9,834
+            "BeDepF"      "PerMacrophyt"               9,158
+            "BeDepF"       "AnMacrophyt"               9,158
+           "BeSuspF"              "Bird"               1,746
+           "BeSuspF"             "BentF"               4,085
+           "BeSuspF"            "MesoZP"              10,177
+           "BeSuspF"             "Phyto"              61,060
+           "MacroZP"              "PisF"               0,037
+           "MacroZP"              "PlaF"               0,230
+           "MacroZP"             "BentF"               0,605
+           "MacroZP"            "MesoZP"               2,400
+           "MacroZP"             "Phyto"               1,800
+            "MesoZP"              "PlaF"              17,222
+            "MesoZP"           "BeSuspF"              10,177
+            "MesoZP"           "MacroZP"               2,400
+            "MesoZP"             "Phyto"             104,174
+      "PerMacrophyt"              "Bird"               0,349
+      "PerMacrophyt"            "BeDepF"               9,158
+       "AnMacrophyt"              "Bird"               0,524
+       "AnMacrophyt"              "PlaF"               5,511
+       "AnMacrophyt"             "BentF"               0,605
+       "AnMacrophyt"            "BeDepF"               9,158
+             "Phyto"           "BeSuspF"              61,060
+             "Phyto"           "MacroZP"               1,800
+             "Phyto"            "MesoZP"             104,174

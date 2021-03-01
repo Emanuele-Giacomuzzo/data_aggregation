@@ -1,0 +1,16 @@
+dl
+n=11
+format=fullmatrix
+labels:	Bird	PisF	PlaF	BentF	BeDepF	BeSuspF	MacroZP	MesoZP	PerMacrophyt	AnMacrophyt	Phyto
+data:
+0	0	0	0	0	0	0	0	0	0	0
+1.913	0	0	0	0	0	0	0	0	0	0
+0.376	1.738	0	0	0	0	0	0	0	0	0
+0.376	2.691	0	0	0	0	0	0	0	0	0
+0	3.414	0	14.777	0	0	0	0	0	0	0
+0	0	0	0	0	0	0	0	0	0	0
+0	1.962	0.761	0	0	0	0	0	0	0	0
+0	0	14.46	0	0	1.105	4.8	0	0	0	0
+0	0	0	0.76	0	0	0	0	0	0	0
+0	0	0	0.756	0	0	0	0	0	0	0
+0	0	0	0	0	20.995	1.6	72	0	0	0

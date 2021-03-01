@@ -1,0 +1,57 @@
+﻿SYMMETRIZE
+--------------------------------------------------------------------------------
+
+Method:                                 Sum
+Input dataset:                          73 Sonda de Campeche fullmatrix_loopless (C:\MUNKA\H�l�zatelemz�s\UCINET data\73 Sonda de Campeche fullmatrix_loopless)
+Output dataset:                         73 Sonda de Campeche fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\73 Sonda de Campeche fullmatrix_loopless-sumsym)
+
+--------------------------------------------------------------------------------
+Matrix 1                                
+--------------------------------------------------------------------------------
+
+Prior to symmetrizing...                
+  Density of the input matrix: 2,03272871688477
+  Number of symmetric pairs: 52
+  Percentage of symmetric pairs: 33.99%
+  Calculated as the proportion of times x(i,j) = x(j,i)
+  Number of dyads with reciprocal ties: 0
+  Percentage with reciprocated ties: 0.00%
+  Calculated as |x->y AND x<-y|/|x->y OR x<-y|
+
+
+
+                     1       2       3       4       5       6       7       8       9      10      11      12      13      14      15      16      17      18 
+                  Herr    Jack    Mack FlatFis CatFish   Major    Snap   Croak   Group     Gru     Sha   Ofish   Squid    Shri  EpiFau   InFau   Zoopl   Phyto 
+                                             h                                                                                                                 
+               ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- ------- 
+    1     Herr       0   7,510   4,292       0   0,634       0   0,007   0,056   0,053       0   0,147   1,444   2,242   8,761   0,645       0  45,420       0 
+    2     Jack   7,510       0   0,245       0       0   0,381   0,003       0   0,298       0   0,013       0   0,214   0,136   0,422   1,197   3,115       0 
+    3     Mack   4,292   0,245       0       0   0,061   0,259       0       0   0,067       0   0,106       0   0,285   1,269   0,341   0,280   0,068       0 
+    4 FlatFish       0       0       0       0   0,062       0   0,028       0   0,019       0   0,011   0,080       0   1,404   0,085   5,674       0       0 
+    5  CatFish   0,634       0   0,061   0,062       0       0   0,011       0   0,017       0   0,037   0,042   0,042   1,736   0,462   2,013   0,062       0 
+    6    Major       0   0,381   0,259       0       0       0   0,011       0   0,334       0   0,052   0,042   0,780   4,413   0,426   1,215  11,385       0 
+    7     Snap   0,007   0,003       0   0,028   0,011   0,011       0   0,013   0,046   0,014   0,006   0,010   0,016   0,094   0,042   0,049       0       0 
+    8    Croak   0,056       0       0       0       0       0   0,013       0   0,076       0   0,005   0,169   0,042   0,417   0,417       1   0,930       0 
+    9    Group   0,053   0,298   0,067   0,019   0,017   0,334   0,046   0,076       0   0,017   0,030   0,093   0,017   0,355   0,437       0       0       0 
+   10      Gru       0       0       0       0       0       0   0,014       0   0,017       0       0   0,042       0   0,371   0,461   0,408   0,368       0 
+   11      Sha   0,147   0,013   0,106   0,011   0,037   0,052   0,006   0,005   0,030       0       0   0,012   0,026   0,040   0,100       0       0       0 
+   12    Ofish   1,444       0       0   0,080   0,042   0,042   0,010   0,169   0,093   0,042   0,012       0       0   0,266   0,705   1,406       0       0 
+   13    Squid   2,242   0,214   0,285       0   0,042   0,780   0,016   0,042   0,017       0   0,026       0       0   0,314   0,042       0   0,176       0 
+   14     Shri   8,761   0,136   1,269   1,404   1,736   4,413   0,094   0,417   0,355   0,371   0,040   0,266   0,314       0   4,272  20,842  19,632       0 
+   15   EpiFau   0,645   0,422   0,341   0,085   0,462   0,426   0,042   0,417   0,437   0,461   0,100   0,705   0,042   4,272       0   8,467   1,991       0 
+   16    InFau       0   1,197   0,280   5,674   2,013   1,215   0,049       1       0   0,408       0   1,406       0  20,842   8,467       0       0       0 
+   17    Zoopl  45,420   3,115   0,068       0   0,062  11,385       0   0,930       0   0,368       0       0   0,176  19,632   1,991       0       0 447,365 
+   18    Phyto       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0 447,365       0 
+
+18 rows, 18 columns, 1 levels.
+
+Density of the symmetrized matrix: 4,06545743376954
+Correlation with un-symmetrized matrix: 0,704892707520336
+
+Symmetrized matrix saved as dataset     73 Sonda de Campeche fullmatrix_loopless-sumsym (C:\MUNKA\H�l�zatelemz�s\UCINET data\73 Sonda de Campeche fullmatrix_loopless-sumsym)
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  12 jan. 18 09:16:08
+UCINET 6.599 Copyright (c) 1992-2016 Analytic Technologies
+

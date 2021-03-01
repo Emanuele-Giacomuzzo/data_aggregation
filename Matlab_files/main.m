@@ -1,21 +1,10 @@
 %Reading only one matrix
 clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files'; warning('off','all');
-A = readmatrix("../data/Napoli_A.txt"); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
-A_loopless = readmatrix("../data/Napoli_A_loopless.txt");
-%FID = fopen('../data/node_names.txt'); data = textscan(FID,'%s'); fclose(FID); node_names = string(data{:}); node_names = strrep(node_names,'_',' ');
+load('../data/adjacency_matrices.mat');
 
-%Reading multiple matrices
-%clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files'; warning('off','all');
-%folder = '/Users/ema/github/data_aggregation/data/ewe_networks';
-%for k = 1 : length(theFiles)
-%    file_pattern = fullfile(folder, '*matrix.txt');
-%    theFiles = dir(file_pattern);
-%    file_name = theFiles(k).name;
-%    file = "/Users/ema/github/data_aggregation/data/ewe_networks/" + file_name;
-%    A = readmatrix(file); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
-%    A_loopless = A;
-%    %All the other code
-%end
+for web=1:length(A:loops)
+A = webs_loops(web); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
+A_loopless = webs_loopless(web);
 
 centralities=["nDC";"nwDC";"nCC";"nBC";"s";"cs";"ns";"kindex";"kbu";"ktd";"kdir";"kindir";"TI1";"TI3";"TI5";"WI1";"WI3";"WI5";"STO";"TP"]; c=length(centralities);
 nDC = centrality(network_U,'degree')/(n-1);
@@ -117,3 +106,5 @@ name = "best_percentage" + count + ".txt";
 writematrix(best_percentage,name);
 name = "best_weight" + count + ".txt";
 writematrix(best_weight,name);
+
+end

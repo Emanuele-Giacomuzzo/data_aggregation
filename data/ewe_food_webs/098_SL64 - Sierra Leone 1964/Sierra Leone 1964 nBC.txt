@@ -1,0 +1,86 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          Sierra Leone 1964 fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\Sierra Leone 1964 fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 2562.591
+
+                                     1            2
+                           Betweenness nBetweenness
+                          ------------ ------------
+    6       LCoastShaRay        72.037        8.367
+   39               Crus        59.778        6.943
+   40              Benth        47.691        5.539
+   41          CarnZoopl        42.931        4.986
+   21           LDemPred        40.287        4.679
+   42          HerbZoopl        27.919        3.243
+   14       SPelaInvFeed        25.170        2.923
+   17               Sard        23.407        2.719
+   38              Cepha        21.728        2.524
+   31        SDemInvFeed        21.098        2.450
+    8       MCoastShaRay        10.542        1.224
+   28        MDemInvFeed         9.568        1.111
+   26          MullOHerb         8.402        0.976
+    7        MDeepShaRay         8.309        0.965
+   11          LPelaPred         8.139        0.945
+    2    ToothWhaleDolph         7.741        0.899
+   29           SDemPred         7.587        0.881
+    5        LDeepShaRay         7.484        0.869
+   18              Group         7.405        0.860
+   43           ProdPrim         6.762        0.785
+   16            BonShad         6.643        0.772
+   15           ScadMack         6.010        0.698
+   13          SPelaPred         4.610        0.535
+    4               Bird         4.505        0.523
+    9              LTuna         4.479        0.520
+   20          GAfriThre         4.356        0.506
+   10              STuna         4.147        0.482
+   23           MDemPred         4.111        0.477
+   37           MesoPela         4.110        0.477
+    1           BalWhale         3.593        0.417
+   34     LBathyPelaPred         3.234        0.376
+   19              Croak         3.060        0.355
+   24            CatFish         2.816        0.327
+   36     SBathyPelaPred         2.536        0.294
+   30            RoyThre         2.159        0.251
+   33     SMBathyInvFeed         1.938        0.225
+   27       LessAfriThre         1.932        0.224
+   12               Jack         1.891        0.220
+   32         LBathyPred         1.634        0.190
+   25            SpaFish         1.626        0.189
+   35  MBathyPelaInvFeed         1.574        0.183
+   22        LDemInvFeed         0.050        0.006
+    3             Turtle         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        12.442        1.445
+    2   Std Dev        16.488        1.915
+    3       Sum       535.000       62.137
+    4  Variance       271.863        3.667
+    5       SSQ     18346.486      247.484
+    6     MCSSQ     11690.092      157.693
+    7  Euc Norm       135.449       15.732
+    8   Minimum         0.000        0.000
+    9   Maximum        72.037        8.367
+   10  N of Obs        43.000       43.000
+
+Network Centralization Index = 7.09%
+
+Output actor-by-centrality measure matrix saved as dataset Sierra Leone 1964 fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  26 j�l. 16 13:03:26
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

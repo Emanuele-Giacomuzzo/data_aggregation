@@ -1,0 +1,106 @@
+﻿FREEMAN BETWEENNESS CENTRALITY
+--------------------------------------------------------------------------------
+
+Input dataset:                          North Sea 1991 fullmatrix-sumsym (C:\Users\Vercsi\Documents\UCINET data\North Sea 1991 fullmatrix-sumsym)
+
+
+
+Important note: This routine cannot handle valued data, so it binarizes your data automatically.
+                It DOES handle directed (non-symmetric) data, so it does NOT symmetrize.
+
+
+Un-normalized centralization: 5566.300
+
+                                    1            2
+                          Betweenness nBetweenness
+                         ------------ ------------
+   54  EpiFauMacroBenth       111.195        5.880
+   47     SquidCuttFish       100.893        5.335
+   31             Sande        96.596        5.108
+   55   InFauMacroBenth        95.146        5.032
+   23             Sgado        94.766        5.011
+   57        SMobEpiFai        63.579        3.362
+   56              Shri        61.388        3.246
+   21           NorPout        58.251        3.080
+   11              Jcod        56.760        3.002
+   49         CarnZoopl        56.730        3.000
+   52             Lcrab        53.940        2.852
+   45          SdemFish        51.351        2.716
+   50      HerbOmnZoopl        49.297        2.607
+   58            SInFau        48.542        2.567
+   28             Sprat        38.062        2.013
+   30           HorMack        34.621        1.831
+   29              Mack        32.786        1.734
+   14             Awhit        29.920        1.582
+    3              Seal        29.058        1.537
+   12              Acod        26.181        1.384
+   32              Plai        18.432        0.975
+   33               Dab        16.008        0.847
+   13             Jwhit        15.259        0.807
+   62        PlMicroFlo        15.212        0.804
+   35              Flou        14.940        0.790
+   16             Ahadd        12.758        0.675
+   34             LRDab        11.146        0.589
+   46  FiltFeedPelaFish         9.958        0.527
+   53              Neph         9.176        0.485
+   20          BlueWhit         8.917        0.472
+   22             Lgado         8.860        0.469
+   51          GelZoopl         8.715        0.461
+   63             Phyto         8.666        0.458
+   59      SessEpiBenth         8.551        0.452
+   42            Dragon         8.282        0.438
+   18           Ashaite         7.897        0.418
+   27             Aherr         7.253        0.384
+    2        ToothWhale         6.898        0.365
+    5              Spur         4.449        0.235
+   25             Gurna         3.787        0.200
+   26             Jherr         3.781        0.200
+   17           Jsaithe         3.561        0.188
+   15             Jhadd         3.538        0.187
+   10          SkateRay         3.208        0.170
+   40               Meg         3.128        0.165
+   60           MeioFau         3.116        0.165
+    8           StarRay         3.055        0.162
+    1          BalWhale         2.702        0.143
+   36              Sole         2.692        0.142
+   39          TurBrill         2.309        0.122
+   24          MonkFish         2.297        0.121
+    7              Jray         2.262        0.120
+   37           LemSole         1.589        0.084
+   38             Witch         1.489        0.079
+    4              Bird         1.236        0.065
+    9          ThornRay         1.196        0.063
+   48          FishLarv         1.084        0.057
+   61     BenthMicroFlo         0.920        0.049
+   41               Hal         0.908        0.048
+   44          LdemFish         0.412        0.022
+   19              Hake         0.293        0.015
+   43           CatFish         0.000        0.000
+    6              Ssha         0.000        0.000
+
+
+DESCRIPTIVE STATISTICS FOR EACH MEASURE
+
+                            1            2
+                  Betweenness nBetweenness
+                 ------------ ------------
+    1      Mean        22.841        1.208
+    2   Std Dev        29.191        1.544
+    3       Sum      1439.000       76.097
+    4  Variance       852.132        2.383
+    5       SSQ     86552.922      242.046
+    6     MCSSQ     53684.336      150.129
+    7  Euc Norm       294.199       15.558
+    8   Minimum         0.000        0.000
+    9   Maximum       111.195        5.880
+   10  N of Obs        63.000       63.000
+
+Network Centralization Index = 4.75%
+
+Output actor-by-centrality measure matrix saved as dataset North Sea 1991 fullmatrix-sumsym-bet
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  11 dec. 16 22:11:32
+UCINET 6.587 Copyright (c) 1992-2015 Analytic Technologies
+

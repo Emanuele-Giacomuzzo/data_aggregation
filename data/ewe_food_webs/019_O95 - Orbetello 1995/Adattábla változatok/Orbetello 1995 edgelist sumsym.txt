@@ -1,0 +1,47 @@
+DL
+N=11
+FORMAT = EDGELIST1
+LABELS EMBEDDED
+DATA:
+             "Cormo"            "Forage"               1,898
+             "Cormo"             "Jmull"               1,022
+              "Bass"            "Forage"               6,520
+              "Bass"          "ZooBenth"               5,566
+              "Bass"             "Jmull"               3,817
+               "Eal"            "Forage"               9,725
+               "Eal"          "ZooBenth"              21,071
+               "Eal"             "Jmull"               1,621
+             "Bream"          "ZooBenth"               4,201
+            "Forage"             "Cormo"               1,898
+            "Forage"              "Bass"               6,520
+            "Forage"               "Eal"               9,725
+            "Forage"          "ZooBenth"             125,930
+            "Forage"             "Jmull"               0,482
+            "Forage"             "Zoopl"             110,761
+          "ZooBenth"              "Bass"               5,566
+          "ZooBenth"               "Eal"              21,071
+          "ZooBenth"             "Bream"               4,201
+          "ZooBenth"            "Forage"             125,930
+          "ZooBenth"             "Jmull"              31,421
+          "ZooBenth"              "Mull"              16,373
+          "ZooBenth"             "Zoopl"             730,846
+          "ZooBenth"             "Phyto"             547,269
+          "ZooBenth"            "Pleust"             730,846
+             "Jmull"             "Cormo"               1,022
+             "Jmull"              "Bass"               3,817
+             "Jmull"               "Eal"               1,621
+             "Jmull"            "Forage"               0,482
+             "Jmull"          "ZooBenth"              31,421
+             "Jmull"             "Zoopl"               7,481
+             "Jmull"            "Pleust"              61,346
+              "Mull"          "ZooBenth"              16,373
+              "Mull"            "Pleust"              37,295
+             "Zoopl"            "Forage"             110,761
+             "Zoopl"          "ZooBenth"             730,846
+             "Zoopl"             "Jmull"               7,481
+             "Zoopl"             "Phyto"            4245,441
+             "Phyto"          "ZooBenth"             547,269
+             "Phyto"             "Zoopl"            4245,441
+            "Pleust"          "ZooBenth"             730,846
+            "Pleust"             "Jmull"              61,346
+            "Pleust"              "Mull"              37,295
