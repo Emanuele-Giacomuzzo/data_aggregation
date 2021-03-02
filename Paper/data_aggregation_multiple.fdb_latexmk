@@ -1,17 +1,14 @@
 # Fdb version 3
-["bibtex Data_aggregation"] 1614689272 "Data_aggregation.aux" "Data_aggregation.bbl" "Data_aggregation" 1614689272
-  "/Applications/Mendeley/library.bib" 1614679013 2397105 423731a9c0b3af51103e94b6deec316e ""
+["bibtex data_aggregation_multiple"] 1614691618 "data_aggregation_multiple.aux" "data_aggregation_multiple.bbl" "data_aggregation_multiple" 1614691629
+  "/Applications/Mendeley/library.bib" 1614691580 2403622 521d3dd331235400a9e79735cd0f602f ""
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "Data_aggregation.aux" 1613665131 11896 12d4c46cbb650e0e63c29bf83ef20c6a "pdflatex"
+  "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
   (generated)
-  "Data_aggregation.blg"
-  "Data_aggregation.bbl"
-["pdflatex"] 1613665130 "Data_aggregation.tex" "Data_aggregation.pdf" "Data_aggregation" 1614689272
+  "data_aggregation_multiple.bbl"
+  "data_aggregation_multiple.blg"
+["pdflatex"] 1614691619 "data_aggregation_multiple.tex" "data_aggregation_multiple.pdf" "data_aggregation_multiple" 1614691629
   "../pics/TI_example.png" 1612195198 31798 6377ab2730196432e0a6d06af83493ec ""
   "../pics/best_weight.jpg" 1613477967 135907 26140295e5a06cf14323869dd0145e67 ""
-  "../pics/dendrogram_jaccard.jpg" 1613479737 110783 0a05769388d2bfa565ae7b1beef6f9c2 ""
-  "../pics/dendrogram_rege.jpg" 1613479752 69558 0a19067d31b1af8871100bdf264684da ""
-  "../pics/original_food_web.png" 1613662883 1034561 fc05917f9096b2ec88304079a3910824 ""
   "../pics/reg_struct_equivalence.png" 1612195198 27264 a382e856f36379284bf57c54ff5df33d ""
   "../pics/results.jpg" 1613478163 146865 8b930b12588b113a48ba47d23207e777 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
@@ -110,12 +107,12 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1584467711 4259636 17b18395073ead5f9f884518c81bc13e ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "Data_aggregation.aux" 1613665131 11896 12d4c46cbb650e0e63c29bf83ef20c6a "pdflatex"
-  "Data_aggregation.bbl" 1614689272 12502 1b399c6f9c8d98c725b2ba6b34475904 "bibtex Data_aggregation"
-  "Data_aggregation.out" 1613665131 215 914e496cf0563c0ff226e72157202972 "pdflatex"
-  "Data_aggregation.tex" 1613668982 39931 40c1767e18f6e94dde3318ff57bc7f5c ""
+  "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
+  "data_aggregation_multiple.bbl" 1614691619 12890 bc02561ab880982844927da11babdcf1 "bibtex data_aggregation_multiple"
+  "data_aggregation_multiple.out" 1614691619 273 178908a0fab933c1d32f85f105499c15 "pdflatex"
+  "data_aggregation_multiple.tex" 1614691605 39646 cf6b57fa05719ba0dd295582eb9cd7f7 ""
   (generated)
-  "Data_aggregation.aux"
-  "Data_aggregation.log"
-  "Data_aggregation.out"
-  "Data_aggregation.pdf"
+  "data_aggregation_multiple.log"
+  "data_aggregation_multiple.aux"
+  "data_aggregation_multiple.pdf"
+  "data_aggregation_multiple.out"
