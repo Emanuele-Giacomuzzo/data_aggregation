@@ -1,17 +1,15 @@
 # Data_aggregation
 
-## Data
-In the edge list for R, the first coloumn is the prey, the second is the predator and the third is the weight of their link.
+## Data format
 
-## Input of the Matlab file
-A is the adjacency matrix. It needs to be a weighted, directed network.
-The species in the rows needs to be eaten by the species in the coloumns.
+### Edge list
+In the edge list, the first column is the prey, the second is the predator and the third is the weight of their link. In the adjacency matrix, a(i,j) is prey i preyed upon by predator j. 
+
+### Adjacency matrix
+In MATLAB, A is the adjacency matrix. It needs to be a weighted, directed network.
 
 Example
   A(2,3): species 2 is eaten by species 3.
-
-## Modularity maximisation
-It could take some time, normally a couple of minutes. Be patient.
 
 ## REGE
 Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be calculated from the UCINET VI software (available only for windows at https://sites.google.com/site/ucinetsoftware/home). The output of UCINET needs then to be transformed into a matlab matrix and saved in the folder data. Here I supposed that the maximum of REGE is 1000.
@@ -20,9 +18,6 @@ Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be cal
 1. "Mann-Kendall Tau-b with Sen's Method (enhanced)" at https://uk.mathworks.com/matlabcentral/fileexchange/11190-mann-kendall-tau-b-with-sen-s-method-enhanced
 2. Food web tools at ...
 3. Signed group model at https://github.com/elsander/SignedGroupModel
-
-## Per Nicoluzzo
-Il file principale è in Data_aggregation/Matlab_files/main.m. Ci sono un sacco di funzioni che non sono nella stessa cartella, ma nella cartella di Data_aggregation/Food_web_tools.
 
 ## CosbiLab
 It is a semi-developed software, whose some features work only partially. To import a food web:
