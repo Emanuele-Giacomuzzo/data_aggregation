@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Data_aggregation_Sheffiled.aux
+The style file: apalike.bst
+Database file #1: /Applications/Mendeley/library.bib
+Reallocated buffer (elt_size=1) to 40000 items from 20000.
+Reallocated sv_buffer (elt_size=1) to 40000 items from 20000.
+Reallocated ex_buf (elt_size=1) to 40000 items from 20000.
+Reallocated out_buf (elt_size=1) to 40000 items from 20000.
+Reallocated name_tok (elt_size=4) to 40000 items from 20000.
+Reallocated name_sep_char (elt_size=1) to 40000 items from 20000.
+Reallocated buffer (elt_size=1) to 60000 items from 40000.
+Reallocated sv_buffer (elt_size=1) to 60000 items from 40000.
+Reallocated ex_buf (elt_size=1) to 60000 items from 40000.
+Reallocated out_buf (elt_size=1) to 60000 items from 40000.
+Reallocated name_tok (elt_size=4) to 60000 items from 40000.
+Reallocated name_sep_char (elt_size=1) to 60000 items from 40000.
+Warning--empty publisher in Agresti2012
+Warning--empty publisher in Fornito2016
+Warning--can't use both volume and number fields in Hall1993
+Warning--empty publisher in Hall1993
+Warning--empty school in VonLuxburg2004
+You've used 44 entries,
+            1935 wiz_defined-function locations,
+            761 strings with 10895 characters,
+and the built_in function-call counts, 16111 in all, are:
+= -- 1555
+> -- 686
+< -- 25
++ -- 228
+- -- 228
+* -- 1395
+:= -- 2907
+add.period$ -- 128
+call.type$ -- 44
+change.case$ -- 329
+chr.to.int$ -- 44
+cite$ -- 49
+duplicate$ -- 595
+empty$ -- 1090
+format.name$ -- 288
+if$ -- 3044
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 46
+newline$ -- 219
+num.names$ -- 132
+pop$ -- 272
+preamble$ -- 1
+purify$ -- 334
+quote$ -- 0
+skip$ -- 461
+stack$ -- 0
+substring$ -- 1023
+swap$ -- 45
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 256
+warning$ -- 5
+while$ -- 132
+width$ -- 0
+write$ -- 548
+(There were 5 warnings)

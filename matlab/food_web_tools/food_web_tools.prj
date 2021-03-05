@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.toolbox" plugin-version="1.0">
-  <configuration build-checksum="692787308" file="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools/food_web_tools.prj" location="/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools" name="food_web_tools" target="target.toolbox" target-name="Package Toolbox">
+  <configuration build-checksum="692787308" file="/Users/ema/github/data_aggregation/matlab/food_web_tools/food_web_tools.prj" location="/Users/ema/github/data_aggregation/matlab/food_web_tools" name="food_web_tools" target="target.toolbox" target-name="Package Toolbox">
     <param.appname>food_web_tools</param.appname>
     <param.authnamewatermark />
     <param.email />
@@ -131,7 +131,7 @@
     <fileset.depfun.excluded />
     <fileset.package />
     <build-deliverables>
-      <file location="${PROJECT_ROOT}" name="food_web_tools.mltbx" optional="false">/Users/ema/Github/Data_aggregation/Food_web_tools/Matlab_food_web_tools/food_web_tools.mltbx</file>
+      <file location="${PROJECT_ROOT}" name="food_web_tools.mltbx" optional="false">/Users/ema/github/data_aggregation/matlab/food_web_tools/food_web_tools.mltbx</file>
     </build-deliverables>
     <workflow />
     <matlab>

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex data_aggregation_multiple"] 1614691618 "data_aggregation_multiple.aux" "data_aggregation_multiple.bbl" "data_aggregation_multiple" 1614691629
+["bibtex data_aggregation_multiple"] 1614691618 "data_aggregation_multiple.aux" "data_aggregation_multiple.bbl" "data_aggregation_multiple" 1614696978
   "/Applications/Mendeley/library.bib" 1614691580 2403622 521d3dd331235400a9e79735cd0f602f ""
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
   (generated)
   "data_aggregation_multiple.bbl"
   "data_aggregation_multiple.blg"
-["pdflatex"] 1614691619 "data_aggregation_multiple.tex" "data_aggregation_multiple.pdf" "data_aggregation_multiple" 1614691629
+["pdflatex"] 1614691619 "data_aggregation_multiple.tex" "data_aggregation_multiple.pdf" "data_aggregation_multiple" 1614696978
   "../pics/TI_example.png" 1612195198 31798 6377ab2730196432e0a6d06af83493ec ""
   "../pics/best_weight.jpg" 1613477967 135907 26140295e5a06cf14323869dd0145e67 ""
   "../pics/reg_struct_equivalence.png" 1612195198 27264 a382e856f36379284bf57c54ff5df33d ""
@@ -110,9 +110,9 @@
   "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
   "data_aggregation_multiple.bbl" 1614691619 12890 bc02561ab880982844927da11babdcf1 "bibtex data_aggregation_multiple"
   "data_aggregation_multiple.out" 1614691619 273 178908a0fab933c1d32f85f105499c15 "pdflatex"
-  "data_aggregation_multiple.tex" 1614691605 39646 cf6b57fa05719ba0dd295582eb9cd7f7 ""
+  "data_aggregation_multiple.tex" 1614696974 39646 cf6b57fa05719ba0dd295582eb9cd7f7 ""
   (generated)
   "data_aggregation_multiple.log"
-  "data_aggregation_multiple.aux"
-  "data_aggregation_multiple.pdf"
   "data_aggregation_multiple.out"
+  "data_aggregation_multiple.pdf"
+  "data_aggregation_multiple.aux"

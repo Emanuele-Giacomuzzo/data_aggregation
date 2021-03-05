@@ -1,0 +1,5 @@
+py.networkx.read_edgelist('/Users/ema/github/data_aggregation/data/Napoli/Edgelist_networkx.txt',pyargs('create_using', 'nx.DiGraph()'DiGraph()));
+
+%pyargs('create_using', DiGraph())
+
+create_using = nx.DiGraph()

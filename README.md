@@ -12,7 +12,7 @@ Example
   A(2,3): species 2 is eaten by species 3.
 
 ## REGE
-Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be calculated from the UCINET VI software (available only for windows at https://sites.google.com/site/ucinetsoftware/home). The output of UCINET needs then to be transformed into a matlab matrix and saved in the folder data. Here I supposed that the maximum of REGE is 1000.
+Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be calculated from the UCINET VI software (available only for windows at https://sites.google.com/site/ucinetsoftware/home). The output of UCINET needs then to be transformed into a MATLAB matrix and saved in the folder data. Here I supposed that the maximum of REGE is 1000.
 
 ## Dependencies
 1. "Mann-Kendall Tau-b with Sen's Method (enhanced)" at https://uk.mathworks.com/matlabcentral/fileexchange/11190-mann-kendall-tau-b-with-sen-s-method-enhanced
@@ -28,3 +28,6 @@ Other things to consider:
 I. If the food web is weighted, then you need to write 'value' into weight attribute.
 II. You can export just certain things such as the keystone index.
 III. To calculate the keystone index and the status index you need to transform the food web into a directed acyclic graph (DAG). To do so you need first to find all the cycles. Then, you should get rid of the edges that create the cycles. See the README file. 
+
+## Food webs
+I got rid of the food web number 5, because it gave me problems with Netcarto. 

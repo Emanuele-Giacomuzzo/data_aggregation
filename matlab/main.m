@@ -1,10 +1,6 @@
 %Reading only one matrix
-clc,clear; cd '/Users/ema/Github/Data_aggregation/Matlab_files'; warning('off','all');
-load('../data/adjacency_matrices.mat');
-
-for web=1:length(A:loops)
-A = webs_loops(web); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
-A_loopless = webs_loopless(web);
+clc,clear; cd '/Users/ema/github/data_aggregation/matlab'; warning('off','all');
+load('../data/Napoli/A.mat'); n=length(A); network=digraph(A); network_U=graph(toundirected(A));
 
 centralities=["nDC";"nwDC";"nCC";"nBC";"s";"cs";"ns";"kindex";"kbu";"ktd";"kdir";"kindir";"TI1";"TI3";"TI5";"WI1";"WI3";"WI5";"STO";"TP"]; c=length(centralities);
 nDC = centrality(network_U,'degree')/(n-1);
@@ -23,17 +19,18 @@ STO = topologicalOverlap(A,3,0.02,0.2,0.02);
 TP = trophicPosition(A);
 centralities_original=[nDC nwDC nCC nBC s cs ns kindex kbu ktd kdir kindir TI1 TI3 TI5 WI1 WI3 WI5 STO TP];
 
-aggregations=["Jaccard_similarity";"Rege_similarity";"Prey_modularity";"Density_modularity";"Group_model"]; a=length(aggregations);
+aggregations=["Jaccard_similarity";"Rege_similarity";"Prey_modularity";"Predator_modularity";"Density_modularity";"Group_model"]; a=length(aggregations);
 branches_jaccard = findBranches(A,"jaccard");
-rege_similarity=readmatrix("../variables/REGE3");
+rege_similarity=readmatrix("../data/Napoli/results/REGE3");
 branches_rege = findBranches(A,"rege",rege_similarity);
 membership_jaccard=cluster(branches_jaccard,'cutoff',0.01);
 membership_rege=cluster(branches_rege,'cutoff',0.01);
-membership_density_modularity = readmatrix("../variables/density_based_results.txt");
-membership_prey_modularity = readmatrix("../variables/prey_based_results.txt");
-membership_groups=readmatrix("../variables/group_model_results.txt");
-membership=[membership_jaccard membership_rege membership_prey_modularity membership_density_modularity membership_groups];
-clear membership_jaccard membership_rege membership_prey_modularity membership_density_modularity membership_groups;
+membership_density_modularity = readmatrix("../data/Napoli/results/directed_modularity_Napoli.txt");
+membership_prey_modularity = readmatrix("../data/Napoli/results/prey_modularity_Napoli.txt");
+membership_predator_modularity = readmatrix("../data/Napoli/results/predator_modularity_Napoli.txt");
+membership_groups = readmatrix("../data/Napoli/results/groups_Napoli.txt");
+membership=[membership_jaccard membership_rege membership_prey_modularity membership_predator_modularity membership_density_modularity membership_groups];
+clear membership_jaccard membership_rege membership_prey_modularity membership_predator_modularity membership_density_modularity membership_groups;
 
 cluster_size=cell(a,1); possible=cell(a,1); realised=cell(a,1); realised_ratio=cell(a,1);
 for i=1:a 
