@@ -1,0 +1,22 @@
+for i=1:a
+nDC = [nDC centrality_nodes{1,i}];
+nwDC = [nwDC centrality_nodes{2,i}];
+nCC = [nCC centrality_nodes{3,i}];
+nBC = [nBC centrality_nodes{4,i}];
+s = [s centrality_nodes{5,i}];
+cs = [cs centrality_nodes{6,i}];
+ns = [ns centrality_nodes{7,i}];
+kindex = [kindex centrality_nodes{8,i}];
+kbu = [kbu centrality_nodes{9,i}];
+ktd = [ktd centrality_nodes{10,i}];
+kdir = [kdir centrality_nodes{11,i}];
+kindir = [kindir centrality_nodes{12,i}];
+TI1 = [TI1 centrality_nodes{13,i}];
+TI3 = [TI3 centrality_nodes{14,i}];
+TI5 = [TI5 centrality_nodes{15,i}];
+WI1 = [WI1 centrality_nodes{16,i}];
+WI3 = [WI3 centrality_nodes{17,i}];
+WI5 = [WI5 centrality_nodes{18,i}];
+STO = [STO centrality_nodes{19,i}];
+TP = [TP centrality_nodes{20,i}];
+end

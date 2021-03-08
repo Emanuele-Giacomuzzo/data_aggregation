@@ -6,7 +6,6 @@ function [s,cs,ns] = statusIndices(A)
 %need to contain neither self-loops or simple cycles.
 
 A_db = tounweighted(A); %binary
-
 network = digraph(A_db);
 
 path_length = getridofinf(distances(network,'Method','unweighted'));

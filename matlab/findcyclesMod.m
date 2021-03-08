@@ -1,10 +1,13 @@
-function pathCell = findcyclesMod(G)
+function pathCell = findcyclesMod(A)
 %https://uk.mathworks.com/matlabcentral/answers/515624-finding-cycles-in-directed-graph
 %It doesn't work. However, I might find the way of making it work. 
-numNodes = size(G,1); 
+
+G = digraph(A);
+
+numNodes = length(A); 
 pathCell = {};
 for n = 1:numNodes
-   [D,P]=graphtraverse(G,n);
+   [D,P]=graphtraverse(A,n);
    for d = D
        if G(d,n)
            pathCell{end+1} = graphpred2path(P,d);

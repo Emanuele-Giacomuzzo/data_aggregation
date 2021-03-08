@@ -1,7 +1,7 @@
 function[k,kbu,ktd,kdir,kindir]=keystoneIndices(A)
 %This code works as it has been tested against the CosbiLab results of the
-%food web. It has been originally coded by Wei-Chung Liu in R and then
-%rewritten by me (Emanuele Giacomuzzo). 
+%food web. Originally coded by Wei-Chung Liu in R and then
+%rewritten in MATLAB by Emanuele Giacomuzzo. 
 
 %Watch out: the food web you are using needs to be loopless: it doesn't
 %need to contain neither self-loops or simple cycles. 

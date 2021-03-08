@@ -3,8 +3,9 @@ clc,clear; cd '/Users/ema/github/data_aggregation/matlab'; warning('off','all');
 load('../data/ecobase/A_ecobase.mat');
 
 for web=1:length(A_loops)
+if length(A_loops(web)) > 1
 A = A_loops{web}; n=length(A); network=digraph(A); network_U=graph(toundirected(A));
-A_loopless = A_loopless{web};
+A_loopless = A;
 
 centralities=["nDC";"nwDC";"nCC";"nBC";"s";"cs";"ns";"kindex";"kbu";"ktd";"kdir";"kindir";"TI1";"TI3";"TI5";"WI1";"WI3";"WI5";"STO";"TP"]; c=length(centralities);
 nDC = centrality(network_U,'degree')/(n-1);
@@ -73,38 +74,12 @@ parfor i=1:a
     end
 end
 
-[H, pValue, SWstatistic] = swtest(best_percentage(:,1));
-[p,tbl,stats] = anova1(best_percentage);
-[p2,tbl2,stats2] = anova1(best_percentage');
-
-for i=1:a
-nDC = [nDC centrality_nodes{1,i}];
-nwDC = [nwDC centrality_nodes{2,i}];
-nCC = [nCC centrality_nodes{3,i}];
-nBC = [nBC centrality_nodes{4,i}];
-s = [s centrality_nodes{5,i}];
-cs = [cs centrality_nodes{6,i}];
-ns = [ns centrality_nodes{7,i}];
-kindex = [kindex centrality_nodes{8,i}];
-kbu = [kbu centrality_nodes{9,i}];
-ktd = [ktd centrality_nodes{10,i}];
-kdir = [kdir centrality_nodes{11,i}];
-kindir = [kindir centrality_nodes{12,i}];
-TI1 = [TI1 centrality_nodes{13,i}];
-TI3 = [TI3 centrality_nodes{14,i}];
-TI5 = [TI5 centrality_nodes{15,i}];
-WI1 = [WI1 centrality_nodes{16,i}];
-WI3 = [WI3 centrality_nodes{17,i}];
-WI5 = [WI5 centrality_nodes{18,i}];
-STO = [STO centrality_nodes{19,i}];
-TP = [TP centrality_nodes{20,i}];
-end
-
-name = "best_kendall" + count + ".txt";
+name = "best_kendall_" + web + ".txt";
 writematrix(best_Kendall,name);
-name = "best_percentage" + count + ".txt";
+name = "best_percentage_" + web + ".txt";
 writematrix(best_percentage,name);
-name = "best_weight" + count + ".txt";
+name = "best_weight_" + web + ".txt";
 writematrix(best_weight,name);
 
+end
 end
