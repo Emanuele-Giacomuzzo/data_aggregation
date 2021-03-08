@@ -1,4 +1,4 @@
-cd '/Users/ema/github/data_aggregation/data/ecobase/A_loops';
+cd '/Users/ema/github/data_aggregation/data/ecobase/A_loops_ucinet';
 for i=1:length(A_loops)
     if (1<=i) && (i<=9)
         name = "A_loops_" + "00" +i;
@@ -8,7 +8,7 @@ for i=1:length(A_loops)
         name = "A_loops_" + i;
     end
     if isa(A_loops{i},'double') == 1
-        writematrix(A_loops{i},name)
+        writematrix(A_loops{i},name,'Delimiter','space')
     end
 end
 
