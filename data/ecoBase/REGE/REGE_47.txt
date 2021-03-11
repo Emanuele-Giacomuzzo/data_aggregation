@@ -1,0 +1,54 @@
+﻿REGULAR EQUIVALENCE VIA WHITE/REITZ REGE ALGORITHM
+--------------------------------------------------------------------------------
+
+Input dataset:                          A_loops_047 (C:\Users\Ema\Documents\UCINET\matrices\A_loops_047)
+
+
+REGE similarities (3 iterations)
+
+          1   2   3   4   5   6   7   8   9  10  11  12  13  14
+        --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    1   100  12  13  46  19   0   1   5  43   6  14   1   0   0
+    2    12 100  50  41  58  33  59  64  19  30  13  50   1   0
+    3    13  50 100  40  53  17  73  37  29  19  16  39   0   0
+    4    46  41  40 100  52   8  35  18  35  15  28  16   0   0
+    5    19  58  53  52 100  22  48  40  22  33  36  30   1   1
+    6     0  33  17   8  22 100  20  54   0  64   0  38   2   0
+    7     1  59  73  35  48  20 100  44   7  18  11  37   0   0
+    8     5  64  37  18  40  54  44 100   6  43   1  55   1   0
+    9    43  19  29  35  22   0   7   6 100   4  13   7   0   0
+   10     6  30  19  15  33  64  18  43   4 100  11  38   4   1
+   11    14  13  16  28  36   0  11   1  13  11 100  22   1   1
+   12     1  50  39  16  30  38  37  55   7  38  22 100   0   0
+   13     0   1   0   0   1   2   0   1   0   4   1   0 100   2
+   14     0   0   0   0   1   0   0   0   0   1   1   0   2 100
+
+
+HIERARCHICAL CLUSTERING OF EQUIVALENCE MATRIX
+
+             1           1     1 1 1
+ Level   1 9 1 4 5 3 7 6 0 2 8 2 3 4
+------   - - - - - - - - - - - - - -
+73.315   . . . . . XXX . . . . . . .
+64.190   . . . . . XXX . . XXX . . .
+63.611   . . . . . XXX XXX XXX . . .
+53.186   . . . . . XXX XXX XXXXX . .
+52.305   . . . XXX XXX XXX XXXXX . .
+45.467   . . . XXXXXXX XXX XXXXX . .
+42.772   XXX . XXXXXXX XXX XXXXX . .
+39.445   XXX . XXXXXXX XXXXXXXXX . .
+32.908   XXX . XXXXXXXXXXXXXXXXX . .
+15.182   XXX XXXXXXXXXXXXXXXXXXX . .
+ 9.488   XXXXXXXXXXXXXXXXXXXXXXX . .
+ 2.474   XXXXXXXXXXXXXXXXXXXXXXX XXX
+ 0.504   XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+Partition-by-actor matrix saved as dataset RegePart3
+Equivalence matrix saved as dataset Rege3.
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  08 mar 21 13:58:19
+UCINET 6.717 Copyright (c) 2002-19 Analytic Technologies
+

@@ -1,0 +1,63 @@
+INTRODUCTION
+Aggregation
+  Time (Baird1989, Schwarz2020)
+  Space (Warren1989)
+Problems with sampling and missing data
+  Sampling efforts and missing of data bias structure (Goldwasser1997)
+  Especially in binary food webs (Thompson2000)
+  Aggregation has effects on global metrics (Sugihara1989,Martinez1991,Martinez1992)
+
+DISCUSSION
+Centrality indices proxy for structure
+  No studies about this
+  Using them in other studies
+  Choosing the most important indices/a singular index
+  Different indices tells us different things
+Future directions: new algorithms
+  Other similarity indices
+  Other types of modules
+Future directions: effect of aggregation on indices
+  On a combination of centrality indices
+  On the most important centrality indices
+  Across different interaction strength type, environmental gradients, food web properties
+A good aggregation method
+  It needs to maintain TP
+  TP is important for the direction of where the perturbation propagates to (Curtsdotter2011)
+  TP is important for risk of extinction (Binzer2011)
+  TP is important for colonisation success (Holt2010)
+Finding keystone species through aggregation
+  Keystone species can be the ones that can't be aggregated (Bond1994)
+  All aggregation methods show something different about a species (see the review of Cirtwill2018a)
+  Which aggregation method for keystone species
+  Non aggregable species across different aggregation methods
+  Is aggregation better than centrality indices?
+All these aggregation methods are legit
+  Difference between group model and density-based
+  Experiments checking whether different aggregation methods are the most important
+  perturbation experiments for example
+  different systems
+Is it okay to aggregate?
+  Better not to aggregate
+  ADBM 83% link correctly predicted with body size classes vs 52% link predicted with species (Woodward2010b)
+  Group into functional groups high redundancy to extinction vs no functional groups or species low redundancy to extinction (Petchey2002)
+  Limits in what we can sample
+  Limits in the data we can access
+  Alternatives
+Robustness of indices
+  Fedor2009: DC, BC, CC, K, TI(1,10)
+  No way of interpreting the index R for every index.
+  "However, the patterns of robustness are quite complex and largely vary among the different food webs, because they can be heavily influenced by the topology of the network: and thus we suggest to use the robustness values in our study only as a guidance and recalculate the exact values for the networks to be analyzed whenever it is possible."
+  I should have done a robustness analysis of centrality indices here.
+  Only binary food webs.
+Standards for food web construction
+  Standards for sampling
+  Standards for aggregation
+Particularly important for certain taxa
+  Plankton (Jordan2018)
+
+
+
+
+TO READ
+ Patonai
+ Fedor (how robust were they at an intermediate level?)

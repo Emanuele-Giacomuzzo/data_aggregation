@@ -1,0 +1,102 @@
+﻿REGULAR EQUIVALENCE VIA WHITE/REITZ REGE ALGORITHM
+--------------------------------------------------------------------------------
+
+Input dataset:                          A_loops_070 (C:\Users\Ema\Documents\UCINET\matrices\A_loops_070)
+
+
+REGE similarities (3 iterations)
+
+          1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38
+        --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    1   100  16  35  57  61  60  19  43  12   7   4  27  16  26  40  72  65  18  23  11  34  18  12  31   5  45  63  64   7  22  16   0   0   0   0   0   0   0
+    2    16 100  43  25  10  12   2  13  18  53  36  13  46  54   2  15  12  56  54  49  22  20   5   1  35   3   4  13  38   5   1   0   0   0   0   0   0   0
+    3    35  43 100  37  22  21   5  26  19  28  22  34  30  57  10  26  42  30  31  37  50  24  25   7  15  12  17  29  29  22   4   0   0   0   0   0   0   0
+    4    57  25  37 100  59  54  17  63  33   9   6  49  43  36  28  59  53  42  45  23  60  46   9  22   5  36  33  51  17  44  13   0   1   0   1   0   0   0
+    5    61  10  22  59 100  78  31  61  40   4   4  52  28  20  52  76  42  17  25  15  50  49   9  43   2  67  50  50  11  56  30   7   7   0   7   1   0   0
+    6    60  12  21  54  78 100  31  48  28   4   3  39  20  17  52  78  40  24  20  10  36  38   4  38   3  67  47  45   8  43  30   1   1   0   1   0   0   0
+    7    19   2   5  17  31  31 100  15   6   1   1  10   4   4  49  28  14   4   7   3  10   8   1  29   1  36  24  18   2  14  36   9  12   1  18   4   0   0
+    8    43  13  26  63  61  48  15 100  66   5   4  72  34  23  28  42  42  18  26  17  59  54  10  25   3  40  29  40  12  72  17   5   5   0   6   0   0   0
+    9    12  18  19  33  40  28   6  66 100   7   7  73  44  28  12  17  17  19  27  29  51  65  13  10   3  20   7  18  22  71   9   6   6   0   6   0   0   0
+   10     7  53  28   9   4   4   1   5   7 100  63   5  23  31   1   6   5  29  24  39  10   9   4   0  55   1   1   5  29   1   0   0   0   0   0   0   0   0
+   11     4  36  22   6   4   3   1   4   7  63 100   5  19  23   1   4   5  19  19  41   9  10  15   1  41   1   1   4  38   3   0   1   1   0   1   0   0   0
+   12    27  13  34  49  52  39  10  72  73   5   5 100  37  28  19  31  30  18  29  25  70  63  10  16   3  30  17  27  20  82  13   5   6   0   6   0   0   0
+   13    16  46  30  43  28  20   4  34  44  23  19  37 100  53   5  18  15  40  50  53  54  61  16   7  16  11   6  16  42  33   5   2   2   0   2   0   0   0
+   14    26  54  57  36  20  17   4  23  28  31  23  28  53 100   7  22  25  37  49  50  43  36  26   5  24   8  12  23  47  17   3   0   0   0   0   0   0   0
+   15    40   2  10  28  52  52  49  28  12   1   1  19   5   7 100  51  29   6  10   5  18  13   5  35   0  58  37  35   4  22  38   4   5   0   5   1   0   0
+   16    72  15  26  59  76  78  28  42  17   6   4  31  18  22  51 100  50  30  30  14  37  27  10  40   3  60  57  59  11  29  25   7   8   0  10   1   0   0
+   17    65  12  42  53  42  40  14  42  17   5   5  30  15  25  29  50 100  17  21  14  40  23  18  28   3  39  51  74   9  31  15   8   9   0  10   1   0   0
+   18    18  56  30  42  17  24   4  18  19  29  19  18  40  37   6  30  17 100  59  32  29  28   5   3  19   7   5  23  18  11   2   2   2   0   2   0   0   0
+   19    23  54  31  45  25  20   7  26  27  24  19  29  50  49  10  30  21  59 100  42  49  34  13   5  15  13   9  27  32  17   3   6   7   0   6   0   0   0
+   20    11  49  37  23  15  10   3  17  29  39  41  25  53  50   5  14  14  32  42 100  37  36  31   4  24   6   5  12  73  17   2   3   3   0   3   0   0   0
+   21    34  22  50  60  50  36  10  59  51  10   9  70  54  43  18  37  40  29  49  37 100  69  17  17   5  29  19  36  29  63  12   6   7   0   7   0   0   0
+   22    18  20  24  46  49  38   8  54  65   9  10  63  61  36  13  27  23  28  34  36  69 100  22  15   4  28  11  23  30  65  12   7   8   0   7   0   0   0
+   23    12   5  25   9   9   4   1  10  13   4  15  10  16  26   5  10  18   5  13  31  17  22 100   4   3   5   8  13  26   8   2   2   2   0   2   0   0   0
+   24    31   1   7  22  43  38  29  25  10   0   1  16   7   5  35  40  28   3   5   4  17  15   4 100   0  59  53  35   3  27  67  13  17   1  19   6   0   0
+   25     5  35  15   5   2   3   1   3   3  55  41   3  16  24   0   3   3  19  15  24   5   4   3   0 100   0   1   4  16   1   0   0   0   0   0   0   0   0
+   26    45   3  12  36  67  67  36  40  20   1   1  30  11   8  58  60  39   7  13   6  29  28   5  59   0 100  65  48   5  38  49   8   9   1  11   2   0   0
+   27    63   4  17  33  50  47  24  29   7   1   1  17   6  12  37  57  51   5   9   5  19  11   8  53   1  65 100  62   3  23  35  12  20   1  24   2   0   0
+   28    64  13  29  51  50  45  18  40  18   5   4  27  16  23  35  59  74  23  27  12  36  23  13  35   4  48  62 100   7  31  20  10  12   0  15   1   0   0
+   29     7  38  29  17  11   8   2  12  22  29  38  20  42  47   4  11   9  18  32  73  29  30  26   3  16   5   3   7 100  13   2   1   1   0   1   0   0   0
+   30    22   5  22  44  56  43  14  72  71   1   3  82  33  17  22  29  31  11  17  17  63  65   8  27   1  38  23  31  13 100  20  15  19   0  18   1   0   0
+   31    16   1   4  13  30  30  36  17   9   0   0  13   5   3  38  25  15   2   3   2  12  12   2  67   0  49  35  20   2  20 100  14  16   4  21  12   1   0
+   32     0   0   0   0   7   1   9   5   6   0   1   5   2   0   4   7   8   2   6   3   6   7   2  13   0   8  12  10   1  15  14 100  74   1  67   4   0   0
+   33     0   0   0   1   7   1  12   5   6   0   1   6   2   0   5   8   9   2   7   3   7   8   2  17   0   9  20  12   1  19  16  74 100   1  78   3   0   0
+   34     0   0   0   0   0   0   1   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   1   1   0   0   0   4   1   1 100   1  50  34   0
+   35     0   0   0   1   7   1  18   6   6   0   1   6   2   0   5  10  10   2   6   3   7   7   2  19   0  11  24  15   1  18  21  67  78   1 100   4   1   0
+   36     0   0   0   0   1   0   4   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0   6   0   2   2   1   0   1  12   4   3  50   4 100  21   1
+   37     0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1   0   0  34   1  21 100  14
+   38     0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   1  14 100
+
+
+HIERARCHICAL CLUSTERING OF EQUIVALENCE MATRIX
+
+         2 1 1 2   1 1   1 1 2 2 2 2     1 3         1 2 2 1 2   1 2 3 3 3 3 3 3 3 3
+ Level   3 0 1 5 3 4 3 2 8 9 0 9 1 2 9 8 2 0 4 1 5 6 6 6 7 7 8 7 5 4 1 2 3 5 4 6 7 8
+------   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+82.188   . . . . . . . . . . . . . . . . XXX . . . . . . . . . . . . . . . . . . . .
+78.284   . . . . . . . . . . . . . . . . XXX . . . . . . . . . . . . . . XXX . . . .
+77.831   . . . . . . . . . . . . . . . . XXX . . XXX . . . . . . . . . . XXX . . . .
+77.038   . . . . . . . . . . . . . . . . XXX . . XXXXX . . . . . . . . . XXX . . . .
+74.025   . . . . . . . . . . . . . . . . XXX . . XXXXX . . XXX . . . . . XXX . . . .
+73.096   . . . . . . . . . . XXX . . . . XXX . . XXXXX . . XXX . . . . . XXX . . . .
+71.636   . . . . . . . . . . XXX . . . XXXXX . . XXXXX . . XXX . . . . . XXX . . . .
+70.150   . . . . . . . . . . XXX . . XXXXXXX . . XXXXX . . XXX . . . . . XXX . . . .
+69.432   . . . . . . . . . . XXX XXX XXXXXXX . . XXXXX . . XXX . . . . . XXX . . . .
+69.430   . . . . . . . . . . XXX XXX XXXXXXX . . XXXXX . . XXX . . . . XXXXX . . . .
+67.333   . . . . . . . . . . XXX XXX XXXXXXX . XXXXXXX . . XXX . . . . XXXXX . . . .
+67.156   . . . . . . . . . . XXX XXX XXXXXXX . XXXXXXX . . XXX . . XXX XXXXX . . . .
+65.011   . . . . . . . . . . XXX XXX XXXXXXX . XXXXXXX XXX XXX . . XXX XXXXX . . . .
+62.759   . XXX . . . . . . . XXX XXX XXXXXXX . XXXXXXX XXX XXX . . XXX XXXXX . . . .
+62.043   . XXX . . . . . . . XXX XXXXXXXXXXX . XXXXXXX XXX XXX . . XXX XXXXX . . . .
+59.211   . XXX . . . . . XXX XXX XXXXXXXXXXX . XXXXXXX XXX XXX . . XXX XXXXX . . . .
+57.383   . XXX . . . . . XXX XXX XXXXXXXXXXX XXXXXXXXX XXX XXX . . XXX XXXXX . . . .
+56.576   . XXX . XXX . . XXX XXX XXXXXXXXXXX XXXXXXXXX XXX XXX . . XXX XXXXX . . . .
+54.592   . XXX . XXX . XXXXX XXX XXXXXXXXXXX XXXXXXXXX XXX XXX . . XXX XXXXX . . . .
+54.090   . XXX . XXX . XXXXX XXX XXXXXXXXXXX XXXXXXXXX XXXXXXX . . XXX XXXXX . . . .
+53.431   . XXX . XXX . XXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX . . XXX XXXXX . . . .
+49.988   . XXX . XXX . XXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX . . XXX XXXXX XXX . .
+48.819   . XXX . XXX . XXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXX XXX XXXXX XXX . .
+46.314   . XXX . XXX XXXXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXX XXX XXXXX XXX . .
+45.579   . XXXXX XXX XXXXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXX XXX XXXXX XXX . .
+43.283   . XXXXX XXXXXXXXXXX XXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXX XXX XXXXX XXX . .
+37.868   . XXXXX XXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXX XXX XXXXX XXX . .
+36.042   . XXXXX XXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXX XXXXXXX XXXXX XXX . .
+30.821   . XXXXX XXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXX XXXXX XXX . .
+24.985   . XXXXX XXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXX XXXXX XXXXX .
+24.163   . XXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXX XXXXX XXXXX .
+21.963   . XXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXX XXXXX .
+18.587   XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXX XXXXX .
+11.931   XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXX .
+ 8.796   XXXXXXXXXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXX
+ 5.231   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX XXXXXXX
+ 0.477   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+Partition-by-actor matrix saved as dataset RegePart3
+Equivalence matrix saved as dataset Rege3.
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  08 mar 21 14:07:58
+UCINET 6.717 Copyright (c) 2002-19 Analytic Technologies
+

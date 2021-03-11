@@ -31,3 +31,6 @@ III. To calculate the keystone index and the status index you need to transform 
 
 ## Food webs
 I got rid of the food web number 5, because it gave me problems with Netcarto. 
+
+## Other
+The REGE from the gulf of Napoli is widely 1000 scaled instead of 100 scaled. 

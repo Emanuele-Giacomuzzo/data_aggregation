@@ -1,0 +1,66 @@
+﻿REGULAR EQUIVALENCE VIA WHITE/REITZ REGE ALGORITHM
+--------------------------------------------------------------------------------
+
+Input dataset:                          A_loops_060 (C:\Users\Ema\Documents\UCINET\matrices\A_loops_060)
+
+
+REGE similarities (3 iterations)
+
+          1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19  20
+        --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    1   100  21   3   2   1   9  39   1   0  41  11   9   0   1   0   0   0   0   0   0
+    2    21 100  16  15   5  30  47   2   1   8   1  38   2   6   2   1   0   0   0   0
+    3     3  16 100  55  47  39   4  20   6   1   0  43  14  38  14  22   2   0   0   0
+    4     2  15  55 100  32  42   5  24  10   1   0  42  26  61  24  19   3   0   1   1
+    5     1   5  47  32 100  15   2  23  14   0   0  14  25  39  20  27   6   1   2   2
+    6     9  30  39  42  15 100  16  19   5   2   1  77   9  22   9   8   1   0   1   1
+    7    39  47   4   5   2  16 100   1   0  12   2  19   1   2   1   0   0   0   0   0
+    8     1   2  20  24  23  19   1 100  30   0   0   9  37  47  43  41  10   0   1   1
+    9     0   1   6  10  14   5   0  30 100   0   0   3  70  25  41  46  38   3   3   4
+   10    41   8   1   1   0   2  12   0   0 100  14   3   0   0   0   0   0   0   0   0
+   11    11   1   0   0   0   1   2   0   0  14 100   0   0   0   0   0   0   0   0   0
+   12     9  38  43  42  14  77  19   9   3   3   0 100   8  21   7   5   1   0   1   1
+   13     0   2  14  26  25   9   1  37  70   0   0   8 100  48  58  57  34   6   7  10
+   14     1   6  38  61  39  22   2  47  25   0   0  21  48 100  43  41  11   3   5   4
+   15     0   2  14  24  20   9   1  43  41   0   0   7  58  43 100  64  35  12  15  23
+   16     0   1  22  19  27   8   0  41  46   0   0   5  57  41  64 100  29  20  28  34
+   17     0   0   2   3   6   1   0  10  38   0   0   1  34  11  35  29 100   9  10  14
+   18     0   0   0   0   1   0   0   0   3   0   0   0   6   3  12  20   9 100  46  48
+   19     0   0   0   1   2   1   0   1   3   0   0   1   7   5  15  28  10  46 100  41
+   20     0   0   0   1   2   1   0   1   4   0   0   1  10   4  23  34  14  48  41 100
+
+
+HIERARCHICAL CLUSTERING OF EQUIVALENCE MATRIX
+
+           1 1     1           1   1 1 1 1 1 1 2
+ Level   1 0 1 2 7 2 6 3 5 8 4 4 9 3 5 6 7 9 8 0
+------   - - - - - - - - - - - - - - - - - - - -
+76.661   . . . . . XXX . . . . . . . . . . . . .
+70.403   . . . . . XXX . . . . . XXX . . . . . .
+63.820   . . . . . XXX . . . . . XXX XXX . . . .
+60.772   . . . . . XXX . . . XXX XXX XXX . . . .
+53.222   . . . . . XXX . . . XXX XXXXXXX . . . .
+48.244   . . . . . XXX . . . XXX XXXXXXX . . XXX
+47.300   . . . . . XXX XXX . XXX XXXXXXX . . XXX
+46.767   . . . XXX XXX XXX . XXX XXXXXXX . . XXX
+42.402   . . . XXX XXX XXX . XXX XXXXXXX . XXXXX
+41.140   XXX . XXX XXX XXX . XXX XXXXXXX . XXXXX
+39.503   XXX . XXX XXX XXX XXXXX XXXXXXX . XXXXX
+35.667   XXX . XXX XXX XXX XXXXXXXXXXXXX . XXXXX
+25.406   XXX . XXX XXX XXXXXXXXXXXXXXXXX . XXXXX
+23.783   XXX . XXXXXXX XXXXXXXXXXXXXXXXX . XXXXX
+21.549   XXX . XXXXXXX XXXXXXXXXXXXXXXXXXX XXXXX
+12.853   XXXXX XXXXXXX XXXXXXXXXXXXXXXXXXX XXXXX
+11.873   XXXXX XXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXX
+ 4.304   XXXXXXXXXXXXX XXXXXXXXXXXXXXXXXXXXXXXXX
+ 1.757   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+Partition-by-actor matrix saved as dataset RegePart3
+Equivalence matrix saved as dataset Rege3.
+
+----------------------------------------
+Running time:  00:00:01
+Output generated:  08 mar 21 14:03:37
+UCINET 6.717 Copyright (c) 2002-19 Analytic Technologies
+

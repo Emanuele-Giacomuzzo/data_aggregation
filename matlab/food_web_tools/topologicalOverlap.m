@@ -1,13 +1,17 @@
-function [STO]=topologicalOverlap(A,nr_of_steps,min_threshold,max_threshold,learning_rate)
+function [STO]=topologicalOverlap(A,nr_of_steps,min_threshold,max_threshold,learning_rate,weight)
+
+if weight == "binary"
+    A = tounweighted(A);
+end
 
 A = A - diag(diag(A)); %loop-less
-degree_matrix=degreeMatrix(A);
+degree_matrix=degreeMatrix(A,weight);
 threshold = [min_threshold:learning_rate:max_threshold];
 
 TO=zeros([length(A) 1]); 
 for i=1:length(threshold)
     step_effect=oneStepEffect(A, degree_matrix);
-    step_effect=stepEffectOverlap(A,step_effect, nr_of_steps);
+    step_effect=stepEffectOverlap(A,step_effect, nr_of_steps); 
     average_effect=averageEffect(A,step_effect, nr_of_steps);
     interactor=interactorMatrix(average_effect, threshold(i));
     overlap_matrix=topologicalOverlapMatrix(interactor);
