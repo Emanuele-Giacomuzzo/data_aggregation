@@ -4,10 +4,16 @@
 Agresti, A. (2012).
 \newblock {\em {Analysis of Ordinal Categorical Data: Second Edition}}.
 
-\bibitem[Allesina and Pascual, 2009]{Allesina2009a}
-Allesina, S. and Pascual, M. (2009).
+\bibitem[Allesina and Pascual, 2009a]{Allesina2009a}
+Allesina, S. and Pascual, M. (2009a).
 \newblock {Food web models: A plea for groups}.
 \newblock {\em Ecology Letters}, 12(7):652--662.
+
+\bibitem[Allesina and Pascual, 2009b]{Allesina2009}
+Allesina, S. and Pascual, M. (2009b).
+\newblock {Googling food webs: Can an eigenvector measure species' importance
+  for coextinctions?}
+\newblock {\em PLoS Computational Biology}, 5(9).
 
 \bibitem[Arenas et~al., 2007]{Arenas2007}
 Arenas, A., Duch, J., Fern{\'{a}}ndez, A., and G{\'{o}}mez, S. (2007).
@@ -19,6 +25,12 @@ Bauer, B., Jord{\'{a}}n, F., and Podani, J. (2010).
 \newblock {Node centrality indices in food webs: Rank orders versus
   distributions}.
 \newblock {\em Ecological Complexity}.
+
+\bibitem[Binzer et~al., 2011]{Binzer2011}
+Binzer, A., Brose, U., Curtsdotter, A., Ekl{\"{o}}f, A., Rall, B.~C., Riede,
+  J.~O., and Castro], F.~d. (2011).
+\newblock {The susceptibility of species to extinctions in model communities}.
+\newblock {\em Basic and Applied Ecology}, 12(7):590--599.
 
 \bibitem[Blondel et~al., 2008]{Blondel2008}
 Blondel, V.~D., Guillaume, J.~L., Lambiotte, R., and Lefebvre, E. (2008).
@@ -41,11 +53,6 @@ Borgatti, S.~P. and Everett, M.~G. (1993).
 \newblock {Two algorithms for computing regular equivalence}.
 \newblock {\em Social Networks}, 15(4):361--376.
 
-\bibitem[Burkey, 2021]{Burkey2021}
-Burkey, J. (2021).
-\newblock {Mann-Kendall Tau-b with Sen's Method (enhanced). Retrieved February
-  15, 2021.}
-
 \bibitem[Coll{\'{e}}ter et~al., 2013]{Colleter2013}
 Coll{\'{e}}ter, M., Valls, A., Guitton, J., Morissette, L.,
   Arregu{\'{i}}n-S{\'{a}}nchez, F., Christensen, V., Gascuel, D., and Pauly, D.
@@ -59,6 +66,25 @@ Csardi, G. and Nepusz, T. (2006).
 \newblock {The igraph software package for complex network research}.
 \newblock {\em InterJournal Complex Systems}.
 
+\bibitem[Curtsdotter et~al., 2011]{Curtsdotter2011}
+Curtsdotter, A., Binzer, A., Brose, U., de~Castro, F., Ebenman, B.,
+  Ekl{\"{o}}f, A., Riede, J.~O., Thierry, A., and Rall, B.~C. (2011).
+\newblock {Robustness to secondary extinctions: Comparing trait-based
+  sequential deletions in static and dynamic food webs}.
+\newblock {\em Basic and Applied Ecology}, 12(7):571--580.
+
+\bibitem[DiCiccio and Efron, 1996]{DiCiccio1996}
+DiCiccio, T.~J. and Efron, B. (1996).
+\newblock {Bootstrap confidence intervals}.
+\newblock {\em Statistical Science}.
+
+\bibitem[Donohue et~al., 2017]{Donohue2017}
+Donohue, I., Petchey, O.~L., K{\'{e}}fi, S., G{\'{e}}nin, A., Jackson, A.~L.,
+  Yang, Q., and O'Connor, N.~E. (2017).
+\newblock {Loss of predator species, not intermediate consumers, triggers rapid
+  and dramatic extinction cascades}.
+\newblock {\em Global Change Biology}, 23(8):2962--2972.
+
 \bibitem[Doulcier and Stouffer, 2015]{Doulcier2015}
 Doulcier, G. and Stouffer, D.~B. (2015).
 \newblock {Rnetcarto: Fast network modularity and roles computation by
@@ -70,6 +96,12 @@ Endr{\'{e}}di, A., Sen{\'{a}}nszky, V., Libralato, S., and Jord{\'{a}}n, F.
 \newblock {Food web dynamics in trophic hierarchies}.
 \newblock {\em Ecological Modelling}, 368:94--103.
 
+\bibitem[Fisher, 1915]{Fisher1915}
+Fisher, R.~A. (1915).
+\newblock {Frequency Distribution of the Values of the Correlation Coefficient
+  in Samples from an Indefinitely Large Population}.
+\newblock {\em Biometrika}.
+
 \bibitem[Fornito et~al., 2016]{Fornito2016}
 Fornito, A., Zalesky, A., and Bullmore, E.~T. (2016).
 \newblock {\em {Fundamentals of Brain Network Analysis}}.
@@ -79,6 +111,16 @@ Frigui, H. (2008).
 \newblock {Clustering: Algorithms and applications}.
 \newblock {\em 2008 1st International Workshops on Image Processing Theory,
   Tools and Applications, IPTA 2008}.
+
+\bibitem[Geyer, 1991]{Geyer1991}
+Geyer, C.~J. (1991).
+\newblock {Markov Chain Monte Carlo Markov Chain Monte Carlo}.
+\newblock (5):1--6.
+
+\bibitem[Gouveia et~al., 2020]{Gouveia2020}
+Gouveia, C., M{\'{o}}r{\'{e}}h, {\'{A}}., and Jord{\'{a}}n, F. (2020).
+\newblock {Combining centrality indices: maximizing the predictability of
+  keystone species in food webs}.
 
 \bibitem[Guimer{\`{a}} et~al., 2007]{Guimera2007}
 Guimer{\`{a}}, R., Sales-Pardo, M., and Amaral, L.~A. (2007).
@@ -106,6 +148,11 @@ Harary, F. (1959).
 Harary, F. (1961).
 \newblock {Who eats whom?}
 \newblock {\em General Systems}, 6:41--44.
+
+\bibitem[Holt, 2010]{Holt2010}
+Holt, R. (2010).
+\newblock {\em {Toward a trophic island biogeography. In: The Theory of Island
+  Biogeography Revisited}}.
 
 \bibitem[Huang et~al., 2006]{Huang2006}
 Huang, J., Tingshao, Z., and Schuurmans, D. (2006).
@@ -154,16 +201,32 @@ Kim, Y., Son, S.~W., and Jeong, H. (2010).
 \newblock {\em Physical Review E - Statistical, Nonlinear, and Soft Matter
   Physics}.
 
+\bibitem[Kirkpatrick et~al., 1983]{Kirkpatrick1983}
+Kirkpatrick, S., Gelatt, C.~D., and Vecchi, M.~P. (1983).
+\newblock {Optimization by simulated annealing}.
+\newblock {\em Science}.
+
 \bibitem[Kozen and Timme, 2007]{Kozen2007}
 Kozen, D. and Timme, M. (2007).
 \newblock {Indefinite summation and the Kronecker delta}.
 \newblock {\em ecommons.cornell.edu}.
+
+\bibitem[Lai et~al., 2015]{Lai2015}
+Lai, S.~M., Liu, W.~C., and Jord{\'{a}}n, F. (2015).
+\newblock {A trophic overlap-based measure for species uniqueness in ecological
+  networks}.
+\newblock {\em Ecological Modelling}, 299:95--101.
 
 \bibitem[Levine, 1980]{Levine1980}
 Levine, S. (1980).
 \newblock {Several measures of trophic structure applicable to complex food
   webs}.
 \newblock {\em Journal of Theoretical Biology}, 83(2):195--207.
+
+\bibitem[Libralato et~al., 2006]{Libralato2006}
+Libralato, S., Christensen, V., and Pauly, D. (2006).
+\newblock {A method for identifying keystone species in food web models}.
+\newblock {\em Ecological Modelling}, 195(3-4):153--171.
 
 \bibitem[Luczkovich et~al., 2003]{Luczkovich2003}
 Luczkovich, J.~J., Borgatti, S.~P., Johnson, J.~C., and Everett, M.~G. (2003).
@@ -182,11 +245,9 @@ Martinez, N.~D. (1991).
   Lake Food Web}.
 \newblock {\em Ecological Monographs}, 61(4):367--392.
 
-\bibitem[mei Lai et~al., 2015]{Lai2015}
-mei Lai, S., chung Liu, W., and Jord{\'{a}}n, F. (2015).
-\newblock {A trophic overlap-based measure for species uniqueness in ecological
-  networks}.
-\newblock {\em Ecological Modelling}, 299:95--101.
+\bibitem[{Mathworks Inc.}, 2019]{MathworksInc.2019}
+{Mathworks Inc.} (2019).
+\newblock {Matlab Statistics and Machine Learning Toolbox}.
 
 \bibitem[Mills et~al., 1993]{Mills1993}
 Mills, L.~S., Doak, M.~E., and Soul{\'{e}}, D.~F. (1993).
@@ -209,12 +270,6 @@ Newman, M.~E. (2004).
 \newblock {\em Physical Review E - Statistical Physics, Plasmas, Fluids, and
   Related Interdisciplinary Topics}.
 
-\bibitem[Newman and Leicht, 2007]{Newman2007}
-Newman, M.~E. and Leicht, E.~A. (2007).
-\newblock {Mixture models and exploratory analysis in networks}.
-\newblock {\em Proceedings of the National Academy of Sciences of the United
-  States of America}.
-
 \bibitem[Okey, 2004]{Okey2004}
 Okey, T.~a. (2004).
 \newblock {Shifted community states in four marine ecosystems: some potential
@@ -232,23 +287,37 @@ Patonai, K. and Jord{\'{a}}n, F. (2017).
   strategies}.
 \newblock {\em Ecological Modelling}, 352:77--89.
 
-\bibitem[Petchey et~al., 2008]{Petchey2008a}
-Petchey, O.~L., Ekl{\"{o}}f, A., Borrvall, C., and Ebenman, B. (2008).
+\bibitem[Petchey et~al., 2008a]{Petchey2008}
+Petchey, O.~L., Beckerman, A.~P., Riede, J.~O., and Warren, P.~H. (2008a).
+\newblock {Size, foraging, and food web structure}.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 105(11):4191--4196.
+
+\bibitem[Petchey et~al., 2008b]{Petchey2008a}
+Petchey, O.~L., Ekl{\"{o}}f, A., Borrvall, C., and Ebenman, B. (2008b).
 \newblock {Trophically unique species are vulnerable to cascading extinction}.
 \newblock {\em American Naturalist}, 171(5):568--579.
 
-\bibitem[Ramasco and Mungan, 2008]{Ramasco2008}
-Ramasco, J.~J. and Mungan, M. (2008).
-\newblock {Inversion method for content-based networks}.
-\newblock {\em Physical Review E - Statistical, Nonlinear, and Soft Matter
-  Physics}.
+\bibitem[Petchey and Gaston, 2002]{Petchey2002}
+Petchey, O.~L. and Gaston, K.~J. (2002).
+\newblock {Functional diversity (FD), species richness and community
+  composition}.
+\newblock {\em Ecology Letters}, 5:402--411.
 
-\bibitem[Rosvall and Bergstrom, 2008]{Rosvall2008}
-Rosvall, M. and Bergstrom, C.~T. (2008).
-\newblock {Maps of random walks on complex networks reveal community
-  structure}.
-\newblock {\em Proceedings of the National Academy of Sciences of the United
-  States of America}.
+\bibitem[Pilosof et~al., 2017]{Pilosof2017}
+Pilosof, S., Porter, M.~A., Pascual, M., and K{\'{e}}fi, S. (2017).
+\newblock {The multilayer nature of ecological networks}.
+\newblock {\em Nature Ecology and Evolution}, 1(4).
+
+\bibitem[{R Development Core Team}, 2011]{RDevelopmentCoreTeam2011}
+{R Development Core Team}, R. (2011).
+\newblock {\em {R: A Language and Environment for Statistical Computing}}.
+
+\bibitem[Rezende et~al., 2009]{Rezende2009}
+Rezende, E.~L., Albert, E.~M., Fortuna, M.~A., and Bascompte, J. (2009).
+\newblock {Compartments in a marine food web associated with phylogeny, body
+  mass, and habitat structure}.
+\newblock {\em Ecology Letters}.
 
 \bibitem[Sander et~al., 2015]{Sander2015}
 Sander, E.~L., Wootton, J.~T., and Allesina, S. (2015).
@@ -308,11 +377,29 @@ White, D. (1984).
   blockmodeling}.
 \newblock {\em Unpublished manuscript}.
 
+\bibitem[Woodward et~al., 2010]{Woodward2010b}
+Woodward, G., Blanchard, J., Lauridsen, R.~B., Edwards, F.~K., Jones, J.~I.,
+  Figueroa, D., Warren, P.~H., and Petchey, O.~L. (2010).
+\newblock {\em {Individual-based food webs. Species identity, body size and
+  sampling effects}}, volume~43.
+\newblock Elsevier Ltd.
+
 \bibitem[Xiao et~al., 2019]{Xiao2019}
 Xiao, Z., Wu, J., Xu, B., Zhang, C., Ren, Y., and Xue, Y. (2019).
 \newblock {Uniqueness measure based on the weighted trophic field overlap of
   species in the food web}.
 \newblock {\em Ecological Indicators}, 101(May 2018):640--646.
+
+\bibitem[Yildirim, 2012]{Yildirim2012}
+Yildirim, I. (2012).
+\newblock {Bayesian Inference: Gibbs Sampling}.
+\newblock {\em Department of Brain and Cognitive Sciences}, 14627:1--6.
+
+\bibitem[Yodzis, 1998]{Yodzis1998}
+Yodzis, P. (1998).
+\newblock {Local trophodynamics and the interaction of marine mammals and
+  fisheries in the Benguela ecosystem}.
+\newblock {\em Journal of Animal Ecology}.
 
 \bibitem[Yodzis and Winemiller, 1999]{Yodzis1999}
 Yodzis, P. and Winemiller, K.~O. (1999).

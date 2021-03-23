@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.17)  2 MAR 2021 13:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.17)  18 MAR 2021 09:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,90 +458,151 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-<../pics/reg_struct_equivalence.png, id=81, 665.48625pt x 242.9075pt>
-File: ../pics/reg_struct_equivalence.png Graphic file (type png)
-<use ../pics/reg_struct_equivalence.png>
-Package pdftex.def Info: ../pics/reg_struct_equivalence.png  used on input line 59.
-(pdftex.def)             Requested size: 195.46576pt x 71.34573pt.
- [2 <../pics/reg_struct_equivalence.png>] [3]
+] [2] [3]
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 145.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 179.
 
-[4]
-<../pics/TI_example.png, id=235, 361.35pt x 344.28625pt>
-File: ../pics/TI_example.png Graphic file (type png)
-<use ../pics/TI_example.png>
-Package pdftex.def Info: ../pics/TI_example.png  used on input line 179.
-(pdftex.def)             Requested size: 195.46576pt x 186.2375pt.
- [5 <../pics/TI_example.png>]
-
-LaTeX Warning: Reference `fig:jaccarddendrogram' on page 6 undefined on input line 218.
+./data_aggregation_multiple.tex:247: Misplaced alignment tab character &.
+<argument> Trophic field overlap (TO) &
+                                        species uniqueness (STO)
+l.247 ... overlap (TO) & species uniqueness (STO)}
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
 
-LaTeX Warning: Reference `fig:regedendrogram' on page 6 undefined on input line 218.
-
-<../pics/best_weight.jpg, id=270, 1927.2pt x 1032.85875pt>
-File: ../pics/best_weight.jpg Graphic file (type jpg)
-<use ../pics/best_weight.jpg>
-Package pdftex.def Info: ../pics/best_weight.jpg  used on input line 223.
-(pdftex.def)             Requested size: 195.46576pt x 104.75761pt.
-<../pics/results.jpg, id=271, 1927.2pt x 1032.85875pt>
-File: ../pics/results.jpg Graphic file (type jpg)
-<use ../pics/results.jpg>
-Package pdftex.def Info: ../pics/results.jpg  used on input line 229.
-(pdftex.def)             Requested size: 498.66258pt x 267.24461pt.
-[6 <../pics/best_weight.jpg>] [7 <../pics/results.jpg>] (./data_aggregation_multiple.bbl [8] [9])
-Underfull \hbox (badness 4416) in paragraph at lines 289--289
-[]\OT1/cmr/bx/n/14.4 Hierarchical clus-ter-ing with
+Underfull \hbox (badness 3977) in paragraph at lines 247--247
+[][]\OT1/cmr/bx/n/12 Trophic field over-lap (TO)  species
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 301.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+[4]
+<../pics/food_web_sizes.jpg, id=287, 1927.2pt x 1032.85875pt>
+File: ../pics/food_web_sizes.jpg Graphic file (type jpg)
+<use ../pics/food_web_sizes.jpg>
+Package pdftex.def Info: ../pics/food_web_sizes.jpg  used on input line 282.
+(pdftex.def)             Requested size: 244.33128pt x 130.9352pt.
+<../pics/cluster_sizes.jpg, id=288, 1927.2pt x 1032.85875pt>
+File: ../pics/cluster_sizes.jpg Graphic file (type jpg)
+<use ../pics/cluster_sizes.jpg>
+Package pdftex.def Info: ../pics/cluster_sizes.jpg  used on input line 289.
+(pdftex.def)             Requested size: 244.33128pt x 130.9352pt.
+
+Underfull \hbox (badness 1348) in paragraph at lines 300--303
+\OT1/cmr/m/n/10 Different cen-tral-ity in-dices have dif-fer-ent pre-dic-tive
+ []
+
+[5 <../pics/food_web_sizes.jpg> <../pics/cluster_sizes.jpg>]
+
+LaTeX Warning: Reference `fig:kendall_results' on page 6 undefined on input line 304.
+
+
+Underfull \vbox (badness 1895) has occurred while \output is active []
+
+ [6] (./data_aggregation_multiple.bbl [7] [8] [9]) [10
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 372.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 301.
-
-Underfull \hbox (badness 4940) in paragraph at lines 321--321
-[]\OT1/cmr/bx/n/14.4 Hierarchical clus-ter-ing with
- []
-
-[10]
-Underfull \hbox (badness 1270) in paragraph at lines 346--347
-\OT1/cmr/m/n/10 ma-trix of the max-i-mum num-ber of it-er-a-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
-[11
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 372.
+ [11
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
+<../pics/TI_example.png, id=476, 361.35pt x 344.28625pt>
+File: ../pics/TI_example.png Graphic file (type png)
+<use ../pics/TI_example.png>
+Package pdftex.def Info: ../pics/TI_example.png  used on input line 473.
+(pdftex.def)             Requested size: 498.66258pt x 475.12077pt.
+ [12] [13 <../pics/TI_example.png>]
+<../pics/heatmap_jaccard.jpg, id=507, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_jaccard.jpg Graphic file (type jpg)
+<use ../pics/heatmap_jaccard.jpg>
+Package pdftex.def Info: ../pics/heatmap_jaccard.jpg  used on input line 501.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+<../pics/heatmap_rege.jpg, id=508, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_rege.jpg Graphic file (type jpg)
+<use ../pics/heatmap_rege.jpg>
+Package pdftex.def Info: ../pics/heatmap_rege.jpg  used on input line 507.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+<../pics/heatmap_density.jpg, id=509, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_density.jpg Graphic file (type jpg)
+<use ../pics/heatmap_density.jpg>
+Package pdftex.def Info: ../pics/heatmap_density.jpg  used on input line 513.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+<../pics/heatmap_predators.jpg, id=510, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_predators.jpg Graphic file (type jpg)
+<use ../pics/heatmap_predators.jpg>
+Package pdftex.def Info: ../pics/heatmap_predators.jpg  used on input line 519.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+<../pics/heatmap_preys.jpg, id=511, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_preys.jpg Graphic file (type jpg)
+<use ../pics/heatmap_preys.jpg>
+Package pdftex.def Info: ../pics/heatmap_preys.jpg  used on input line 525.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+<../pics/heatmap_groups.jpg, id=512, 2890.8pt x 1704.3675pt>
+File: ../pics/heatmap_groups.jpg Graphic file (type jpg)
+<use ../pics/heatmap_groups.jpg>
+Package pdftex.def Info: ../pics/heatmap_groups.jpg  used on input line 531.
+(pdftex.def)             Requested size: 498.66258pt x 294.00371pt.
+
+./data_aggregation_multiple.tex:581: Missing $ inserted.
+<inserted text> 
+                $
+l.581 			120 Prince William Sound_
+                                  old	18
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./data_aggregation_multiple.tex:644: Missing $ inserted.
+<inserted text> 
+                $
+l.644 		\end{tabular}
+                     
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (10108.22742pt too wide) in paragraph at lines 539--645
+ [] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 648.
+[14] [15 <../pics/heatmap_jaccard.jpg>] [16 <../pics/heatmap_rege.jpg>] [17 <../pics/heatmap_density.jpg>] [18 <../pics/heatmap_predators.jpg>] [19 <../pics/heatmap_preys.jpg>] [20 <../pics/heatmap_groups.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 648.
  (./data_aggregation_multiple.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 648.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 648.
 Package rerunfilecheck Info: File `data_aggregation_multiple.out' has not changed.
-(rerunfilecheck)             Checksum: 178908A0FAB933C1D32F85F105499C15;273.
+(rerunfilecheck)             Checksum: 85E05EC1C2B48643618002380EFE0204;459.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 648.
  ) 
 Here is how much of TeX's memory you used:
- 8873 strings out of 492616
- 131485 string characters out of 6129481
- 245867 words of memory out of 5000000
- 12527 multiletter control sequences out of 15000+600000
+ 8993 strings out of 492616
+ 133889 string characters out of 6129481
+ 248314 words of memory out of 5000000
+ 12604 multiletter control sequences out of 15000+600000
  12321 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,39p,1014b,628s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,7n,39p,1521b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on data_aggregation_multiple.pdf (11 pages, 597912 bytes).
+Output written on data_aggregation_multiple.pdf (20 pages, 3925103 bytes).
 PDF statistics:
- 523 PDF objects out of 1000 (max. 8388607)
- 481 compressed objects within 5 object streams
- 161 named destinations out of 1000 (max. 500000)
- 53 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 654 PDF objects out of 1000 (max. 8388607)
+ 598 compressed objects within 6 object streams
+ 199 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 

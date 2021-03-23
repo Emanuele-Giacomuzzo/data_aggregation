@@ -1,16 +1,21 @@
 # Fdb version 3
-["bibtex data_aggregation_multiple"] 1614691618 "data_aggregation_multiple.aux" "data_aggregation_multiple.bbl" "data_aggregation_multiple" 1614696978
-  "/Applications/Mendeley/library.bib" 1614691580 2403622 521d3dd331235400a9e79735cd0f602f ""
+["bibtex data_aggregation_multiple"] 1616059265 "data_aggregation_multiple.aux" "data_aggregation_multiple.bbl" "data_aggregation_multiple" 1616059268
+  "/Applications/Mendeley/library.bib" 1616059068 2434446 2adfcf6770ea7e1dc967aae57c22114c ""
   "/usr/local/texlive/2019/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
+  "data_aggregation_multiple.aux" 1616059266 15709 461bb79f451d578c5a34042b66ed34c9 "pdflatex"
   (generated)
   "data_aggregation_multiple.bbl"
   "data_aggregation_multiple.blg"
-["pdflatex"] 1614691619 "data_aggregation_multiple.tex" "data_aggregation_multiple.pdf" "data_aggregation_multiple" 1614696978
+["pdflatex"] 1616059265 "data_aggregation_multiple.tex" "data_aggregation_multiple.pdf" "data_aggregation_multiple" 1616059268
   "../pics/TI_example.png" 1612195198 31798 6377ab2730196432e0a6d06af83493ec ""
-  "../pics/best_weight.jpg" 1613477967 135907 26140295e5a06cf14323869dd0145e67 ""
-  "../pics/reg_struct_equivalence.png" 1612195198 27264 a382e856f36379284bf57c54ff5df33d ""
-  "../pics/results.jpg" 1613478163 146865 8b930b12588b113a48ba47d23207e777 ""
+  "../pics/cluster_sizes.jpg" 1615900558 122926 982e8b6db1fdbb9195024afd85176af8 ""
+  "../pics/food_web_sizes.jpg" 1615639474 101771 4a3bcd5b0b69a5fef6ccccd3fd44932b ""
+  "../pics/heatmap_density.jpg" 1615898214 565414 303edf83d92c89a565e07cb2e2d1c6b7 ""
+  "../pics/heatmap_groups.jpg" 1615898264 559742 57e24782df1958cd3c9fbd3a97c67d6e ""
+  "../pics/heatmap_jaccard.jpg" 1615898182 566833 df72d1df3af2ecee14f6580517d06177 ""
+  "../pics/heatmap_predators.jpg" 1615898233 565747 84e33f397aa0aa0e10c4942cc8c9c9ac ""
+  "../pics/heatmap_preys.jpg" 1615898250 564283 89947f38f56fb397ae753a7862165efd ""
+  "../pics/heatmap_rege.jpg" 1615898199 566364 03d95c93bfe281ae2a0ee48b2c3149d3 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -107,12 +112,12 @@
   "/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1557342064 3277517 23507ed665b4dd9046f0f2a94bbef2be ""
   "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1584467711 4259636 17b18395073ead5f9f884518c81bc13e ""
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
-  "data_aggregation_multiple.aux" 1614691619 11214 3ee4dd72ac973d7649411de674eedc08 "pdflatex"
-  "data_aggregation_multiple.bbl" 1614691619 12890 bc02561ab880982844927da11babdcf1 "bibtex data_aggregation_multiple"
-  "data_aggregation_multiple.out" 1614691619 273 178908a0fab933c1d32f85f105499c15 "pdflatex"
-  "data_aggregation_multiple.tex" 1614696974 39646 cf6b57fa05719ba0dd295582eb9cd7f7 ""
+  "data_aggregation_multiple.aux" 1616059266 15709 461bb79f451d578c5a34042b66ed34c9 "pdflatex"
+  "data_aggregation_multiple.bbl" 1616059265 16579 0c209d5dfb51ab215f125aa8c59fde04 "bibtex data_aggregation_multiple"
+  "data_aggregation_multiple.out" 1616059266 459 85e05ec1c2b48643618002380efe0204 "pdflatex"
+  "data_aggregation_multiple.tex" 1615903813 50475 06d7e364123d045ee106c1f5a7b1d4af ""
   (generated)
   "data_aggregation_multiple.log"
-  "data_aggregation_multiple.out"
-  "data_aggregation_multiple.pdf"
   "data_aggregation_multiple.aux"
+  "data_aggregation_multiple.pdf"
+  "data_aggregation_multiple.out"
