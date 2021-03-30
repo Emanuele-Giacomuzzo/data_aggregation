@@ -1,30 +1,29 @@
-function[TP]=trophicPosition(A)
+function[TP] = calculateTP(A)
 
-A(A > 0) = 1; %binary
-A = A - diag(diag(A)); %loop-less
+A = A - diag(diag(A));
 
-TA = fluxRatio(A);
-diet = sum(TA,2);
-QA = withoutAutotrophs(TA,diet);
+intake_ratio = computeIntakeRatioMatrix(A);
+tot_intake = sum(intake_ratio);
+intake_ratio_heterotrophs = deleteAutotrophs(intake_ratio,tot_intake);
 
-IA = QA*0;
-for i = 1:length(IA)
-    IA(i,i) = 1;
+diagonal_matrix = intake_ratio_heterotrophs * 0;
+for heterotroph = 1:length(diagonal_matrix)
+    diagonal_matrix(heterotroph,heterotroph) = 1;
 end
-vw = ones(length(IA),1);
-TP_heterotrophs = linsolve((IA-QA),vw);
+
+solutions = ones(length(diagonal_matrix),1);
+coefficients = (diagonal_matrix - intake_ratio_heterotrophs)';
+TP_heterotrophs = linsolve(coefficients,solutions) + 1;
 
 TP = zeros(length(A),1);
-c = 1;
-for i = 1:length(A)
-    if diet(i) == 0
-       TP(i) = 0; 
-    else 
-        TP(i) = TP_heterotrophs(c);
-        c = c+1;
+heterotroph = 1;
+for predator = 1:length(A)
+    if tot_intake(predator) == 0
+       TP(predator) = 1; 
+    else
+        TP(predator) = TP_heterotrophs(heterotroph);
+        heterotroph = heterotroph + 1;
     end
 end
-
-TP = TP + 1;
 
 end

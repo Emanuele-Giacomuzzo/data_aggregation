@@ -4,8 +4,9 @@ clc,clear;
 tot_web_nr = 105;
 TP_problems = [63 87];
 duplicate_webs = [3 19 62 71 85 86 93 94 97 99 100];
-less_than_14 = [4 5 10 14 18 29 34 48 52 57 67 76 79 89 90];
+less_than_14_nodes = [4 5 10 14 18 29 34 48 52 57 67 76 79 89 90];
 NA_webs = [74];
+weighted_centralities = [2,16,17,18,22,23,24];
 hc_max_inconsistency = 0.01;
 TO_min_threshold = 0.01;
 TO_max_threshold = 0.1;
@@ -14,23 +15,11 @@ publication_size = 50;
 visualisation_size = 10;
 font_size = visualisation_size;
 checking = 0;
+color_style = jet;
+chosen_web=37;
+figure = 1;
 
-%% COMBINATION OF METHODS
-
-clustering_methods = [ "jaccard_similarity" "rege_similarity" "density_modularity" "prey_modularity" "predator_modularity" "group_model"]; 
-centralities = [ "DC" ; "WDC" ; "CC" ; "BC" ; "s" ; "cs" ; "ns" ; "kindex" ; "kbu" ; "ktd" ; "kdir" ; "kindir" ; "TI1" ; "TI3" ; "TI5" ; "WI1" ; "WI3" ; "WI5" ; "STO1" ; "STO3" ; "STO5" ; "wSTO1" ; "wSTO3" ; "wSTO5" ; "TP"]; 
-link_methods = [0.001; 0.25 ; 0.5 ; 0.75 ; 1];
-strength_methods = ["min" "mean" "max" "sum"];
-
-percentages_better_names = ["1 link" "25% links" "50% links" "75% links" "100% links"];
-percentages_and_weights = string.empty;
-for ratio= 1:length(link_methods)
-    for strength = 1:length(strength_methods)
-        percentages_and_weights = [percentages_and_weights; [string(percentages_better_names(ratio)) + " " + strength_methods(strength)]];
-    end
-end
-
-%% IMPORT
+%% FOOD WEBS
 
 cd '/Users/ema/github/data_aggregation/data/ecobase/adjacency_matrices'
 files = dir();
@@ -39,12 +28,43 @@ for file = (hidden_files + 1):length(files)
     A_ecobase{(file - hidden_files),1} = readmatrix(files(file).name);
 end
 
-for clust = 1:length(clustering_methods)
-    cd ('/Users/ema/github/data_aggregation/results/membership_' + clustering_methods(clust))
+food_web_sizes = double.empty;
+for web = 1:tot_web_nr
+    food_web_sizes = [food_web_sizes; length(A_ecobase{web})];
+end
+food_web_sizes(food_web_sizes==1) = [];
+
+connectance = zeros(web,1);
+for web = 1:tot_web_nr
+    if length(A_ecobase{web}) > 1
+        links = numedges(digraph(A_ecobase{web}));
+        nodes = numnodes(digraph(A_ecobase{web}));
+        connectance(web) = (links/(nodes^2))*100;
+    end
+end
+connectance(connectance==0) = [];
+
+%% CENTRALITIES
+
+centralities = [ "DC" ; "WDC" ; "CC" ; "BC" ; "s" ; "cs" ; "ns" ; "kindex" ; "kbu" ; "ktd" ; "kdir" ; "kindir" ; "TI1" ; "TI3" ; "TI5" ; "WI1" ; "WI3" ; "WI5" ; "STO1" ; "STO3" ; "STO5" ; "wSTO1" ; "wSTO3" ; "wSTO5" ; "TP"]; 
+centralities_latex = [ "DC" ; "WDC" ; "CC" ; "BC" ; "s" ; "s'" ; "\Delta s" ; "k" ; "k_{bu}" ; "k_{td}" ; "k_{dir}" ; "k_{indir}" ; "TI^1" ; "TI^3" ; "TI^5" ; "WI^1" ; "WI^3" ; "WI^5" ; "STO^1" ; "STO^3" ; "STO^5" ; "wSTO^1" ; "wSTO^3" ; "wSTO^5" ; "TP"]; ;
+
+weighted_centralities_names = string.empty;
+for centralityI = 1:length(weighted_centralities_names)
+    weighted_centralities_names = [weighted_centralities_names centralities(weighted_centralities_names(centralityI))];
+end
+
+%% CLUSTERING METHODS 
+
+clustering_methods = [ "jaccard_similarity" "rege_similarity" "density_modularity" "prey_modularity" "predator_modularity" "group_model"]; 
+clustering_better_names = ["Jaccard" "REGE" "density" "prey" "predator" "groups"];
+
+for clustering = 1:length(clustering_methods)
+    cd ('/Users/ema/github/data_aggregation/results/membership_' + clustering_methods(clustering))
     files = dir();
     hidden_files = length(files) - tot_web_nr;
     for file = (hidden_files+1):length(files)
-        membership{(file - hidden_files),clust} = readmatrix(files(file).name);
+        membership{(file - hidden_files),clustering} = readmatrix(files(file).name);
     end
 end
 
@@ -55,9 +75,32 @@ for file = (hidden_files + 1):length(files)
     REGE_matrices{(file - hidden_files),1} = readmatrix(files(file).name);
 end
 
+%% LINKAGE METHODS AND STRENGTH METHODS 
+
+linkage_methods = [0.001; 0.25 ; 0.5 ; 0.75 ; 1];
+linkage_methods_names = ["NMAX" "25%" "50%" "75%" "NMIN"];
+
+strength_methods = ["min" "mean" "max" "sum"];
+
+linkage_n_strength = string.empty;
+for linkage = 1:length(linkage_methods)
+    for strength = 1:length(strength_methods)
+        linkage_n_strength = [linkage_n_strength; [string(linkage_methods_names(linkage)) + " " + strength_methods(strength)]];
+    end
+end
+
+%% AGGREGATION METHODS 
+
+aggregation_methods = string.empty;
+for clustering = 1:length(clustering_methods)
+    for links = 1:length(linkage_n_strength)
+       aggregation_methods = [aggregation_methods; (clustering_better_names(clustering) + " " + linkage_n_strength(links))];
+    end
+end
+
 %% MAIN
 cd '/Users/ema/github/data_aggregation/matlab';
-for web = 1:tot_web_nr
+for web = chosen_web %1:tot_web_nr
     if length(A_ecobase{web}) > 1
         
         A = A_ecobase{web}; 
@@ -91,49 +134,42 @@ for web = 1:tot_web_nr
         wSTO3 = calculateSTO(A, 3, TO_min_threshold, TO_max_threshold, TO_learning_rate, "weighted");
         wSTO5 = calculateSTO(A, 5, TO_min_threshold, TO_max_threshold, TO_learning_rate, "weighted");
         TP = calculateTP(A);
-        centralities_before = double.empty;
+        centralities_original = double.empty;
         for i = 1:length(centralities); 
-            centralities_before = [centralities_before eval(centralities(i))];
+            centralities_original = [centralities_original eval(centralities(i))];
         end
         
         realised_link_ratio = cell(length(clustering_methods),1);
-        for clust = 1:length(clustering_methods)
-            cluster_size = findClusterSize(membership{web,clust});
+        for clustering = 1:length(clustering_methods)
+            cluster_size = findClusterSize(membership{web,clustering});
             possible_links = findPossibleLinks(cluster_size);
-            realised_links = findRealisedLinks(A,membership{web,clust});
-            realised_link_ratio{clust} = findRealisedLinkRatio(possible_links, realised_links);
+            realised_links = findRealisedLinks(A,membership{web,clustering});
+            realised_link_ratio{clustering} = findRealisedLinkRatio(possible_links, realised_links);
         end
         
-        %Kendalls = cell(length(clustering_methods),1);
-        %A_aggregated = cell(length(clustering_methods),1);
-        %for clust = 1:length(clustering_methods); 
-        %    Kendalls{clust} = zeros(length(centralities),(length(link_methods)*length(strength_methods))); 
-        %    A_aggregated{clust} = cell(length(centralities),(length(link_methods)*length(strength_methods)));
-        %end
-
-        for clust = 1:length(clustering_methods)
+        for clustering = 1:length(clustering_methods)
             for centr = 1:length(centralities)
                 column = 0;
-                for ratio = 1:length(link_methods)
+                for linkage = 1:length(linkage_methods)
                     for strength = 1:length(strength_methods)
                         column = column + 1;
-                        A_aggregated_weighted = buildWeightedNetwork(A, membership{web,clust}, strength_methods(strength));
-                        A_aggregated_binary = buildBinaryNetwork(realised_link_ratio{clust}, link_methods(ratio));
-                        A_aggregated{web}{clust}{centr,column} = A_aggregated_weighted .* A_aggregated_binary;
-                        centrality_clusters = calculateClusterCentrality(A_aggregated{web}{clust}{centr,column}, centralities(centr));
-                        centrality_nodes = assignNodeCentrality(centrality_clusters, membership{web,clust});
-                        Kendalls{web}{clust}(centr, column) = calculateKendall([centralities_before(:,centr) centrality_nodes']);
+                        A_aggregated_weighted = buildWeightedNetwork(A, membership{web,clustering}, strength_methods(strength));
+                        A_aggregated_binary = buildBinaryNetwork(realised_link_ratio{clustering}, linkage_methods(linkage));
+                        A_aggregated{web}{clustering,column} = A_aggregated_weighted .* A_aggregated_binary;
+                        centrality_clusters = calculateClusterCentrality(A_aggregated{web}{clustering,column}, centralities(centr));
+                        centrality_nodes = assignNodeCentrality(centrality_clusters, membership{web,clustering});
+                        Kendalls{web}{clustering}(centr, column) = calculateKendall([centralities_original(:,centr) centrality_nodes']);
                    end
                 end
             end
-            path = '/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clust) + '/' + "Kendalls_" + clustering_methods(clust) + addFrontZeros(web) + ".txt";
-            writematrix(Kendalls{web}{clust}, path);
+            path = '/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clustering) + '/' + "Kendalls_" + clustering_methods(clustering) + addFrontZeros(web) + ".txt";
+            writematrix(Kendalls{web}{clustering}, path);
         end
         
     else
         
-        for clust = 1:length(clustering_methods)
-            path = '/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clust) + '/' + "Kendalls_" + clustering_methods(clust) + addFrontZeros(web) + ".txt";
+        for clustering = 1:length(clustering_methods)
+            path = '/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clustering) + '/' + "Kendalls_" + clustering_methods(clustering) + addFrontZeros(web) + ".txt";
             writematrix(A_ecobase{web}, path);
         end
         path = '/Users/ema/github/data_aggregation/results/membership_jaccard_similarity/membership_jaccard_' + addFrontZeros(web) + '.txt'
@@ -143,101 +179,58 @@ for web = 1:tot_web_nr
         
     end
     
-    %CHECK EVERYTHING IS FINE FOR A CERTAIN FOOD WEB
-    if checking == 1
-        deleted_edge_percentage = ((numedges(digraph(A)) - numedges(digraph(A_DAG)))/numedges(digraph(A))) * 100
-        for node = 1:length(A)
-            xaxis(node) = normrnd(0.5,0.25)
-        end
-        plot(digraph(A), 'XData', xaxis, 'YData', TP);
-        ylabel('Trophic position (TP)','FontSize',20)
-        centralities_before_table = array2table(centralities_before,'VariableNames',centralities)
-        t = tiledlayout(2,3); 
-        for clust = 1:length(clustering_methods)
-            nexttile;
-            heatmap(realised_link_ratio{clust},'Title',clustering_methods(clust))
-        end
-        dendrogram(branches_jaccard, 'Orientation', 'left')
-        dendrogram(branches_rege,'Orientation', 'left')
-        t = tiledlayout(2,3);
-        for clust = 1:length(clustering_methods)
-            name = "Kendalls_" + clustering_methods(clust) + addFrontZeros(web) + ".txt";
-            path = '/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clust) + '/' + name;
-            kendall_matrix = readmatrix(path);
-            nexttile;
-            heatmap(percentages_and_weights, centralities, kendall_matrix, 'Title',clustering_methods(clust),'ColorMap',parula,'ColorLimits',[0 1])
-        end
-    end
-    
 end
 
-%% FIND FOOD WEB SIZES & CLUSTER SIZES
+%% FIND CLUSTER SIZES
 
-food_web_sizes = double.empty;
 for web = 1:tot_web_nr
-    food_web_sizes = [food_web_sizes; length(A_ecobase{web})];
-end
-food_web_sizes(food_web_sizes==1) = [];
-
-cluster_sizes = zeros(web,length(clustering_methods));
-for web = 1:tot_web_nr
-    for clust = 1:length(clustering_methods)
-        cluster_sizes(web,clust) = max(membership{web,clust}) / length(A_ecobase{web});
+    for clustering = 1:length(clustering_methods)
+        cluster_sizes(web,clustering) = max(membership{web,clustering}) / length(A_ecobase{web});
     end
 end
+[row,col] = find(cluster_sizes == 1);
 cluster_sizes = rmmissing(cluster_sizes);
 
-%% IMPORT KENDALLS
+%% IMPORT, MODIFY AND REARRANGE KENDALLS
 
-for clust = 1:length(clustering_methods)
-    cd ('/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clust));
+for clustering = 1:length(clustering_methods)
+    cd ('/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clustering));
     files = dir();
     hidden_files = length(files) - tot_web_nr;
     for file = (hidden_files+1):length(files)
-        kendalls{(file - hidden_files),clust} = readmatrix(files(file).name);
+        kendalls{(file - hidden_files),clustering} = readmatrix(files(file).name);
     end
 end
 
-for clust = 1:length(clustering_methods)
+for clustering = 1:length(clustering_methods)
     for web = 1:tot_web_nr
-        if sum(sum(isnan(kendalls{web,clust}))) > 0 || sum(sum(isinf(kendalls{web,clust}))) > 0
-            if length(A_ecobase{web}) > 1
-                "Nan/Inf in clustering " + clust + " in food web " + web
+        if length(A_ecobase{web}) > 1
+            if sum(sum(isnan(kendalls{web,clustering}))) > 0 || sum(sum(isinf(kendalls{web,clustering}))) > 0
+                "Nan/Inf in clustering " + clustering + " in food web " + web
             end
         end
-        if sum(find(kendalls{web,clust}==1)) > 0
-            "τ = 1 in kendalls{" + web + "," + clust + "} transformed into τ = 0.9999." 
+        if sum(find(kendalls{web,clustering}==1)) > 0
+            kendalls{web,clustering}(kendalls{web,clustering}==1) = 0.9999;
+            "τ = 1 in kendalls{" + web + "," + clustering + "} transformed into τ = 0.9999."
         end
-        kendalls{web,clust}(kendalls{web,clust}==1) = 0.9999;
     end
 end
 
-%% BAD PREDATOR WEBS
-
-bad_predator_webs = double.empty;
-for web = 1:tot_web_nr
-    if max(membership{web,5}) == length(A_ecobase{web})
-        "The number of clusters created by the group model in food web nr " + web + " is the same as the number of nodes"
-        bad_predator_webs = [bad_predator_webs; web];
-    end
+for bad_clustering = 1:length(row)
+    kendalls{row(bad_clustering),col(bad_clustering)} = NaN;
 end
-
-for web = 1:length(bad_predator_webs)
-    kendalls{bad_predator_webs(web),5} = NaN
-end
-
-%% REARRANGE KENDALLS
 
 kendalls_rearranged = cell(length(clustering_methods),1);
-for clust = 1:length(clustering_methods)
-    kendalls_rearranged{clust} = cell(length(centralities),length(percentages_and_weights));
+for clustering = 1:length(clustering_methods)
+    kendalls_rearranged{clustering} = cell(length(centralities),length(linkage_n_strength));
 end
-for clust = 1:length(clustering_methods)
-    for cent = 1:length(centralities)
-        for strength_n_ratio = 1:length(percentages_and_weights)
+
+for clustering = 1:length(clustering_methods)
+    for centralityI = 1:length(centralities)
+        for strength_n_ratio = 1:length(linkage_n_strength)
             for web = 1:tot_web_nr
-                if length(kendalls{web,clust}) > 1
-                    kendalls_rearranged{clust}{cent,strength_n_ratio} = [kendalls_rearranged{clust}{cent,strength_n_ratio}; kendalls{web,clust}(cent,strength_n_ratio)];
+                if length(kendalls{web,clustering}) > 1
+                    kendalls_rearranged{clustering}{centralityI,strength_n_ratio} = [kendalls_rearranged{clustering}{centralityI,strength_n_ratio}; kendalls{web,clustering}(centralityI,strength_n_ratio)];
                 end
             end
         end
@@ -246,80 +239,327 @@ end
 
 %% CALCULATE MEAN AND CI 
 
-for clust = 1:length(clustering_methods)
-    for cent = 1:length(centralities)
-        for strength_n_ratio = 1:length(percentages_and_weights)
-            fisher{clust}{cent,strength_n_ratio} = atanh(kendalls_rearranged{clust}{cent,strength_n_ratio});
-            fisher_mean{clust}(cent,strength_n_ratio) = mean(fisher{clust}{cent,strength_n_ratio});
-            fisher_ci_min{clust}(cent,strength_n_ratio) = min(bootci(length(fisher{clust}{cent,strength_n_ratio}),@mean,fisher{clust}{cent,strength_n_ratio}));
-            fisher_ci_max{clust}(cent,strength_n_ratio) = max(bootci(length(fisher{clust}{cent,strength_n_ratio}),@mean,fisher{clust}{cent,strength_n_ratio}));
-            kendall_mean{clust}(cent,strength_n_ratio) = tanh(fisher_mean{clust}(cent,strength_n_ratio));
-            kendall_ci_min{clust}(cent,strength_n_ratio) = tanh(fisher_ci_min{clust}(cent,strength_n_ratio));
-            kendall_ci_max{clust}(cent,strength_n_ratio) = tanh(fisher_ci_max{clust}(cent,strength_n_ratio));
-            kendall_ci_min_relative{clust}(cent,strength_n_ratio) = kendall_mean{clust}(cent,strength_n_ratio) - kendall_ci_min{clust}(cent,strength_n_ratio);
-            kendall_ci_max_relative{clust}(cent,strength_n_ratio) = kendall_ci_max{clust}(cent,strength_n_ratio) - kendall_mean{clust}(cent,strength_n_ratio);
+for clustering = 1:length(clustering_methods)
+    for centralityI = 1:length(centralities)
+        for strength_n_ratio = 1:length(linkage_n_strength)
+            fisher{clustering}{centralityI,strength_n_ratio} = atanh(kendalls_rearranged{clustering}{centralityI,strength_n_ratio});
+            fisher_mean{clustering}(centralityI,strength_n_ratio) = mean(fisher{clustering}{centralityI,strength_n_ratio});
+            fisher_ci_min{clustering}(centralityI,strength_n_ratio) = min(bootci(length(fisher{clustering}{centralityI,strength_n_ratio}),@mean,fisher{clustering}{centralityI,strength_n_ratio}));
+            fisher_ci_max{clustering}(centralityI,strength_n_ratio) = max(bootci(length(fisher{clustering}{centralityI,strength_n_ratio}),@mean,fisher{clustering}{centralityI,strength_n_ratio}));
+            kendall_mean{clustering}(centralityI,strength_n_ratio) = tanh(fisher_mean{clustering}(centralityI,strength_n_ratio));
+            kendall_ci_min{clustering}(centralityI,strength_n_ratio) = tanh(fisher_ci_min{clustering}(centralityI,strength_n_ratio));
+            kendall_ci_max{clustering}(centralityI,strength_n_ratio) = tanh(fisher_ci_max{clustering}(centralityI,strength_n_ratio));
+            kendall_ci_min_relative{clustering}(centralityI,strength_n_ratio) = kendall_mean{clustering}(centralityI,strength_n_ratio) - kendall_ci_min{clustering}(centralityI,strength_n_ratio);
+            kendall_ci_max_relative{clustering}(centralityI,strength_n_ratio) = kendall_ci_max{clustering}(centralityI,strength_n_ratio) - kendall_mean{clustering}(centralityI,strength_n_ratio);
         end
     end
 end
 
-%% PLOT
-
-histogram(nonzeros(food_web_sizes))
-title("Food web sizes. Median = " + median(food_web_sizes) + " (IQR=" + iqr(food_web_sizes) + ").")
-xlabel('Number of nodes in the food web')
-ylabel('Food web n')
-ax = gca;
-ax.FontSize = font_size;
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/food_web_sizes.png') 
-
-t = tiledlayout(2,3); edges = [0:0.1:1];
-for clust = 1:length(clustering_methods)
-    nexttile;
-    histogram(cluster_sizes(:,clust),edges);
-    title(strrep(clustering_methods(clust),"_"," ") + " x=" + round(median(cluster_sizes(:,clust)),2) + " IQR=" + round(iqr(cluster_sizes(:,clust)),2),'FontSize',font_size);
-    xlabel('Size aggregated web/ size original web','FontSize',font_size);
-    ylabel('Number of food webs with this size','FontSize',font_size);
-    ax = gca; 
-    ax.FontSize = font_size;
+all_mean_kendalls = double.empty;
+for clustering = 1:length(clustering_methods)
+    all_mean_kendalls = [all_mean_kendalls kendall_mean{clustering}];
 end
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/cluster_sizes.png') 
 
-font_size = 15
-heatmap(percentages_and_weights,centralities,kendall_mean{1},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using Jaccard: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_jaccard.png') 
-heatmap(percentages_and_weights,centralities,kendall_mean{2},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using REGE: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_rege.png') 
-heatmap(percentages_and_weights,centralities,kendall_mean{3},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using density-based modules: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_density.png') 
-heatmap(percentages_and_weights,centralities,kendall_mean{4},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using prey-based modules: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_prey.png') 
-heatmap(percentages_and_weights,centralities,kendall_mean{5},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using predator-based modules: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_predator.png') 
-heatmap(percentages_and_weights,centralities,kendall_mean{6},'ColorMap',parula,'ColorLimits',[0 1],'CellLabelFormat', '%.2f','title','Aggregation using the group model: mean correlation between the ranking before the aggregation and after the aggregation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_mean_groups.png') 
+all_max_ci = double.empty;
+for clustering = 1:length(clustering_methods)
+    all_max_ci = [all_max_ci kendall_ci_max{clustering}];
+end
+all_max_ci = all_max_ci - all_mean_kendalls;
 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{1},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using Jaccard: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_jaccard.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{2},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using REGE: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_rege.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{3},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using density-based modules: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_density.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{4},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using prey-based modules: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_prey.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{5},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using predator-based modules: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_predator.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_min_relative{6},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using the groups model: lower confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_min_groups.png') 
+all_min_ci = double.empty;
+for clustering = 1:length(clustering_methods)
+    all_min_ci = [all_min_ci kendall_ci_min{clustering}];
+end
+all_min_ci = all_mean_kendalls - all_min_ci;
 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{1},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using Jaccard: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_jaccard.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{2},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using REGE: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_rege.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{3},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using density-based modules: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_density.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{4},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using prey-based modules: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_prey.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{5},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using predator-based modules: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_predator.png') 
-heatmap(percentages_and_weights,centralities,kendall_ci_max_relative{6},'ColorMap',parula,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f','title','Aggregation using the group model: upper confidence interval of the mean correlation.', 'FontSize',font_size)
-saveas(gcf,'/Users/ema/github/data_aggregation/pics/kendall_ci_max_groups.png')
+%% FIND BEST AGGREGATION
+
+best_kendall = zeros(length(centralities),length(clustering_methods));
+best_link_n_strength = zeros(length(centralities),length(clustering_methods));
+ci_min_of_best = zeros(length(centralities),length(clustering_methods));
+ci_max_of_best = zeros(length(centralities),length(clustering_methods));
+for clustering = 1:length(clustering_methods)
+    for centralityI = 1:length(centralities)
+        [best_kendall(centralityI,clustering), best_link_n_strength(centralityI,clustering)] = max(kendall_mean{clustering}(centralityI,:));
+        ci_min_of_best(centralityI,clustering) = kendall_ci_min{clustering}(centralityI, best_link_n_strength(centralityI,clustering));
+        ci_max_of_best(centralityI,clustering) = kendall_ci_max{clustering}(centralityI, best_link_n_strength(centralityI,clustering));
+    end
+end
+ci_min_of_best = round(ci_min_of_best,2);
+ci_max_of_best = round(ci_max_of_best,2);
+
+rankings = strings(length(centralities),length(clustering_methods));
+rankings_ci = strings(length(centralities),length(clustering_methods));
+rankings_link_n_strength = strings(length(centralities),length(clustering_methods));
+for centralityI = 1:length(centralities)
+    [sorted_values, sorted_values_indices] = sort(best_kendall(centralityI,:),'descend');
+    sorted_values = round(sorted_values,2);
+    for rank = 1:length(clustering_methods)
+        rankings(centralityI,rank) = "A" + sorted_values_indices(rank) + " (" + sorted_values(rank) + ")";
+        rankings_ci(centralityI,rank) = ci_min_of_best(centralityI,sorted_values_indices(rank)) + "-" + ci_max_of_best(centralityI,sorted_values_indices(rank));
+        rankings_link_n_strength(centralityI,rank) = "M" + best_link_n_strength(centralityI,sorted_values_indices(rank)) + " ";
+    end
+end
+
+for clustering = 1:length(clustering_methods)
+    rankings = strrep(rankings, "A"+clustering, clustering_better_names(clustering));
+end
+
+for method = 1:length(linkage_n_strength)
+    rankings_link_n_strength = strrep(rankings_link_n_strength, "M"+method+" ", linkage_n_strength(method));
+end
+
+%If the centralityI index is not a weighted one, delete the strength part.
+for centralityI = 1:length(centralities)
+    if isempty(find(weighted_centralities==centralityI)) == 1;
+        rankings_link_n_strength(centralityI,:) = strrep(rankings_link_n_strength(centralityI,:),"min","");
+        rankings_link_n_strength(centralityI,:) = strrep(rankings_link_n_strength(centralityI,:),"max","");
+        rankings_link_n_strength(centralityI,:) = strrep(rankings_link_n_strength(centralityI,:),"sum","");
+        rankings_link_n_strength(centralityI,:) = strrep(rankings_link_n_strength(centralityI,:),"mean","");
+    end
+end
+
+rank_table = array2table(rankings,'VariableNames',["First" "Second" "Third" "Fourth" "Fifth" "Sixth"],'RowNames',centralities)
+rank_table_ci = array2table(rankings_ci,'VariableNames',["First" "Second" "Third" "Fourth" "Fifth" "Sixth"],'RowNames',centralities)
+rank_table_aggregations = array2table(rankings_link_n_strength,'VariableNames',["First" "Second" "Third" "Fourth" "Fifth" "Sixth"],'RowNames',centralities)
+
+%% FIGURES & CAPTIONS
+figure = 0;
+
+figure = figure + 1;
+histogram(nonzeros(food_web_sizes))
+xlabel('Number of nodes')
+ylabel('Number of food webs')
+ylim([0 8]) 
+ax = gca;
+ax.FontSize = 15;
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/figures/Figure_" + figure + ".png")
+caption = "Size of the food webs we used in our study. The median number of nodes in the food webs was " + median(food_web_sizes) + " (IQR=" + iqr(food_web_sizes) + ")."
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/figures/Caption_figure_" + figure + ".txt")
+
+figure = figure + 1;
+titles = ["(a)", "(b)", "(c)", "(d)", "(e)", "(f)"];
+cluster_plot_size = 12;
+additional_info = string.empty;
+t = tiledlayout(2,3); edges = [0:1:100];
+caption = "The size of the clusters produced by the different clustering methods. The size of the aggregated food web compared to the original one was ";
+for clustering = 1:length(clustering_methods)
+    nexttile;
+    membership_cluster_sizes = cluster_sizes(:,clustering);
+    membership_cluster_sizes(membership_cluster_sizes==1) = [];
+    histogram(membership_cluster_sizes*100,edges);
+    title(titles(clustering));
+    xlabel('Size aggregated web / Size original web (%)','FontSize',cluster_plot_size);
+    ylabel('Number of food webs','FontSize',cluster_plot_size);
+    ylim([0 12]) 
+    ax = gca; 
+    ax.FontSize = cluster_plot_size;
+    caption = caption + round(median(cluster_sizes(:,clustering)*100),1) + "% (IQR=" + round(iqr(cluster_sizes(:,clustering)*100),1) + ") for " + clustering_better_names(clustering) + " " + titles(clustering) + ", "
+end
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/figures/Figure_" + figure + ".png")
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/figures/Caption_figure_" + figure + ".txt")
+tiledlayout(1,1)
+
+figure = figure + 1;
+heatmap(aggregation_methods,centralities_latex,all_mean_kendalls,'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',12)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/figures/Figure_" + figure + "a.png") 
+heatmap(centralities,aggregation_methods,all_mean_kendalls','ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',7)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/figures/Figure_" + figure + "b.png") 
+caption1 = "Heat map describing the kendall's rank correlation (τ) between ranking original and after the aggregation of the nodes. On the x axis there is aggregation method. Each aggregation is described by three parts. The first one is the clustering algorithm. The second one is the linkage method. The third is method by which we determined the interaction strength.";
+caption2 = "Jaccard = Hierachical clustering using Jaccard index, REGE = Hierarchical clustering using REGE index, density = clustering of density-based modules, prey = clustering of prey-based modules, predator = clustering of predator-based modules, groups = clustering of groups."
+caption3 = "NMAX = maximum linkage, 25% = at least 25% of links realised to consider a connection, 50% = at least 25% of links realised to consider a connection, 75% = at least 75% of links realised to consider a connection, NMIN = 100% all possible links realised."
+caption4 = "min = minimum interaction strength, max = maximum interaction strength, sum = sum of interaction strength, mean = mean interaction strength."
+caption5 = "DC = degree centrality, WDC = weighted degree centrality, CC = closeness centrality, BC = betweenness centrality, s = status index, cs = constrostatus index, ns = net status index, kindex = keystone index, kbu = bottom-up keystone index, ktd = top-down keystone index, kdir = directed keystone index, kindir = indirected keystone index, TI1 = 1-step topological imoprtance, TI3 = 3-step topological importance, TI5 = 5-step topological importance, WI1 = 1-step weighted topological importance, WI3 = 3-step weighted topological importance, WI5 = 5-step weighted topological importance, STO1 = 1-step species uniqueness, STO3 = 3-step species uniqueness, STO5 = 5-step species uniqueness, wSTO1 = 1-step weighted species uniqueness, wSTO3 = 3-step weighted species uniqueness, wSTO5 = 5-step weighted species uniqueness, TP = trophic position";
+caption = caption1 + caption2 +caption3 + caption4 + caption5;
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/figures/Caption_figure_" + figure + ".txt");
+
+figure = figure + 1;
+heatmap(clustering_better_names,centralities_latex,best_kendall,'ColorMap',color_style,'CellLabelFormat', '%.2f','FontSize', 18)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/figures/Figure_" + figure + ".png") 
+caption = "Hetmap of the best Kendall's rank correlation coefficient for each of the clustering methods across linkage methods and weight methods.";
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/figures/Caption_figure_" + figure + ".txt")
+
+%% SUPPORTING INFORMATION
+figure = 0;
+
+medium_font_size = 18;
+small_font_size = 12;
+
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{1},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{2},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{3},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{4},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{5},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_mean{6},'ColorMap',color_style,'ColorLimits',[0 1],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+caption = "Sections of the comprehensive heat map. It allows to read the single values.";
+writematrix(caption, "/Users/ema/github/data_aggregation/paper/supporting_information/Caption_figure_" + (figure-5) + "-" + figure + ".txt")
+
+figure = figure + 1;
+heatmap(aggregation_methods, centralities_latex, all_max_ci, 'ColorMap', color_style, 'ColorLimits', [0 0.2], 'CellLabelFormat', '%.2f', 'FontSize',small_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/figures/Caption_figure_" + figure + ".txt")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{1},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{2},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{3},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{4},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{5},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_max_relative{6},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png");
+caption = "Heat map of the upper confidence interval for each of the kendall's rank correlation coefficients (τ). Each value in the heat map is the difference between kendall's rank correlation and its upper confidence interval.";
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/supporting_information/Caption_figure_" + (figure-6) + "-" + figure + ".txt")
+
+figure = figure + 1;
+heatmap(aggregation_methods, centralities_latex, all_min_ci, 'ColorMap', color_style, 'ColorLimits', [0 0.2], 'CellLabelFormat', '%.2f', 'FontSize',small_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+writematrix(caption,'/Users/ema/github/data_aggregation/paper/supporting_information/min_ci_all.txt')
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{1},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{2},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{3},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{4},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size)
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{5},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+figure = figure + 1;
+heatmap(linkage_n_strength,centralities_latex,kendall_ci_min_relative{6},'ColorMap',color_style,'ColorLimits',[0 0.2],'CellLabelFormat', '%.2f', 'FontSize',medium_font_size);
+saveas(gcf,"/Users/ema/github/data_aggregation/paper/supporting_information/Figure_" + figure + ".png")
+caption = "Sections of the comprehensive heat map. It allows to read the single values.";
+writematrix(caption,"/Users/ema/github/data_aggregation/paper/supporting_information/Caption_figure_" + (figure-6) + "-" + figure + ".txt")
+
+writetable(rank_table, '/Users/ema/github/data_aggregation/paper/supporting_information/rank_table.txt');
+writetable(rank_table_ci, '/Users/ema/github/data_aggregation/paper/supporting_information/rank_table_ci.txt');
+writetable(rank_table_aggregations, '/Users/ema/github/data_aggregation/paper/supporting_information/rank_table_aggregations.txt');
+
+%% BUILD THE REPRESENTATIVE FOOD WEB
+cd '/Users/ema/github/data_aggregation/matlab'
+
+selected_centrality = 2;
+WDC_original = calculateWDC(A_ecobase{chosen_web});
+centrality_original = repmat("not central", length(WDC_original),1);
+[~,keystone] = max(WDC_original);
+centrality_original(keystone) = "central";
+coordinates_original = zeros(length(A_ecobase{chosen_web}),2);
+for node = 1:length(coordinates_original)
+    coordinates_original(node,1) = normrnd(0.5,0.25);
+    coordinates_original(node,2) = TP(node);
+end
+file = "/Users/ema/github/data_aggregation/r/plotting/coordinates_original_web_" + web + ".csv";
+writematrix(coordinates_original, file);
+
+for clustering = 1:length(clustering_methods)
+    
+    [~,best_strength_n_links] = max(kendalls{chosen_web,clustering}(selected_centrality,:));
+    if clustering == 3; best_strength_n_links = 2; end
+    A_clusters = A_aggregated{chosen_web}{clustering,best_strength_n_links};
+    
+    WDC_clusters_after = calculateWDC(A_clusters);
+    centrality_clusters_after = repmat("not central", length(A_clusters),1);
+    [~,keystone] = max(WDC_clusters_after);
+    centrality_clusters_after(keystone) = "central";
+    centrality_nodes_after = (assignNodeCentrality(centrality_clusters_after, membership{chosen_web,clustering}))';
+    
+    node_colors = assignNodeColors(centrality_original, centrality_nodes_after);
+    cluster_colors = assignClusterColors(membership{chosen_web,clustering});
+    size_of_clusters = findClusterSize(membership{chosen_web,clustering});
+    
+    TP_clusters = calculateTP(A_clusters);
+    nan_inf = sum(isinf(TP_clusters)) + sum(isnan(TP_clusters));
+    if nan_inf ~= 0
+        A_clusters_DAG = createDAG(A_clusters);
+        TP_clusters = calculateTP(A_clusters_DAG);
+        nan_inf = sum(isinf(TP_clusters)) + sum(isnan(TP_clusters));
+        if nan_inf ~= 0
+            "Still a problem with TP"
+        end
+    end
+    
+    coordinates_clusters = double.empty;
+    nodes_of_clusters = cell(length(A_clusters),2);
+    for cluster = 1:length(A_clusters)
+        nodes_of_clusters{cluster,1} = find(membership{chosen_web,clustering}==cluster);
+        for node = 1:length(nodes_of_clusters{cluster})
+            nodes_of_clusters{cluster,2} = [nodes_of_clusters{cluster,2}; coordinates_original(nodes_of_clusters{cluster,1}(node),1)];
+        end
+        nodes_of_clusters{cluster,2} = mean(nodes_of_clusters{cluster,2});
+        coordinates_clusters(cluster) = nodes_of_clusters{cluster,2};
+    end
+    coordinates_clusters = [coordinates_clusters' TP_clusters];
+    
+    file = "/Users/ema/github/data_aggregation/r/plotting/A_" + clustering_better_names(clustering) + "_web_" + chosen_web + ".csv";
+    writematrix(A_clusters,file);
+    file = "/Users/ema/github/data_aggregation/r/plotting/coordinates_" + clustering_better_names(clustering) + "_web_" + chosen_web + ".csv";
+    writematrix(coordinates_clusters,file);    
+    file = "/Users/ema/github/data_aggregation/r/plotting/colors_original_" + clustering_better_names(clustering) + "_web_" + chosen_web + ".csv";
+    writematrix(node_colors,file);
+    file = "/Users/ema/github/data_aggregation/r/plotting/colors_clustered_" + clustering_better_names(clustering) + "_web_" + chosen_web + ".csv";
+    writematrix(cluster_colors,file);
+    file = "/Users/ema/github/data_aggregation/r/plotting/cluster_sizes_" + clustering_better_names(clustering) + "_web_" + chosen_web + ".csv";
+    writematrix(size_of_clusters,file);
+    
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+setwd('/Users/ema/github/data_aggregation/r/food_web_tools/trophic_position')
+source('../writeEdgelist.r')
+source('../readEdgelist.r')
+source('../../addFrontZeros.r')
+source('trophicPosition.r')
+A = readEdgelist('edgelist_web_1.csv')
+TP = trophicPosition(A)

@@ -1,0 +1,1 @@
+Size of the food webs we used in our study. The median number of nodes in the food webs was 23.5 (IQR=12.5).

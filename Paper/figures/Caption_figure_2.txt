@@ -1,0 +1,1 @@
+"The size of the clusters produced by the different clustering methods. The size of the aggregated food web compared to the original one was 74.5% (IQR=10.8) for Jaccard (a), 73% (IQR=7.2) for REGE (b), 12.8% (IQR=6.5) for density (c), 35.8% (IQR=21.3) for prey (d), 72.1% (IQR=29.6) for predator (e), 15.8% (IQR=6.5) for groups (f), "

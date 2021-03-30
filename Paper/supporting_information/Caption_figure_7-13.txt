@@ -1,0 +1,1 @@
+Heat map of the upper confidence interval for each of the kendall's rank correlation coefficients (τ). Each value in the heat map is the difference between kendall's rank correlation and its upper confidence interval.

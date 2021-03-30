@@ -1,5 +1,8 @@
 # Data_aggregation
 
+## Ecopath with Ecosim food webs.
+The food webs included in adjacency_matrices are all taken by the 105 food webs of Ecopath with Ecosim. Inside, you have 105 food webs with loops, which include around 35 food webs that are naturally without cycles. I should include big food webs, but it seems like there are not many of them. Only 10 food webs have no cycles and more than 20 nodes. 8 have at least 23 nodes. 
+
 ## Data format
 
 ### Edge list
