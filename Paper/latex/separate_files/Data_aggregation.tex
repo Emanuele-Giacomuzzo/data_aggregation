@@ -1,0 +1,55 @@
+\documentclass[twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry} %Margins
+\usepackage{multicol} %Columns: multiples
+\usepackage[hidelinks]{hyperref} %Hyperlinks
+\usepackage{authblk} %Authors: affiliation
+\renewcommand\Affilfont{\itshape\small} %Authors: affiliation font
+\usepackage{tabularx} % Tabular: automatic line-break
+\usepackage[justification=raggedright]{caption} %Floats: caption as with tables
+\usepackage{ltablex} %Floats: long
+\renewcommand{\arraystretch}{1.5} %Tables: more space between rows
+\usepackage{graphicx} %Figures: import
+\graphicspath{{../pics/}} %Figures path
+\usepackage{subcaption} %Figures: multiple with one caption
+\usepackage{amsmath} %Case definition
+\usepackage[toc,page]{appendix} %Appendix
+\newenvironment{conditions} %Conditions
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}} %Conditions
+{\end{tabular}\par\vspace{\belowdisplayskip}} %Conditions
+\usepackage{natbib} %Citations: APA
+\usepackage{amsmath} %Use \[ ... \]
+\usepackage{xcolor} %colors
+\title{Food web aggregation: effects on key positions}
+\author[1]{Emanuele Giacomuzzo}
+\author[1]{Ferenc Jordàn}
+\affil[1]{Stazione Zoologica Anton Dohrn, Napoli, 80122, Italy}
+%\affil[2]{Central European University, Budapest, 1051, Hungary}
+\date{}
+\begin{document}
+\maketitle
+\input{introduction}
+						\begin{figure}[htbp]%{\textwidth}
+							\centering
+							\includegraphics[width=1.0\linewidth]{reg_struct_equivalence}
+							\caption{\input{caption}}
+							\label{fig:equivalences}
+						\end{figure} %CHANGE
+\input{methods}
+\input{results}
+\input{acknowledgments}
+\input{suuplementary_material}
+\bibliographystyle{apalike}
+\bibliography{/Applications/Mendeley/library.bib}
+\onecolumn
+\begin{appendices}
+	\section{Hierarchical clustering with Jaccard index} \label{appendix:jaccard}
+	\input{Jaccard_algorithm}
+	\section{Hierarchical clustering with REGE index} \label{appendix:rege}
+	\input{rege_algorithm}
+	\section{Topological importance computation} \label{appendix:TI}
+	\input{TI_algorithm}
+	\section{Trophic field overlap computation} \label{appendix:TO}
+	\input{TO_algorithm}
+\end{appendices}
+\end{document}

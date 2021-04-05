@@ -1,0 +1,41 @@
+\begin{enumerate}
+
+			\item \emph{Compute similarity.} \smallskip \newline
+						Compute the Jaccard similarity between the nodes by using the following equation \citep{Yodzis1999}:
+
+										\begin{equation}
+				      				J_{ij}=\frac{a}{a+b+c} \label{eqn:jaccard}
+			      				\end{equation}
+
+			      \noindent where $J_{ij}$ is the Jaccard similarity between node $i$ and $j$, $a$ is the number of preys and predators that $i$ and $j$ have in common, $b$ is the number of preys and predators exclusively of i, and $c$ is the number of preys and predators exclusively of $j$.
+
+			\item \emph{Build the dendrogram.} \smallskip \newline
+			      Find the two most similar elements and cluster them together (elements are intended as nodes or clusters. Of course, the first time we run this step all the elements are nodes). Repeat until you are left with only one item, which is the final dendrogram. During this process, the similarity between two clusters can be calculated in different ways, called linkage criteria. The ones that we used were
+
+						\begin{itemize}
+				      \item 	The similarity between the least similar nodes, one in each cluster, known as single-linkage \citep{Frigui2008}.
+				      \item 	The similarity between the most similar nodes, one in each cluster, known as complete linkage \citep{Frigui2008}.
+				      \item 	The mean similarity between the nodes inside the first item and the second item, known as the weighted average distance(WPGMA) \citep{Sokal1958}:
+
+				            	\begin{equation}
+					            	d_{(i \bigcup j),k}=\frac{d_{i,k}+d_{j,k}}{2} \label{eqn:WPGMA}
+				            	\end{equation}
+
+											\noindent where $d_{\left(i\cup j\right),k}$ is the distance between the cluster $i \bigcup j$ (cluster including $i$ and $j$) and $k$, $d_{i,k}$ is the distance between $i$ and $k$, and  $d_{j,k}$ is the distance between $j$ and $k$.
+				      \item	The mean similarity between the nodes inside the first item and the second item, but taking into consideration the average distance between the items inside the fist cluster; this is known as the unweighted average distance (UPGMA) \citep{Sokal1958}:
+
+				            	\begin{equation}
+					            	d_{(i \bigcup j),k}=\frac{|i|d_{i,k}+|j|d_{j,k}}{|i|+|j|} \label{eqn:UPGMA}
+				            	\end{equation}
+
+							\noindent where $|i|$ and $|j|$ are the mean distances between the elements inside $i$ and $j$, respectively.
+			      \end{itemize}
+
+			\item \emph{Select the dendrogram.} \smallskip \newline
+						After having produced a dendrogram for every linkage criteria, select the dendrogram with the highest cophenetic correlation \citep{Sokal1962}.
+			      This allows selecting the linkage criterion that produces the dendrogram that preserves the most faithfully the pairwise similarity between different elements.
+
+			\item \emph{Cut the dendrogram.} \smallskip \newline
+			      Cut the dendrogram according to the maximum inconsistency of the branches, set at 0.01.
+
+		\end{enumerate}

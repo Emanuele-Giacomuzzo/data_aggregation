@@ -9,7 +9,7 @@ clustering_methods = c('Jaccard', 'REGE', 'density', 'prey', 'predator', 'groups
 titles = c('(a)', '(b)', '(c)', '(d)', '(e)', '(f)')
 figure = 4
 
-path = paste0('/Users/ema/github/data_aggregation/data/ecobase/adjacency_matrices/A_loops_', addFrontZeros(web), '.txt')
+path = paste0('/Users/ema/github/data_aggregation/data/ecobase/adjacency_matrices/Adjacency_matrix_web_', addFrontZeros(web), '.txt')
 A = read.csv(path, header = F)
 A = as.matrix(A)
 
@@ -46,7 +46,7 @@ for (clustering in 1:length(clustering_methods)){
   title(titles[clustering],cex.main = 2)
 }
 dev.off()
-caption = "Effect of aggregation on most the most important nodes in a food web. Red: central before and central after. Orange: central before and not central after. Purple: not central before and central after. Blue: not central before and not central after. The self-loops are not included in the figure for clarity. (a) = jaccard, (b) = rege, (c) = density-based modules, (d) = prey-based modules, (e) = predator-based modules, (f) = groups found by the group model."
+caption = "Effect of aggregation on most the most important nodes in a food web. Red: central before and central after. Orange: central before and not central after. Purple: not central before and central after. Blue: not central before and not central after. The self-loops are not included in the figure for clarity. (a) = jaccard, (b) = rege, (c) = density-based modules, (d) = prey-based modules, (e) = predator-based modules, (f) = groups found by the group model. The food web of this figure is the one of the West Florida Shelf (Okey, 2004a)) and the largest network we used (55 nodes)."
 write.table(caption,paste0("/Users/ema/github/data_aggregation/paper/figures/Caption_figure_", figure,".txt"),col.names = F, row.names = F)
 
 
@@ -105,5 +105,5 @@ for (clustering in 1:length(clustering_methods)){
 }
 dev.off()
 
-caption = "Aggregation of the food web according to different clustering algortihms. The size of the nodes is prortional to the number of nodes that have been aggregated into them. The self-loops are not included in the figure for clarity. (a) = jaccard, (b) = rege, (c) = density-based modules, (d) = prey-based modules, (e) = predator-based modules, (f) = groups found by the group model."
-write.table(caption,paste0("/Users/ema/github/data_aggregation/paper/figures/Caption_figure_", figure,".txt"),col.names = F, row.names = F)
+caption = "Aggregation of the food web of Figure 5 according to different clustering algortihms. The size of the nodes is prortional to the number of nodes that have been aggregated into them. The self-loops are not included in the figure for clarity. (a) = jaccard, (b) = rege, (c) = density-based modules, (d) = prey-based modules, (e) = predator-based modules, (f) = groups found by the group model. As you can see in (d), aggregation might cause to produce a node that is not connected to the rest of the network."
+write.table(caption,paste0("/Users/ema/github/data_aggregation/paper/figures/Caption_figure_", figure,".txt"),col.names = F, row.names = F) 

@@ -1,73 +1,44 @@
-function [DAG] = createDAG(A,TP)
+function DAG = createDAG(A)
 
-%if the network had problems with the TP, then we need to eliminate cycles
+%if the network had problems with the TP,  then we need to eliminate cycles
 %until the network gives us a good answer. At that point we need to
-%calculate TP and that's going to be our ultimate TP. 
+%calculate TP and that's going to be our ultimate TP.
 
 A = A - diag(diag(A));
+TP = calculateTP(A);
+TP_errors = sum(isinf(TP)) + sum(isnan(TP));
 
-all_cycles = 1;
-cycles_deleted = 0;
-
-while isempty(all_cycles) == 0
+cycles = 1;
     
-    TP = calculateTP(A);
-    nan_inf = sum(isinf(TP)) + sum(isnan(TP));
-    if nan_inf == 0
-        final_TP = TP;
+while isempty(cycles) == 0
+    
+    cycle_lengths = double.empty;
+    cycle_TPs = cell(length(cycles), 1);
+    cycle_TPs_to_next = cell(length(cycles), 1);
+    cycle_out_links = cell(length(cycles), 1);
+    
+    cycles = findCycles(A);
+    
+    for cycle = 1:length(cycles)
+        cycle_lengths(cycle) = length(cycles{cycle});
     end
     
-    all_cycles = findCycles(A);
-    
-    tp = cell(length(all_cycles),1);
-    out_links = cell(length(all_cycles),1);
-    tp_to_next = cell(length(all_cycles),1);
-    for cycle = 1:length(all_cycles)
-        for node = 1:length(all_cycles{cycle})
-            tp{cycle}(node) = TP(all_cycles{cycle}(node));
-        end
-        for node = 1:length(all_cycles{cycle})
-            if node ~= length(all_cycles{cycle})
-                out_links{cycle}(node) = A((all_cycles{cycle}(node)), (all_cycles{cycle}(node+1)));
-                tp_to_next{cycle}(node) = abs(tp{cycle}(node)-tp{cycle}(node+1));
-            else
-                out_links{cycle}(node) = A((all_cycles{cycle}(node)), (all_cycles{cycle}(1)));
-                tp_to_next{cycle}(node) = abs(tp{cycle}(node)-tp{cycle}(1));
+    for cycle = 1:length(cycles)
+        if cycle_lengths(cycle) == min(cycle_lengths)
+            for node = 1:cycle_lengths(cycle)
+                cycle_TPs{cycle}(node) = TP(cycles{cycle}(node));
             end
+            [cycle_out_links{cycle}, cycle_TPs_to_next{cycle}] = calculateOutStrengthAndTP(A, cycles{cycle}, cycle_TPs{cycle});
+            A = deleteCycle(A, TP, cycles{cycle}, cycle_TPs_to_next{cycle}, cycle_out_links{cycle}, TP_errors);
         end
     end
     
-    lengths=zeros(length(all_cycles),1);
-    for cycle = 1:length(all_cycles)
-        lengths(cycle) = length(all_cycles{cycle});
-        min_cycle_length = min(lengths);
-    end
-    
-    for cycle = 1:length(all_cycles)
-        if length(all_cycles{cycle}) == min_cycle_length
-            if max(tp_to_next{cycle}) > 0.2 && nan_inf == 0
-                [~,index_max] = max(tp_to_next{cycle});
-                from = all_cycles{cycle}(index_max);
-                if index_max ~= length(all_cycles{cycle})
-                    to = all_cycles{cycle}(index_max+1);
-                else 
-                    to = all_cycles{cycle}(1);
-                end
-                A(from,to) = 0; cycles_deleted = cycles_deleted+1;
-            else 
-                [~,index_min_link] = min(out_links{cycle});
-                min_link_from = all_cycles{cycle}(index_min_link);
-                if index_min_link ~= length(all_cycles{cycle})
-                    min_link_to = all_cycles{cycle}(index_min_link+1);
-                else
-                    min_link_to = all_cycles{cycle}(1);
-                end
-                A(min_link_from, min_link_to) = 0; cycles_deleted = cycles_deleted+1;
-            end
-        end
-    end
 end
 
-DAG = A;
-    
+if isdag(digraph(A)) == 1
+    DAG = A;
+else
+    msg('Error: the graph you produced is not a DAG.')
+end
+
 end

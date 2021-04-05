@@ -1,0 +1,42 @@
+\begin{enumerate}
+
+  \item \emph{Compute similarity.} \smallskip \newline
+  Compute the similarity between nodes by using REGE, calculated by the homonym algorithm. This was originally developed in the unpublished work by \citet{White1980,White1982,White1984} and firstly described in the literature by \citet{Borgatti1993}. It is available to be used in the software UCINET VI \citet{Borgatti2002}. The REGE algorithm is as follows \citep{Jordan2018}:
+
+          \begin{enumerate}
+
+            \item Set the maximum number of iterations. We set 3 iterations. Each iteration produces a matrix $R_{\left(t\right)}$ where $t$ is the number of the iteration and every element $r_{\left(t\right)ij}$ is the regular equivalence between i and j at iteration t. The regular equivalence between nodes at iteration t=0 is always 1.
+
+            \item Starting from t=1, update the elements of the matrix following these sub-steps:
+
+                  \begin{enumerate}
+                    \item For every predator k of species i, find the most similar predator m of species j according to  $R_{\left(t\right)}$.
+                          Now, set $X_{i,k,j}=R_{\left(t\right)km}.$
+                    \item For every predator m of species j, find the most similar predator k of species o according to $R_{\left(t\right)}$.
+                          Now, set $X_{j,m,i}=R_{\left(t\right)mk}$.
+                    \item For every prey h of species i, find the most similar prey n of species j according to $R_{\left(t\right)}$.
+                          Now, set $Y_{i,h,j}=R_{\left(t\right)hn}$.
+                    \item For every prey n of species j, find the most similar prey h of species i according to $R_{\left(t\right)}$.
+                          Now, set $Y_{j,n,i}=R_{\left(t\right)nh}$.
+                    \item Update the matrix R through the following equation
+                          %\begin{equation}
+                          % R_{\left(t\right)ij}=\frac{\sum_{k=1} X_{i,k,j}+\sum_{m=1} X_{j,m,i}+\sum_{h=1} Y_{i,h,j}+\sum_{n=1} Y_{j,n,i}}
+                          %{MAX\left(\sum_{k=1} X_{i,k,j}+\sum_{m=1} X_{j,m,i}+\sum_{h=1} Y_{i,h,j}+\sum_{n=1} Y_{j,n,i}\right)}
+                          %\end{equation}
+                    \item Increase t=t+1 and repeat step b until you reach the maximum number of iterations. The matrix of the maximum number of iterations contains the regular equivalence between nodes.
+                  \end{enumerate}
+
+            \item Increase t=t+1 and repeat step b until you reach the maximum number of iterations. The matrix of the maximum number of iterations contains the regular equivalence between nodes.
+
+          \end{enumerate}
+
+  \item \emph{Build the dendrogram.} \smallskip \
+  The same as in the hierarchical clustering of nodes according to their Jaccard similarity index. During our analysis, we used the function linkage of MATLAB, which does not include the possibility of using a similarity matrix, so we converted the similarity matrices into dissimilarity ones. This was done by following what was written in \citet{VonLuxburg2004}. Namely, if the similarity function is normalised - takes values between 0 and 1 - and always positive, then $d=1-s$ where d is the dissimilarity measure and s is the similarity measure).
+
+  \item \emph{Select the dendrogram.} \smallskip \newline
+  The same as in the hierarchical clustering of nodes according to their Jaccard similarity index.
+
+  \item \emph{Cut the dendrogram.} \smallskip \newline
+  The same as in the hierarchical clustering of nodes according to their Jaccard similarity index.
+
+\end{enumerate}

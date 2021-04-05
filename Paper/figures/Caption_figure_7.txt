@@ -1,1 +1,0 @@
-Sections of the comprehensive heat map. It allows to read the single values.

@@ -10,14 +10,14 @@ if centrality_type=="DC", centrality_clusters = centrality(network_U,'degree'); 
 if centrality_type=="WDC", centrality_clusters = calculateWDC(A_clustered); end
 if centrality_type=="BC", centrality_clusters = centrality(network,'betweenness'); end
 if centrality_type=="CC", centrality_clusters = centrality(network_U,'closeness'); end
-if centrality_type=="s", A_clustered = createDAG(A_clustered,TP); [centrality_clusters,~,~] = calculateStatus(A_clustered); end
-if centrality_type=="cs", A_clustered = createDAG(A_clustered,TP); [~,centrality_clusters,~] = calculateStatus(A_clustered); end
-if centrality_type=="ns", A_clustered = createDAG(A_clustered,TP); [~,~,centrality_clusters] = calculateStatus(A_clustered); end
-if centrality_type=="kindex", A_clustered = createDAG(A_clustered,TP); [centrality_clusters,~,~,~,~] = calculateKeystone(A_clustered); end
-if centrality_type=="kbu", A_clustered = createDAG(A_clustered,TP); [~,centrality_clusters,~,~,~] = calculateKeystone(A_clustered); end
-if centrality_type=="ktd", A_clustered = createDAG(A_clustered,TP); [~,~,centrality_clusters,~,~] = calculateKeystone(A_clustered); end
-if centrality_type=="kdir", A_clustered = createDAG(A_clustered,TP); [~,~,~,centrality_clusters,~] = calculateKeystone(A_clustered); end
-if centrality_type=="kindir", A_clustered = createDAG(A_clustered,TP); [~,~,~,~,centrality_clusters] = calculateKeystone(A_clustered); end
+if centrality_type=="s", A_clustered = createDAG(A_clustered); [centrality_clusters,~,~] = calculateStatus(A_clustered); end
+if centrality_type=="cs", A_clustered = createDAG(A_clustered); [~,centrality_clusters,~] = calculateStatus(A_clustered); end
+if centrality_type=="ns", A_clustered = createDAG(A_clustered); [~,~,centrality_clusters] = calculateStatus(A_clustered); end
+if centrality_type=="kindex", A_clustered = createDAG(A_clustered); [centrality_clusters,~,~,~,~] = calculateKeystone(A_clustered); end
+if centrality_type=="kbu", A_clustered = createDAG(A_clustered); [~,centrality_clusters,~,~,~] = calculateKeystone(A_clustered); end
+if centrality_type=="ktd", A_clustered = createDAG(A_clustered); [~,~,centrality_clusters,~,~] = calculateKeystone(A_clustered); end
+if centrality_type=="kdir", A_clustered = createDAG(A_clustered); [~,~,~,centrality_clusters,~] = calculateKeystone(A_clustered); end
+if centrality_type=="kindir", A_clustered = createDAG(A_clustered); [~,~,~,~,centrality_clusters] = calculateKeystone(A_clustered); end
 if centrality_type=="TI1", centrality_clusters = calculateTI(A_clustered,1,"false"); end
 if centrality_type=="TI3", centrality_clusters = calculateTI(A_clustered,3,"false"); end
 if centrality_type=="TI5", centrality_clusters = calculateTI(A_clustered,5,"false"); end

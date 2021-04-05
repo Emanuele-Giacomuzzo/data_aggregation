@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Data_aggregation.aux
+The style file: apalike.bst
+Database file #1: /Applications/Mendeley/library.bib
+Reallocated buffer (elt_size=1) to 40000 items from 20000.
+Reallocated sv_buffer (elt_size=1) to 40000 items from 20000.
+Reallocated ex_buf (elt_size=1) to 40000 items from 20000.
+Reallocated out_buf (elt_size=1) to 40000 items from 20000.
+Reallocated name_tok (elt_size=4) to 40000 items from 20000.
+Reallocated name_sep_char (elt_size=1) to 40000 items from 20000.
+Reallocated buffer (elt_size=1) to 60000 items from 40000.
+Reallocated sv_buffer (elt_size=1) to 60000 items from 40000.
+Reallocated ex_buf (elt_size=1) to 60000 items from 40000.
+Reallocated out_buf (elt_size=1) to 60000 items from 40000.
+Reallocated name_tok (elt_size=4) to 60000 items from 40000.
+Reallocated name_sep_char (elt_size=1) to 60000 items from 40000.
+Warning--I didn't find a database entry for "Agresti2012"
+Warning--empty institution in Colleter2013
+Warning--there's a number but no volume in Endredi2018
+Warning--empty journal in Geyer1991
+Warning--can't use both volume and number fields in Hall1993
+Warning--empty publisher in Hall1993
+You've used 54 entries,
+            1935 wiz_defined-function locations,
+            827 strings with 12154 characters,
+and the built_in function-call counts, 19854 in all, are:
+= -- 1945
+> -- 790
+< -- 32
++ -- 259
+- -- 259
+* -- 1726
+:= -- 3557
+add.period$ -- 157
+call.type$ -- 54
+change.case$ -- 395
+chr.to.int$ -- 54
+cite$ -- 59
+duplicate$ -- 731
+empty$ -- 1380
+format.name$ -- 333
+if$ -- 3772
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 51
+newline$ -- 268
+num.names$ -- 164
+pop$ -- 307
+preamble$ -- 1
+purify$ -- 399
+quote$ -- 0
+skip$ -- 558
+stack$ -- 0
+substring$ -- 1376
+swap$ -- 51
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 318
+warning$ -- 5
+while$ -- 172
+width$ -- 0
+write$ -- 679
+(There were 6 warnings)
