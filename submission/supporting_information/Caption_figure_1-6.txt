@@ -1,0 +1,1 @@
+"Sections of Figure 3, which allows to read the single values. Figure S1= Jaccard, Figure S2= REGE, Figure S3= Density-based modules, Figure S4= Prey-based modules, Figure S5= Predator-based modules, Figure S6= Group model."

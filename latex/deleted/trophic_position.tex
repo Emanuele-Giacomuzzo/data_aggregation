@@ -1,0 +1,7 @@
+The trophic position of a node is the mean length connecting it to the producers of the ecological community (its energy source). It was firstly introduced by \citet{Levine1980}, as a generalization of the earlier use of integer trophic levels to include fractional positions. It can be calculated through the following formula
+
+        \begin{equation}
+          TP_i=\sum\limits_{k=0}^\infty k \cdot p_i(k).
+        \end{equation}
+
+\noindent where $k$ is a certain path length and $p_i(k)$ is the probability that species $i$ will reach the energy produced by the autotrophs via a path of length $k$. $TP$ equals 0 for producers, it equals 1 for herbivores and larger values for omnivores and carnivores.
