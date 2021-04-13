@@ -13,3 +13,12 @@ for clustering = 1:length(clustering_methods)
         end
     end
 end
+
+%% TAKE OFF TP
+if take_off_TP == 1 
+    for clustering = 1:length(clustering_methods)
+        kendall_mean{clustering} = kendall_mean{clustering}(1:end-1,:);
+        kendall_ci_max{clustering} = kendall_ci_max{clustering}(1:end-1,:);
+        kendall_ci_min{clustering} = kendall_ci_min{clustering}(1:end-1,:);
+    end
+end

@@ -1,26 +1,25 @@
-First,Second,Third,Fourth,Fifth,Sixth
-50% ,50% ,50% ,50% ,25% ,25% 
-50% mean,50% mean,25% sum,NMAX mean,NMAX mean,NMAX sum
-50% ,50% ,50% ,50% ,25% ,25% 
-50% ,50% ,50% ,25% ,25% ,25% 
-NMAX ,NMAX ,25% ,NMAX ,25% ,NMAX 
-25% ,25% ,NMAX ,25% ,NMAX ,25% 
-25% ,NMAX ,25% ,25% ,NMAX ,NMAX 
-50% ,50% ,50% ,25% ,25% ,NMAX 
-25% ,50% ,25% ,25% ,25% ,NMAX 
-25% ,50% ,50% ,25% ,25% ,25% 
-50% ,50% ,50% ,50% ,50% ,25% 
-50% ,50% ,50% ,25% ,25% ,NMAX 
-50% ,50% ,50% ,NMAX ,25% ,NMAX 
-50% ,NMAX ,50% ,NMAX ,NMAX ,NMAX 
-25% ,25% ,25% ,NMAX ,NMAX ,NMAX 
-50% mean,50% mean,50% mean,NMAX max,25% mean,NMAX sum
-50% mean,NMAX mean,50% mean,NMAX mean,NMAX mean,NMAX mean
-25% mean,25% mean,25% mean,NMAX mean,NMAX mean,NMAX mean
-25% ,50% ,50% ,25% ,25% ,25% 
-25% ,50% ,50% ,25% ,25% ,25% 
-25% ,50% ,50% ,25% ,25% ,25% 
-25% mean,50% max,50% mean,25% min,25% mean,25% min
-25% mean,50% mean,50% max,25% mean,25% mean,25% max
-25% mean,50% mean,50% mean,25% mean,25% mean,NMAX sum
-NMAX ,25% ,NMAX ,25% ,NMAX ,25% 
+Index,C1,C2,C3,C4,C5,C6
+DC,50% ,50% ,50% ,50% ,25% ,25% 
+WDC,50% mean,50% mean,25% sum,NMAX mean,NMAX mean,NMAX sum
+CC,50% ,50% ,50% ,50% ,25% ,25% 
+BC,50% ,50% ,50% ,25% ,25% ,25% 
+s,NMAX ,NMAX ,25% ,NMAX ,25% ,NMAX 
+cs,25% ,25% ,NMAX ,25% ,NMAX ,25% 
+ns,25% ,NMAX ,25% ,25% ,NMAX ,NMAX 
+kindex,50% ,50% ,50% ,25% ,25% ,NMAX 
+kbu,25% ,50% ,25% ,25% ,25% ,NMAX 
+ktd,25% ,50% ,50% ,25% ,25% ,25% 
+kdir,50% ,50% ,50% ,50% ,50% ,25% 
+kindir,50% ,50% ,50% ,25% ,25% ,NMAX 
+TI1,50% ,50% ,50% ,NMAX ,25% ,NMAX 
+TI3,50% ,NMAX ,50% ,NMAX ,NMAX ,NMAX 
+TI5,25% ,25% ,25% ,NMAX ,NMAX ,NMAX 
+WI1,50% mean,50% mean,50% mean,NMAX max,25% mean,NMAX sum
+WI3,50% mean,NMAX mean,50% mean,NMAX mean,NMAX mean,NMAX mean
+WI5,25% mean,25% mean,25% mean,NMAX mean,NMAX mean,NMAX mean
+STO1,25% ,50% ,50% ,25% ,25% ,25% 
+STO3,25% ,50% ,50% ,25% ,25% ,25% 
+STO5,25% ,50% ,50% ,25% ,25% ,25% 
+wSTO1,25% mean,50% max,50% mean,25% min,25% mean,25% min
+wSTO3,25% mean,50% mean,50% max,25% mean,25% mean,25% max
+wSTO5,25% mean,50% mean,50% mean,25% mean,25% mean,NMAX sum

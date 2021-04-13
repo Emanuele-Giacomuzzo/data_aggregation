@@ -1,3 +1,5 @@
+initial_path = pwd();
+
 for clustering = 1:length(clustering_methods)
     cd ('/Users/ema/github/data_aggregation/results/kendalls_' + clustering_methods(clustering));
     files = dir();
@@ -6,3 +8,5 @@ for clustering = 1:length(clustering_methods)
         kendalls{(file - hidden_files),clustering} = readmatrix(files(file).name);
     end
 end
+
+cd('../../matlab')

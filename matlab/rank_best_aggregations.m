@@ -1,6 +1,9 @@
+%% INITIALISE 
 rankings = strings(length(centralities),length(clustering_methods));
 rankings_ci = strings(length(centralities),length(clustering_methods));
 rankings_link_n_strength = strings(length(centralities),length(clustering_methods));
+
+%% RANK BEST AGGREGATION 
 for centralityI = 1:length(centralities)
     [sorted_values, sorted_values_indices] = sort(best_kendall(centralityI,:),'descend');
     sorted_values = round(sorted_values,2);
@@ -19,7 +22,7 @@ for method = 1:length(linkage_n_strength)
     rankings_link_n_strength = strrep(rankings_link_n_strength, "M"+method+" ", linkage_n_strength(method));
 end
 
-%If the centralityI index is not a weighted one, delete the strength part.
+%% If the centralityI index is not a weighted one, delete the strength part.
 for centralityI = 1:length(centralities)
     if isempty(find(weighted_centralities==centralityI)) == 1;
         rankings_link_n_strength(centralityI,:) = strrep(rankings_link_n_strength(centralityI,:),"min","");
