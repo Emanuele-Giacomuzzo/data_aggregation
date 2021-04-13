@@ -1,5 +1,6 @@
 cd '/Users/ema/github/data_aggregation/matlab';
 clc,clear;
+figure('WindowState','fullscreen')
 %% PARAMETERS
 tot_web_nr = 105;
 TP_problems = [63 87];
@@ -14,24 +15,46 @@ TO_min_threshold = 0.01;
 TO_max_threshold = 0.1;
 TO_learning_rate = 0.01;
 
-whole_analysis = 1;
+whole_analysis = 0;
 take_off_TP = 1;
 
 color_style = jet;
 medium_font_size = 18;
 small_font_size = 12;
 
-%% PROGRAMM
-centralities_n_aggregations;
-cd '/Users/ema/github/data_aggregation/matlab';
+%% ANALYSIS
+import_adjacency_matrices;
+calculate_food_web_sizes;
+define_centralities;
+define_aggregations;
+import_memberships;
+import_rege_matrices;
+
 if whole_analysis == 1
     indices_analysis;
 end
-save at_the_end_of_whole_analysis
-sizes_of_clusters;
-manipulate_kendalls;
-save_figures;
-save_supporting_info;
+
+%% POST ANALYSIS
+calculate_cluster_sizes;
+
+import_kendalls;
+screen_kendall_values;
+rearrange_kendalls;
+
+calculate_mean_n_ci_of_kendalls;
+compute_comprehensive_heatmaps;
+save_comprehensive_heatmap_mean;
+save_comprehensive_heatmaps_ci;
+
+save_kendall_mean_for_each_clustering;
+save_kendall_ci_for_each_clustering;
+
+find_best_aggregations;
+rank_best_aggregations;
+take_off_TP;
+
+write_ranking_table;
+write_supporting_tables;
 
 chosen_web=37;
 indices_analysis;

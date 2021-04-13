@@ -1,0 +1,26 @@
+First,Second,Third,Fourth,Fifth,Sixth
+50% ,50% ,50% ,50% ,25% ,25% 
+50% mean,50% mean,25% sum,NMAX mean,NMAX mean,NMAX sum
+50% ,50% ,50% ,50% ,25% ,25% 
+50% ,50% ,50% ,25% ,25% ,25% 
+NMAX ,NMAX ,25% ,NMAX ,25% ,NMAX 
+25% ,25% ,NMAX ,25% ,NMAX ,25% 
+25% ,NMAX ,25% ,25% ,NMAX ,NMAX 
+50% ,50% ,50% ,25% ,25% ,NMAX 
+25% ,50% ,25% ,25% ,25% ,NMAX 
+25% ,50% ,50% ,25% ,25% ,25% 
+50% ,50% ,50% ,50% ,50% ,25% 
+50% ,50% ,50% ,25% ,25% ,NMAX 
+50% ,50% ,50% ,NMAX ,25% ,NMAX 
+50% ,NMAX ,50% ,NMAX ,NMAX ,NMAX 
+25% ,25% ,25% ,NMAX ,NMAX ,NMAX 
+50% mean,50% mean,50% mean,NMAX max,25% mean,NMAX sum
+50% mean,NMAX mean,50% mean,NMAX mean,NMAX mean,NMAX mean
+25% mean,25% mean,25% mean,NMAX mean,NMAX mean,NMAX mean
+25% ,50% ,50% ,25% ,25% ,25% 
+25% ,50% ,50% ,25% ,25% ,25% 
+25% ,50% ,50% ,25% ,25% ,25% 
+25% mean,50% max,50% mean,25% min,25% mean,25% min
+25% mean,50% mean,50% max,25% mean,25% mean,25% max
+25% mean,50% mean,50% mean,25% mean,25% mean,NMAX sum
+NMAX ,25% ,NMAX ,25% ,NMAX ,25% 

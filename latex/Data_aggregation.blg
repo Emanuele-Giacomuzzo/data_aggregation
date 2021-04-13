@@ -23,7 +23,7 @@ Warning--can't use both volume and number fields in Hall1993
 Warning--empty publisher in Hall1993
 You've used 53 entries,
             1935 wiz_defined-function locations,
-            821 strings with 12038 characters,
+            821 strings with 12056 characters,
 and the built_in function-call counts, 19491 in all, are:
 = -- 1907
 > -- 783

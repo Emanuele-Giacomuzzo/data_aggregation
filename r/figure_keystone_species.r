@@ -16,7 +16,7 @@ for (clustering in 1:length(clustering_methods)){
               ylim = c(min(coordinates_original[,2]), max(coordinates_original[,2])),
               #axes = T,
               vertex.label = NA,
-              vertex.size = 3,
+              vertex.size = 5,
               vertex.color = V(G)$color,
               vertex.shape = V(G)$shape,
               edge.arrow.size = .2,
