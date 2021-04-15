@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.17)  13 APR 2021 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.3.17)  14 APR 2021 10:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -648,250 +648,33 @@ I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-(./captions/caption_best_kendalls.txt) (./captions/caption_best_kendalls.txt) (./tables/rank_table.tex
-./tables/rank_table.tex:9: Extra }, or forgotten \endgroup.
-l.9 ...h$$\backslash$displaystyle DC $\backslash$}
-                                                  $\backslash$$\backslash$ &...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:10: Extra }, or forgotten \endgroup.
-l.10 ...$\backslash$displaystyle WDC $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:11: Extra }, or forgotten \endgroup.
-l.11 ...$$\backslash$displaystyle CC $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:12: Extra }, or forgotten \endgroup.
-l.12 ...$$\backslash$displaystyle BC $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:13: Extra }, or forgotten \endgroup.
-l.13 ...h$$\backslash$displaystyle s $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:14: Extra }, or forgotten \endgroup.
-l.14 ...$$\backslash$displaystyle s' $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:15: Extra }, or forgotten \endgroup.
-l.15 ...laystyle $\backslash$Delta s $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:16: Extra }, or forgotten \endgroup.
-l.16 ...h$$\backslash$displaystyle k $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+(./captions/caption_best_kendalls.txt) (./captions/caption_best_kendalls.txt) (./tables/rank_table.tex) (./tables/rank_table_ci.tex) (./tables/rank_table_aggregations.tex) (./sections/acknowledgments.tex) (./sections/supplementary_material.tex) (./Data_aggregation.bbl [7 <./figures/cluster_sizes.png (PNG copy)>] [8 <./figures/mean_kendalls_a.png (PNG copy)>] [9 <./figures/best_kendalls.png (PNG copy)>] [10]) [11] [12] [13] [14] (./sections/Jaccard_algorithm.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 16.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
-
-./tables/rank_table.tex:17: Extra }, or forgotten \endgroup.
-l.17 ...slash$displaystyle k\_\{bu\} $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:18: Extra }, or forgotten \endgroup.
-l.18 ...slash$displaystyle k\_\{td\} $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:19: Extra }, or forgotten \endgroup.
-l.19 ...lash$displaystyle k\_\{dir\} $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:20: Extra }, or forgotten \endgroup.
-l.20 ...sh$displaystyle k\_\{indir\} $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:21: Extra }, or forgotten \endgroup.
-l.21 ...ash$displaystyle TI\verb|^|1 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:22: Extra }, or forgotten \endgroup.
-l.22 ...ash$displaystyle TI\verb|^|3 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:23: Extra }, or forgotten \endgroup.
-l.23 ...ash$displaystyle TI\verb|^|5 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:24: Extra }, or forgotten \endgroup.
-l.24 ...ash$displaystyle WI\verb|^|1 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:25: Extra }, or forgotten \endgroup.
-l.25 ...ash$displaystyle WI\verb|^|3 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:26: Extra }, or forgotten \endgroup.
-l.26 ...ash$displaystyle WI\verb|^|5 $\backslash$}
-                                                   & {\color[HTML]{EF2A00} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:27: Extra }, or forgotten \endgroup.
-l.27 ...sh$displaystyle STO\verb|^|1 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:28: Extra }, or forgotten \endgroup.
-l.28 ...sh$displaystyle STO\verb|^|3 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:29: Extra }, or forgotten \endgroup.
-l.29 ...sh$displaystyle STO\verb|^|5 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:30: Extra }, or forgotten \endgroup.
-l.30 ...h$displaystyle wSTO\verb|^|1 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:31: Extra }, or forgotten \endgroup.
-l.31 ...h$displaystyle wSTO\verb|^|3 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-./tables/rank_table.tex:32: Extra }, or forgotten \endgroup.
-l.32 ...h$displaystyle wSTO\verb|^|5 $\backslash$}
-                                                   & {\color[HTML]{00D768} 0...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-) (./sections/acknowledgments.tex) (./sections/supplementary_material.tex) (./Data_aggregation.bbl [7 <./figures/cluster_sizes.png (PNG copy)>] [8 <./figures/mean_kendalls_a.png (PNG copy)>] [9 <./figures/best_kendalls.png (PNG copy)>] [10] [11]) [12] (./sections/Jaccard_algorithm.tex) (./sections/rege_algorithm.tex [13
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 16.
+) (./sections/rege_algorithm.tex [15
 
 ]) (./sections/TI_algorithm.tex
-<figures/TI_example.png, id=375, 361.35pt x 344.28625pt>
+<figures/TI_example.png, id=385, 361.35pt x 344.28625pt>
 File: figures/TI_example.png Graphic file (type png)
 <use figures/TI_example.png>
 Package pdftex.def Info: figures/TI_example.png  used on input line 28.
 (pdftex.def)             Requested size: 498.66258pt x 475.12077pt.
-) (./sections/TO_algorithm.tex [14] [15 <./figures/TI_example.png>])
+) (./sections/TO_algorithm.tex [16] [17 <./figures/TI_example.png>])
 
 Package natbib Warning: There were undefined citations.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 85.
-[16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 85.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
+[18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
  (./Data_aggregation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 85.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 85.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
 Package rerunfilecheck Info: File `Data_aggregation.out' has not changed.
-(rerunfilecheck)             Checksum: CAE84CCF94585629A97E4E353C70A8F1;347.
+(rerunfilecheck)             Checksum: 18C0B73A6D0B3CEC4ADB56F903C24B9B;347.
 
 
 LaTeX Warning: There were undefined references.
@@ -899,22 +682,22 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 85.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 8935 strings out of 492616
- 133014 string characters out of 6129481
- 246879 words of memory out of 5000000
- 12532 multiletter control sequences out of 15000+600000
+ 8942 strings out of 492616
+ 133163 string characters out of 6129481
+ 280322 words of memory out of 5000000
+ 12529 multiletter control sequences out of 15000+600000
  12321 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,9n,46p,2051b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,52p,2090b,560s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Data_aggregation.pdf (16 pages, 1332528 bytes).
+Output written on Data_aggregation.pdf (18 pages, 1316907 bytes).
 PDF statistics:
- 509 PDF objects out of 1000 (max. 8388607)
- 462 compressed objects within 5 object streams
- 160 named destinations out of 1000 (max. 500000)
+ 520 PDF objects out of 1000 (max. 8388607)
+ 471 compressed objects within 5 object streams
+ 164 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

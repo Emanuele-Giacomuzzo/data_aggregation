@@ -1,0 +1,11 @@
+Figure S1 - S2
+Confidence intervals of the mean Kendall's rank correlation coefficients of Figure 1. Each value is the difference between the mean and confidence upper or lower confidence interval. Figure S1: mean - lower confidence interval. Figure S2: upper confidence interval - mean.
+
+Figure S3 - S8
+Sections of Figure 1, which allow to read the single values in the heat map. Figure S3 = hierarchical clustering using Jaccard index, Figure S4 = hierarchical clustering using REGE index, Figure S5 = maximisation of density-based modularity, Figure S6 = maximisation of prey-based modularity, Figure S7 = maximisation of predator-based modularity, Figure S8 = group detection through the group model.
+
+Figure S9 - S14
+Upper confidence intervals of the values in FigureS3 - S8, calculated as in FigureS1 - S2.
+
+Figure S15 - S20
+Lower confidence intervals of the values in FigureS3 - S8, calculated as in Figures S1 - S2.

@@ -1,0 +1,30 @@
+\documentclass[onecolumn]{article} %[twocolumn]
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry} %Margins
+\usepackage{multicol} %Columns: multiples
+\usepackage[hidelinks]{hyperref} %Hyperlinks
+\usepackage{authblk} %Authors: affiliation
+\renewcommand\Affilfont{\itshape\small} %Authors: affiliation font
+\usepackage{tabularx} % Tabular: automatic line-break
+\usepackage[justification=raggedright]{caption} %Floats: caption as with tables
+\usepackage{ltablex} %Floats: long
+\renewcommand{\arraystretch}{1.5} %Tables: more space between rows
+\usepackage{graphicx} %Figures: import
+\graphicspath{{figures/}} %Figures path
+\usepackage{subcaption} %Figures: multiple with one caption
+\usepackage{amsmath} %Case definition
+\usepackage[toc,page]{appendix} %Appendix
+\newenvironment{conditions} %Conditions
+{\par\vspace{\abovedisplayskip}\noindent\begin{tabular}{>{$}l<{$} @{${}={}$} l}} %Conditions
+{\end{tabular}\par\vspace{\belowdisplayskip}} %Conditions
+\usepackage{natbib} %Citations: APA
+\usepackage{amsmath} %Use \[ ... \]
+\usepackage{xcolor} %colors
+\usepackage{import}
+\begin{document}
+
+\include{rank_table_ci}
+\include{rank_table_aggregations}
+\include{food webs}
+
+\end{document}

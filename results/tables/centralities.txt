@@ -1,0 +1,24 @@
+DC
+WDC
+CC
+BC
+s
+s'
+\Delta s
+k
+k_{bu}
+k_{td}
+k_{dir}
+k_{indir}
+TI^1
+TI^3
+TI^5
+WI^1
+WI^3
+WI^5
+STO^1
+STO^3
+STO^5
+wSTO^1
+wSTO^3
+wSTO^5

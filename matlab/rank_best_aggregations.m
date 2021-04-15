@@ -4,18 +4,22 @@ rankings_ci = strings(length(centralities),length(clustering_methods));
 rankings_link_n_strength = strings(length(centralities),length(clustering_methods));
 
 %% RANK BEST AGGREGATION 
-for centralityI = 1:length(centralities)
+for centralityI = 1:length(best_kendall)
     [sorted_values, sorted_values_indices] = sort(best_kendall(centralityI,:),'descend');
     sorted_values = round(sorted_values,2);
     for rank = 1:length(clustering_methods)
         rankings(centralityI,rank) = "A" + sorted_values_indices(rank) + " (" + sprintf('%1.2f',sorted_values(rank)) + ")";
-        rankings_ci(centralityI,rank) = ci_min_of_best(centralityI,sorted_values_indices(rank)) + "-" + ci_max_of_best(centralityI,sorted_values_indices(rank));
-        rankings_link_n_strength(centralityI,rank) = "M" + best_link_n_strength(centralityI,sorted_values_indices(rank)) + " ";
+        rankings_ci(centralityI,rank) = "A" + sorted_values_indices(rank) + " (" + sprintf('%1.2f', ci_min_of_best(centralityI,sorted_values_indices(rank))) + "-" + sprintf('%1.2f',ci_max_of_best(centralityI,sorted_values_indices(rank))) + ")";
+        rankings_link_n_strength(centralityI,rank) = "A" + sorted_values_indices(rank) + " " + "M" + best_link_n_strength(centralityI,sorted_values_indices(rank)) + " )";
     end
 end
 
+%% Change the names
+
 for clustering = 1:length(clustering_methods)
     rankings = strrep(rankings, "A"+clustering, clustering_better_names(clustering));
+    rankings_ci = strrep(rankings_ci, "A"+clustering, clustering_better_names(clustering));
+    rankings_link_n_strength = strrep(rankings_link_n_strength, "A"+clustering, clustering_better_names(clustering));
 end
 
 for method = 1:length(linkage_n_strength)
