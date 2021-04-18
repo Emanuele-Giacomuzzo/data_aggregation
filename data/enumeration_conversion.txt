@@ -1,107 +1,106 @@
-Our nr	Heymans et al. (2014) nr
-
-1	18
-2	60
-3	59
-4	20
-5	32
-6	101
-7	100
-8	103
-9	102
-10	36
-11	38
-12	39
-13	37
-14	3
-15	41
-16	42
-17	45
-18	43
-19	44
-20	88
-21	83
-22	85
-23	77
-24	82
-25	80
-26	89
-27	75
-28	76
-29	8
-30	26
-31	93
-32	58
-33	29
-34	30
-35	63
-36	95
-37	97
-38	94
-39	92
-40	91
-41	96
-42	104
-43	81
-44	64
-45	61
-46	62
-47	19
-48	23
-49	25
-50	24
-51	27
-52	98
-53	67
-54	99
-55	87
-56	90
-57	79
-58	86
-59	78
-60	105
-61	49
-62	50
-63	40
-64	22
-65	35
-66	1
-67	54
-68	66
-69	21
-70	68
-71	69
-72	2
-73	14
-74	4
-75	5
-76	33
-77	31
-78	16
-79	51
-80	6
-81	47
-82	7
-83	84
-84	72
-85	71
-86	74
-87	65
-88	9
-89	34
-90	53
-91	28
-92	55
-93	56
-94	57
-95	10
-96	70
-97	73
-98	11
-99	12
-100	13
-101	52
-102	15
-103	17
-104	46
-105	48
+Our nr 	Heymans et al. (2014) nr	Name
+1	18	Great Barrier Reef-prawn
+2	60	Baltic Sea
+3	59	Baltic Sea (NEST)
+4	20	Brunei
+5	32	Maspalomas Lagoon
+6	101	Central Chile
+7	100	Tongoy Bay
+8	103	Gulf of Nicoya
+9	102	Golf of Dulce
+10	36	Bay of Somme
+11	38	Etang de Thau
+12	39	Gironde Estuary
+13	37	Seine Estuary
+14	3	Sakumo Lagoon
+15	41	Iceland
+16	42	Iceland - 1950
+17	45	Lagoon of Venice
+18	43	Orbetello 1995
+19	44	Orbetello Lagoon
+20	88	La Paz Bay
+21	83	Central Gulf of California
+22	85	Sonda de Campeche
+23	77	Huizache-Caimanero
+24	82	Alto Golfo de California
+25	80	Terminos Lagoon
+26	89	Mandinga Lagoon
+27	75	Tampamachoco Lagoon
+28	76	Celestun Lagoon
+29	8	Maputo
+30	26	Loyalty Islands Atoll
+31	93	Aleutians Islands
+32	58	Cantabrian Sea
+33	29	Kuosheng Bay
+34	30	Lagoon Chiku - Taiwan
+35	63	English Channel 1995
+36	95	Monterey Bay
+37	97	West Florida Shelf
+38	94	Western Bering Sea
+39	92	Prince William Sound 1990s
+40	91	Prince William Sound 1980s
+41	96	Looe Key Sanctuary
+42	104	Venzuela Shelf
+43	81	Seagrass&Mangrove Terminos Lagoon
+44	64	North Sea 1880
+45	61	West Coast of Scotland
+46	62	Western English Chanel
+47	19	Bay of Bengal
+48	23	Southwest coast of India
+49	25	West coast of Sarawak
+50	24	West coast of Sabah
+51	27	San Pedro Bay, Leyte
+52	98	Southern Brazil Shelf
+53	67	Strait of Georgia
+54	99	South Brazil Bight
+55	87	Gulf of Mexico
+56	90	Western Gulf of Mexico
+57	79	Tamaihua Lagoon
+58	86	Yucatan Continental Shelf
+59	78	Campeche Bank
+60	105	Virgin Islands
+61	49	North-Central Adriatic 1970s
+62	50	North-Central Adriatic 1990s
+63	40	Aegean model
+64	22	SE Arabian Sea
+65	35	Bay of Calvi
+66	1	Cape Verde
+67	54	Curonian Lagoon
+68	66	Deep sea West Coast of Scotland
+69	21	East China Sea
+70	68	Eastern Scotian Shelf 1980s
+71	69	Eastern Scotian Shelf 1990s
+72	2	Gambia
+73	14	Gamtoos Estuary
+74	4	Guinea
+75	5	Guinea-Bissau
+76	33	Gulf of Riga
+77	31	Gulf of Thailand
+78	16	Kromme Estuary
+79	51	Lithuanian Coast
+80	6	Mauritania
+81	47	Miramare Natural Marine Reserve
+82	7	Morocco
+83	84	Northern Gulf of California
+84	72	Northern Gulf of St. Lawrence 2000s
+85	71	Northern Gulf of St. Lawrence 1989s
+86	74	Southern Gulf of St. Lawrence 1990s
+87	65	North Sea 1991
+88	9	Northern Benguela
+89	34	Parnu Bay
+90	53	Puck Bay
+91	28	San Miguel Bay
+92	55	Catalan sea 1980s
+93	56	Catalan sea 1990s
+94	57	Catalan sea 2003
+95	10	Senegambien
+96	70	Northern Gulf of St. Lawrence 1980s
+97	73	Southern Gulf of St. Lawrence 1980s
+98	11	Sierre Leone 1964
+99	12	Sierre Leone 1978
+100	13	Sierre Leone 1990
+101	52	Sorfjord
+102	15	Sundays Estuary
+103	17	Swartkops Estuary
+104	46	Venice Lagoon (Seagrass habitat)
+105	48	Venice Lagoon (Tapes habitat)
