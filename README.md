@@ -19,6 +19,8 @@ The main analysis is carried out in MATLAB. However, certain functions were not 
 2. Netcarto R package (https://cran.r-project.org/web/packages/rnetcarto/vignettes/getting-started.html)
 
 ## References
+Giacomuzzo, E., Jordán, F. (2021). Food web aggregation: effects on key positions. In review. 
+
 Heymans, J. J., Coll, M., Libralato, S., Morissette, L., & Christensen, V. (2014). Global patterns in ecological indicators of marine food webs: a modelling approach. PloS one, 9(4), e95845.
 
 Sander, E. L., Wootton, J. T., & Allesina, S. (2015). What can interaction webs tell us about species roles?. PLoS computational biology, 11(7), e1004330.
