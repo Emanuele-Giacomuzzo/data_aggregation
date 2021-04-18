@@ -1,4 +1,6 @@
-# Data_aggregation
+# Data Aggregation 
+
+This is the code and the data we used during the analysis we performed in Giacomuzzo (2021).
 
 ## Ecopath with Ecosim food webs.
 The food webs included in adjacency_matrices are all taken by the 105 food webs of Ecopath with Ecosim. Inside, you have 105 food webs with loops, which include around 35 food webs that are naturally without cycles. I should include big food webs, but it seems like there are not many of them. Only 10 food webs have no cycles and more than 20 nodes. 8 have at least 23 nodes. 
@@ -18,22 +20,11 @@ Example
 Watch out: this toolbox doesn't implement the REGE algorithm. It needs to be calculated from the UCINET VI software (available only for windows at https://sites.google.com/site/ucinetsoftware/home). The output of UCINET needs then to be transformed into a MATLAB matrix and saved in the folder data. Here I supposed that the maximum of REGE is 1000.
 
 ## Dependencies
-1. "Mann-Kendall Tau-b with Sen's Method (enhanced)" at https://uk.mathworks.com/matlabcentral/fileexchange/11190-mann-kendall-tau-b-with-sen-s-method-enhanced
-2. Food web tools at ...
-3. Signed group model at https://github.com/elsander/SignedGroupModel
-
-## CosbiLab
-It is a semi-developed software, whose some features work only partially. To import a food web:
-1. Import food web into UCINET.
-2. Export food web as edge list.
-3. Change the dot to comma. If there is any connection that it's zero delete it (CosbiLab considers it as if there was a connection.)
-Other things to consider:
-I. If the food web is weighted, then you need to write 'value' into weight attribute.
-II. You can export just certain things such as the keystone index.
-III. To calculate the keystone index and the status index you need to transform the food web into a directed acyclic graph (DAG). To do so you need first to find all the cycles. Then, you should get rid of the edges that create the cycles. See the README file. 
+1. Food Web Analysis Toolbox (https://uk.mathworks.com/matlabcentral/fileexchange/89907-food-web-analysis-toolbox)
+2. Netcarto
 
 ## Food webs
 I got rid of the food web number 5, because it gave me problems with Netcarto. 
 
 ## Other
-The REGE from the gulf of Napoli is widely 1000 scaled instead of 100 scaled. 
+The REGE from the gulf of Napoli is widely 1000 scaled instead of 100 scaled.
