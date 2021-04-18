@@ -1,11 +1,13 @@
 %% FIGURES
 tiledlayout(1, 1)
 
-heatmap(aggregation_methods, centralities_figures, all_mean_kendalls, 'ColorMap', color_style, 'ColorLimits', [0 1], 'CellLabelFormat',  '%.2f',  'FontSize', 15)
+heatmap(aggregation_methods, centralities_figures, all_mean_kendalls, 'ColorMap', color_style, 'ColorLimits', [0 1], 'CellLabelFormat',  '%.2f',  'FontSize', 13)
 saveas(gcf, "../latex/figures/mean_kendalls_a.png") 
 
 heatmap(centralities_figures, aggregation_methods, all_mean_kendalls', 'ColorMap', color_style, 'ColorLimits', [0 1], 'CellLabelFormat',  '%.2f',  'FontSize', 7)
 saveas(gcf, "../latex/figures/mean_kendalls_b.png")
+
+
 
 %% CAPTION
 caption1 = "Heat map describing the kendall's rank correlation (τ) between the ranking of the nodes in the original food web and in the aggregated food web. On the x axis,  there is the aggregation method,  which is described by three components. The first component is the clustering algorithm. The second one is the linkage method. The third one is the method by which we determined the interaction strength. On the y axis,  there are the centrality indices.";

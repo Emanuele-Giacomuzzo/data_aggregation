@@ -37,9 +37,9 @@ caption = "\\caption{Table of the best Kendall’s correlation coefficients. The
 writeRankingTables(table,caption)
 
 table = "rank_table_ci"
-caption = "\\caption{Confidence intervals of the mean Kendalls in Table 1.}"
+caption = "\\caption{Table S1. Confidence intervals of the mean Kendalls in Table 1 of the paper. {\\color[HTML]{00D768} Green = hierarchical clustering with Jaccard index}, {\\color[HTML]{EF2A00} red = hierarchical clustering with REGE index}, {\\color[HTML]{9B9B9B} grey = density-based modules}, {\\color{orange} yellow = prey-based modules}, {\\color[HTML]{0051D7} blue = predator-based modules}, {\\color[HTML]{6200D7} purple = groups produced by the group model}. C1 = Best clustering, C2 = second best clustering, C3 = third best clustering, C4 = fourth best clustering, C5 = fifth best clustering, C6 = sixth best clustering.}"
 writeRankingTables(table,caption)
 
 table = "rank_table_aggregations"
-caption = "\\caption{Combination of linkage method and interaction strength method that gave us the highest Kendall's correlation coefficient. Most of the cells do not containi the interaction strength method because they are computed upon a binary network.}"
+caption = "\\caption{Table S2. Combination of linkage method and interaction strength method that gave us the highest Kendall's correlation coefficient in Table 1 of the paper. Most of the cells do not containi the interaction strength method because they are computed upon a binary network. {\\color[HTML]{00D768} Green = hierarchical clustering with Jaccard index}, {\\color[HTML]{EF2A00} red = hierarchical clustering with REGE index}, {\\color[HTML]{9B9B9B} grey = density-based modules}, {\\color{orange} yellow = prey-based modules}, {\\color[HTML]{0051D7} blue = predator-based modules}, {\\color[HTML]{6200D7} purple = groups produced by the group model}. C1 = Best clustering, C2 = second best clustering, C3 = third best clustering, C4 = fourth best clustering, C5 = fifth best clustering, C6 = sixth best clustering.}"
 writeRankingTables(table,caption)

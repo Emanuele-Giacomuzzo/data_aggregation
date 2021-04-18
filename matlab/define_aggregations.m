@@ -15,6 +15,6 @@ end
 aggregation_methods = string.empty;
 for clustering = 1:length(clustering_methods)
     for links = 1:length(linkage_n_strength)
-       aggregation_methods = [aggregation_methods; (clustering_better_names(clustering) + " " + linkage_n_strength(links))];
+       aggregation_methods = [aggregation_methods; (linkage_n_strength(links) + "  " + clustering_better_names(clustering))];
     end
 end

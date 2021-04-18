@@ -95,8 +95,6 @@ INPUT rank_table_ci.aux
 INPUT rank_table_ci.aux
 INPUT rank_table_aggregations.aux
 INPUT rank_table_aggregations.aux
-INPUT food.aux
-INPUT food.aux
 OUTPUT Tables.aux
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -130,14 +128,11 @@ INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 OUTPUT rank_table_aggregations.aux
 INPUT rank_table_aggregations.tex
 INPUT rank_table_aggregations.tex
-OUTPUT food.aux
 INPUT Tables.aux
 INPUT rank_table_ci.aux
 INPUT rank_table_ci.aux
 INPUT rank_table_aggregations.aux
 INPUT rank_table_aggregations.aux
-INPUT food.aux
-INPUT food.aux
 INPUT ./Tables.out
 INPUT ./Tables.out
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
