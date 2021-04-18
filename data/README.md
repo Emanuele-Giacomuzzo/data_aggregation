@@ -1,0 +1,4 @@
+The food webs that I used and that can be easily imported into MATLAB are the ones in the folder "adjacency_matrices". Watch out: the food webs come from the paper of Heymans et al. (2014), but their enumeration has been changed. Also, to make it easier for me to work with these files, every single food webs of the 105 has its file. However, some of them are not available - i.e., their file is empty. This is because they are food webs I didn't use. 
+
+
+Heymans, J. J., Coll, M., Libralato, S., Morissette, L., & Christensen, V. (2014). Global patterns in ecological indicators of marine food webs: a modelling approach. PloS one, 9(4), e95845.
